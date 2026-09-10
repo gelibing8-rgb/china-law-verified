@@ -1,0 +1,47 @@
+# china-law-verified 官方来源白名单
+# 仅收录下列官方站点的法律原文，禁止第三方商业数据库与社媒来源。
+
+allowed_domains:
+  - flk.npc.gov.cn        # 国家法律法规数据库（V1 实际数据源）
+  - npc.gov.cn            # 中国人大网
+  - gov.cn                # 中国政府网
+  - court.gov.cn          # 最高人民法院
+  - chinacourt.gov.cn     # 最高人民法院
+  - moj.gov.cn            # 司法部
+  - spp.gov.cn            # 最高人民检察院
+  - audit.gov.cn          # 审计署
+
+# 实际使用的具体官方来源页面，按收录时间顺序登记。
+# 任何新增条目都必须落在 allowed_domains 之内，否则 verify.py 会拒绝收录。
+used_sources:
+  - id: civil_code_flk_2020
+    title: 中华人民共和国民法典
+    domain: flk.npc.gov.cn
+    detail_url: https://flk.npc.gov.cn/detail.html?bbbs=ff808081729d1efe01729d50b5c500bf
+    bbbs: ff808081729d1efe01729d50b5c500bf
+    note: |
+      flk.npc.gov.cn API /law-search/search/list 查询 "民法典" 返回的现行版本（sxx=3）。
+      核验项：title=中华人民共和国民法典，gbrq=2020-05-28，sxrq=2021-01-01，
+      zdjgName=全国人民代表大会，flxz=法律。
+      正文通过 SPA WPS/OFD 文档查看器渲染，源文档存储在内网 OSS（公网无法直接下载）。
+  - id: company_law_2024_flk
+    title: 中华人民共和国公司法（2023 修订 / 2024-07-01 施行）
+    domain: flk.npc.gov.cn
+    detail_url: https://flk.npc.gov.cn/detail.html?bbbs=ff8081818c9108eb018cb6922f750c07
+    bbbs: ff8081818c9108eb018cb6922f750c07
+    note: |
+      flk.npc.gov.cn API 查询 "公司法" 返回的现行版本（sxx=3）。
+      核验项：title=中华人民共和国公司法，gbrq=2023-12-29，sxrq=2024-07-01，
+      zdjgName=全国人民代表大会常务委员会，flxz=法律。
+      完全匹配用户指定的"必须为2023年12月29日修订、2024年7月1日起施行的现行版本"。
+  - id: labor_contract_law_flk
+    title: 中华人民共和国劳动合同法
+    domain: flk.npc.gov.cn
+    detail_url: https://flk.npc.gov.cn/detail.html?bbbs=2c909fdd678bf17901678bf74d7106b3
+    bbbs: 2c909fdd678bf17901678bf74d7106b3
+    note: |
+      flk.npc.gov.cn API 查询 "劳动合同法" 返回的现行版本（sxx=3）。
+      核验项：title=中华人民共和国劳动合同法，gbrq=2012-12-28，sxrq=2013-07-01，
+      zdjgName=全国人民代表大会常务委员会，flxz=法律。
+      gbrq=2012-12-28 表示最后一次修正日期；原法律 2007-06-29 通过、2008-01-01 施行。
+      这是当前唯一现行版本，V1 收录。
