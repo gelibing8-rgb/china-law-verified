@@ -3,7 +3,7 @@ topic:
   title: 公司法专题
   description: 以中华人民共和国公司法（2023 修订 / 2024-07-01 施行）为枢轴，关联相关行政法规、部门规章、司法解释与典型案例
   primary_law_document_id: CL-PRIMARY-2024
-  generated_at: '2026-09-11T07:08:10Z'
+  generated_at: '2026-09-11T07:17:20Z'
   default_show_relation_strength:
   - core
   - direct
@@ -110,8 +110,8 @@ documents:
   document_type: 部门规章
   relation_type: department_rule
   relation_strength: direct
-  legal_status: pending_verification
-  status_basis: candidate_repository_metadata_only
+  legal_status: effective
+  status_basis: user_confirmed_metadata
   status_basis_url: null
   verified_at: '2026-09-11'
   verification_status: CANDIDATE
@@ -129,8 +129,76 @@ documents:
     source_license_status: unclear
     verification_status: CANDIDATE
     match_method: exact_filename_and_title
-  notes: 候选文本标注2022-03-01公布并载明国家市场监督管理总局令第52号；本轮未访问政府网站，现行效力留 pending_verification。
+  notes: 根据已确认元数据登记；正文仍仅为本地候选文本，verification_status 保持 CANDIDATE。
   document_id: DR-MARKET-ENTITY-IMPLEMENT-2022
+- title: 公司登记管理实施办法
+  document_type: 部门规章
+  relation_type: department_rule
+  relation_strength: core
+  legal_status: effective
+  status_basis: user_confirmed_metadata
+  status_basis_url: null
+  verified_at: '2026-09-11'
+  verification_status: CANDIDATE
+  issuing_authority: 国家市场监督管理总局
+  document_number: 国家市场监督管理总局令第95号
+  publication_date: '2024-12-20'
+  effective_date: '2025-02-10'
+  source_url: null
+  local_path: null
+  notes: 按已确认元数据登记；两个本地候选库均未找到正式标题、文号或唯一 ID 对应全文。
+  document_id: DR-COMPANY-REGISTRATION-IMPLEMENT-2025
+- title: 经营主体登记文书规范（2026年版）
+  document_type: 规范性文件
+  relation_type: normative_document
+  relation_strength: direct
+  legal_status: effective
+  status_basis: user_confirmed_metadata
+  status_basis_url: null
+  verified_at: '2026-09-11'
+  verification_status: CANDIDATE
+  issuing_authority: 国家市场监督管理总局
+  document_number: 国市监注发〔2026〕5号（文件组）
+  publication_date: '2026-01-12'
+  effective_date: '2026-05-01'
+  source_url: null
+  local_path: null
+  notes: 直接落实公司法关于股东出资期限、股东失权、弥补亏损减资等登记要求；本地候选库未找到全文。
+  document_id: NF-ENTITY-REGISTRATION-DOC-2026
+- title: 经营主体登记提交材料规范（2026年版）
+  document_type: 规范性文件
+  relation_type: normative_document
+  relation_strength: direct
+  legal_status: effective
+  status_basis: user_confirmed_metadata
+  status_basis_url: null
+  verified_at: '2026-09-11'
+  verification_status: CANDIDATE
+  issuing_authority: 国家市场监督管理总局
+  document_number: 国市监注发〔2026〕5号（文件组）
+  publication_date: '2026-01-12'
+  effective_date: '2026-05-01'
+  source_url: null
+  local_path: null
+  notes: 直接落实公司法关于股东出资期限、股东失权、弥补亏损减资等登记要求；本地候选库未找到全文。
+  document_id: NF-ENTITY-REGISTRATION-MATERIALS-2026
+- title: 市场监管总局关于印发经营主体登记文书规范和提交材料规范（2026年版）的通知
+  document_type: 规范性文件
+  relation_type: normative_document
+  relation_strength: direct
+  legal_status: effective
+  status_basis: user_confirmed_metadata
+  status_basis_url: null
+  verified_at: '2026-09-11'
+  verification_status: CANDIDATE
+  issuing_authority: 国家市场监督管理总局
+  document_number: 国市监注发〔2026〕5号
+  publication_date: '2026-01-12'
+  effective_date: '2026-05-01'
+  source_url: null
+  local_path: null
+  notes: 上位通知；本地候选库未找到全文。
+  document_id: NF-ENTITY-REGISTRATION-NOTICE-2026
 - title: 最高人民法院关于适用《中华人民共和国公司法》若干问题的规定（一）（2014 修正）
   document_type: 司法解释
   relation_type: judicial_interpretation
@@ -366,6 +434,44 @@ documents_related:
   local_path: null
   notes: flk.npc.gov.cn 未单独登记 1993 原版；被后续多次修订/修正最终由 2023 修订版整体替代。
   document_id: CL-1993-ORIGINAL
+- title: 市场主体登记文书规范（2022版）
+  document_type: 规范性文件
+  relation_type: historical_version
+  relation_strength: related
+  legal_status: replaced
+  status_basis: user_confirmed_metadata
+  status_basis_url: null
+  verified_at: '2026-09-11'
+  verification_status: CANDIDATE
+  issuing_authority: 国家市场监督管理总局
+  document_number: null
+  publication_date: '2022-03-01'
+  effective_date: '2022-03-01'
+  source_url: null
+  local_path: null
+  replaced_by: NF-ENTITY-REGISTRATION-DOC-2026
+  replacement_effective_date: '2026-05-01'
+  notes: 由2026年版替代；不进入当前默认检索范围。
+  document_id: NF-ENTITY-REGISTRATION-DOC-2022-REPLACED
+- title: 市场主体登记提交材料规范（2022版）
+  document_type: 规范性文件
+  relation_type: historical_version
+  relation_strength: related
+  legal_status: replaced
+  status_basis: user_confirmed_metadata
+  status_basis_url: null
+  verified_at: '2026-09-11'
+  verification_status: CANDIDATE
+  issuing_authority: 国家市场监督管理总局
+  document_number: null
+  publication_date: '2022-03-01'
+  effective_date: '2022-03-01'
+  source_url: null
+  local_path: null
+  replaced_by: NF-ENTITY-REGISTRATION-MATERIALS-2026
+  replacement_effective_date: '2026-05-01'
+  notes: 由2026年版替代；不进入当前默认检索范围。
+  document_id: NF-ENTITY-REGISTRATION-MATERIALS-2022-REPLACED
 - title: 最高人民法院关于适用《中华人民共和国公司法》若干问题的规定（五）（2019 版）
   document_type: 司法解释
   relation_type: judicial_interpretation
@@ -625,28 +731,28 @@ cases:
   analysis_note: null
 cases_related: []
 statistics:
-  documents_total: 20
+  documents_total: 26
   documents_by_relation_type:
     primary_law: 1
-    historical_version: 3
+    historical_version: 5
     administrative_regulation: 3
-    department_rule: 1
+    department_rule: 2
+    normative_document: 3
     judicial_interpretation: 12
   documents_by_legal_status:
-    effective: 11
-    replaced: 7
+    effective: 16
+    replaced: 9
     repealed: 1
-    pending_verification: 1
   documents_by_verification_status:
     OFFICIAL_META: 1
-    CANDIDATE: 19
+    CANDIDATE: 25
   documents_by_relation_strength:
-    core: 9
-    related: 8
-    direct: 3
+    core: 10
+    related: 10
+    direct: 6
   documents_with_local_path: 1
   documents_with_official_source: 19
-  documents_pending_verification: 1
+  documents_pending_verification: 0
   case_collections_total: 4
   cases_total: 8
   cases_by_type:
@@ -665,11 +771,11 @@ verification:
   judicial_interpretations_split_by_effectiveness: true
   no_empty_department_rule_placeholders: true
   cases_split_to_individual: true
-  current_core_documents: 12
+  current_core_documents: 16
   current_effective_judicial_interpretations: 7
   individual_cases: 8
-  history_documents: 8
-  still_pending_or_unverified: 1
+  history_documents: 10
+  still_pending_or_unverified: 0
 known_gaps:
 - 未盘点具体部门规章 / 规范性文件：合规铁律下不批量访问国家市场监管总局 / 证监会等官网；按 V3.1 spec，盘点不到的具体文件不写入 manifest。
 - 人民法院案例库（rmfyalk.court.gov.cn）需登录访问；不绕过登录控制；具体入库案例无法直接核验。
