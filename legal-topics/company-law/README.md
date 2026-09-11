@@ -57,11 +57,21 @@
 | 法释〔2020〕18号 | 公司法若干问题的规定（五）2020 修正 | 2020-12-29 / 2021-01-01 | **effective** | |
 | 法释〔2014〕2号 | 公司法若干问题的规定（一）2014 修正 | 2014-02-20 / 2014-03-01 | **effective** | 条文援引旧法序号应改写为新法序号 |
 
+## 2. 权威案例层（V3.3B）
+
+案例与法规效力状态完全分开。案例使用 `reference_status`（`active` / `no_longer_reference` / `historical` / `pending_verification`），不使用 `legal_status`。
+
+本轮登记三起种子案例：指导性案例 215、人民法院案例库编号 `2023-08-2-084-028`、指导性案例 9。由于本地候选库未找到三起案例的唯一可靠全文或当前参照状态材料，均保持 `verification_status=CANDIDATE`、`reference_status=pending_verification`；不得据此直接作为最终案例依据。
+
+状态记录见 `case-reference-status.json`。`official_holding` 仅保存已登记的官方明确裁判要旨；本轮种子案例未填充官方要旨，分析性说明统一使用 `analysis_note.content_type=ai_summary`。
+
+`search_all.py --topic company-law` 默认在法律检索后展示匹配案例元数据，案例按指导性案例、人民法院案例库、公报案例、典型案例排序，并显示案例编号、参照状态、可信等级和候选来源。
+
 > **官方核验依据**：最高人民法院民二庭负责人就公司法时间效力的规定答记者问（2024-07-01）。
 > 原话："五部旧公司法司法解释尚未被废除，……五部旧公司法司法解释条文与公司法规定原理一致、不存在冲突时，五部旧公司法司法解释可以继续适用。……五部旧公司法司法解释条文与公司法规定内容不一致、存在冲突时，应当适用公司法。"
 > 来源：<https://www.court.gov.cn/zixun/xiangqing/438551.html>
 
-## 2. 权威案例
+## 3. 权威案例
 
 ### 指导性案例
 
@@ -99,7 +109,7 @@
 
 **案件批次来源（case_collections）**：见 `manifest.yaml` 中 `case_collections` 段。
 
-## 3. 历史沿革
+## 4. 历史沿革
 
 ### 历次公司法版本
 
@@ -127,19 +137,20 @@
 - **2024-12-24** 最高法公布 法释〔2024〕15号，明确 公司法第八十八条第一款仅适用于 2024-07-01 之后发生的股权转让。
 - **2024 年备案审查** 全国人大常委会法工委对 时间效力规定 第四条溯及适用第八十八条第一款提出审查建议；最高法随后出台批复实质否定该溯及适用。
 
-## 4. 关联但非核心文件（`relation_strength = related`）
+## 5. 关联但非核心文件（`relation_strength = related`）
 
 仅按需展示，不参与默认法律结论推荐：
 
 - 2018 / 2013 / 1993 公司法旧版（CL-*）
 - 已被取代的 2006 / 2014 / 2017 / 2019 司法解释版（JI-*-EXPIRED）
 
-## 数据可信等级与法律效力是两个维度
+## 数据可信等级、法律效力与案例参照状态是三个维度
 
 | 维度 | 字段 | 取值 |
 | --- | --- | --- |
 | 数据可信 | `verification_status` | `VERIFIED` / `OFFICIAL_META` / `CANDIDATE` / `UNVERIFIED` |
 | 法律效力 | `legal_status` | `effective` / `repealed` / `replaced` / `historical` / `draft` / `pending_verification` / `not_applicable` |
+| 案例参照状态 | `reference_status` | `active` / `no_longer_reference` / `historical` / `pending_verification` |
 
 禁止：
 - 用 `CANDIDATE` 表示"失效"

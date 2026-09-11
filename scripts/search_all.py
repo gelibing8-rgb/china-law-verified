@@ -479,6 +479,77 @@ def filter_hits_by_scope(hits, allowed_paths):
     return [(rel, ln, content) for rel, ln, content in hits if rel in allowed_paths]
 
 
+def load_topic_cases(topic_id: str, include_related: bool = False) -> list[dict]:
+    """读取专题案例元数据；不读取或复制候选案例正文。"""
+    path = ROOT / "legal-topics" / topic_id / "manifest.json"
+    if not path.exists():
+        return []
+    try:
+        with path.open("r", encoding="utf-8") as fh:
+            manifest = json.load(fh)
+    except (OSError, json.JSONDecodeError):
+        return []
+    cases = list(manifest.get("cases", []) or [])
+    if include_related:
+        cases += list(manifest.get("cases_related", []) or [])
+    return [c for c in cases if c.get("relation_strength") in ("core", "direct")]
+
+
+def print_case_results(cases: list[dict], query: str, keywords: list[str]) -> int:
+    """按权威等级展示案例元数据命中；案例不冒充法规依据。"""
+    terms = [t for t in ([query] + keywords) if t]
+    if not cases or not terms:
+        return 0
+    authority_rank = {
+        "guiding_case": 0,
+        "people_court_database_case": 1,
+        "gazette_case": 2,
+        "typical_case": 3,
+    }
+    status_rank = {"active": 0, "pending_verification": 1, "historical": 2, "no_longer_reference": 3}
+    matched = []
+    for case in cases:
+        fields = [
+            case.get("case_title", ""),
+            case.get("cause_of_action", ""),
+            " ".join(case.get("keywords", []) or []),
+            " ".join(case.get("related_articles", []) or []),
+            case.get("official_holding", "") or "",
+        ]
+        haystack = "\n".join(str(x) for x in fields)
+        hit_terms = [t for t in terms if t in haystack]
+        if hit_terms:
+            matched.append((case, hit_terms))
+    matched.sort(key=lambda x: (
+        authority_rank.get(x[0].get("case_authority"), 99),
+        status_rank.get(x[0].get("reference_status"), 99),
+        x[0].get("case_title", ""),
+    ))
+    print("\n## 权威案例（仅作案例定位，不替代法律依据）")
+    if not matched:
+        print("  当前专题无已核验权威案例（本地案例元数据未命中）")
+        return 0
+    for case, hit_terms in matched:
+        print(f"  · {case.get('case_title', '')}")
+        print(f"    case_authority: {case.get('case_authority')}")
+        print(f"    reference_status: {case.get('reference_status')}")
+        print(f"    verification_status: {case.get('verification_status')}")
+        print(f"    guiding_case_number: {case.get('guiding_case_number')}")
+        print(f"    database_case_number: {case.get('database_case_number')}")
+        print(f"    case_number: {case.get('case_number')}")
+        sources = case.get("candidate_sources") or []
+        print(f"    candidate_source: {sources if sources else 'none (metadata only)'}")
+        print(f"    命中词: {', '.join(hit_terms)}")
+        if case.get("official_holding"):
+            print(f"    official_holding: {case['official_holding']}")
+        else:
+            print("    official_holding: 未保存官方裁判要旨")
+        note = case.get("analysis_note")
+        if isinstance(note, dict) and note.get("content_type") == "ai_summary":
+            print(f"    analysis_note [ai_summary]: {note.get('text', '')}")
+    return len(matched)
+
+
 # ------------------------- 主流程 -------------------------
 
 def main() -> int:
@@ -495,6 +566,8 @@ def main() -> int:
                                   "读 legal-topics/<id>/manifest.yaml 限定检索范围")
     p.add_argument("--include-related", action="store_true",
                    help="专题模式下额外纳入 historical_version / relation_strength=related 的条目")
+    p.add_argument("--include-cases", action="store_true",
+                   help="展示专题案例元数据；--topic 模式默认开启")
     args = p.parse_args()
 
     if not args.query and not args.keywords:
@@ -508,12 +581,14 @@ def main() -> int:
 
     # V3.1 专题加载（--topic）
     topic_meta, topic_scope, topic_unresolved = (None, None, [])
+    topic_cases: list[dict] = []
     if args.topic:
         topic_meta, topic_scope, topic_unresolved = load_topic_manifest(
             args.topic, include_related=args.include_related
         )
         if topic_meta is None:
             return 2
+        topic_cases = load_topic_cases(args.topic, include_related=args.include_related)
 
     print("# china-law-verified V2.2 检索")
     if args.topic and topic_meta:
@@ -657,6 +732,9 @@ def main() -> int:
 
     dt_total = time.perf_counter() - t_total
     print(f"\n# 合计命中行数: {grand_total}  总耗时: {dt_total*1000:.1f} ms")
+
+    if args.topic and (args.include_cases or args.topic):
+        print_case_results(topic_cases, query, keywords)
 
     # V3.1 专题 UNRESOLVED 报告
     if args.topic:

@@ -862,6 +862,112 @@ CASES = [
     },
 ]
 
+# V3.3B：案例状态与法规效力彻底分离。已有案例保留为 CANDIDATE，
+# 新增种子案例只登记身份与检索元数据；未取得官方正文时不填 official_holding。
+SEED_CASES = [
+    {
+        "case_id": "GC-215-KUNMING-MIAN",
+        "case_title": "昆明闽某纸业有限责任公司等污染环境刑事附带民事公益诉讼案",
+        "case_authority": "guiding_case",
+        "case_type": "guiding_case",
+        "reference_status": "pending_verification",
+        "verification_status": "CANDIDATE",
+        "guiding_case_number": "215",
+        "database_case_number": None,
+        "case_number": None,
+        "court": None,
+        "publication_body": "最高人民法院",
+        "publication_date": None,
+        "decision_date": None,
+        "cause_of_action": "污染环境刑事附带民事公益诉讼",
+        "keywords": ["公司法人人格否认", "股东连带责任"],
+        "related_articles": ["公司法 第二十三条"],
+        "related_documents": [],
+        "relation_strength": "direct",
+        "official_source_url": None,
+        "candidate_sources": [],
+        "official_holding": None,
+        "analysis_note": {
+            "content_type": "ai_summary",
+            "text": "用户指定核心问题为公司法人人格否认与股东连带责任；未取得本地官方案例正文，不能替代官方裁判要旨。",
+        },
+    },
+    {
+        "case_id": "PCDB-2023-08-2-084-028",
+        "case_title": "北京某建材公司诉北京某科技公司、马某等买卖合同纠纷案",
+        "case_authority": "people_court_database_case",
+        "case_type": "people_court_database_case",
+        "reference_status": "pending_verification",
+        "verification_status": "CANDIDATE",
+        "guiding_case_number": None,
+        "database_case_number": "2023-08-2-084-028",
+        "case_number": None,
+        "court": None,
+        "publication_body": "人民法院案例库",
+        "publication_date": None,
+        "decision_date": None,
+        "cause_of_action": "买卖合同纠纷",
+        "keywords": ["股东出资", "债权抵销出资义务"],
+        "related_articles": ["公司法 股东出资相关条款"],
+        "related_documents": [],
+        "relation_strength": "core",
+        "official_source_url": None,
+        "candidate_sources": [],
+        "official_holding": None,
+        "analysis_note": {
+            "content_type": "ai_summary",
+            "text": "用户指定核心问题为股东出资与债权抵销出资义务；入库编号已登记，但本地未找到唯一可靠全文。",
+        },
+    },
+    {
+        "case_id": "GC-9-SHANGHAI-CUNLIANG",
+        "case_title": "上海存亮贸易有限公司诉蒋志东、王卫明等买卖合同纠纷案",
+        "case_authority": "guiding_case",
+        "case_type": "guiding_case",
+        "reference_status": "pending_verification",
+        "verification_status": "CANDIDATE",
+        "guiding_case_number": "9",
+        "database_case_number": None,
+        "case_number": None,
+        "court": None,
+        "publication_body": "最高人民法院",
+        "publication_date": None,
+        "decision_date": None,
+        "cause_of_action": "买卖合同纠纷",
+        "keywords": ["公司清算义务", "股东清算责任"],
+        "related_articles": ["公司法 清算义务相关条款"],
+        "related_documents": [],
+        "relation_strength": "core",
+        "official_source_url": None,
+        "candidate_sources": [],
+        "official_holding": None,
+        "analysis_note": {
+            "content_type": "ai_summary",
+            "text": "用户指定核心问题为公司清算义务与股东清算责任；本地候选库未找到唯一可靠全文。",
+        },
+    },
+]
+
+
+def normalize_case(case):
+    """兼容 V3.1 旧案例字段，同时输出 V3.3B 案例字段。"""
+    out = dict(case)
+    out.setdefault("case_authority", out.get("case_type", "typical_case"))
+    out.setdefault("reference_status", "pending_verification")
+    out.setdefault("guiding_case_number", None)
+    out.setdefault("database_case_number", None)
+    out.setdefault("publication_body", "最高人民法院")
+    out.setdefault("cause_of_action", None)
+    out.setdefault("keywords", [])
+    out.setdefault("related_documents", [])
+    out.setdefault("candidate_sources", [])
+    out.setdefault("official_holding", out.get("official_typical_significance_official_text"))
+    out.setdefault("analysis_note", None)
+    return out
+
+
+CASES = [normalize_case(c) for c in CASES] + SEED_CASES
+
 # ============================================================
 # 自动统计（V3.1 spec：从 documents[] / cases[] / collections[] 实际生成）
 # ============================================================
@@ -893,7 +999,12 @@ def compute_statistics():
         "cases_total": len(CASES),
         "cases_by_type": dict(Counter(c.get("case_type") for c in CASES)),
         "cases_by_verification_status": dict(Counter(c.get("verification_status") for c in CASES)),
-        "cases_with_case_number": sum(1 for c in CASES if c.get("case_number")),
+        "cases_by_authority": dict(Counter(c.get("case_authority") for c in CASES)),
+        "cases_by_reference_status": dict(Counter(c.get("reference_status") for c in CASES)),
+        "cases_with_case_number": sum(
+            1 for c in CASES
+            if c.get("case_number") or c.get("guiding_case_number") or c.get("database_case_number")
+        ),
         "cases_with_decision_date": sum(1 for c in CASES if c.get("decision_date")),
         "cases_pending_official_detail": sum(
             1 for c in CASES
@@ -988,6 +1099,29 @@ def main() -> int:
     with json_path.open("w", encoding="utf-8") as fh:
         json.dump(manifest, fh, ensure_ascii=False, indent=2)
     print(f"[OK] {json_path}")
+    status_path = OUT.parent / "case-reference-status.json"
+    status_doc = {
+        "topic_id": "company-law",
+        "checked_at": "2026-09-11",
+        "source_policy": "本地候选库只读盘点；本轮未访问政府/法院网站，不绕过登录或访问控制。",
+        "records": [
+            {
+                "guiding_case_number": "215",
+                "reference_status": "pending_verification",
+                "status_basis": "本地资料未发现可确认的‘不再参照’清单；当前状态未作官方在线核验。",
+                "checked_at": "2026-09-11",
+            },
+            {
+                "guiding_case_number": "9",
+                "reference_status": "pending_verification",
+                "status_basis": "本地候选库未找到唯一可靠案例全文或当前参照状态材料。",
+                "checked_at": "2026-09-11",
+            },
+        ],
+    }
+    with status_path.open("w", encoding="utf-8") as fh:
+        json.dump(status_doc, fh, ensure_ascii=False, indent=2)
+    print(f"[OK] {status_path}")
     print(f"[stats]")
     for k, v in manifest["statistics"].items():
         print(f"  {k}: {v}")

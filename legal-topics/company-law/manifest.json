@@ -4,7 +4,7 @@
     "title": "公司法专题",
     "description": "以中华人民共和国公司法（2023 修订 / 2024-07-01 施行）为枢轴，关联相关行政法规、部门规章、司法解释与典型案例",
     "primary_law_document_id": "CL-PRIMARY-2024",
-    "generated_at": "2026-09-11T07:17:20Z",
+    "generated_at": "2026-09-11T07:29:05Z",
     "default_show_relation_strength": [
       "core",
       "direct"
@@ -702,7 +702,17 @@
       "content_source": "official_typical_significance",
       "verification_status": "CANDIDATE",
       "official_typical_significance_official_text": "关联公司之间恶意转移交易收益、人员财务混同、边界不清——横向'刺穿公司面纱'，判决关联公司对债务承担连带责任。",
-      "analysis_note": null
+      "analysis_note": null,
+      "case_authority": "typical_case",
+      "reference_status": "pending_verification",
+      "guiding_case_number": null,
+      "database_case_number": null,
+      "publication_body": "最高人民法院",
+      "cause_of_action": null,
+      "keywords": [],
+      "related_documents": [],
+      "candidate_sources": [],
+      "official_holding": "关联公司之间恶意转移交易收益、人员财务混同、边界不清——横向'刺穿公司面纱'，判决关联公司对债务承担连带责任。"
     },
     {
       "case_id": "CASE-EVADE-002",
@@ -724,7 +734,17 @@
       "content_source": "official_typical_significance",
       "verification_status": "CANDIDATE",
       "official_typical_significance_official_text": "股东在公司不能清偿对外负债的情况下两次零对价转让股权，受让人通过修改章程延长出资期限——延长出资期限的内部决议对公司债权人不发生法律效力，股权出让人和受让人向公司债权人承担补充赔偿责任。",
-      "analysis_note": null
+      "analysis_note": null,
+      "case_authority": "typical_case",
+      "reference_status": "pending_verification",
+      "guiding_case_number": null,
+      "database_case_number": null,
+      "publication_body": "最高人民法院",
+      "cause_of_action": null,
+      "keywords": [],
+      "related_documents": [],
+      "candidate_sources": [],
+      "official_holding": "股东在公司不能清偿对外负债的情况下两次零对价转让股权，受让人通过修改章程延长出资期限——延长出资期限的内部决议对公司债权人不发生法律效力，股权出让人和受让人向公司债权人承担补充赔偿责任。"
     },
     {
       "case_id": "CASE-EVADE-003",
@@ -746,7 +766,17 @@
       "content_source": "official_typical_significance",
       "verification_status": "CANDIDATE",
       "official_typical_significance_official_text": "股东向公司转入出资款 2 日内即将全部资金转给案外人且无证据证明基于正常交易——构成出资不实 / 抽逃出资，由股东承担相应责任。",
-      "analysis_note": null
+      "analysis_note": null,
+      "case_authority": "typical_case",
+      "reference_status": "pending_verification",
+      "guiding_case_number": null,
+      "database_case_number": null,
+      "publication_body": "最高人民法院",
+      "cause_of_action": null,
+      "keywords": [],
+      "related_documents": [],
+      "candidate_sources": [],
+      "official_holding": "股东向公司转入出资款 2 日内即将全部资金转给案外人且无证据证明基于正常交易——构成出资不实 / 抽逃出资，由股东承担相应责任。"
     },
     {
       "case_id": "CASE-EQ-001",
@@ -769,7 +799,17 @@
       "content_source": "official_typical_significance",
       "verification_status": "CANDIDATE",
       "official_typical_significance_official_text": "已依法履行出资义务的股东受股东有限责任制度保护；股东与公司责任之间存在有效'防火墙'；不得仅以资金账目异动即否定股东有限责任。",
-      "analysis_note": null
+      "analysis_note": null,
+      "case_authority": "typical_case",
+      "reference_status": "pending_verification",
+      "guiding_case_number": null,
+      "database_case_number": null,
+      "publication_body": "最高人民法院",
+      "cause_of_action": null,
+      "keywords": [],
+      "related_documents": [],
+      "candidate_sources": [],
+      "official_holding": "已依法履行出资义务的股东受股东有限责任制度保护；股东与公司责任之间存在有效'防火墙'；不得仅以资金账目异动即否定股东有限责任。"
     },
     {
       "case_id": "CASE-EQ-002",
@@ -791,7 +831,17 @@
       "content_source": "official_typical_significance",
       "verification_status": "CANDIDATE",
       "official_typical_significance_official_text": "改制企业债务承担应遵循'权利义务相一致'原则；在确认原改制方案未完全履行、企业仅实际接收部分资产的基础上，判决其在接收资产范围内承担连带责任。",
-      "analysis_note": null
+      "analysis_note": null,
+      "case_authority": "typical_case",
+      "reference_status": "pending_verification",
+      "guiding_case_number": null,
+      "database_case_number": null,
+      "publication_body": "最高人民法院",
+      "cause_of_action": null,
+      "keywords": [],
+      "related_documents": [],
+      "candidate_sources": [],
+      "official_holding": "改制企业债务承担应遵循'权利义务相一致'原则；在确认原改制方案未完全履行、企业仅实际接收部分资产的基础上，判决其在接收资产范围内承担连带责任。"
     },
     {
       "case_id": "CASE-CC-001",
@@ -813,7 +863,17 @@
       "content_source": "official_typical_significance",
       "verification_status": "CANDIDATE",
       "official_typical_significance_official_text": "法院未简单'一清了之'，组织调解促成'存续式和解'：一方延长经营期限，一方股权转让退出；保全企业资产，化解十余年股东僵局。",
-      "analysis_note": null
+      "analysis_note": null,
+      "case_authority": "typical_case",
+      "reference_status": "pending_verification",
+      "guiding_case_number": null,
+      "database_case_number": null,
+      "publication_body": "最高人民法院",
+      "cause_of_action": null,
+      "keywords": [],
+      "related_documents": [],
+      "candidate_sources": [],
+      "official_holding": "法院未简单'一清了之'，组织调解促成'存续式和解'：一方延长经营期限，一方股权转让退出；保全企业资产，化解十余年股东僵局。"
     },
     {
       "case_id": "CASE-CC-002",
@@ -835,7 +895,17 @@
       "content_source": "official_typical_significance",
       "verification_status": "CANDIDATE",
       "official_typical_significance_official_text": "1.5 亿元股权收购因房地产行业形势变化陷入僵局，法院通过实质解纷、源头治理方式化解。",
-      "analysis_note": null
+      "analysis_note": null,
+      "case_authority": "typical_case",
+      "reference_status": "pending_verification",
+      "guiding_case_number": null,
+      "database_case_number": null,
+      "publication_body": "最高人民法院",
+      "cause_of_action": null,
+      "keywords": [],
+      "related_documents": [],
+      "candidate_sources": [],
+      "official_holding": "1.5 亿元股权收购因房地产行业形势变化陷入僵局，法院通过实质解纷、源头治理方式化解。"
     },
     {
       "case_id": "CASE-PROP-001",
@@ -857,7 +927,113 @@
       "content_source": "official_typical_significance",
       "verification_status": "CANDIDATE",
       "official_typical_significance_official_text": "原二审期间公司法已对资本注册制度作出重大调整，当事人没有实缴注册资本的行为未违反修正后公司法的规定，不再需要承担刑事责任；体现罪刑法定原则与公司法资本制度变化的衔接。",
-      "analysis_note": null
+      "analysis_note": null,
+      "case_authority": "typical_case",
+      "reference_status": "pending_verification",
+      "guiding_case_number": null,
+      "database_case_number": null,
+      "publication_body": "最高人民法院",
+      "cause_of_action": null,
+      "keywords": [],
+      "related_documents": [],
+      "candidate_sources": [],
+      "official_holding": "原二审期间公司法已对资本注册制度作出重大调整，当事人没有实缴注册资本的行为未违反修正后公司法的规定，不再需要承担刑事责任；体现罪刑法定原则与公司法资本制度变化的衔接。"
+    },
+    {
+      "case_id": "GC-215-KUNMING-MIAN",
+      "case_title": "昆明闽某纸业有限责任公司等污染环境刑事附带民事公益诉讼案",
+      "case_authority": "guiding_case",
+      "case_type": "guiding_case",
+      "reference_status": "pending_verification",
+      "verification_status": "CANDIDATE",
+      "guiding_case_number": "215",
+      "database_case_number": null,
+      "case_number": null,
+      "court": null,
+      "publication_body": "最高人民法院",
+      "publication_date": null,
+      "decision_date": null,
+      "cause_of_action": "污染环境刑事附带民事公益诉讼",
+      "keywords": [
+        "公司法人人格否认",
+        "股东连带责任"
+      ],
+      "related_articles": [
+        "公司法 第二十三条"
+      ],
+      "related_documents": [],
+      "relation_strength": "direct",
+      "official_source_url": null,
+      "candidate_sources": [],
+      "official_holding": null,
+      "analysis_note": {
+        "content_type": "ai_summary",
+        "text": "用户指定核心问题为公司法人人格否认与股东连带责任；未取得本地官方案例正文，不能替代官方裁判要旨。"
+      }
+    },
+    {
+      "case_id": "PCDB-2023-08-2-084-028",
+      "case_title": "北京某建材公司诉北京某科技公司、马某等买卖合同纠纷案",
+      "case_authority": "people_court_database_case",
+      "case_type": "people_court_database_case",
+      "reference_status": "pending_verification",
+      "verification_status": "CANDIDATE",
+      "guiding_case_number": null,
+      "database_case_number": "2023-08-2-084-028",
+      "case_number": null,
+      "court": null,
+      "publication_body": "人民法院案例库",
+      "publication_date": null,
+      "decision_date": null,
+      "cause_of_action": "买卖合同纠纷",
+      "keywords": [
+        "股东出资",
+        "债权抵销出资义务"
+      ],
+      "related_articles": [
+        "公司法 股东出资相关条款"
+      ],
+      "related_documents": [],
+      "relation_strength": "core",
+      "official_source_url": null,
+      "candidate_sources": [],
+      "official_holding": null,
+      "analysis_note": {
+        "content_type": "ai_summary",
+        "text": "用户指定核心问题为股东出资与债权抵销出资义务；入库编号已登记，但本地未找到唯一可靠全文。"
+      }
+    },
+    {
+      "case_id": "GC-9-SHANGHAI-CUNLIANG",
+      "case_title": "上海存亮贸易有限公司诉蒋志东、王卫明等买卖合同纠纷案",
+      "case_authority": "guiding_case",
+      "case_type": "guiding_case",
+      "reference_status": "pending_verification",
+      "verification_status": "CANDIDATE",
+      "guiding_case_number": "9",
+      "database_case_number": null,
+      "case_number": null,
+      "court": null,
+      "publication_body": "最高人民法院",
+      "publication_date": null,
+      "decision_date": null,
+      "cause_of_action": "买卖合同纠纷",
+      "keywords": [
+        "公司清算义务",
+        "股东清算责任"
+      ],
+      "related_articles": [
+        "公司法 清算义务相关条款"
+      ],
+      "related_documents": [],
+      "relation_strength": "core",
+      "official_source_url": null,
+      "candidate_sources": [],
+      "official_holding": null,
+      "analysis_note": {
+        "content_type": "ai_summary",
+        "text": "用户指定核心问题为公司清算义务与股东清算责任；本地候选库未找到唯一可靠全文。"
+      }
     }
   ],
   "cases_related": [],
@@ -889,16 +1065,26 @@
     "documents_with_official_source": 19,
     "documents_pending_verification": 0,
     "case_collections_total": 4,
-    "cases_total": 8,
+    "cases_total": 11,
     "cases_by_type": {
-      "typical_case": 8
+      "typical_case": 8,
+      "guiding_case": 2,
+      "people_court_database_case": 1
     },
     "cases_by_verification_status": {
-      "CANDIDATE": 8
+      "CANDIDATE": 11
     },
-    "cases_with_case_number": 0,
+    "cases_by_authority": {
+      "typical_case": 8,
+      "guiding_case": 2,
+      "people_court_database_case": 1
+    },
+    "cases_by_reference_status": {
+      "pending_verification": 11
+    },
+    "cases_with_case_number": 3,
     "cases_with_decision_date": 1,
-    "cases_pending_official_detail": 8
+    "cases_pending_official_detail": 11
   },
   "verification": {
     "schema_separation": {
@@ -911,7 +1097,7 @@
     "cases_split_to_individual": true,
     "current_core_documents": 16,
     "current_effective_judicial_interpretations": 7,
-    "individual_cases": 8,
+    "individual_cases": 11,
     "history_documents": 10,
     "still_pending_or_unverified": 0
   },

@@ -1,0 +1,19 @@
+{
+  "topic_id": "company-law",
+  "checked_at": "2026-09-11",
+  "source_policy": "本地候选库只读盘点；本轮未访问政府/法院网站，不绕过登录或访问控制。",
+  "records": [
+    {
+      "guiding_case_number": "215",
+      "reference_status": "pending_verification",
+      "status_basis": "本地资料未发现可确认的‘不再参照’清单；当前状态未作官方在线核验。",
+      "checked_at": "2026-09-11"
+    },
+    {
+      "guiding_case_number": "9",
+      "reference_status": "pending_verification",
+      "status_basis": "本地候选库未找到唯一可靠案例全文或当前参照状态材料。",
+      "checked_at": "2026-09-11"
+    }
+  ]
+}
