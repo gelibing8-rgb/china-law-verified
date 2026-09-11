@@ -533,6 +533,11 @@ def print_case_results(cases: list[dict], query: str, keywords: list[str]) -> in
         print(f"  · {case.get('case_title', '')}")
         print(f"    case_authority: {case.get('case_authority')}")
         print(f"    reference_status: {case.get('reference_status')}")
+        if case.get("reference_status") == "no_longer_reference":
+            effective = case.get("reference_status_effective_date") or "日期未登记"
+            print(f"    ⚠ 不再参照（自{effective}）")
+        elif case.get("reference_status") == "active":
+            print("    当前案例参考序列: active")
         print(f"    verification_status: {case.get('verification_status')}")
         print(f"    guiding_case_number: {case.get('guiding_case_number')}")
         print(f"    database_case_number: {case.get('database_case_number')}")

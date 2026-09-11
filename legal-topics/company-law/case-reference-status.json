@@ -5,14 +5,21 @@
   "records": [
     {
       "guiding_case_number": "215",
-      "reference_status": "pending_verification",
-      "status_basis": "本地资料未发现可确认的‘不再参照’清单；当前状态未作官方在线核验。",
+      "reference_status": "active",
+      "status_basis": "最高人民法院指导性案例215号官方发布页面 + 2026年生态环境领域指导性案例集中清理结果；215号未列入不再参照清单。",
       "checked_at": "2026-09-11"
     },
     {
       "guiding_case_number": "9",
-      "reference_status": "pending_verification",
-      "status_basis": "本地候选库未找到唯一可靠案例全文或当前参照状态材料。",
+      "reference_status": "no_longer_reference",
+      "reference_status_effective_date": "2021-01-01",
+      "status_basis": "最高人民法院《关于部分指导性案例不再参照的通知》法〔2020〕343号。",
+      "checked_at": "2026-09-11"
+    },
+    {
+      "database_case_number": "2023-08-2-084-028",
+      "reference_status": "active",
+      "status_basis": "最高人民法院公开发布的入库参考案例页面。",
       "checked_at": "2026-09-11"
     }
   ]

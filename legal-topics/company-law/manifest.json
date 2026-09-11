@@ -4,7 +4,7 @@
     "title": "公司法专题",
     "description": "以中华人民共和国公司法（2023 修订 / 2024-07-01 施行）为枢轴，关联相关行政法规、部门规章、司法解释与典型案例",
     "primary_law_document_id": "CL-PRIMARY-2024",
-    "generated_at": "2026-09-11T07:29:05Z",
+    "generated_at": "2026-09-11T07:39:39Z",
     "default_show_relation_strength": [
       "core",
       "direct"
@@ -944,14 +944,15 @@
       "case_title": "昆明闽某纸业有限责任公司等污染环境刑事附带民事公益诉讼案",
       "case_authority": "guiding_case",
       "case_type": "guiding_case",
-      "reference_status": "pending_verification",
-      "verification_status": "CANDIDATE",
+      "reference_status": "active",
+      "reference_status_effective_date": null,
+      "verification_status": "OFFICIAL_META",
       "guiding_case_number": "215",
       "database_case_number": null,
       "case_number": null,
       "court": null,
       "publication_body": "最高人民法院",
-      "publication_date": null,
+      "publication_date": "2023-11-21",
       "decision_date": null,
       "cause_of_action": "污染环境刑事附带民事公益诉讼",
       "keywords": [
@@ -966,6 +967,8 @@
       "official_source_url": null,
       "candidate_sources": [],
       "official_holding": null,
+      "status_basis": "最高人民法院指导性案例215号官方发布页面 + 2026年生态环境领域指导性案例集中清理结果",
+      "notes": "2026年集中清理生态环境领域45件指导性案例，明确不再参照的是123、136、139、204号；215号未列入不再参照清单。正文未逐字保存和核验。",
       "analysis_note": {
         "content_type": "ai_summary",
         "text": "用户指定核心问题为公司法人人格否认与股东连带责任；未取得本地官方案例正文，不能替代官方裁判要旨。"
@@ -976,14 +979,15 @@
       "case_title": "北京某建材公司诉北京某科技公司、马某等买卖合同纠纷案",
       "case_authority": "people_court_database_case",
       "case_type": "people_court_database_case",
-      "reference_status": "pending_verification",
-      "verification_status": "CANDIDATE",
+      "reference_status": "active",
+      "reference_status_effective_date": null,
+      "verification_status": "OFFICIAL_META",
       "guiding_case_number": null,
       "database_case_number": "2023-08-2-084-028",
       "case_number": null,
       "court": null,
       "publication_body": "人民法院案例库",
-      "publication_date": null,
+      "publication_date": "2025-01-16",
       "decision_date": null,
       "cause_of_action": "买卖合同纠纷",
       "keywords": [
@@ -998,6 +1002,8 @@
       "official_source_url": null,
       "candidate_sources": [],
       "official_holding": null,
+      "status_basis": "最高人民法院公开发布的入库参考案例页面",
+      "notes": "入库编号已确认；当前仓库没有逐字核验的官方裁判要旨，因此不新增 official_holding。",
       "analysis_note": {
         "content_type": "ai_summary",
         "text": "用户指定核心问题为股东出资与债权抵销出资义务；入库编号已登记，但本地未找到唯一可靠全文。"
@@ -1008,8 +1014,9 @@
       "case_title": "上海存亮贸易有限公司诉蒋志东、王卫明等买卖合同纠纷案",
       "case_authority": "guiding_case",
       "case_type": "guiding_case",
-      "reference_status": "pending_verification",
-      "verification_status": "CANDIDATE",
+      "reference_status": "no_longer_reference",
+      "reference_status_effective_date": "2021-01-01",
+      "verification_status": "OFFICIAL_META",
       "guiding_case_number": "9",
       "database_case_number": null,
       "case_number": null,
@@ -1030,6 +1037,8 @@
       "official_source_url": null,
       "candidate_sources": [],
       "official_holding": null,
+      "status_basis": "最高人民法院《关于部分指导性案例不再参照的通知》法〔2020〕343号",
+      "notes": "自2021年1月1日起不再参照；原案例裁判以及此前参照该案例作出的裁判仍然有效。",
       "analysis_note": {
         "content_type": "ai_summary",
         "text": "用户指定核心问题为公司清算义务与股东清算责任；本地候选库未找到唯一可靠全文。"
@@ -1072,7 +1081,8 @@
       "people_court_database_case": 1
     },
     "cases_by_verification_status": {
-      "CANDIDATE": 11
+      "CANDIDATE": 8,
+      "OFFICIAL_META": 3
     },
     "cases_by_authority": {
       "typical_case": 8,
@@ -1080,7 +1090,9 @@
       "people_court_database_case": 1
     },
     "cases_by_reference_status": {
-      "pending_verification": 11
+      "pending_verification": 8,
+      "active": 2,
+      "no_longer_reference": 1
     },
     "cases_with_case_number": 3,
     "cases_with_decision_date": 1,
