@@ -1,81 +1,175 @@
-# 公司法专题（V3 样板）
+# 公司法专题（V3.1 清库后）
 
-> 这是 `china-law-verified` 项目按"法律专题知识包"组织的第一份样板。
-> 目标：把"单部法律全文"升级为"以专题为单位的法律知识包"。
+> 这是 `china-law-verified` 项目"法律专题知识包"模式的样板（V3.1 清理版）。
+> 围绕 **中华人民共和国公司法（2023 修订 / 2024-07-01 施行）** 现行版本展开。
 
-本专题围绕 **中华人民共和国公司法（2023 修订 / 2024-07-01 施行）** 现行版本展开，关联其直接相关的：
+## 1. 核心现行法律体系
 
-- 行政法规 / 实施规定
-- 公司登记、注册资本、股东、董监高、公司治理等相关的部门规章 / 规范性文件
-- 现行有效的公司法司法解释
-- 最高人民法院发布的指导性 / 典型 / 公报案例
-- 公司法历次修订、修正、修改的版本沿革
+> 默认展示 `relation_strength = core | direct`；`related` 见 §4。
 
-## 目录
+### 主法律
 
-```
-legal-topics/
-└── company-law/
-    ├── README.md       # 本文件
-    └── manifest.yaml   # 专题清单（核心数据）
-```
+| 文件 | 标题 | 施行日期 | legal_status | verification_status |
+| --- | --- | --- | --- | --- |
+| `laws/company_law_2024.md` | 中华人民共和国公司法（2023 修订） | 2024-07-01 | **effective** | **OFFICIAL_META** |
 
-**本专题不复制任何法条正文 / 案例全文**。所有底层文件按"不重复存储"原则，
-仅记录：
+正文为 `（正文待补）` 占位；元数据 + 结构树已通过 `flk.npc.gov.cn` 公开 API 核验。
 
-- 已在 `laws/` 收录的 → 指向 `laws/company_law_2024.md`
-- 仅在 `just-laws`（CANDIDATE 候选层）有的 → 指向本地只读路径
-- 仅官方源 / web 检索发现元数据的 → 留 `local_path: null`，待人工补齐
+### 行政法规
 
-## 可信等级
+| 标题 | 发布/施行 | legal_status | verification_status |
+| --- | --- | --- | --- |
+| 国务院关于实施《中华人民共和国公司法》注册资本登记管理制度的规定 | 2024-07-01 / 2024-07-01 | **effective** | CANDIDATE |
+| 中华人民共和国市场主体登记管理条例 | 2021-07-27 / 2022-03-01 | **effective** | CANDIDATE |
+| 企业名称登记管理规定 | 2020-12-28 / 2021-03-01 | **effective** | CANDIDATE |
 
-每条记录的 `verification_status` 沿用 V2.2 三层语义：
+### 部门规章
 
-| 层级 | 含义 |
-| --- | --- |
-| **VERIFIED** | 元数据 + 全文均已官方核验（当前本专题 0 条） |
-| **OFFICIAL_META** | 元数据 + 结构树已通过 `flk.npc.gov.cn` 等官方 API 核验；正文未经官方逐字核验 |
-| **CANDIDATE** | 来自 `just-laws`（ImCa0/just-laws, MIT）或 `web_search` 公开结果，仅供定位 |
+**暂无。** V3.1 清理后已删除原 `DEPT-RULES-PENDING` 空泛占位条目。
 
-**禁止**：仅因文件与公司法相关就自动提升可信等级。
+按合规铁律，本项目不批量访问国家市场监督管理总局 / 中国证监会等官网；如需盘点具体部门规章（例如《公司登记档案管理办法》《企业登记代理人员管理办法》等），需通过允许渠道（web_search 公开网页、第三方汇编等）逐项核验后写入 manifest；本轮仅在公开官方源（flk.npc.gov.cn / court.gov.cn 等）能直接确认的范围内登记，未确认的不写入。
 
-## 数据来源
+### 重要规范性文件
 
-| 来源 | 用途 | 限制 |
+**暂无。** 同上，待逐项核验后登记。
+
+### 现行司法解释
+
+| document_number | 标题 | 发布 / 施行 | legal_status | 备注 |
+| --- | --- | --- | --- | --- |
+| 法释〔2024〕7号 | 公司法时间效力的若干规定 | 2024-06-29 / 2024-07-01 | **effective** | 第四条被 法释〔2024〕15号批复实质否定 |
+| 法释〔2024〕15号 | 公司法第八十八条第一款不溯及适用的批复 | 2024-12-24 / 2024-12-24 | **effective** | 应对 2024 备案审查公民建议 |
+| 法释〔2020〕18号 | 公司法若干问题的规定（二）2020 修正 | 2020-12-29 / 2021-01-01 | **effective** | 与新法无冲突内容继续适用 |
+| 法释〔2020〕18号 | 公司法若干问题的规定（三）2020 修正 | 2020-12-29 / 2021-01-01 | **effective** | 第十三条第三款被 2023 公司法第九十九条吸收 |
+| 法释〔2020〕18号 | 公司法若干问题的规定（四）2020 修正 | 2020-12-29 / 2021-01-01 | **effective** | |
+| 法释〔2020〕18号 | 公司法若干问题的规定（五）2020 修正 | 2020-12-29 / 2021-01-01 | **effective** | |
+| 法释〔2014〕2号 | 公司法若干问题的规定（一）2014 修正 | 2014-02-20 / 2014-03-01 | **effective** | 条文援引旧法序号应改写为新法序号 |
+
+> **官方核验依据**：最高人民法院民二庭负责人就公司法时间效力的规定答记者问（2024-07-01）。
+> 原话："五部旧公司法司法解释尚未被废除，……五部旧公司法司法解释条文与公司法规定原理一致、不存在冲突时，五部旧公司法司法解释可以继续适用。……五部旧公司法司法解释条文与公司法规定内容不一致、存在冲突时，应当适用公司法。"
+> 来源：<https://www.court.gov.cn/zixun/xiangqing/438551.html>
+
+## 2. 权威案例
+
+### 指导性案例
+
+> **暂无。** 最高人民法院指导性案例需通过 `court.gov.cn` 公告逐年核对；本环境 `court.gov.cn` TLS 握手被服务端 alert 拒绝；按合规铁律，不批量访问、不绕过。
+
+**当前专题库未收录已核验权威案例**。
+
+### 人民法院案例库案例
+
+> **暂无。** 人民法院案例库（rmfyalk.court.gov.cn）需登录查询；本项目不绕过登录控制；V3.1 仅占位、不批量访问。
+
+**当前专题库未收录已核验权威案例**。
+
+### 公报案例
+
+> **暂无。** 公报案例需逐年核对《最高人民法院公报》目录；本环境不绕过访问控制；V3.1 仅占位。
+
+**当前专题库未收录已核验权威案例**。
+
+### 最高法典型案例（已收录 8 件）
+
+来源：见 `cases[]` 中 `official_source_url`，均为最高法对外发布的典型案例。
+所有 case_number / decision_date 字段在原始公开稿中以化名披露的，已标 `null` 并在 `notes` 中说明；不补全、不冒充。
+
+| case_id | 案件 | 关系强度 | verification_status | 备注 |
+| --- | --- | --- | --- | --- |
+| CASE-EVADE-001 | 陈某与乙公司、丙公司等买卖合同纠纷案 | direct | CANDIDATE | 关联公司人格否认 / 横向'刺穿公司面纱' |
+| CASE-EVADE-002 | 某建材公司诉庄某某、某矿业公司等股东损害公司债权人利益纠纷案 | direct | CANDIDATE | 股东零对价转让股权 + 延长出资期限 |
+| CASE-EVADE-003 | 丙公司诉乙公司、崔某、李某追加被执行人执行异议之诉案 | direct | CANDIDATE | 出资款 2 日内转出 → 出资不实 |
+| CASE-EQ-001 | 某投资公司诉某集团公司执行异议之诉案 | direct | CANDIDATE | 最高法提审；股东有限责任保护 |
+| CASE-EQ-002 | 某资产管理公司河南分公司诉某商贸公司金融不良债权追偿纠纷案 | direct | CANDIDATE | 改制企业债务承担 |
+| CASE-CC-001 | 某海峡公司强制清算案（存续式和解） | direct | CANDIDATE | 化解股东僵局 |
+| CASE-CC-002 | 某股权收购僵局案（1.5 亿元） | direct | CANDIDATE | 实质解纷 |
+| CASE-PROP-001 | 谢某等三人虚报注册资本、私分国有资产、行贿、职务侵占再审部分改判无罪案 | direct | CANDIDATE | 公司法资本制度调整后不再承担刑责 |
+
+**案件批次来源（case_collections）**：见 `manifest.yaml` 中 `case_collections` 段。
+
+## 3. 历史沿革
+
+### 历次公司法版本
+
+| document_id | 标题 | 施行日期 | legal_status |
+| --- | --- | --- | --- |
+| CL-1993-ORIGINAL | 公司法（1993 通过） | 1994-07-01 | **repealed** |
+| CL-2013-CORRECTION | 公司法（2013 修正版） | 2014-03-01 | **replaced** |
+| CL-2018-CORRECTION | 公司法（2018 修正版） | 2018-10-26 | **replaced** |
+| CL-PRIMARY-2024 | 公司法（2023 修订） | 2024-07-01 | **effective** |
+
+### 已废止 / 被替代司法解释
+
+| document_id | 标题 | legal_status |
 | --- | --- | --- |
-| `flk.npc.gov.cn`（国家法律法规数据库）官方 API | 主法律、司法解释、行政法规元数据 | 正文受内网 WPS/OFD viewer 阻塞，本项目不绕过 |
-| `just-laws`（ImCa0/just-laws, MIT，本地只读） | CANDIDATE 正文本体的唯一来源 | 仅本地只读；不复制进本仓库；不冒充权威 |
-| `web_search`（MiniMax Search） | 找典型 / 指导性 / 公报案例的 `source_url` 与发布机构 | 命中内容不直接采纳为法条正文 |
-| `court.gov.cn` / `gov.cn` / `moj.gov.cn` / `npc.gov.cn` | **本次环境 TLS 握手被服务端 alert 拒绝**；无法直接访问 | 严禁任何规避措施 |
+| JI-1-2006-EXPIRED | 公司法若干问题的规定（一）2006 版 | **replaced** |
+| JI-2-2014-EXPIRED | 公司法若干问题的规定（二）2014 版 | **replaced** |
+| JI-3-2014-EXPIRED | 公司法若干问题的规定（三）2014 版 | **replaced** |
+| JI-4-2017-EXPIRED | 公司法若干问题的规定（四）2017 版 | **replaced** |
+| JI-5-2019-EXPIRED | 公司法若干问题的规定（五）2019 版 | **replaced** |
 
-## 中国网站合规铁律（持续执行）
+### 重要修订节点
 
-- 不绕过验证码 / 登录 / 滑块 / 限频 / 反爬 / 访问控制 / 风控
-- 不调用未公开接口 / 内网接口
-- 遇到访问限制立即停止，不尝试规避
-- 不批量访问政府站点
-- 仅在 `sources.yaml` 列出的白名单域名内主动访问政府站点
-- 不复制 `just-laws` 候选层正文到本仓库
-- 不新增 Agent、不新增 MCP 来绕过上述限制
+- **2023-12-29** 全国人大常委会通过《公司法（2023 修订）》，自 **2024-07-01** 起施行；新增 49 条；强化股东出资责任、引入"公司法人人格否认"细化规则。
+- **2024-07-01** 同步施行《国务院关于实施〈中华人民共和国公司法〉注册资本登记管理制度的规定》。
+- **2024-12-24** 最高法公布 法释〔2024〕15号，明确 公司法第八十八条第一款仅适用于 2024-07-01 之后发生的股权转让。
+- **2024 年备案审查** 全国人大常委会法工委对 时间效力规定 第四条溯及适用第八十八条第一款提出审查建议；最高法随后出台批复实质否定该溯及适用。
 
-## 如何扩展为其他专题
+## 4. 关联但非核心文件（`relation_strength = related`）
 
-本 manifest.yaml 结构可直接复制到其他法律专题。复制步骤：
+仅按需展示，不参与默认法律结论推荐：
 
-1. 在 `legal-topics/` 下创建新专题目录，例如 `labor-contract-law/`
-2. 复制 `manifest.yaml` 作为模板
-3. 按 `relation_type` 列表盘点该专题应该包含的关联文件
-4. 逐条查询 `flk.npc.gov.cn` / `just-laws` / `web_search`，登记元数据
-5. 实际正文与案例按"不重复存储"原则，**只填 `local_path` 或留空待补**
-6. 写专题 README 说明覆盖范围与限制
+- 2018 / 2013 / 1993 公司法旧版（CL-*）
+- 已被取代的 2006 / 2014 / 2017 / 2019 司法解释版（JI-*-EXPIRED）
 
-## 待补清单
+## 数据可信等级与法律效力是两个维度
 
-| 类型 | 缺失内容 | 补齐方法 |
+| 维度 | 字段 | 取值 |
 | --- | --- | --- |
-| primary_law 正文 | 公司法全文 | 浏览器打开 flk 详情页复制 → 写入 `laws/company_law_2024.md` |
-| 行政法规 / 部门规章 全文 | 多部无 just-laws 副本 | flk 详情页复制 / 后续按需入 OFFICIAL_META |
-| 司法解释 全文 | 6 部现行司法解释无 just-laws 副本 | flk 详情页复制 |
-| 指导性案例 | court.gov.cn 被 TLS 阻断 | 通过 web_search 找 `source_url`，待人工按指引访问 |
-| 部门规章 / 规范性文件 | flk.npc.gov.cn 未单独类目 | web_search 找国家市场监督管理总局 / 中国证监会等部门规章 |
-| 历史版本 | 1993 / 1999 / 2004 / 2005 详细沿革 | 已在 manifest 列出 bbbs；正文按需补 |
+| 数据可信 | `verification_status` | `VERIFIED` / `OFFICIAL_META` / `CANDIDATE` / `UNVERIFIED` |
+| 法律效力 | `legal_status` | `effective` / `repealed` / `replaced` / `historical` / `draft` / `pending_verification` / `not_applicable` |
+
+禁止：
+- 用 `CANDIDATE` 表示"失效"
+- 用 `VERIFIED` 表示"现行有效"
+
+## 数据来源与合规铁律
+
+- `flk.npc.gov.cn`（国家法律法规数据库）公开 API —— 元数据
+- `just-laws`（ImCa0/just-laws, MIT）—— 本地只读 CANDIDATE
+- `web_search`（MiniMax Search）—— 仅取 `source_url` + 案件标题 / 官方裁判要旨
+- `court.gov.cn` / `npc.gov.cn` / `gov.cn` / `moj.gov.cn` —— **本环境 TLS 握手被服务端 alert 拒绝**；不绕过、不批量、不重试
+- 不复制 `just-laws` 正文到本仓库
+- 不让 LLM 生成法律正文 / 裁判原文 / 案号 / 裁判要旨
+
+## 使用方式
+
+```bash
+# 只搜本专题（默认 core+direct）
+python3 ../../scripts/search_all.py \
+  --topic company-law \
+  --query "股东抽逃出资承担什么责任" \
+  --keywords "抽逃出资" "股东" "责任"
+
+# 包含历史 + 关联
+python3 ../../scripts/search_all.py \
+  --topic company-law --include-related \
+  --query "公司法 2018 修正 注册资本" \
+  --keywords "2018修正" "注册资本"
+```
+
+`--topic` 模式仅在专题 `manifest.yaml` 存在且含 `topic.id` 字段时生效。
+
+## manifest 可复用性
+
+`build_manifest.py` 可直接复制到 `legal-topics/<other-topic>/build_manifest.py`；
+`topic` / `documents` / `documents_related` / `case_collections` / `cases` / `cases_related` /
+`statistics` / `verification` / `known_gaps` 结构已通用。
+
+## 已知真实缺口（V3.1）
+
+1. 部门规章 / 规范性文件：本轮未盘点到（合规铁律下不批量访问）
+2. 指导性案例 / 公报案例 / 案例库入库案例：官方源 TLS 阻断或需登录，未绕过
+3. 典型案例的案号 / 裁决日期：最高法公开稿以化名披露，原文未给出
+4. primary_law 公司法正文：仍为 `（正文待补）` 占位，需人工在 flk.npc.gov.cn 浏览器复制
+5. 已盘点案例 8 件全部 `verification_status=CANDIDATE`，未经 flk.npc.gov.cn 元数据级核验
