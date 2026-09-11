@@ -7,7 +7,7 @@
   OFFICIAL_META  = laws/*.md 中 verification_status=needs_recheck 的文件
                    元数据 + 结构树已通过官方 API 核验；正文未经官方原文逐字核验，
                    不可作为最终法律依据引用
-  CANDIDATE      = ~/workspace/legal-sources/just-laws (ImCa0/just-laws, MIT)
+  CANDIDATE      = 本地只读候选源（just-laws / lawtext-laws / china-data-laws）
                    开源候选，仅供"定位相关条文"，**不能**作为最终法律依据
 
 专题检索（V3.1.1）：
@@ -53,6 +53,8 @@ INDEX_FILE = ROOT / "metadata" / "index.jsonl"
 CANDIDATE_ROOT = WORKSPACE / "legal-sources" / "just-laws"
 # V3.2：第二候选源 lawtext/laws（仅本地只读；不复制到本仓）
 LAWTEXT_ROOT = WORKSPACE / "legal-sources" / "laws"
+# V3.3A：第三候选源 china-data/laws（仅本地只读；不复制到本仓）
+CHINA_DATA_ROOT = WORKSPACE / "legal-sources" / "china-data-laws"
 
 LAYER_VERIFIED = "VERIFIED"
 LAYER_OFFICIAL_META = "OFFICIAL_META"
@@ -389,6 +391,7 @@ def load_topic_manifest(topic_id: str, include_related: bool = False):
     candidate_sources_paths: dict[str, set[str]] = {
         "just-laws": set(),
         "lawtext-laws": set(),
+        "china-data-laws": set(),
     }
     unresolved: list[tuple[str, str]] = []
 
@@ -449,8 +452,12 @@ def load_topic_manifest(topic_id: str, include_related: bool = False):
 
     # V3.2：构造多源 scope
     candidate_sources = []
-    for name in ["just-laws", "lawtext-laws"]:
-        root_map = {"just-laws": CANDIDATE_ROOT, "lawtext-laws": LAWTEXT_ROOT}
+    for name in ["just-laws", "lawtext-laws", "china-data-laws"]:
+        root_map = {
+            "just-laws": CANDIDATE_ROOT,
+            "lawtext-laws": LAWTEXT_ROOT,
+            "china-data-laws": CHINA_DATA_ROOT,
+        }
         candidate_sources.append({
             "name": name,
             "root": root_map[name],
@@ -549,6 +556,8 @@ def main() -> int:
         candidate_iter.append(("just-laws", CANDIDATE_ROOT))
         if LAWTEXT_ROOT.exists():
             candidate_iter.append(("lawtext-laws", LAWTEXT_ROOT))
+        if CHINA_DATA_ROOT.exists():
+            candidate_iter.append(("china-data-laws", CHINA_DATA_ROOT))
 
     grand_total = 0
     t_total = time.perf_counter()
@@ -599,6 +608,7 @@ def main() -> int:
             license_note = {
                 "just-laws": "ImCa0/just-laws, MIT",
                 "lawtext-laws": "lawtext/laws (LICENSE unclear — 本地只读候选，不可复制)",
+                "china-data-laws": "china-data/laws (LICENSE unclear — 本地只读候选，不可复制)",
             }.get(source_name, "?")
             print(f"\n## CANDIDATE / {source_name}  ({source_root})  [{license_note}]")
             fmt_hit = fmt_candidate_hit

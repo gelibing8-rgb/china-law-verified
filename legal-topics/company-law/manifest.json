@@ -4,7 +4,7 @@
     "title": "公司法专题",
     "description": "以中华人民共和国公司法（2023 修订 / 2024-07-01 施行）为枢轴，关联相关行政法规、部门规章、司法解释与典型案例",
     "primary_law_document_id": "CL-PRIMARY-2024",
-    "generated_at": "2026-09-11T03:57:01Z",
+    "generated_at": "2026-09-11T07:08:10Z",
     "default_show_relation_strength": [
       "core",
       "direct"
@@ -126,6 +126,36 @@
         }
       ],
       "document_id": "AR-NAME-2020"
+    },
+    {
+      "title": "中华人民共和国市场主体登记管理条例实施细则",
+      "document_type": "部门规章",
+      "relation_type": "department_rule",
+      "relation_strength": "direct",
+      "legal_status": "pending_verification",
+      "status_basis": "candidate_repository_metadata_only",
+      "status_basis_url": null,
+      "verified_at": "2026-09-11",
+      "verification_status": "CANDIDATE",
+      "issuing_authority": "国家市场监督管理总局",
+      "document_number": "国家市场监督管理总局令第52号",
+      "promulgation_date": "2022-03-01",
+      "effective_date": "2022-03-01",
+      "source_url": "https://github.com/china-data/laws/blob/1ca7a3518d115c8dd3b752849ebdfa09878fa1b0/部门规章/市场监督管理总局/市场主体登记管理条例实施细则(2022-03-01).md",
+      "local_path": null,
+      "candidate_sources": [
+        {
+          "source": "china-data-laws",
+          "local_root": "~/workspace/legal-sources/china-data-laws",
+          "relative_path": "部门规章/市场监督管理总局/市场主体登记管理条例实施细则(2022-03-01).md",
+          "source_commit": "1ca7a3518d115c8dd3b752849ebdfa09878fa1b0",
+          "source_license_status": "unclear",
+          "verification_status": "CANDIDATE",
+          "match_method": "exact_filename_and_title"
+        }
+      ],
+      "notes": "候选文本标注2022-03-01公布并载明国家市场监督管理总局令第52号；本轮未访问政府网站，现行效力留 pending_verification。",
+      "document_id": "DR-MARKET-ENTITY-IMPLEMENT-2022"
     },
     {
       "title": "最高人民法院关于适用《中华人民共和国公司法》若干问题的规定（一）（2014 修正）",
@@ -714,30 +744,32 @@
   ],
   "cases_related": [],
   "statistics": {
-    "documents_total": 19,
+    "documents_total": 20,
     "documents_by_relation_type": {
       "primary_law": 1,
       "historical_version": 3,
       "administrative_regulation": 3,
+      "department_rule": 1,
       "judicial_interpretation": 12
     },
     "documents_by_legal_status": {
       "effective": 11,
       "replaced": 7,
-      "repealed": 1
+      "repealed": 1,
+      "pending_verification": 1
     },
     "documents_by_verification_status": {
       "OFFICIAL_META": 1,
-      "CANDIDATE": 18
+      "CANDIDATE": 19
     },
     "documents_by_relation_strength": {
       "core": 9,
       "related": 8,
-      "direct": 2
+      "direct": 3
     },
     "documents_with_local_path": 1,
-    "documents_with_official_source": 18,
-    "documents_pending_verification": 0,
+    "documents_with_official_source": 19,
+    "documents_pending_verification": 1,
     "case_collections_total": 4,
     "cases_total": 8,
     "cases_by_type": {
@@ -759,11 +791,11 @@
     "judicial_interpretations_split_by_effectiveness": true,
     "no_empty_department_rule_placeholders": true,
     "cases_split_to_individual": true,
-    "current_core_documents": 11,
+    "current_core_documents": 12,
     "current_effective_judicial_interpretations": 7,
     "individual_cases": 8,
     "history_documents": 8,
-    "still_pending_or_unverified": 0
+    "still_pending_or_unverified": 1
   },
   "known_gaps": [
     "未盘点具体部门规章 / 规范性文件：合规铁律下不批量访问国家市场监管总局 / 证监会等官网；按 V3.1 spec，盘点不到的具体文件不写入 manifest。",

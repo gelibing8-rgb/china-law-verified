@@ -220,6 +220,37 @@ add("AR-NAME-2020",
     ],
 )
 
+# 4) 部门规章（本地候选库发现；未访问政府网站）
+add("DR-MARKET-ENTITY-IMPLEMENT-2022",
+    title="中华人民共和国市场主体登记管理条例实施细则",
+    document_type="部门规章",
+    relation_type="department_rule",
+    relation_strength="direct",
+    legal_status="pending_verification",
+    status_basis="candidate_repository_metadata_only",
+    status_basis_url=None,
+    verified_at="2026-09-11",
+    verification_status="CANDIDATE",
+    issuing_authority="国家市场监督管理总局",
+    document_number="国家市场监督管理总局令第52号",
+    promulgation_date="2022-03-01",
+    effective_date="2022-03-01",
+    source_url="https://github.com/china-data/laws/blob/1ca7a3518d115c8dd3b752849ebdfa09878fa1b0/部门规章/市场监督管理总局/市场主体登记管理条例实施细则(2022-03-01).md",
+    local_path=None,
+    candidate_sources=[
+        {
+            "source": "china-data-laws",
+            "local_root": "~/workspace/legal-sources/china-data-laws",
+            "relative_path": "部门规章/市场监督管理总局/市场主体登记管理条例实施细则(2022-03-01).md",
+            "source_commit": "1ca7a3518d115c8dd3b752849ebdfa09878fa1b0",
+            "source_license_status": "unclear",
+            "verification_status": "CANDIDATE",
+            "match_method": "exact_filename_and_title",
+        }
+    ],
+    notes="候选文本标注2022-03-01公布并载明国家市场监督管理总局令第52号；本轮未访问政府网站，现行效力留 pending_verification。"
+)
+
 # 4) 司法解释（现行）
 # 一律按 2024 年最高法民二庭公开口径标 effective；status_basis 注明依据
 add("JI-1-2014",
