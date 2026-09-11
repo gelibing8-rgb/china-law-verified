@@ -20,6 +20,13 @@ LAWS_DIR = ROOT / "laws"
 META_FILE = ROOT / "metadata" / "index.jsonl"
 
 # 3 部法律
+# 日期字段说明 (V2.1)：
+#   original_effective_date    = 原法律首次施行日期
+#   current_version_date       = 当前修正/修订版本通过或公布日期
+#   current_version_effective_date = 当前版本实际施行日期
+#   effective_date             = [已废弃] 仅保留向后兼容，等同于 current_version_effective_date
+#   promulgation_date          = 当前版本的公布日期（flk.npc.gov.cn gbrq）
+#   version_date               = [已废弃] 仅保留向后兼容，等同于 current_version_date
 LAW_SPECS = [
     {
         "key": "civil_code",
@@ -29,9 +36,11 @@ LAW_SPECS = [
         "document_type": "法律",
         "issuing_authority": "全国人民代表大会",
         "promulgation_date": "2020-05-28",
-        "effective_date": "2021-01-01",
+        # 民法典是 2020 年首次通过、首次施行，无修正史
+        "original_effective_date": "2021-01-01",
+        "current_version_date": "2020-05-28",
+        "current_version_effective_date": "2021-01-01",
         "status": "现行",
-        "version_date": "2020-05-28",
         "official_url": "https://flk.npc.gov.cn/detail.html?bbbs=ff808081729d1efe01729d50b5c500bf",
         "category_hint": "编",
     },
@@ -43,9 +52,11 @@ LAW_SPECS = [
         "document_type": "法律",
         "issuing_authority": "全国人民代表大会常务委员会",
         "promulgation_date": "2023-12-29",
-        "effective_date": "2024-07-01",
+        # 公司法 1993-12-29 通过 / 1994-07-01 首次施行；现行版本 2023-12-29 修订 / 2024-07-01 施行
+        "original_effective_date": "1994-07-01",
+        "current_version_date": "2023-12-29",
+        "current_version_effective_date": "2024-07-01",
         "status": "现行",
-        "version_date": "2023-12-29",
         "official_url": "https://flk.npc.gov.cn/detail.html?bbbs=ff8081818c9108eb018cb6922f750c07",
         "category_hint": "编",
     },
@@ -56,10 +67,12 @@ LAW_SPECS = [
         "filename": "labor_contract_law.md",
         "document_type": "法律",
         "issuing_authority": "全国人民代表大会常务委员会",
-        "promulgation_date": "2007-06-29",
-        "effective_date": "2008-01-01",
+        "promulgation_date": "2012-12-28",
+        # 劳动合同法 2007-06-29 通过 / 2008-01-01 首次施行；现行版本 2012-12-28 修正 / 2013-07-01 施行
+        "original_effective_date": "2008-01-01",
+        "current_version_date": "2012-12-28",
+        "current_version_effective_date": "2013-07-01",
         "status": "现行",
-        "version_date": "2012-12-28",
         "official_url": "https://flk.npc.gov.cn/detail.html?bbbs=2c909fdd678bf17901678bf74d7106b3",
         "category_hint": "章",
     },
@@ -168,9 +181,13 @@ def build_law_file(spec: dict, full_json: dict) -> str:
         f"document_type: {spec['document_type']}",
         f"issuing_authority: {spec['issuing_authority']}",
         f"promulgation_date: {spec['promulgation_date']}",
-        f"effective_date: {spec['effective_date']}",
+        f"original_effective_date: {spec['original_effective_date']}",
+        f"current_version_date: {spec['current_version_date']}",
+        f"current_version_effective_date: {spec['current_version_effective_date']}",
+        # [废弃字段] 仅保留向后兼容
+        f"effective_date: {spec['current_version_effective_date']}  # deprecated: 同 current_version_effective_date",
         f"status: {spec['status']}",
-        f"version_date: {spec['version_date']}",
+        f"version_date: {spec['current_version_date']}  # deprecated: 同 current_version_date",
         f"official_url: {spec['official_url']}",
         f"retrieved_at: {retrieved_at}",
         "verification_status: needs_recheck",
@@ -201,13 +218,15 @@ def main() -> int:
 
         # index record
         # 重新计算 sha256
-        # 解析 frontmatter 取正文
+        # 解析 frontmatter 取正文（剥除值后的 # 注释）
         m = re.match(r"^---\s*\n(.*?)\n---\s*\n(.*)$", text, re.DOTALL)
         meta = {}
         for line in m.group(1).splitlines():
-            if ":" in line:
-                k, _, v = line.partition(":")
-                meta[k.strip()] = v.strip()
+            if ":" not in line:
+                continue
+            k, _, v = line.partition(":")
+            val = v.split("#", 1)[0].strip()  # strip inline comment
+            meta[k.strip()] = val
         body = m.group(2)
         body_sha = hashlib.sha256(body.encode("utf-8")).hexdigest()
 
@@ -216,9 +235,12 @@ def main() -> int:
             "title": meta["title"],
             "issuing_authority": meta["issuing_authority"],
             "promulgation_date": meta["promulgation_date"],
-            "effective_date": meta["effective_date"],
+            "original_effective_date": meta["original_effective_date"],
+            "current_version_date": meta["current_version_date"],
+            "current_version_effective_date": meta["current_version_effective_date"],
+            "effective_date": meta["effective_date"],  # [deprecated]
             "status": meta["status"],
-            "version_date": meta["version_date"],
+            "version_date": meta["version_date"],  # [deprecated]
             "official_url": meta["official_url"],
             "retrieved_at": meta["retrieved_at"],
             "verification_status": meta["verification_status"],

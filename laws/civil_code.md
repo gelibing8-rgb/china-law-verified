@@ -3,11 +3,14 @@ title: 中华人民共和国民法典
 document_type: 法律
 issuing_authority: 全国人民代表大会
 promulgation_date: 2020-05-28
-effective_date: 2021-01-01
+original_effective_date: 2021-01-01
+current_version_date: 2020-05-28
+current_version_effective_date: 2021-01-01
+effective_date: 2021-01-01  # deprecated: 同 current_version_effective_date
 status: 现行
-version_date: 2020-05-28
+version_date: 2020-05-28  # deprecated: 同 current_version_date
 official_url: https://flk.npc.gov.cn/detail.html?bbbs=ff808081729d1efe01729d50b5c500bf
-retrieved_at: 2026-09-10T07:54:25Z
+retrieved_at: 2026-09-11T01:30:04Z
 verification_status: needs_recheck
 content_sha256: 557a3a87bb0be324dc752723192e1546952766341eee3d220aece796b243f450
 ---

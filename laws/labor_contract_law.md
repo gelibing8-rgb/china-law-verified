@@ -2,12 +2,15 @@
 title: 中华人民共和国劳动合同法
 document_type: 法律
 issuing_authority: 全国人民代表大会常务委员会
-promulgation_date: 2007-06-29
-effective_date: 2008-01-01
+promulgation_date: 2012-12-28
+original_effective_date: 2008-01-01
+current_version_date: 2012-12-28
+current_version_effective_date: 2013-07-01
+effective_date: 2013-07-01  # deprecated: 同 current_version_effective_date
 status: 现行
-version_date: 2012-12-28
+version_date: 2012-12-28  # deprecated: 同 current_version_date
 official_url: https://flk.npc.gov.cn/detail.html?bbbs=2c909fdd678bf17901678bf74d7106b3
-retrieved_at: 2026-09-10T07:54:25Z
+retrieved_at: 2026-09-11T01:30:04Z
 verification_status: needs_recheck
 content_sha256: 664b87074b106513b3848979d255c016ff4c0df530d2cb7c10333347b79dd9b6
 ---

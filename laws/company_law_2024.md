@@ -3,11 +3,14 @@ title: 中华人民共和国公司法
 document_type: 法律
 issuing_authority: 全国人民代表大会常务委员会
 promulgation_date: 2023-12-29
-effective_date: 2024-07-01
+original_effective_date: 1994-07-01
+current_version_date: 2023-12-29
+current_version_effective_date: 2024-07-01
+effective_date: 2024-07-01  # deprecated: 同 current_version_effective_date
 status: 现行
-version_date: 2023-12-29
+version_date: 2023-12-29  # deprecated: 同 current_version_date
 official_url: https://flk.npc.gov.cn/detail.html?bbbs=ff8081818c9108eb018cb6922f750c07
-retrieved_at: 2026-09-10T07:54:25Z
+retrieved_at: 2026-09-11T01:30:04Z
 verification_status: needs_recheck
 content_sha256: aeed45e0191a27ed6d0d8814c9a93dba71485a64751fcc4925a90ac7545d340e
 ---

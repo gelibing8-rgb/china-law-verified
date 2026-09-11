@@ -28,14 +28,17 @@ REQUIRED_FIELDS = (
     "document_type",
     "issuing_authority",
     "promulgation_date",
-    "effective_date",
+    "original_effective_date",
+    "current_version_date",
+    "current_version_effective_date",
     "status",
-    "version_date",
     "official_url",
     "retrieved_at",
     "verification_status",
     "content_sha256",
 )
+# [deprecated] 已废弃字段：如果仍存在不报错，但 README 记录后期逐步废弃
+DEPRECATED_FIELDS = ("effective_date", "version_date")
 
 ALLOWED_STATUS = {"现行", "已被修正", "已废止", "已失效"}
 VERIFICATION_STATUS = {"verified_official", "needs_recheck"}
