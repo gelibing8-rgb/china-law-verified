@@ -28,6 +28,10 @@ def now() -> str:
     return datetime.now(timezone.utc).replace(microsecond=0).isoformat().replace("+00:00", "Z")
 
 
+def normalize_title(t: str) -> str:
+    return re.sub(r"^中华人民共和国\s*", "", (t or "").strip()).strip()
+
+
 def git_commit(path: Path) -> str | None:
     try:
         return subprocess.check_output(["git", "-C", str(path), "rev-parse", "HEAD"], text=True).strip()
@@ -160,6 +164,47 @@ def official_primary(primary: str) -> dict | None:
     return None
 
 
+def load_catalog_for(primary: str) -> list[dict]:
+    """从 catalog.json 取主法律在 just-laws / lawtext-laws / china-data-laws 中的唯一路径."""
+    catalog_path = TOPICS / "catalog.json"
+    if not catalog_path.exists():
+        return []
+    try:
+        data = json.loads(catalog_path.read_text(encoding="utf-8"))
+    except json.JSONDecodeError:
+        return []
+    out = []
+    n = normalize_title(primary)
+    for entry in data.get("laws", []):
+        if normalize_title(entry.get("title", "")) != n:
+            continue
+        source = entry.get("candidate_source")
+        if source not in SOURCES:
+            continue
+        root = SOURCES[source]
+        rel_path = entry.get("candidate_path")
+        if not (root / rel_path).exists():
+            continue
+        out.append({
+            "source": source,
+            "local_root": str(root),
+            "relative_path": rel_path,
+            "source_commit": git_commit(root),
+            "verification_status": "CANDIDATE",
+            "match_method": "catalog_unique_match",
+        })
+    return out
+
+
+def attach_primary_candidates(official: dict, primary: str) -> None:
+    """优先从 catalog.json 自动补主法律 candidate_sources；catalog 未找到再扫候选库元数据兜底."""
+    existing_paths = {(cs.get("source"), cs.get("relative_path")) for cs in official.get("candidate_sources", [])}
+    for cs in load_catalog_for(primary):
+        if (cs["source"], cs["relative_path"]) in existing_paths:
+            continue
+        official.setdefault("candidate_sources", []).append(cs)
+
+
 def scan_candidates(primary: str) -> tuple[list[dict], list[str]]:
     docs: list[dict] = []
     gaps: list[str] = []
@@ -195,10 +240,14 @@ def scan_candidates(primary: str) -> tuple[list[dict], list[str]]:
                 "verification_status": "CANDIDATE",
                 "match_method": "title_exact",
             })
+        # 优先从 catalog.json 自动补主法律 candidate_source + candidate_path
+        attach_primary_candidates(official, primary)
         docs.append(official)
     elif exact:
         source, path, title, fm = sorted(exact, key=lambda x: (list(SOURCES).index(x[0]), str(x[1])))[0]
-        docs.append(candidate_record(source, path, title, primary, fm, is_primary=True))
+        primary_doc = candidate_record(source, path, title, primary, fm, is_primary=True)
+        attach_primary_candidates(primary_doc, primary)
+        docs.append(primary_doc)
     else:
         gaps.append("主法律未在本地官方元数据或候选库中唯一找到")
 
@@ -218,11 +267,18 @@ def build(primary: str, topic_id: str) -> Path:
     out_dir = TOPICS / topic_id
     out_dir.mkdir(parents=True, exist_ok=True)
     if topic_id == "company-law" and (out_dir / "manifest.json").exists():
-        # 公司法为冻结参考模板；只补通用 V4 版本字段，不重建其人工校正内容。
+        # 公司法为冻结参考模板；只补主法律 candidate_source / candidate_path 以及 V4 版本字段，不重建其人工校正内容。
         data = json.loads((out_dir / "manifest.json").read_text(encoding="utf-8"))
         data.setdefault("topic", {})["schema_version"] = "V4"
         data["topic"]["topic_status"] = "frozen_reference_template"
+        # 仅补主法律 candidate_sources，不重建其他人工条目。
+        for doc in list(data.get("documents", [])) + list(data.get("documents_related", [])):
+            if doc.get("relation_strength") == "core":
+                attach_primary_candidates(doc, primary)
         data.setdefault("update_state", {})["last_generated_at"] = now()
+        data["update_state"]["candidate_commits"] = {
+            k: git_commit(v) for k, v in SOURCES.items()
+        }
         (out_dir / "manifest.json").write_text(json.dumps(data, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
         return out_dir
 

@@ -93,6 +93,13 @@ def build_topics() -> list[dict]:
         t = d.get("topic", {})
         stats = d.get("statistics", {})
         by_vs = stats.get("documents_by_verification_status", {})
+        kw_path = p.with_name("topic-keywords.json")
+        topic_keywords: list[str] = []
+        if kw_path.exists():
+            try:
+                topic_keywords = list(json.loads(kw_path.read_text(encoding="utf-8")).get("keywords", []) or [])
+            except (OSError, json.JSONDecodeError):
+                topic_keywords = []
         rows.append({
             "topic_id": t.get("id", p.parent.name),
             "title": t.get("title"),
@@ -106,6 +113,7 @@ def build_topics() -> list[dict]:
             "official_meta_count": by_vs.get("OFFICIAL_META", 0),
             "candidate_count": by_vs.get("CANDIDATE", 0),
             "known_gap_count": len(d.get("known_gaps", [])),
+            "topic_keywords": topic_keywords,
         })
     return rows
 

@@ -6,7 +6,7 @@
     "primary_document_id": "OFFICIAL-civil_code",
     "schema_version": "V4",
     "topic_status": "generated_local_candidate",
-    "generated_at": "2026-09-11T07:52:43Z",
+    "generated_at": "2026-09-11T08:29:48Z",
     "data_sources": [
       "just-laws: local read-only clone",
       "lawtext-laws: local read-only clone",
@@ -471,7 +471,7 @@
     "案例层未自动归类；需后续提供唯一可靠案例身份与本地材料。"
   ],
   "update_state": {
-    "generated_at": "2026-09-11T07:52:43Z",
+    "generated_at": "2026-09-11T08:29:48Z",
     "candidate_commits": {
       "just-laws": "56770b043bf19686fec43403bd24e8e290275794",
       "lawtext-laws": "aefdfca37fb06e90a29af6311a1ed9804c9670bd",

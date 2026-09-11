@@ -39,7 +39,17 @@
       "candidate_path": "docs/civil-and-commercial/company-law/README.md",
       "document_number": "中华人民共和国主席令第十五号",
       "notes": "元数据 + 结构树已通过 flk.npc.gov.cn API 核验；正文为占位，未逐字官方核验。",
-      "document_id": "CL-PRIMARY-2024"
+      "document_id": "CL-PRIMARY-2024",
+      "candidate_sources": [
+        {
+          "source": "just-laws",
+          "local_root": "/Users/glb/workspace/legal-sources/just-laws",
+          "relative_path": "docs/civil-and-commercial/company-law/README.md",
+          "source_commit": "56770b043bf19686fec43403bd24e8e290275794",
+          "verification_status": "CANDIDATE",
+          "match_method": "catalog_unique_match"
+        }
+      ]
     },
     {
       "title": "国务院关于实施《中华人民共和国公司法》注册资本登记管理制度的规定",
@@ -66,6 +76,14 @@
           "source_license_status": "unclear",
           "verification_status": "CANDIDATE",
           "match_method": "bbbs_exact_match"
+        },
+        {
+          "source": "just-laws",
+          "local_root": "/Users/glb/workspace/legal-sources/just-laws",
+          "relative_path": "docs/civil-and-commercial/company-law/README.md",
+          "source_commit": "56770b043bf19686fec43403bd24e8e290275794",
+          "verification_status": "CANDIDATE",
+          "match_method": "catalog_unique_match"
         }
       ],
       "notes": "2023 修订公司法同步配套；just-laws 无副本；正文未逐字核验。",
@@ -177,7 +195,17 @@
       "source_url": null,
       "local_path": null,
       "notes": "按已确认元数据登记；两个本地候选库均未找到正式标题、文号或唯一 ID 对应全文。",
-      "document_id": "DR-COMPANY-REGISTRATION-IMPLEMENT-2025"
+      "document_id": "DR-COMPANY-REGISTRATION-IMPLEMENT-2025",
+      "candidate_sources": [
+        {
+          "source": "just-laws",
+          "local_root": "/Users/glb/workspace/legal-sources/just-laws",
+          "relative_path": "docs/civil-and-commercial/company-law/README.md",
+          "source_commit": "56770b043bf19686fec43403bd24e8e290275794",
+          "verification_status": "CANDIDATE",
+          "match_method": "catalog_unique_match"
+        }
+      ]
     },
     {
       "title": "经营主体登记文书规范（2026年版）",
@@ -262,6 +290,14 @@
           "source_license_status": "unclear",
           "verification_status": "CANDIDATE",
           "match_method": "bbbs_exact_match"
+        },
+        {
+          "source": "just-laws",
+          "local_root": "/Users/glb/workspace/legal-sources/just-laws",
+          "relative_path": "docs/civil-and-commercial/company-law/README.md",
+          "source_commit": "56770b043bf19686fec43403bd24e8e290275794",
+          "verification_status": "CANDIDATE",
+          "match_method": "catalog_unique_match"
         }
       ],
       "notes": "2014 修正版（最新）；与 2023 公司法无冲突的内容继续适用；条文援引旧法序号应改写为新法序号。",
@@ -293,6 +329,14 @@
           "source_license_status": "unclear",
           "verification_status": "CANDIDATE",
           "match_method": "bbbs_exact_match"
+        },
+        {
+          "source": "just-laws",
+          "local_root": "/Users/glb/workspace/legal-sources/just-laws",
+          "relative_path": "docs/civil-and-commercial/company-law/README.md",
+          "source_commit": "56770b043bf19686fec43403bd24e8e290275794",
+          "verification_status": "CANDIDATE",
+          "match_method": "catalog_unique_match"
         }
       ],
       "notes": "2020 修正版；公司解散与清算纠纷。",
@@ -324,6 +368,14 @@
           "source_license_status": "unclear",
           "verification_status": "CANDIDATE",
           "match_method": "bbbs_exact_match"
+        },
+        {
+          "source": "just-laws",
+          "local_root": "/Users/glb/workspace/legal-sources/just-laws",
+          "relative_path": "docs/civil-and-commercial/company-law/README.md",
+          "source_commit": "56770b043bf19686fec43403bd24e8e290275794",
+          "verification_status": "CANDIDATE",
+          "match_method": "catalog_unique_match"
         }
       ],
       "notes": "2020 修正版；公司设立、股东出资、股权确认等纠纷。第十三条第三款被 2023 公司法第九十九条吸收。",
@@ -355,6 +407,14 @@
           "source_license_status": "unclear",
           "verification_status": "CANDIDATE",
           "match_method": "bbbs_exact_match"
+        },
+        {
+          "source": "just-laws",
+          "local_root": "/Users/glb/workspace/legal-sources/just-laws",
+          "relative_path": "docs/civil-and-commercial/company-law/README.md",
+          "source_commit": "56770b043bf19686fec43403bd24e8e290275794",
+          "verification_status": "CANDIDATE",
+          "match_method": "catalog_unique_match"
         }
       ],
       "notes": "2020 修正版；公司决议效力、股东知情权、利润分配权、股东代位诉讼。",
@@ -386,6 +446,14 @@
           "source_license_status": "unclear",
           "verification_status": "CANDIDATE",
           "match_method": "bbbs_exact_match"
+        },
+        {
+          "source": "just-laws",
+          "local_root": "/Users/glb/workspace/legal-sources/just-laws",
+          "relative_path": "docs/civil-and-commercial/company-law/README.md",
+          "source_commit": "56770b043bf19686fec43403bd24e8e290275794",
+          "verification_status": "CANDIDATE",
+          "match_method": "catalog_unique_match"
         }
       ],
       "notes": "2020 修正版；关联交易、董事职务解除、利润分配履行。",
@@ -417,6 +485,14 @@
           "source_license_status": "unclear",
           "verification_status": "CANDIDATE",
           "match_method": "bbbs_exact_match"
+        },
+        {
+          "source": "just-laws",
+          "local_root": "/Users/glb/workspace/legal-sources/just-laws",
+          "relative_path": "docs/civil-and-commercial/company-law/README.md",
+          "source_commit": "56770b043bf19686fec43403bd24e8e290275794",
+          "verification_status": "CANDIDATE",
+          "match_method": "catalog_unique_match"
         }
       ],
       "notes": "2024 年发布；解决新旧公司法衔接适用问题。第四条关于第八十八条第一款溯及适用的规定，已被 法释〔2024〕15号批复实质否定。",
@@ -448,6 +524,14 @@
           "source_license_status": "unclear",
           "verification_status": "CANDIDATE",
           "match_method": "bbbs_exact_match"
+        },
+        {
+          "source": "just-laws",
+          "local_root": "/Users/glb/workspace/legal-sources/just-laws",
+          "relative_path": "docs/civil-and-commercial/company-law/README.md",
+          "source_commit": "56770b043bf19686fec43403bd24e8e290275794",
+          "verification_status": "CANDIDATE",
+          "match_method": "catalog_unique_match"
         }
       ],
       "notes": "2024-12-24 最高法审委会第 1939 次会议通过；针对 2024 备案审查中公民、组织对 JI-TIME-2024 第四条溯及适用的审查建议；明确第八十八条第一款仅适用于 2024-07-01 之后发生的股权转让。",
@@ -1124,7 +1208,7 @@
     "三法（民法典 / 劳动合同法）OFFICIAL_META 正文仍是占位，未补齐。"
   ],
   "update_state": {
-    "last_generated_at": "2026-09-11T07:52:47Z",
+    "last_generated_at": "2026-09-11T08:29:52Z",
     "candidate_commits": {
       "just-laws": "56770b043bf19686fec43403bd24e8e290275794",
       "lawtext-laws": "aefdfca37fb06e90a29af6311a1ed9804c9670bd",

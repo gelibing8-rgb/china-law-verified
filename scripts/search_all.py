@@ -71,13 +71,30 @@ def load_topic_registry() -> list[dict]:
         return []
 
 
-def auto_select_topic(query: str, keywords: list[str]) -> tuple[str | None, str]:
-    """仅用主法律全称做高置信度唯一匹配；否则回退全库。"""
+def _topic_candidates(query: str, keywords: list[str]) -> list[tuple[str, list[str], int]]:
+    """计算每个 Topic 在 hay 中的关键词命中数；返回 [(topic_id, matched_words, count), ...]。"""
     hay = " ".join([query] + keywords)
-    hits = [t for t in load_topic_registry() if t.get("primary_law") and t["primary_law"] in hay]
-    if len(hits) == 1:
-        return hits[0].get("topic_id"), "primary_law_exact"
-    return None, "no_unique_primary_law"
+    cand: list[tuple[str, list[str], int]] = []
+    for t in load_topic_registry():
+        topic_id = t.get("topic_id")
+        kws = t.get("topic_keywords") or []
+        if not topic_id or not kws:
+            continue
+        matched = [k for k in kws if k in hay]
+        if matched:
+            cand.append((topic_id, matched, len(matched)))
+    cand.sort(key=lambda x: x[2], reverse=True)
+    return cand
+
+
+def auto_select_topic(query: str, keywords: list[str]) -> tuple[str | None, str]:
+    """按 Topic 关键词命中数选唯一 Topic；若第一名领先第二名才视为唯一。"""
+    cands = _topic_candidates(query, keywords)
+    if not cands:
+        return None, "no_primary_law_match"
+    if len(cands) == 1 or cands[0][2] > cands[1][2]:
+        return cands[0][0], f"primary_law_topic_keywords(count={cands[0][2]})"
+    return None, f"primary_law_topic_keywords_ambiguous(top={cands[0][2]},second={cands[1][2]})"
 
 
 # ------------------------- 元数据 -------------------------
@@ -706,8 +723,19 @@ def main() -> int:
                                 print("    [kw=" + kw + "] " + line)
                         grand_total += len(hits)
 
-    # CANDIDATE 层（V3.2：多候选源迭代）
+    # CANDIDATE 层（V3.2：多候选源迭代；V4.0.1：Topic 确定时严禁静默全库回退）
     if not args.laws_only:
+        # V4.0.1 规则 4：当 Topic 已确定且所有源都无映射路径时，显式 TOPIC_CANDIDATE_GAP，不走全库。
+        if topic_scope is not None:
+            any_paths = any(
+                cs["paths"] for cs in topic_scope["candidate_sources"]
+            )
+            if not any_paths:
+                print("\nTOPIC_CANDIDATE_GAP: 当前专题未在 manifest.candidate_sources 中映射任何候选文件。")
+                print("  仅返回 manifest 元数据；不静默走全库 CANDIDATE 检索。")
+                print("  补齐方式：补 build_topic.py 生成的 candidate_sources 或人工填写 manifest.candidate_sources 后重跑。")
+                # 不进入下面的 for 循环
+                candidate_iter = []
         for source_name, source_root in candidate_iter:
             if not source_root.exists():
                 continue
@@ -716,7 +744,6 @@ def main() -> int:
                 "lawtext-laws": "lawtext/laws (LICENSE unclear — 本地只读候选，不可复制)",
                 "china-data-laws": "china-data/laws (LICENSE unclear — 本地只读候选，不可复制)",
             }.get(source_name, "?")
-            print(f"\n## CANDIDATE / {source_name}  ({source_root})  [{license_note}]")
             fmt_hit = fmt_candidate_hit
             # 本源在专题下的路径集合（topic 启用时）
             source_paths: set[str] = set()
@@ -725,12 +752,10 @@ def main() -> int:
                     if cs["root"] == source_root:
                         source_paths = cs["paths"]
                         break
-                # 专题启用但本源无任何映射路径：报错并跳过
-                if not source_paths and source_name in (
-                    c["name"] for c in topic_scope["candidate_sources"]
-                ):
-                    print(f"  本源在专题中未映射任何文件（请检查 manifest.candidate_sources）")
+                # 专题启用但本源无任何映射路径：不输出全库检索，不冒充返回
+                if not source_paths:
                     continue
+            print(f"\n## CANDIDATE / {source_name}  ({source_root})  [{license_note}]")
             total1 = 0
             if query:
                 print(f"\n[阶段 1] 原句精确: {query!r}")

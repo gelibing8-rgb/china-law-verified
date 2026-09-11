@@ -8,7 +8,7 @@
       "primary_document_id": "LOCAL-B71B034D35C4",
       "topic_status": "generated_local_candidate",
       "schema_version": "V4",
-      "last_generated_at": "2026-09-11T07:52:46Z",
+      "last_generated_at": "2026-09-11T08:29:51Z",
       "last_candidate_update": {
         "just-laws": "56770b043bf19686fec43403bd24e8e290275794",
         "lawtext-laws": "aefdfca37fb06e90a29af6311a1ed9804c9670bd",
@@ -17,7 +17,16 @@
       "verified_count": 0,
       "official_meta_count": 0,
       "candidate_count": 1,
-      "known_gap_count": 2
+      "known_gap_count": 2,
+      "topic_keywords": [
+        "行政处罚",
+        "罚款",
+        "没收",
+        "责令",
+        "听证",
+        "复议",
+        "诉讼"
+      ]
     },
     {
       "topic_id": "civil-code",
@@ -26,7 +35,7 @@
       "primary_document_id": "OFFICIAL-civil_code",
       "topic_status": "generated_local_candidate",
       "schema_version": "V4",
-      "last_generated_at": "2026-09-11T07:52:43Z",
+      "last_generated_at": "2026-09-11T08:29:48Z",
       "last_candidate_update": {
         "just-laws": "56770b043bf19686fec43403bd24e8e290275794",
         "lawtext-laws": "aefdfca37fb06e90a29af6311a1ed9804c9670bd",
@@ -35,7 +44,19 @@
       "verified_count": 0,
       "official_meta_count": 1,
       "candidate_count": 16,
-      "known_gap_count": 1
+      "known_gap_count": 1,
+      "topic_keywords": [
+        "民法典",
+        "民事权利",
+        "民事义务",
+        "物权",
+        "合同",
+        "人格权",
+        "婚姻家庭",
+        "继承",
+        "侵权",
+        "担保"
+      ]
     },
     {
       "topic_id": "civil-procedure-law",
@@ -44,7 +65,7 @@
       "primary_document_id": "LOCAL-3D34F64C0A41",
       "topic_status": "generated_local_candidate",
       "schema_version": "V4",
-      "last_generated_at": "2026-09-11T07:52:47Z",
+      "last_generated_at": "2026-09-11T08:29:52Z",
       "last_candidate_update": {
         "just-laws": "56770b043bf19686fec43403bd24e8e290275794",
         "lawtext-laws": "aefdfca37fb06e90a29af6311a1ed9804c9670bd",
@@ -53,7 +74,19 @@
       "verified_count": 0,
       "official_meta_count": 0,
       "candidate_count": 17,
-      "known_gap_count": 1
+      "known_gap_count": 1,
+      "topic_keywords": [
+        "民事诉讼",
+        "起诉",
+        "受理",
+        "管辖",
+        "举证",
+        "判决",
+        "上诉",
+        "再审",
+        "调解",
+        "执行"
+      ]
     },
     {
       "topic_id": "company-law",
@@ -71,7 +104,22 @@
       "verified_count": 0,
       "official_meta_count": 1,
       "candidate_count": 25,
-      "known_gap_count": 5
+      "known_gap_count": 5,
+      "topic_keywords": [
+        "公司",
+        "股东",
+        "董事",
+        "监事",
+        "法定代表人",
+        "减资",
+        "增资",
+        "出资",
+        "清算",
+        "合并",
+        "分立",
+        "破产",
+        "公司治理"
+      ]
     },
     {
       "topic_id": "construction-law",
@@ -80,7 +128,7 @@
       "primary_document_id": "LOCAL-A683988A50D9",
       "topic_status": "generated_local_candidate",
       "schema_version": "V4",
-      "last_generated_at": "2026-09-11T07:52:45Z",
+      "last_generated_at": "2026-09-11T08:29:50Z",
       "last_candidate_update": {
         "just-laws": "56770b043bf19686fec43403bd24e8e290275794",
         "lawtext-laws": "aefdfca37fb06e90a29af6311a1ed9804c9670bd",
@@ -89,7 +137,18 @@
       "verified_count": 0,
       "official_meta_count": 0,
       "candidate_count": 1,
-      "known_gap_count": 2
+      "known_gap_count": 2,
+      "topic_keywords": [
+        "建筑工程",
+        "施工",
+        "监理",
+        "招标",
+        "发包",
+        "承包",
+        "开工",
+        "竣工",
+        "验收"
+      ]
     },
     {
       "topic_id": "environmental-protection-law",
@@ -98,7 +157,7 @@
       "primary_document_id": "LOCAL-2483FD14550E",
       "topic_status": "generated_local_candidate",
       "schema_version": "V4",
-      "last_generated_at": "2026-09-11T07:52:46Z",
+      "last_generated_at": "2026-09-11T08:29:51Z",
       "last_candidate_update": {
         "just-laws": "56770b043bf19686fec43403bd24e8e290275794",
         "lawtext-laws": "aefdfca37fb06e90a29af6311a1ed9804c9670bd",
@@ -107,7 +166,15 @@
       "verified_count": 0,
       "official_meta_count": 0,
       "candidate_count": 1,
-      "known_gap_count": 2
+      "known_gap_count": 2,
+      "topic_keywords": [
+        "环境保护",
+        "环境影响评价",
+        "排污",
+        "污染",
+        "生态保护",
+        "环境监测"
+      ]
     },
     {
       "topic_id": "government-procurement-law",
@@ -116,7 +183,7 @@
       "primary_document_id": "LOCAL-94E5C4016911",
       "topic_status": "generated_local_candidate",
       "schema_version": "V4",
-      "last_generated_at": "2026-09-11T07:52:44Z",
+      "last_generated_at": "2026-09-11T08:29:49Z",
       "last_candidate_update": {
         "just-laws": "56770b043bf19686fec43403bd24e8e290275794",
         "lawtext-laws": "aefdfca37fb06e90a29af6311a1ed9804c9670bd",
@@ -125,7 +192,17 @@
       "verified_count": 0,
       "official_meta_count": 0,
       "candidate_count": 3,
-      "known_gap_count": 1
+      "known_gap_count": 1,
+      "topic_keywords": [
+        "政府采购",
+        "采购人",
+        "供应商",
+        "采购代理机构",
+        "集中采购",
+        "分散采购",
+        "询价",
+        "竞争性谈判"
+      ]
     },
     {
       "topic_id": "labor-contract-law",
@@ -134,7 +211,7 @@
       "primary_document_id": "OFFICIAL-labor_contract_law",
       "topic_status": "generated_local_candidate",
       "schema_version": "V4",
-      "last_generated_at": "2026-09-11T07:52:43Z",
+      "last_generated_at": "2026-09-11T08:29:49Z",
       "last_candidate_update": {
         "just-laws": "56770b043bf19686fec43403bd24e8e290275794",
         "lawtext-laws": "aefdfca37fb06e90a29af6311a1ed9804c9670bd",
@@ -143,7 +220,18 @@
       "verified_count": 0,
       "official_meta_count": 1,
       "candidate_count": 2,
-      "known_gap_count": 1
+      "known_gap_count": 1,
+      "topic_keywords": [
+        "劳动合同",
+        "用人单位",
+        "劳动者",
+        "经济补偿",
+        "解除",
+        "终止",
+        "试用期",
+        "工资",
+        "社保"
+      ]
     },
     {
       "topic_id": "land-administration-law",
@@ -152,7 +240,7 @@
       "primary_document_id": "LOCAL-23E05200A86C",
       "topic_status": "generated_local_candidate",
       "schema_version": "V4",
-      "last_generated_at": "2026-09-11T07:52:45Z",
+      "last_generated_at": "2026-09-11T08:29:50Z",
       "last_candidate_update": {
         "just-laws": "56770b043bf19686fec43403bd24e8e290275794",
         "lawtext-laws": "aefdfca37fb06e90a29af6311a1ed9804c9670bd",
@@ -161,7 +249,16 @@
       "verified_count": 0,
       "official_meta_count": 0,
       "candidate_count": 5,
-      "known_gap_count": 1
+      "known_gap_count": 1,
+      "topic_keywords": [
+        "土地",
+        "国有土地",
+        "集体土地",
+        "建设用地",
+        "农用地",
+        "土地征收",
+        "土地补偿"
+      ]
     },
     {
       "topic_id": "tendering-bidding-law",
@@ -170,7 +267,7 @@
       "primary_document_id": "LOCAL-EC1C7DD7B9DB",
       "topic_status": "generated_local_candidate",
       "schema_version": "V4",
-      "last_generated_at": "2026-09-11T07:52:44Z",
+      "last_generated_at": "2026-09-11T08:29:49Z",
       "last_candidate_update": {
         "just-laws": "56770b043bf19686fec43403bd24e8e290275794",
         "lawtext-laws": "aefdfca37fb06e90a29af6311a1ed9804c9670bd",
@@ -179,7 +276,17 @@
       "verified_count": 0,
       "official_meta_count": 0,
       "candidate_count": 4,
-      "known_gap_count": 1
+      "known_gap_count": 1,
+      "topic_keywords": [
+        "招标",
+        "投标",
+        "必须招标",
+        "工程项目",
+        "政府采购",
+        "招投标",
+        "评标",
+        "中标"
+      ]
     },
     {
       "topic_id": "urban-rural-planning-law",
@@ -188,7 +295,7 @@
       "primary_document_id": "LOCAL-B889354DE846",
       "topic_status": "generated_local_candidate",
       "schema_version": "V4",
-      "last_generated_at": "2026-09-11T07:52:45Z",
+      "last_generated_at": "2026-09-11T08:29:50Z",
       "last_candidate_update": {
         "just-laws": "56770b043bf19686fec43403bd24e8e290275794",
         "lawtext-laws": "aefdfca37fb06e90a29af6311a1ed9804c9670bd",
@@ -197,7 +304,15 @@
       "verified_count": 0,
       "official_meta_count": 0,
       "candidate_count": 2,
-      "known_gap_count": 1
+      "known_gap_count": 1,
+      "topic_keywords": [
+        "城乡规划",
+        "城市规划",
+        "镇规划",
+        "乡村规划",
+        "选址意见书",
+        "建设用地规划许可证"
+      ]
     },
     {
       "topic_id": "work-safety-law",
@@ -206,7 +321,7 @@
       "primary_document_id": "LOCAL-2521CB8D1B21",
       "topic_status": "generated_local_candidate",
       "schema_version": "V4",
-      "last_generated_at": "2026-09-11T07:52:46Z",
+      "last_generated_at": "2026-09-11T08:29:51Z",
       "last_candidate_update": {
         "just-laws": "56770b043bf19686fec43403bd24e8e290275794",
         "lawtext-laws": "aefdfca37fb06e90a29af6311a1ed9804c9670bd",
@@ -215,7 +330,16 @@
       "verified_count": 0,
       "official_meta_count": 0,
       "candidate_count": 2,
-      "known_gap_count": 1
+      "known_gap_count": 1,
+      "topic_keywords": [
+        "安全生产",
+        "生产经营单位",
+        "隐患",
+        "事故",
+        "应急救援",
+        "三同时",
+        "安全培训"
+      ]
     }
   ]
 }
