@@ -3,7 +3,7 @@ topic:
   title: 公司法专题
   description: 以中华人民共和国公司法（2023 修订 / 2024-07-01 施行）为枢轴，关联相关行政法规、部门规章、司法解释与典型案例
   primary_law_document_id: CL-PRIMARY-2024
-  generated_at: '2026-09-11T03:05:41Z'
+  generated_at: '2026-09-11T03:45:46Z'
   default_show_relation_strength:
   - core
   - direct
@@ -28,6 +28,7 @@ documents:
   bbbs: ff8081818c9108eb018cb6922f750c07
   source_url: https://flk.npc.gov.cn/detail.html?bbbs=ff8081818c9108eb018cb6922f750c07
   local_path: laws/company_law_2024.md
+  candidate_path: docs/civil-and-commercial/company-law/README.md
   document_number: 中华人民共和国主席令第十五号
   notes: 元数据 + 结构树已通过 flk.npc.gov.cn API 核验；正文为占位，未逐字官方核验。
   document_id: CL-PRIMARY-2024

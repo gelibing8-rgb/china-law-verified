@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""china-law-verified V3.1 三层语义检索 + 专题检索.
+"""china-law-verified V3.1.1 三层语义检索 + 专题检索.
 
 层级定义（V2.2）：
   VERIFIED       = laws/*.md 中 verification_status=verified_official 的文件
@@ -10,11 +10,11 @@
   CANDIDATE      = ~/workspace/legal-sources/just-laws (ImCa0/just-laws, MIT)
                    开源候选，仅供"定位相关条文"，**不能**作为最终法律依据
 
-专题检索（V3.1）：
-  --topic company-law  读 legal-topics/<topic>/manifest.yaml；
-  限定 laws/ 检索范围为主题内 relation_strength∈[core,direct] 且存在 local_path 的文档。
-  CANDIDATE 检索保持全量命中，由主题的 manifest 限定后续处理。
-  --include-related 把 historical_version / relation_strength=related 的条目也纳入检索范围。
+专题检索（V3.1.1）：
+  --topic company-law  优先读 legal-topics/<topic>/manifest.json（stdlib）；
+  若不存在，再 fallback 到 manifest.yaml（仅在 PyYAML 可用时）；
+  限制 laws/ 与 CANDIDATE 两层检索范围，严格按 manifest 的 laws_paths / candidate_paths 过滤；
+  --include-related 可放宽到 historical_version / relation_strength=related。
 
 执行顺序：
   阶段 1：--query 整句精确检索
@@ -38,10 +38,12 @@ import time
 from pathlib import Path
 from typing import Iterator
 
+# V3.1.1：运行时不再依赖 PyYAML。优先读 manifest.json（stdlib json）；
+# 仅在 manifest.json 缺失时才尝试 PyYAML fallback，且只为可读性。
 try:
-    import yaml  # V3.1 专题过滤使用；标准库 yaml 在 Python 3.10+；环境使用 PyYAML
+    import yaml as _yaml_fallback  # noqa: F401  # optional, only used if .json missing
 except ImportError:
-    yaml = None
+    _yaml_fallback = None
 
 ROOT = Path(__file__).resolve().parent.parent
 WORKSPACE = ROOT.parent
@@ -305,7 +307,7 @@ def _build_candidate_title_index() -> dict[str, set[str]]:
 
 
 def load_topic_manifest(topic_id: str, include_related: bool = False):
-    """V3.1 专题加载：读 legal-topics/<topic_id>/manifest.yaml.
+    """V3.1.1 专题加载：优先读 manifest.json（stdlib）；），fallback 到 manifest.yaml。
 
     返回 (topic_meta, scope, unresolved)：
       topic_meta    dict — 专题元数据
@@ -316,24 +318,53 @@ def load_topic_manifest(topic_id: str, include_related: bool = False):
       legal_status      ∈ {effective, pending_verification}
       relation_strength ∈ {core, direct}
     排除：repealed / replaced / historical / draft
+
+    路径映射优先级：
+      1. manifest 条目 explicit candidate_path → 直接加入 candidate_paths
+      2. manifest 条目 local_path 以 docs/ / constitution/ 开头 → 直接加入 candidate_paths
+      3. manifest 条目 local_path 以 laws/ 开头 → 加入 laws_paths
+      4. 都不存在 → 才执行 title 唯一匹配（0 / 多匹配 → unresolved）
+
+    运行时仅依赖 Python 标准库 json；yaml 仅在 .json 缺失且 PyYAML 可用时作为 fallback。
     """
     if not topic_id:
         return None, None, []
-    if yaml is None:
-        print("[ERR] 需要 PyYAML（pip install --user pyyaml）才能启用 --topic", file=sys.stderr)
+
+    json_path = ROOT / "legal-topics" / topic_id / "manifest.json"
+    yaml_path = ROOT / "legal-topics" / topic_id / "manifest.yaml"
+
+    manifest = None
+    src = None
+    if json_path.exists():
+        try:
+            with json_path.open("r", encoding="utf-8") as fh:
+                manifest = json.load(fh)
+            src = "manifest.json"
+        except json.JSONDecodeError as e:
+            print(f"[ERR] manifest.json 解析失败: {e}", file=sys.stderr)
+            return None, None, []
+    elif yaml_path.exists():
+        if _yaml_fallback is None:
+            print(
+                "[ERR] manifest.json 不存在且 PyYAML 未装；无法读取 manifest.yaml。"
+                "请运行 legal-topics/company-law/build_manifest.py 生成 manifest.json。",
+                file=sys.stderr,
+            )
+            return None, None, []
+        try:
+            with yaml_path.open("r", encoding="utf-8") as fh:
+                manifest = _yaml_fallback.safe_load(fh)
+            src = "manifest.yaml"
+        except Exception as e:
+            print(f"[ERR] manifest.yaml 解析失败: {e}", file=sys.stderr)
+            return None, None, []
+    else:
+        print(f"[ERR] manifest 不存在: 期望 {json_path} 或 {yaml_path}", file=sys.stderr)
         return None, None, []
 
-    manifest_path = ROOT / "legal-topics" / topic_id / "manifest.yaml"
-    if not manifest_path.exists():
-        print(f"[ERR] manifest 不存在: {manifest_path}", file=sys.stderr)
-        return None, None, []
-
-    try:
-        with manifest_path.open("r", encoding="utf-8") as fh:
-            manifest = yaml.safe_load(fh)
-    except yaml.YAMLError as e:
-        print(f"[ERR] manifest YAML 解析失败: {e}", file=sys.stderr)
-        return None, None, []
+    if src:
+        # 仅在 verbose / 调试时输出；静默保持输出干净
+        pass
 
     topic_meta = manifest.get("topic", {}) or {}
     allowed_status = TOPIC_DEFAULT_LEGAL_STATUS if not include_related else (
@@ -349,10 +380,7 @@ def load_topic_manifest(topic_id: str, include_related: bool = False):
 
     laws_paths: set[str] = set()
     candidate_paths: set[str] = set()
-    unresolved: list[tuple[str, str, str]] = []
-
-    # CANDIDATE 标题索引：启动一次
-    cand_index = _build_candidate_title_index()
+    unresolved: list[tuple[str, str]] = []
 
     for doc in docs:
         status = doc.get("legal_status", "")
@@ -365,6 +393,16 @@ def load_topic_manifest(topic_id: str, include_related: bool = False):
         if strength not in allowed_strength:
             continue
 
+        # V3.1.1：candidate_path 优先于 title 匹配
+        cp = doc.get("candidate_path")
+        if cp:
+            # 必须是相对 CANDIDATE_ROOT 的路径
+            if cp.startswith("docs/") or cp.startswith("constitution/") or "/" in cp:
+                candidate_paths.add(cp)
+                continue
+            unresolved.append((doc_id, title, f"candidate_path 不在 CANDIDATE_ROOT 之下: {cp}"))
+            continue
+
         lp = doc.get("local_path")
         if lp:
             if lp.startswith("laws/"):
@@ -375,15 +413,16 @@ def load_topic_manifest(topic_id: str, include_related: bool = False):
                 unresolved.append((doc_id, title, "local_path 不在已知层（laws/ 或 CANDIDATE/）"))
             continue
 
-        # local_path=null：用 title 尝试匹配 CANDIDATE
+        # 既无 candidate_path 也无 local_path → title 唯一匹配
+        cand_index = _build_candidate_title_index()
         norm = _normalize_title(title)
         matches = cand_index.get(norm, set())
         if len(matches) == 1:
             candidate_paths.update(matches)
         elif len(matches) > 1:
-            unresolved.append((doc_id, title, f"title 匹配多个 CANDIDATE 文件: {sorted(matches)}"))
+            unresolved.append((doc_id, title))
         else:
-            unresolved.append((doc_id, title, "title 在 CANDIDATE 中未匹配"))
+            unresolved.append((doc_id, title))
 
     scope = {"laws_paths": laws_paths, "candidate_paths": candidate_paths}
     return topic_meta, scope, unresolved
@@ -544,8 +583,13 @@ def main() -> int:
     if args.topic:
         if topic_unresolved:
             print(f"\n# TOPIC_UNRESOLVED: {len(topic_unresolved)} 个 manifest 条目未能可靠映射到本地文件")
-            for did, title, reason in topic_unresolved:
-                print(f"  - {did}  title={title!r}  reason: {reason}")
+            for item in topic_unresolved:
+                if len(item) == 3:
+                    did, title, reason = item
+                    print(f"  - {did}  title={title!r}  reason: {reason}")
+                else:
+                    did, title = item
+                    print(f"  - {did}  title={title!r}")
         else:
             print(f"\n# TOPIC_UNRESOLVED: (无)")
     return 0

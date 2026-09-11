@@ -70,6 +70,8 @@ add("CL-PRIMARY-2024",
     bbbs="ff8081818c9108eb018cb6922f750c07",
     source_url="https://flk.npc.gov.cn/detail.html?bbbs=ff8081818c9108eb018cb6922f750c07",
     local_path="laws/company_law_2024.md",
+    # V3.1.1：显式声明 just-laws 中公司法全文路径，不再用模糊 title 匹配
+    candidate_path="docs/civil-and-commercial/company-law/README.md",
     document_number="中华人民共和国主席令第十五号",
     notes="元数据 + 结构树已通过 flk.npc.gov.cn API 核验；正文为占位，未逐字官方核验。"
 )
@@ -721,10 +723,16 @@ def build_manifest():
 
 
 def main() -> int:
+    import json
     manifest = build_manifest()
+    # V3.1.1：同时生成 manifest.yaml （人工阅读）和 manifest.json （search_all.py 默认读取）
     with OUT.open("w", encoding="utf-8") as fh:
         yaml.safe_dump(manifest, fh, allow_unicode=True, sort_keys=False, default_flow_style=False)
     print(f"[OK] {OUT}")
+    json_path = OUT.with_suffix(".json")
+    with json_path.open("w", encoding="utf-8") as fh:
+        json.dump(manifest, fh, ensure_ascii=False, indent=2)
+    print(f"[OK] {json_path}")
     print(f"[stats]")
     for k, v in manifest["statistics"].items():
         print(f"  {k}: {v}")
