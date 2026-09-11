@@ -1,0 +1,176 @@
+{
+  "topic": {
+    "id": "land-administration-law",
+    "title": "中华人民共和国土地管理法专题",
+    "primary_law": "中华人民共和国土地管理法",
+    "primary_document_id": "LOCAL-23E05200A86C",
+    "schema_version": "V4",
+    "topic_status": "generated_local_candidate",
+    "generated_at": "2026-09-11T07:52:45Z",
+    "data_sources": [
+      "just-laws: local read-only clone",
+      "lawtext-laws: local read-only clone",
+      "china-data-laws: local read-only clone"
+    ]
+  },
+  "documents": [
+    {
+      "document_id": "LOCAL-23E05200A86C",
+      "title": "中华人民共和国土地管理法",
+      "document_type": "法律",
+      "document_number": null,
+      "issuing_authority": null,
+      "promulgation_date": null,
+      "effective_date": null,
+      "legal_status": "pending_verification",
+      "relation_strength": "core",
+      "verification_status": "CANDIDATE",
+      "source_url": null,
+      "candidate_sources": [
+        {
+          "source": "just-laws",
+          "local_root": "/Users/glb/workspace/legal-sources/just-laws",
+          "relative_path": "docs/administrative/land-administration-law/README.md",
+          "source_commit": "56770b043bf19686fec43403bd24e8e290275794",
+          "verification_status": "CANDIDATE",
+          "match_method": "title_exact"
+        }
+      ],
+      "notes": "由本地候选库标题/元数据明确关联；未复制正文，未提升为 VERIFIED。"
+    },
+    {
+      "document_id": "LOCAL-AF099DC435AA",
+      "title": "上海市实施《中华人民共和国土地管理法》办法",
+      "document_type": "法律",
+      "document_number": null,
+      "issuing_authority": null,
+      "promulgation_date": null,
+      "effective_date": null,
+      "legal_status": "pending_verification",
+      "relation_strength": "direct",
+      "verification_status": "CANDIDATE",
+      "source_url": null,
+      "candidate_sources": [
+        {
+          "source": "china-data-laws",
+          "local_root": "/Users/glb/workspace/legal-sources/china-data-laws",
+          "relative_path": "地方性法规/上海/上海市实施《土地管理法》办法(2018-12-20).md",
+          "source_commit": "1ca7a3518d115c8dd3b752849ebdfa09878fa1b0",
+          "verification_status": "CANDIDATE",
+          "match_method": "title_contains_primary_law"
+        }
+      ],
+      "notes": "由本地候选库标题/元数据明确关联；未复制正文，未提升为 VERIFIED。"
+    },
+    {
+      "document_id": "LOCAL-D5BED1B71B27",
+      "title": "中华人民共和国土地管理法实施条例",
+      "document_type": "行政法规",
+      "document_number": null,
+      "issuing_authority": null,
+      "promulgation_date": null,
+      "effective_date": null,
+      "legal_status": "pending_verification",
+      "relation_strength": "direct",
+      "verification_status": "CANDIDATE",
+      "source_url": null,
+      "candidate_sources": [
+        {
+          "source": "china-data-laws",
+          "local_root": "/Users/glb/workspace/legal-sources/china-data-laws",
+          "relative_path": "行政法规/土地管理法实施条例(2021-07-02).md",
+          "source_commit": "1ca7a3518d115c8dd3b752849ebdfa09878fa1b0",
+          "verification_status": "CANDIDATE",
+          "match_method": "title_contains_primary_law"
+        }
+      ],
+      "notes": "由本地候选库标题/元数据明确关联；未复制正文，未提升为 VERIFIED。"
+    },
+    {
+      "document_id": "LOCAL-2087812432EF",
+      "title": "中华人民共和国土地管理法实施条例",
+      "document_type": "行政法规",
+      "document_number": null,
+      "issuing_authority": "国务院",
+      "promulgation_date": "2014-07-29",
+      "effective_date": null,
+      "legal_status": "pending_verification",
+      "relation_strength": "direct",
+      "verification_status": "CANDIDATE",
+      "source_url": null,
+      "candidate_sources": [
+        {
+          "source": "lawtext-laws",
+          "local_root": "/Users/glb/workspace/legal-sources/laws",
+          "relative_path": "content/行政法规/ff8080816f3cbb3c016f40f5a2050e35.md",
+          "source_commit": "aefdfca37fb06e90a29af6311a1ed9804c9670bd",
+          "verification_status": "CANDIDATE",
+          "match_method": "title_contains_primary_law"
+        }
+      ],
+      "notes": "由本地候选库标题/元数据明确关联；未复制正文，未提升为 VERIFIED。"
+    },
+    {
+      "document_id": "LOCAL-4544772449FA",
+      "title": "中华人民共和国土地管理法实施条例",
+      "document_type": "行政法规",
+      "document_number": null,
+      "issuing_authority": "国务院",
+      "promulgation_date": "2021-07-02",
+      "effective_date": "2021-09-01",
+      "legal_status": "effective",
+      "relation_strength": "direct",
+      "verification_status": "CANDIDATE",
+      "source_url": null,
+      "candidate_sources": [
+        {
+          "source": "lawtext-laws",
+          "local_root": "/Users/glb/workspace/legal-sources/laws",
+          "relative_path": "content/行政法规/ff8081817b63b895017b7b071b6843c0.md",
+          "source_commit": "aefdfca37fb06e90a29af6311a1ed9804c9670bd",
+          "verification_status": "CANDIDATE",
+          "match_method": "title_contains_primary_law"
+        }
+      ],
+      "notes": "由本地候选库标题/元数据明确关联；未复制正文，未提升为 VERIFIED。"
+    }
+  ],
+  "documents_related": [],
+  "case_collections": [],
+  "cases": [],
+  "cases_related": [],
+  "statistics": {
+    "documents_total": 5,
+    "documents_by_type": {
+      "法律": 2,
+      "行政法规": 3
+    },
+    "documents_by_verification_status": {
+      "CANDIDATE": 5
+    },
+    "documents_by_legal_status": {
+      "pending_verification": 4,
+      "effective": 1
+    },
+    "documents_by_relation_strength": {
+      "core": 1,
+      "direct": 4
+    },
+    "cases_total": 0
+  },
+  "verification": {
+    "generated_by": "scripts/build_topic.py",
+    "no_government_network": true
+  },
+  "known_gaps": [
+    "案例层未自动归类；需后续提供唯一可靠案例身份与本地材料。"
+  ],
+  "update_state": {
+    "generated_at": "2026-09-11T07:52:45Z",
+    "candidate_commits": {
+      "just-laws": "56770b043bf19686fec43403bd24e8e290275794",
+      "lawtext-laws": "aefdfca37fb06e90a29af6311a1ed9804c9670bd",
+      "china-data-laws": "1ca7a3518d115c8dd3b752849ebdfa09878fa1b0"
+    }
+  }
+}

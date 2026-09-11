@@ -4,7 +4,7 @@ Verified Chinese laws from official government sources, structured for human and
 
 ## 项目说明
 
-本仓库收录中国法律法规的官方原文，仅使用经核验的官方发布来源。仓库采用 **V2.2 三层语义结构**：
+本仓库收录中国法律法规的官方核验层元数据及本地候选全文定位，采用 **V4 Topic Schema**；候选正文不复制入库，不能替代官方依据。
 
 | 层级 | 含义 | 路径 |
 | --- | --- | --- |
@@ -66,17 +66,28 @@ china-law-verified/
 │   ├── civil_code.md
 │   ├── company_law_2024.md
 │   └── labor_contract_law.md
+├── legal-topics/          # V4 专题、Schema、topics registry、311 部法律 catalog
+│   ├── _schema/
+│   ├── topics.json
+│   ├── catalog.json
+│   └── company-law/       # 冻结的公司法参考专题
 ├── metadata/
 │   └── index.jsonl      # laws/*.md 元数据
 └── scripts/
     ├── search.py        # 单层（laws/）全文检索
     ├── search_all.py    # V2.2 三层语义检索：laws/ + CANDIDATE
     ├── verify.py        # 校验元数据 / 域名 / SHA256
-    ├── update.py        # 增量更新占位
+    ├── update.py        # 旧版兼容入口
+    ├── build_topic.py   # V4 本地专题生成器
+    ├── build_registry.py # topics/catalog 生成器
+    ├── update_candidates.py # GitHub 候选库增量更新
+    ├── update_topics.py # 受影响专题重建
+    ├── validate_topics.py # V4 QA
+    ├── weekly_update.sh # 自动任务执行入口
     └── _generate_laws.py # 生成器（V1 一次性脚本）
 ```
 
-**CANDIDATE 候选层不在本仓库内**。运行 `search_all.py` 之前需要在 `~/workspace/legal-sources/just-laws` 下只读 clone `ImCa0/just-laws`（MIT，详见 `scripts/search_all.py` 中 `CANDIDATE_ROOT` 路径）。
+**CANDIDATE 候选层不在本仓库内**。运行 `search_all.py` 之前需要准备 `~/workspace/legal-sources/just-laws`、`laws`、`china-data-laws` 三个本地只读 clone；许可证和来源风险按各专题 manifest 记录。
 
 ## 单部法律格式
 

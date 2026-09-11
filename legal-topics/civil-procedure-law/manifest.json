@@ -1,0 +1,465 @@
+{
+  "topic": {
+    "id": "civil-procedure-law",
+    "title": "中华人民共和国民事诉讼法专题",
+    "primary_law": "中华人民共和国民事诉讼法",
+    "primary_document_id": "LOCAL-3D34F64C0A41",
+    "schema_version": "V4",
+    "topic_status": "generated_local_candidate",
+    "generated_at": "2026-09-11T07:52:47Z",
+    "data_sources": [
+      "just-laws: local read-only clone",
+      "lawtext-laws: local read-only clone",
+      "china-data-laws: local read-only clone"
+    ]
+  },
+  "documents": [
+    {
+      "document_id": "LOCAL-3D34F64C0A41",
+      "title": "中华人民共和国民事诉讼法",
+      "document_type": "法律",
+      "document_number": null,
+      "issuing_authority": null,
+      "promulgation_date": null,
+      "effective_date": null,
+      "legal_status": "pending_verification",
+      "relation_strength": "core",
+      "verification_status": "CANDIDATE",
+      "source_url": null,
+      "candidate_sources": [
+        {
+          "source": "just-laws",
+          "local_root": "/Users/glb/workspace/legal-sources/just-laws",
+          "relative_path": "docs/procedural/civil-procedure/README.md",
+          "source_commit": "56770b043bf19686fec43403bd24e8e290275794",
+          "verification_status": "CANDIDATE",
+          "match_method": "title_exact"
+        }
+      ],
+      "notes": "由本地候选库标题/元数据明确关联；未复制正文，未提升为 VERIFIED。"
+    },
+    {
+      "document_id": "LOCAL-ECF6D9FC1D72",
+      "title": "最高人民法院关于适用《中华人民共和国民事诉讼法》审判监督程序若干问题的解释",
+      "document_type": "司法解释",
+      "document_number": null,
+      "issuing_authority": null,
+      "promulgation_date": null,
+      "effective_date": null,
+      "legal_status": "pending_verification",
+      "relation_strength": "direct",
+      "verification_status": "CANDIDATE",
+      "source_url": null,
+      "candidate_sources": [
+        {
+          "source": "china-data-laws",
+          "local_root": "/Users/glb/workspace/legal-sources/china-data-laws",
+          "relative_path": "司法解释/最高人民法院关于适用《民事诉讼法》审判监督程序若干问题的解释(2020-12-29).md",
+          "source_commit": "1ca7a3518d115c8dd3b752849ebdfa09878fa1b0",
+          "verification_status": "CANDIDATE",
+          "match_method": "title_contains_primary_law"
+        }
+      ],
+      "notes": "由本地候选库标题/元数据明确关联；未复制正文，未提升为 VERIFIED。"
+    },
+    {
+      "document_id": "LOCAL-98522C9FC1D3",
+      "title": "最高人民法院关于适用《中华人民共和国民事诉讼法》执行程序若干问题的解释",
+      "document_type": "司法解释",
+      "document_number": null,
+      "issuing_authority": null,
+      "promulgation_date": null,
+      "effective_date": null,
+      "legal_status": "pending_verification",
+      "relation_strength": "direct",
+      "verification_status": "CANDIDATE",
+      "source_url": null,
+      "candidate_sources": [
+        {
+          "source": "china-data-laws",
+          "local_root": "/Users/glb/workspace/legal-sources/china-data-laws",
+          "relative_path": "司法解释/最高人民法院关于适用《民事诉讼法》执行程序若干问题的解释(2020-12-29).md",
+          "source_commit": "1ca7a3518d115c8dd3b752849ebdfa09878fa1b0",
+          "verification_status": "CANDIDATE",
+          "match_method": "title_contains_primary_law"
+        }
+      ],
+      "notes": "由本地候选库标题/元数据明确关联；未复制正文，未提升为 VERIFIED。"
+    },
+    {
+      "document_id": "LOCAL-C4922423C793",
+      "title": "最高人民法院关于适用《中华人民共和国民事诉讼法》的解释",
+      "document_type": "司法解释",
+      "document_number": null,
+      "issuing_authority": null,
+      "promulgation_date": null,
+      "effective_date": null,
+      "legal_status": "pending_verification",
+      "relation_strength": "direct",
+      "verification_status": "CANDIDATE",
+      "source_url": null,
+      "candidate_sources": [
+        {
+          "source": "china-data-laws",
+          "local_root": "/Users/glb/workspace/legal-sources/china-data-laws",
+          "relative_path": "司法解释/最高人民法院关于适用《民事诉讼法》的解释(2020-12-29).md",
+          "source_commit": "1ca7a3518d115c8dd3b752849ebdfa09878fa1b0",
+          "verification_status": "CANDIDATE",
+          "match_method": "title_contains_primary_law"
+        }
+      ],
+      "notes": "由本地候选库标题/元数据明确关联；未复制正文，未提升为 VERIFIED。"
+    },
+    {
+      "document_id": "LOCAL-624EC3983B0B",
+      "title": "最高人民法院关于适用《中华人民共和国民事诉讼法》的解释",
+      "document_type": "司法解释",
+      "document_number": null,
+      "issuing_authority": null,
+      "promulgation_date": null,
+      "effective_date": null,
+      "legal_status": "pending_verification",
+      "relation_strength": "direct",
+      "verification_status": "CANDIDATE",
+      "source_url": null,
+      "candidate_sources": [
+        {
+          "source": "china-data-laws",
+          "local_root": "/Users/glb/workspace/legal-sources/china-data-laws",
+          "relative_path": "司法解释/最高人民法院关于适用《民事诉讼法》的解释(2022-04-02).md",
+          "source_commit": "1ca7a3518d115c8dd3b752849ebdfa09878fa1b0",
+          "verification_status": "CANDIDATE",
+          "match_method": "title_contains_primary_law"
+        }
+      ],
+      "notes": "由本地候选库标题/元数据明确关联；未复制正文，未提升为 VERIFIED。"
+    },
+    {
+      "document_id": "LOCAL-D74EABA1774E",
+      "title": "最高人民法院关于适用《中华人民共和国民事诉讼法》的解释",
+      "document_type": "司法解释",
+      "document_number": null,
+      "issuing_authority": "最高人民法院",
+      "promulgation_date": "2015-01-30",
+      "effective_date": "2015-02-04",
+      "legal_status": "pending_verification",
+      "relation_strength": "direct",
+      "verification_status": "CANDIDATE",
+      "source_url": null,
+      "candidate_sources": [
+        {
+          "source": "lawtext-laws",
+          "local_root": "/Users/glb/workspace/legal-sources/laws",
+          "relative_path": "content/司法解释/402881e45ffb0c10015ffb57d5ba0357.md",
+          "source_commit": "aefdfca37fb06e90a29af6311a1ed9804c9670bd",
+          "verification_status": "CANDIDATE",
+          "match_method": "title_contains_primary_law"
+        }
+      ],
+      "notes": "由本地候选库标题/元数据明确关联；未复制正文，未提升为 VERIFIED。"
+    },
+    {
+      "document_id": "LOCAL-850E1876CC1B",
+      "title": "最高人民法院关于如何理解《关于适用〈中华人民共和国民事诉讼法〉若干问题的意见》第31条第2款的批复",
+      "document_type": "司法解释",
+      "document_number": null,
+      "issuing_authority": "最高人民法院",
+      "promulgation_date": "1998-04-17",
+      "effective_date": "1998-04-25",
+      "legal_status": "repealed",
+      "relation_strength": "direct",
+      "verification_status": "CANDIDATE",
+      "source_url": null,
+      "candidate_sources": [
+        {
+          "source": "lawtext-laws",
+          "local_root": "/Users/glb/workspace/legal-sources/laws",
+          "relative_path": "content/司法解释/402881e46000e27901600192d10f0701.md",
+          "source_commit": "aefdfca37fb06e90a29af6311a1ed9804c9670bd",
+          "verification_status": "CANDIDATE",
+          "match_method": "title_contains_primary_law"
+        }
+      ],
+      "notes": "由本地候选库标题/元数据明确关联；未复制正文，未提升为 VERIFIED。"
+    },
+    {
+      "document_id": "LOCAL-22113D99AF20",
+      "title": "最高人民法院关于适用《中华人民共和国民事诉讼法》审判监督程序若干问题的解释",
+      "document_type": "司法解释",
+      "document_number": null,
+      "issuing_authority": "最高人民法院",
+      "promulgation_date": "2008-11-25",
+      "effective_date": "2008-12-01",
+      "legal_status": "pending_verification",
+      "relation_strength": "direct",
+      "verification_status": "CANDIDATE",
+      "source_url": null,
+      "candidate_sources": [
+        {
+          "source": "lawtext-laws",
+          "local_root": "/Users/glb/workspace/legal-sources/laws",
+          "relative_path": "content/司法解释/402881e46000e279016001afba000908.md",
+          "source_commit": "aefdfca37fb06e90a29af6311a1ed9804c9670bd",
+          "verification_status": "CANDIDATE",
+          "match_method": "title_contains_primary_law"
+        }
+      ],
+      "notes": "由本地候选库标题/元数据明确关联；未复制正文，未提升为 VERIFIED。"
+    },
+    {
+      "document_id": "LOCAL-2DB5D2D790E2",
+      "title": "最高人民法院关于适用《中华人民共和国民事诉讼法》执行程序若干问题的解释",
+      "document_type": "司法解释",
+      "document_number": null,
+      "issuing_authority": "最高人民法院",
+      "promulgation_date": "2008-11-03",
+      "effective_date": "2009-01-01",
+      "legal_status": "pending_verification",
+      "relation_strength": "direct",
+      "verification_status": "CANDIDATE",
+      "source_url": null,
+      "candidate_sources": [
+        {
+          "source": "lawtext-laws",
+          "local_root": "/Users/glb/workspace/legal-sources/laws",
+          "relative_path": "content/司法解释/402881e46000e279016001b11f700928.md",
+          "source_commit": "aefdfca37fb06e90a29af6311a1ed9804c9670bd",
+          "verification_status": "CANDIDATE",
+          "match_method": "title_contains_primary_law"
+        }
+      ],
+      "notes": "由本地候选库标题/元数据明确关联；未复制正文，未提升为 VERIFIED。"
+    },
+    {
+      "document_id": "LOCAL-652EF2CE1176",
+      "title": "最高人民法院关于调整司法解释等文件中引用《中华人民共和国民事诉讼法》条文序号的决定",
+      "document_type": "司法解释",
+      "document_number": null,
+      "issuing_authority": "最高人民法院",
+      "promulgation_date": "2008-12-16",
+      "effective_date": "2008-12-31",
+      "legal_status": "repealed",
+      "relation_strength": "direct",
+      "verification_status": "CANDIDATE",
+      "source_url": null,
+      "candidate_sources": [
+        {
+          "source": "lawtext-laws",
+          "local_root": "/Users/glb/workspace/legal-sources/laws",
+          "relative_path": "content/司法解释/402881e46000e279016001c49c100aec.md",
+          "source_commit": "aefdfca37fb06e90a29af6311a1ed9804c9670bd",
+          "verification_status": "CANDIDATE",
+          "match_method": "title_contains_primary_law"
+        }
+      ],
+      "notes": "由本地候选库标题/元数据明确关联；未复制正文，未提升为 VERIFIED。"
+    },
+    {
+      "document_id": "LOCAL-E6CC0DD74E11",
+      "title": "最高人民法院关于修改《最高人民法院关于适用〈中华人民共和国民事诉讼法〉的解释》的决定",
+      "document_type": "司法解释",
+      "document_number": null,
+      "issuing_authority": "最高人民法院",
+      "promulgation_date": "2022-04-01",
+      "effective_date": "2022-04-10",
+      "legal_status": "pending_verification",
+      "relation_strength": "direct",
+      "verification_status": "CANDIDATE",
+      "source_url": null,
+      "candidate_sources": [
+        {
+          "source": "lawtext-laws",
+          "local_root": "/Users/glb/workspace/legal-sources/laws",
+          "relative_path": "content/司法解释/eba4d93163864693a64555f167d1878f.md",
+          "source_commit": "aefdfca37fb06e90a29af6311a1ed9804c9670bd",
+          "verification_status": "CANDIDATE",
+          "match_method": "title_contains_primary_law"
+        }
+      ],
+      "notes": "由本地候选库标题/元数据明确关联；未复制正文，未提升为 VERIFIED。"
+    },
+    {
+      "document_id": "LOCAL-3D20A1F83600",
+      "title": "最高人民法院关于适用《中华人民共和国民事诉讼法》的解释",
+      "document_type": "司法解释",
+      "document_number": null,
+      "issuing_authority": "最高人民法院",
+      "promulgation_date": "2020-12-29",
+      "effective_date": "2021-01-01",
+      "legal_status": "pending_verification",
+      "relation_strength": "direct",
+      "verification_status": "CANDIDATE",
+      "source_url": null,
+      "candidate_sources": [
+        {
+          "source": "lawtext-laws",
+          "local_root": "/Users/glb/workspace/legal-sources/laws",
+          "relative_path": "content/司法解释/ff808181799def980179b1a97b5b1b31.md",
+          "source_commit": "aefdfca37fb06e90a29af6311a1ed9804c9670bd",
+          "verification_status": "CANDIDATE",
+          "match_method": "title_contains_primary_law"
+        }
+      ],
+      "notes": "由本地候选库标题/元数据明确关联；未复制正文，未提升为 VERIFIED。"
+    },
+    {
+      "document_id": "LOCAL-0BEE06E7254A",
+      "title": "最高人民法院关于适用《中华人民共和国民事诉讼法》审判监督程序若干问题的解释",
+      "document_type": "司法解释",
+      "document_number": null,
+      "issuing_authority": "最高人民法院",
+      "promulgation_date": "2020-12-29",
+      "effective_date": "2021-01-01",
+      "legal_status": "effective",
+      "relation_strength": "direct",
+      "verification_status": "CANDIDATE",
+      "source_url": null,
+      "candidate_sources": [
+        {
+          "source": "lawtext-laws",
+          "local_root": "/Users/glb/workspace/legal-sources/laws",
+          "relative_path": "content/司法解释/ff808181799def980179b1ab569c1b33.md",
+          "source_commit": "aefdfca37fb06e90a29af6311a1ed9804c9670bd",
+          "verification_status": "CANDIDATE",
+          "match_method": "title_contains_primary_law"
+        }
+      ],
+      "notes": "由本地候选库标题/元数据明确关联；未复制正文，未提升为 VERIFIED。"
+    },
+    {
+      "document_id": "LOCAL-E8161A78117C",
+      "title": "最高人民法院关于适用《中华人民共和国民事诉讼法》执行程序若干问题的解释",
+      "document_type": "司法解释",
+      "document_number": null,
+      "issuing_authority": "最高人民法院",
+      "promulgation_date": "2020-12-29",
+      "effective_date": "2021-01-01",
+      "legal_status": "effective",
+      "relation_strength": "direct",
+      "verification_status": "CANDIDATE",
+      "source_url": null,
+      "candidate_sources": [
+        {
+          "source": "lawtext-laws",
+          "local_root": "/Users/glb/workspace/legal-sources/laws",
+          "relative_path": "content/司法解释/ff80818179f5d2480179fa4c0ccb0492.md",
+          "source_commit": "aefdfca37fb06e90a29af6311a1ed9804c9670bd",
+          "verification_status": "CANDIDATE",
+          "match_method": "title_contains_primary_law"
+        }
+      ],
+      "notes": "由本地候选库标题/元数据明确关联；未复制正文，未提升为 VERIFIED。"
+    },
+    {
+      "document_id": "LOCAL-1AA612EEFDF7",
+      "title": "最高人民法院关于适用《中华人民共和国民事诉讼法》的解释",
+      "document_type": "司法解释",
+      "document_number": null,
+      "issuing_authority": "最高人民法院",
+      "promulgation_date": "2022-04-01",
+      "effective_date": "2022-04-10",
+      "legal_status": "effective",
+      "relation_strength": "direct",
+      "verification_status": "CANDIDATE",
+      "source_url": null,
+      "candidate_sources": [
+        {
+          "source": "lawtext-laws",
+          "local_root": "/Users/glb/workspace/legal-sources/laws",
+          "relative_path": "content/司法解释/ff80818181cdceb30181d801c31c4070.md",
+          "source_commit": "aefdfca37fb06e90a29af6311a1ed9804c9670bd",
+          "verification_status": "CANDIDATE",
+          "match_method": "title_contains_primary_law"
+        }
+      ],
+      "notes": "由本地候选库标题/元数据明确关联；未复制正文，未提升为 VERIFIED。"
+    },
+    {
+      "document_id": "LOCAL-2BE280899692",
+      "title": "全国人民代表大会常务委员会关于修改《中华人民共和国民事诉讼法》的决定",
+      "document_type": "法律",
+      "document_number": null,
+      "issuing_authority": "全国人民代表大会常务委员会",
+      "promulgation_date": "2021-12-24",
+      "effective_date": "2022-01-01",
+      "legal_status": "pending_verification",
+      "relation_strength": "direct",
+      "verification_status": "CANDIDATE",
+      "source_url": null,
+      "candidate_sources": [
+        {
+          "source": "lawtext-laws",
+          "local_root": "/Users/glb/workspace/legal-sources/laws",
+          "relative_path": "content/法律/ff8081817d99a651017dec5dc1bf3482.md",
+          "source_commit": "aefdfca37fb06e90a29af6311a1ed9804c9670bd",
+          "verification_status": "CANDIDATE",
+          "match_method": "title_contains_primary_law"
+        }
+      ],
+      "notes": "由本地候选库标题/元数据明确关联；未复制正文，未提升为 VERIFIED。"
+    },
+    {
+      "document_id": "LOCAL-B1C206BEDAE3",
+      "title": "全国人民代表大会常务委员会关于修改《中华人民共和国民事诉讼法》的决定",
+      "document_type": "法律",
+      "document_number": null,
+      "issuing_authority": "全国人民代表大会常务委员会",
+      "promulgation_date": "2023-09-01",
+      "effective_date": "2024-01-01",
+      "legal_status": "pending_verification",
+      "relation_strength": "direct",
+      "verification_status": "CANDIDATE",
+      "source_url": null,
+      "candidate_sources": [
+        {
+          "source": "lawtext-laws",
+          "local_root": "/Users/glb/workspace/legal-sources/laws",
+          "relative_path": "content/法律/ff8081818a21e8b2018a50f8d6340ca7.md",
+          "source_commit": "aefdfca37fb06e90a29af6311a1ed9804c9670bd",
+          "verification_status": "CANDIDATE",
+          "match_method": "title_contains_primary_law"
+        }
+      ],
+      "notes": "由本地候选库标题/元数据明确关联；未复制正文，未提升为 VERIFIED。"
+    }
+  ],
+  "documents_related": [],
+  "case_collections": [],
+  "cases": [],
+  "cases_related": [],
+  "statistics": {
+    "documents_total": 17,
+    "documents_by_type": {
+      "法律": 3,
+      "司法解释": 14
+    },
+    "documents_by_verification_status": {
+      "CANDIDATE": 17
+    },
+    "documents_by_legal_status": {
+      "pending_verification": 12,
+      "repealed": 2,
+      "effective": 3
+    },
+    "documents_by_relation_strength": {
+      "core": 1,
+      "direct": 16
+    },
+    "cases_total": 0
+  },
+  "verification": {
+    "generated_by": "scripts/build_topic.py",
+    "no_government_network": true
+  },
+  "known_gaps": [
+    "案例层未自动归类；需后续提供唯一可靠案例身份与本地材料。"
+  ],
+  "update_state": {
+    "generated_at": "2026-09-11T07:52:47Z",
+    "candidate_commits": {
+      "just-laws": "56770b043bf19686fec43403bd24e8e290275794",
+      "lawtext-laws": "aefdfca37fb06e90a29af6311a1ed9804c9670bd",
+      "china-data-laws": "1ca7a3518d115c8dd3b752849ebdfa09878fa1b0"
+    }
+  }
+}

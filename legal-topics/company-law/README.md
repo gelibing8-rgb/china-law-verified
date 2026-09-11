@@ -1,4 +1,4 @@
-# 公司法专题（V3.3A）
+# 公司法专题（V4 冻结参考模板）
 
 > 这是 `china-law-verified` 项目"法律专题知识包"模式的样板（V3.1 清理版）。
 > 围绕 **中华人民共和国公司法（2023 修订 / 2024-07-01 施行）** 现行版本展开。
@@ -61,7 +61,7 @@
 
 案例与法规效力状态完全分开。案例使用 `reference_status`（`active` / `no_longer_reference` / `historical` / `pending_verification`），不使用 `legal_status`。
 
-本轮登记三起种子案例：指导性案例 215、人民法院案例库编号 `2023-08-2-084-028`、指导性案例 9。由于本地候选库未找到三起案例的唯一可靠全文或当前参照状态材料，均保持 `verification_status=CANDIDATE`、`reference_status=pending_verification`；不得据此直接作为最终案例依据。
+本轮登记三起种子案例：指导性案例 215（`active / OFFICIAL_META`）、人民法院案例库编号 `2023-08-2-084-028`（`active / OFFICIAL_META`）、指导性案例 9（`no_longer_reference / OFFICIAL_META`）。三起均未逐字核验官方全文，因此不得提升为 `VERIFIED`。
 
 状态记录见 `case-reference-status.json`。`official_holding` 仅保存已登记的官方明确裁判要旨；本轮种子案例未填充官方要旨，分析性说明统一使用 `analysis_note.content_type=ai_summary`。
 
@@ -73,17 +73,15 @@
 
 ## 3. 权威案例
 
-### 指导性案例
+### 指导性案例与人民法院案例库
 
-> **暂无。** 最高人民法院指导性案例需通过 `court.gov.cn` 公告逐年核对；本环境 `court.gov.cn` TLS 握手被服务端 alert 拒绝；按合规铁律，不批量访问、不绕过。
+| 案例 | 权威类型 | 参照状态 | 可信等级 | 编号 |
+| --- | --- | --- | --- | --- |
+| 昆明闽某纸业有限责任公司等污染环境刑事附带民事公益诉讼案 | guiding_case | **active** | **OFFICIAL_META** | 215 |
+| 上海存亮贸易有限公司诉蒋志东、王卫明等买卖合同纠纷案 | guiding_case | **no_longer_reference**（自 2021-01-01） | **OFFICIAL_META** | 9 |
+| 北京某建材公司诉北京某科技公司、马某等买卖合同纠纷案 | people_court_database_case | **active** | **OFFICIAL_META** | `2023-08-2-084-028` |
 
-**当前专题库未收录已核验权威案例**。
-
-### 人民法院案例库案例
-
-> **暂无。** 人民法院案例库（rmfyalk.court.gov.cn）需登录查询；本项目不绕过登录控制；V3.1 仅占位、不批量访问。
-
-**当前专题库未收录已核验权威案例**。
+指导性案例9号仅保留历史查询，不进入当前指导性案例优先推荐序列。
 
 ### 公报案例
 
@@ -190,10 +188,10 @@ python3 ../../scripts/search_all.py \
 `topic` / `documents` / `documents_related` / `case_collections` / `cases` / `cases_related` /
 `statistics` / `verification` / `known_gaps` 结构已通用。
 
-## 已知真实缺口（V3.3A.1）
+## 已知真实缺口（V4）
 
 1. 部门规章 / 规范性文件：现有条目均保持 `CANDIDATE`；《公司登记管理实施办法》和 2026 年版登记文书/提交材料规范暂无可靠本地全文映射
-2. 指导性案例 / 公报案例 / 案例库入库案例：官方源 TLS 阻断或需登录，未绕过
+2. 指导性案例215、案例库案例仅完成元数据核验；未保存逐字官方全文，保持 `OFFICIAL_META`
 3. 典型案例的案号 / 裁决日期：最高法公开稿以化名披露，原文未给出
 4. primary_law 公司法正文：仍为 `（正文待补）` 占位，需人工在 flk.npc.gov.cn 浏览器复制
-5. 已盘点案例 8 件全部 `verification_status=CANDIDATE`，未经 flk.npc.gov.cn 元数据级核验
+5. 其余 8 件典型案例保持 `CANDIDATE / pending_verification`，本轮不继续核验

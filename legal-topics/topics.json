@@ -1,0 +1,221 @@
+{
+  "schema_version": "V4",
+  "topics": [
+    {
+      "topic_id": "administrative-penalty-law",
+      "title": "中华人民共和国行政处罚法专题",
+      "primary_law": "中华人民共和国行政处罚法",
+      "primary_document_id": "LOCAL-B71B034D35C4",
+      "topic_status": "generated_local_candidate",
+      "schema_version": "V4",
+      "last_generated_at": "2026-09-11T07:52:46Z",
+      "last_candidate_update": {
+        "just-laws": "56770b043bf19686fec43403bd24e8e290275794",
+        "lawtext-laws": "aefdfca37fb06e90a29af6311a1ed9804c9670bd",
+        "china-data-laws": "1ca7a3518d115c8dd3b752849ebdfa09878fa1b0"
+      },
+      "verified_count": 0,
+      "official_meta_count": 0,
+      "candidate_count": 1,
+      "known_gap_count": 2
+    },
+    {
+      "topic_id": "civil-code",
+      "title": "中华人民共和国民法典专题",
+      "primary_law": "中华人民共和国民法典",
+      "primary_document_id": "OFFICIAL-civil_code",
+      "topic_status": "generated_local_candidate",
+      "schema_version": "V4",
+      "last_generated_at": "2026-09-11T07:52:43Z",
+      "last_candidate_update": {
+        "just-laws": "56770b043bf19686fec43403bd24e8e290275794",
+        "lawtext-laws": "aefdfca37fb06e90a29af6311a1ed9804c9670bd",
+        "china-data-laws": "1ca7a3518d115c8dd3b752849ebdfa09878fa1b0"
+      },
+      "verified_count": 0,
+      "official_meta_count": 1,
+      "candidate_count": 16,
+      "known_gap_count": 1
+    },
+    {
+      "topic_id": "civil-procedure-law",
+      "title": "中华人民共和国民事诉讼法专题",
+      "primary_law": "中华人民共和国民事诉讼法",
+      "primary_document_id": "LOCAL-3D34F64C0A41",
+      "topic_status": "generated_local_candidate",
+      "schema_version": "V4",
+      "last_generated_at": "2026-09-11T07:52:47Z",
+      "last_candidate_update": {
+        "just-laws": "56770b043bf19686fec43403bd24e8e290275794",
+        "lawtext-laws": "aefdfca37fb06e90a29af6311a1ed9804c9670bd",
+        "china-data-laws": "1ca7a3518d115c8dd3b752849ebdfa09878fa1b0"
+      },
+      "verified_count": 0,
+      "official_meta_count": 0,
+      "candidate_count": 17,
+      "known_gap_count": 1
+    },
+    {
+      "topic_id": "company-law",
+      "title": "公司法专题",
+      "primary_law": "中华人民共和国公司法",
+      "primary_document_id": null,
+      "topic_status": "frozen_reference_template",
+      "schema_version": "V4",
+      "last_generated_at": "2026-09-11T07:52:47Z",
+      "last_candidate_update": {
+        "just-laws": "56770b043bf19686fec43403bd24e8e290275794",
+        "lawtext-laws": "aefdfca37fb06e90a29af6311a1ed9804c9670bd",
+        "china-data-laws": "1ca7a3518d115c8dd3b752849ebdfa09878fa1b0"
+      },
+      "verified_count": 0,
+      "official_meta_count": 1,
+      "candidate_count": 25,
+      "known_gap_count": 5
+    },
+    {
+      "topic_id": "construction-law",
+      "title": "中华人民共和国建筑法专题",
+      "primary_law": "中华人民共和国建筑法",
+      "primary_document_id": "LOCAL-A683988A50D9",
+      "topic_status": "generated_local_candidate",
+      "schema_version": "V4",
+      "last_generated_at": "2026-09-11T07:52:45Z",
+      "last_candidate_update": {
+        "just-laws": "56770b043bf19686fec43403bd24e8e290275794",
+        "lawtext-laws": "aefdfca37fb06e90a29af6311a1ed9804c9670bd",
+        "china-data-laws": "1ca7a3518d115c8dd3b752849ebdfa09878fa1b0"
+      },
+      "verified_count": 0,
+      "official_meta_count": 0,
+      "candidate_count": 1,
+      "known_gap_count": 2
+    },
+    {
+      "topic_id": "environmental-protection-law",
+      "title": "中华人民共和国环境保护法专题",
+      "primary_law": "中华人民共和国环境保护法",
+      "primary_document_id": "LOCAL-2483FD14550E",
+      "topic_status": "generated_local_candidate",
+      "schema_version": "V4",
+      "last_generated_at": "2026-09-11T07:52:46Z",
+      "last_candidate_update": {
+        "just-laws": "56770b043bf19686fec43403bd24e8e290275794",
+        "lawtext-laws": "aefdfca37fb06e90a29af6311a1ed9804c9670bd",
+        "china-data-laws": "1ca7a3518d115c8dd3b752849ebdfa09878fa1b0"
+      },
+      "verified_count": 0,
+      "official_meta_count": 0,
+      "candidate_count": 1,
+      "known_gap_count": 2
+    },
+    {
+      "topic_id": "government-procurement-law",
+      "title": "中华人民共和国政府采购法专题",
+      "primary_law": "中华人民共和国政府采购法",
+      "primary_document_id": "LOCAL-94E5C4016911",
+      "topic_status": "generated_local_candidate",
+      "schema_version": "V4",
+      "last_generated_at": "2026-09-11T07:52:44Z",
+      "last_candidate_update": {
+        "just-laws": "56770b043bf19686fec43403bd24e8e290275794",
+        "lawtext-laws": "aefdfca37fb06e90a29af6311a1ed9804c9670bd",
+        "china-data-laws": "1ca7a3518d115c8dd3b752849ebdfa09878fa1b0"
+      },
+      "verified_count": 0,
+      "official_meta_count": 0,
+      "candidate_count": 3,
+      "known_gap_count": 1
+    },
+    {
+      "topic_id": "labor-contract-law",
+      "title": "中华人民共和国劳动合同法专题",
+      "primary_law": "中华人民共和国劳动合同法",
+      "primary_document_id": "OFFICIAL-labor_contract_law",
+      "topic_status": "generated_local_candidate",
+      "schema_version": "V4",
+      "last_generated_at": "2026-09-11T07:52:43Z",
+      "last_candidate_update": {
+        "just-laws": "56770b043bf19686fec43403bd24e8e290275794",
+        "lawtext-laws": "aefdfca37fb06e90a29af6311a1ed9804c9670bd",
+        "china-data-laws": "1ca7a3518d115c8dd3b752849ebdfa09878fa1b0"
+      },
+      "verified_count": 0,
+      "official_meta_count": 1,
+      "candidate_count": 2,
+      "known_gap_count": 1
+    },
+    {
+      "topic_id": "land-administration-law",
+      "title": "中华人民共和国土地管理法专题",
+      "primary_law": "中华人民共和国土地管理法",
+      "primary_document_id": "LOCAL-23E05200A86C",
+      "topic_status": "generated_local_candidate",
+      "schema_version": "V4",
+      "last_generated_at": "2026-09-11T07:52:45Z",
+      "last_candidate_update": {
+        "just-laws": "56770b043bf19686fec43403bd24e8e290275794",
+        "lawtext-laws": "aefdfca37fb06e90a29af6311a1ed9804c9670bd",
+        "china-data-laws": "1ca7a3518d115c8dd3b752849ebdfa09878fa1b0"
+      },
+      "verified_count": 0,
+      "official_meta_count": 0,
+      "candidate_count": 5,
+      "known_gap_count": 1
+    },
+    {
+      "topic_id": "tendering-bidding-law",
+      "title": "中华人民共和国招标投标法专题",
+      "primary_law": "中华人民共和国招标投标法",
+      "primary_document_id": "LOCAL-EC1C7DD7B9DB",
+      "topic_status": "generated_local_candidate",
+      "schema_version": "V4",
+      "last_generated_at": "2026-09-11T07:52:44Z",
+      "last_candidate_update": {
+        "just-laws": "56770b043bf19686fec43403bd24e8e290275794",
+        "lawtext-laws": "aefdfca37fb06e90a29af6311a1ed9804c9670bd",
+        "china-data-laws": "1ca7a3518d115c8dd3b752849ebdfa09878fa1b0"
+      },
+      "verified_count": 0,
+      "official_meta_count": 0,
+      "candidate_count": 4,
+      "known_gap_count": 1
+    },
+    {
+      "topic_id": "urban-rural-planning-law",
+      "title": "中华人民共和国城乡规划法专题",
+      "primary_law": "中华人民共和国城乡规划法",
+      "primary_document_id": "LOCAL-B889354DE846",
+      "topic_status": "generated_local_candidate",
+      "schema_version": "V4",
+      "last_generated_at": "2026-09-11T07:52:45Z",
+      "last_candidate_update": {
+        "just-laws": "56770b043bf19686fec43403bd24e8e290275794",
+        "lawtext-laws": "aefdfca37fb06e90a29af6311a1ed9804c9670bd",
+        "china-data-laws": "1ca7a3518d115c8dd3b752849ebdfa09878fa1b0"
+      },
+      "verified_count": 0,
+      "official_meta_count": 0,
+      "candidate_count": 2,
+      "known_gap_count": 1
+    },
+    {
+      "topic_id": "work-safety-law",
+      "title": "中华人民共和国安全生产法专题",
+      "primary_law": "中华人民共和国安全生产法",
+      "primary_document_id": "LOCAL-2521CB8D1B21",
+      "topic_status": "generated_local_candidate",
+      "schema_version": "V4",
+      "last_generated_at": "2026-09-11T07:52:46Z",
+      "last_candidate_update": {
+        "just-laws": "56770b043bf19686fec43403bd24e8e290275794",
+        "lawtext-laws": "aefdfca37fb06e90a29af6311a1ed9804c9670bd",
+        "china-data-laws": "1ca7a3518d115c8dd3b752849ebdfa09878fa1b0"
+      },
+      "verified_count": 0,
+      "official_meta_count": 0,
+      "candidate_count": 2,
+      "known_gap_count": 1
+    }
+  ]
+}

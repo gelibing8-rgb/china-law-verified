@@ -51,6 +51,7 @@ WORKSPACE = ROOT.parent
 LAWS_DIR = ROOT / "laws"
 INDEX_FILE = ROOT / "metadata" / "index.jsonl"
 CANDIDATE_ROOT = WORKSPACE / "legal-sources" / "just-laws"
+TOPICS_REGISTRY = ROOT / "legal-topics" / "topics.json"
 # V3.2：第二候选源 lawtext/laws（仅本地只读；不复制到本仓）
 LAWTEXT_ROOT = WORKSPACE / "legal-sources" / "laws"
 # V3.3A：第三候选源 china-data/laws（仅本地只读；不复制到本仓）
@@ -59,6 +60,24 @@ CHINA_DATA_ROOT = WORKSPACE / "legal-sources" / "china-data-laws"
 LAYER_VERIFIED = "VERIFIED"
 LAYER_OFFICIAL_META = "OFFICIAL_META"
 LAYER_CANDIDATE = "CANDIDATE"
+
+
+def load_topic_registry() -> list[dict]:
+    if not TOPICS_REGISTRY.exists():
+        return []
+    try:
+        return list(json.loads(TOPICS_REGISTRY.read_text(encoding="utf-8")).get("topics", []) or [])
+    except (OSError, json.JSONDecodeError):
+        return []
+
+
+def auto_select_topic(query: str, keywords: list[str]) -> tuple[str | None, str]:
+    """仅用主法律全称做高置信度唯一匹配；否则回退全库。"""
+    hay = " ".join([query] + keywords)
+    hits = [t for t in load_topic_registry() if t.get("primary_law") and t["primary_law"] in hay]
+    if len(hits) == 1:
+        return hits[0].get("topic_id"), "primary_law_exact"
+    return None, "no_unique_primary_law"
 
 
 # ------------------------- 元数据 -------------------------
@@ -418,16 +437,14 @@ def load_topic_manifest(topic_id: str, include_related: bool = False):
                     candidate_sources_paths[src_name].add(rel)
                 else:
                     unresolved.append((doc_id, title))
-            continue
 
         # 向后兼容 V3.1.1 的 candidate_path 单字段
         cp = doc.get("candidate_path")
         if cp:
             if cp.startswith("docs/") or cp.startswith("constitution/") or "/" in cp:
                 candidate_sources_paths["just-laws"].add(cp)
-                continue
-            unresolved.append((doc_id, title))
-            continue
+            else:
+                unresolved.append((doc_id, title))
 
         lp = doc.get("local_path")
         if lp:
@@ -437,18 +454,17 @@ def load_topic_manifest(topic_id: str, include_related: bool = False):
                 candidate_sources_paths["just-laws"].add(lp)
             else:
                 unresolved.append((doc_id, title))
-            continue
-
-        # 既无 candidate_sources 也无 candidate_path / local_path → title 唯一匹配
-        cand_index = _build_candidate_title_index()
-        norm = _normalize_title(title)
-        matches = cand_index.get(norm, set())
-        if len(matches) == 1:
-            candidate_sources_paths["just-laws"].update(matches)
-        elif len(matches) > 1:
-            unresolved.append((doc_id, title))
-        else:
-            unresolved.append((doc_id, title))
+        elif not css and not cp:
+            # 既无 candidate_sources 也无 candidate_path / local_path → title 唯一匹配
+            cand_index = _build_candidate_title_index()
+            norm = _normalize_title(title)
+            matches = cand_index.get(norm, set())
+            if len(matches) == 1:
+                candidate_sources_paths["just-laws"].update(matches)
+            elif len(matches) > 1:
+                unresolved.append((doc_id, title))
+            else:
+                unresolved.append((doc_id, title))
 
     # V3.2：构造多源 scope
     candidate_sources = []
@@ -573,6 +589,8 @@ def main() -> int:
                    help="专题模式下额外纳入 historical_version / relation_strength=related 的条目")
     p.add_argument("--include-cases", action="store_true",
                    help="展示专题案例元数据；--topic 模式默认开启")
+    p.add_argument("--auto-topic", action="store_true",
+                   help="按 topics.json 中主法律全称做高置信度唯一专题路由；无法唯一匹配则全库检索")
     args = p.parse_args()
 
     if not args.query and not args.keywords:
@@ -583,6 +601,12 @@ def main() -> int:
 
     query = (args.query or "").strip()
     keywords = [k.strip() for k in (args.keywords or []) if k.strip()]
+
+    auto_reason = None
+    if args.auto_topic and not args.topic:
+        selected, auto_reason = auto_select_topic(query, keywords)
+        if selected:
+            args.topic = selected
 
     # V3.1 专题加载（--topic）
     topic_meta, topic_scope, topic_unresolved = (None, None, [])
@@ -608,6 +632,8 @@ def main() -> int:
                   f"candidate_sources=[{cs_summary}]")
         if args.include_related:
             print("# (--include-related 已启用)")
+    elif args.auto_topic:
+        print(f"Auto topic: full-library fallback ({auto_reason})")
     print(f"# query={query!r}")
     print(f"# keywords={keywords!r}\n")
 

@@ -1,0 +1,78 @@
+{
+  "topic": {
+    "id": "administrative-penalty-law",
+    "title": "中华人民共和国行政处罚法专题",
+    "primary_law": "中华人民共和国行政处罚法",
+    "primary_document_id": "LOCAL-B71B034D35C4",
+    "schema_version": "V4",
+    "topic_status": "generated_local_candidate",
+    "generated_at": "2026-09-11T07:52:46Z",
+    "data_sources": [
+      "just-laws: local read-only clone",
+      "lawtext-laws: local read-only clone",
+      "china-data-laws: local read-only clone"
+    ]
+  },
+  "documents": [
+    {
+      "document_id": "LOCAL-B71B034D35C4",
+      "title": "中华人民共和国行政处罚法",
+      "document_type": "法律",
+      "document_number": null,
+      "issuing_authority": null,
+      "promulgation_date": null,
+      "effective_date": null,
+      "legal_status": "pending_verification",
+      "relation_strength": "core",
+      "verification_status": "CANDIDATE",
+      "source_url": null,
+      "candidate_sources": [
+        {
+          "source": "just-laws",
+          "local_root": "/Users/glb/workspace/legal-sources/just-laws",
+          "relative_path": "docs/administrative/administrative-penalty/README.md",
+          "source_commit": "56770b043bf19686fec43403bd24e8e290275794",
+          "verification_status": "CANDIDATE",
+          "match_method": "title_exact"
+        }
+      ],
+      "notes": "由本地候选库标题/元数据明确关联；未复制正文，未提升为 VERIFIED。"
+    }
+  ],
+  "documents_related": [],
+  "case_collections": [],
+  "cases": [],
+  "cases_related": [],
+  "statistics": {
+    "documents_total": 1,
+    "documents_by_type": {
+      "法律": 1
+    },
+    "documents_by_verification_status": {
+      "CANDIDATE": 1
+    },
+    "documents_by_legal_status": {
+      "pending_verification": 1
+    },
+    "documents_by_relation_strength": {
+      "core": 1
+    },
+    "cases_total": 0
+  },
+  "verification": {
+    "generated_by": "scripts/build_topic.py",
+    "no_government_network": true
+  },
+  "known_gaps": [
+    "未发现标题明确包含主法律名称的配套行政法规、部门规章、司法解释或规范性文件",
+    "案例层未自动归类；需后续提供唯一可靠案例身份与本地材料。"
+  ],
+  "update_state": {
+    "generated_at": "2026-09-11T07:52:46Z",
+    "candidate_commits": {
+      "just-laws": "56770b043bf19686fec43403bd24e8e290275794",
+      "lawtext-laws": "aefdfca37fb06e90a29af6311a1ed9804c9670bd",
+      "china-data-laws": "1ca7a3518d115c8dd3b752849ebdfa09878fa1b0"
+    }
+  }
+}

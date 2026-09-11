@@ -1,0 +1,19 @@
+{
+  "topic": {
+    "id": "topic-id",
+    "title": "专题",
+    "primary_law": "中华人民共和国××法",
+    "primary_document_id": null,
+    "schema_version": "V4",
+    "topic_status": "generated_local_candidate"
+  },
+  "documents": [],
+  "documents_related": [],
+  "case_collections": [],
+  "cases": [],
+  "cases_related": [],
+  "statistics": {},
+  "verification": {},
+  "known_gaps": [],
+  "update_state": {}
+}

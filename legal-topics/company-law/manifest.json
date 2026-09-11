@@ -2,9 +2,12 @@
   "topic": {
     "id": "company-law",
     "title": "公司法专题",
+    "primary_law": "中华人民共和国公司法",
     "description": "以中华人民共和国公司法（2023 修订 / 2024-07-01 施行）为枢轴，关联相关行政法规、部门规章、司法解释与典型案例",
     "primary_law_document_id": "CL-PRIMARY-2024",
-    "generated_at": "2026-09-11T07:39:39Z",
+    "schema_version": "V4",
+    "topic_status": "frozen_reference_template",
+    "generated_at": "2026-09-11T07:52:47Z",
     "default_show_relation_strength": [
       "core",
       "direct"
@@ -1119,5 +1122,13 @@
     "指导性案例 / 公报案例：court.gov.cn 在本环境 TLS 阻断；按 V3.1 spec，不批量绕过。",
     "公司法部分具体案例的案号 / 裁判日期 / 法院：最高法典型案例多以当事人化名披露，官方原文未给出完整案号；已在 manifest 标 null 并说明。",
     "三法（民法典 / 劳动合同法）OFFICIAL_META 正文仍是占位，未补齐。"
-  ]
+  ],
+  "update_state": {
+    "last_generated_at": "2026-09-11T07:52:47Z",
+    "candidate_commits": {
+      "just-laws": "56770b043bf19686fec43403bd24e8e290275794",
+      "lawtext-laws": "aefdfca37fb06e90a29af6311a1ed9804c9670bd",
+      "china-data-laws": "1ca7a3518d115c8dd3b752849ebdfa09878fa1b0"
+    }
+  }
 }

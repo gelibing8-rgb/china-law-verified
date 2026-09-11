@@ -1,0 +1,3117 @@
+{
+  "schema_version": "V4",
+  "source": "just-laws",
+  "generated_at": "2026-09-11T07:54:04.765403+00:00",
+  "laws": [
+    {
+      "law_id": "JUST-docs-administrative-academic-degrees-law-readme-md",
+      "title": "中华人民共和国学位法",
+      "category": "administrative",
+      "candidate_path": "docs/administrative/academic-degrees-law/README.md",
+      "candidate_source": "just-laws",
+      "topic_exists": false,
+      "topic_id": null,
+      "verification_status": "CANDIDATE"
+    },
+    {
+      "law_id": "JUST-docs-administrative-active-duty-officers-law-readme-md",
+      "title": "中华人民共和国现役军官法",
+      "category": "administrative",
+      "candidate_path": "docs/administrative/active-duty-officers-law/README.md",
+      "candidate_source": "just-laws",
+      "topic_exists": false,
+      "topic_id": null,
+      "verification_status": "CANDIDATE"
+    },
+    {
+      "law_id": "JUST-docs-administrative-administrative-compulsion-law-readme-md",
+      "title": "中华人民共和国行政强制法",
+      "category": "administrative",
+      "candidate_path": "docs/administrative/administrative-compulsion-law/README.md",
+      "candidate_source": "just-laws",
+      "topic_exists": false,
+      "topic_id": null,
+      "verification_status": "CANDIDATE"
+    },
+    {
+      "law_id": "JUST-docs-administrative-administrative-licensing-law-readme-md",
+      "title": "中华人民共和国行政许可法",
+      "category": "administrative",
+      "candidate_path": "docs/administrative/administrative-licensing-law/README.md",
+      "candidate_source": "just-laws",
+      "topic_exists": false,
+      "topic_id": null,
+      "verification_status": "CANDIDATE"
+    },
+    {
+      "law_id": "JUST-docs-administrative-administrative-penalty-readme-md",
+      "title": "中华人民共和国行政处罚法",
+      "category": "administrative",
+      "candidate_path": "docs/administrative/administrative-penalty/README.md",
+      "candidate_source": "just-laws",
+      "topic_exists": true,
+      "topic_id": "administrative-penalty-law",
+      "verification_status": "CANDIDATE"
+    },
+    {
+      "law_id": "JUST-docs-administrative-administrative-reconsideration-law-readme-md",
+      "title": "中华人民共和国行政复议法",
+      "category": "administrative",
+      "candidate_path": "docs/administrative/administrative-reconsideration-law/README.md",
+      "candidate_source": "just-laws",
+      "topic_exists": false,
+      "topic_id": null,
+      "verification_status": "CANDIDATE"
+    },
+    {
+      "law_id": "JUST-docs-administrative-air-pollution-prevention-and-control-law-readme-md",
+      "title": "中华人民共和国大气污染防治法",
+      "category": "administrative",
+      "candidate_path": "docs/administrative/air-pollution-prevention-and-control-law/README.md",
+      "candidate_source": "just-laws",
+      "topic_exists": false,
+      "topic_id": null,
+      "verification_status": "CANDIDATE"
+    },
+    {
+      "law_id": "JUST-docs-administrative-anti-drug-law-readme-md",
+      "title": "中华人民共和国禁毒法",
+      "category": "administrative",
+      "candidate_path": "docs/administrative/anti-drug-law/README.md",
+      "candidate_source": "just-laws",
+      "topic_exists": false,
+      "topic_id": null,
+      "verification_status": "CANDIDATE"
+    },
+    {
+      "law_id": "JUST-docs-administrative-anti-food-waste-law-readme-md",
+      "title": "中华人民共和国反食品浪费法",
+      "category": "administrative",
+      "candidate_path": "docs/administrative/anti-food-waste-law/README.md",
+      "candidate_source": "just-laws",
+      "topic_exists": false,
+      "topic_id": null,
+      "verification_status": "CANDIDATE"
+    },
+    {
+      "law_id": "JUST-docs-administrative-archives-law-readme-md",
+      "title": "中华人民共和国档案法",
+      "category": "administrative",
+      "candidate_path": "docs/administrative/archives-law/README.md",
+      "candidate_source": "just-laws",
+      "topic_exists": false,
+      "topic_id": null,
+      "verification_status": "CANDIDATE"
+    },
+    {
+      "law_id": "JUST-docs-administrative-basic-healthcare-and-health-promotion-law-readme-md",
+      "title": "中华人民共和国基本医疗卫生与健康促进法",
+      "category": "administrative",
+      "candidate_path": "docs/administrative/basic-healthcare-and-health-promotion-law/README.md",
+      "candidate_source": "just-laws",
+      "topic_exists": false,
+      "topic_id": null,
+      "verification_status": "CANDIDATE"
+    },
+    {
+      "law_id": "JUST-docs-administrative-biosafety-law-readme-md",
+      "title": "中华人民共和国生物安全法",
+      "category": "administrative",
+      "candidate_path": "docs/administrative/biosafety-law/README.md",
+      "candidate_source": "just-laws",
+      "topic_exists": false,
+      "topic_id": null,
+      "verification_status": "CANDIDATE"
+    },
+    {
+      "law_id": "JUST-docs-administrative-blood-donation-law-readme-md",
+      "title": "中华人民共和国献血法",
+      "category": "administrative",
+      "candidate_path": "docs/administrative/blood-donation-law/README.md",
+      "candidate_source": "just-laws",
+      "topic_exists": false,
+      "topic_id": null,
+      "verification_status": "CANDIDATE"
+    },
+    {
+      "law_id": "JUST-docs-administrative-civil-air-defense-law-readme-md",
+      "title": "中华人民共和国人民防空法",
+      "category": "administrative",
+      "candidate_path": "docs/administrative/civil-air-defense-law/README.md",
+      "candidate_source": "just-laws",
+      "topic_exists": false,
+      "topic_id": null,
+      "verification_status": "CANDIDATE"
+    },
+    {
+      "law_id": "JUST-docs-administrative-civil-service-law-readme-md",
+      "title": "中华人民共和国公务员法",
+      "category": "administrative",
+      "candidate_path": "docs/administrative/civil-service-law/README.md",
+      "candidate_source": "just-laws",
+      "topic_exists": false,
+      "topic_id": null,
+      "verification_status": "CANDIDATE"
+    },
+    {
+      "law_id": "JUST-docs-administrative-coast-guard-law-readme-md",
+      "title": "中华人民共和国海警法",
+      "category": "administrative",
+      "candidate_path": "docs/administrative/coast-guard-law/README.md",
+      "candidate_source": "just-laws",
+      "topic_exists": false,
+      "topic_id": null,
+      "verification_status": "CANDIDATE"
+    },
+    {
+      "law_id": "JUST-docs-administrative-community-corrections-law-readme-md",
+      "title": "中华人民共和国社区矫正法",
+      "category": "administrative",
+      "candidate_path": "docs/administrative/community-corrections-law/README.md",
+      "candidate_source": "just-laws",
+      "topic_exists": false,
+      "topic_id": null,
+      "verification_status": "CANDIDATE"
+    },
+    {
+      "law_id": "JUST-docs-administrative-compulsory-education-law-readme-md",
+      "title": "中华人民共和国义务教育法",
+      "category": "administrative",
+      "candidate_path": "docs/administrative/compulsory-education-law/README.md",
+      "candidate_source": "just-laws",
+      "topic_exists": false,
+      "topic_id": null,
+      "verification_status": "CANDIDATE"
+    },
+    {
+      "law_id": "JUST-docs-administrative-counter-terrorism-law-readme-md",
+      "title": "中华人民共和国反恐怖主义法",
+      "category": "administrative",
+      "candidate_path": "docs/administrative/counter-terrorism-law/README.md",
+      "candidate_source": "just-laws",
+      "topic_exists": false,
+      "topic_id": null,
+      "verification_status": "CANDIDATE"
+    },
+    {
+      "law_id": "JUST-docs-administrative-cryptography-law-readme-md",
+      "title": "中华人民共和国密码法",
+      "category": "administrative",
+      "candidate_path": "docs/administrative/cryptography-law/README.md",
+      "candidate_source": "just-laws",
+      "topic_exists": false,
+      "topic_id": null,
+      "verification_status": "CANDIDATE"
+    },
+    {
+      "law_id": "JUST-docs-administrative-cultural-relics-protection-law-readme-md",
+      "title": "中华人民共和国文物保护法",
+      "category": "administrative",
+      "candidate_path": "docs/administrative/cultural-relics-protection-law/README.md",
+      "candidate_source": "just-laws",
+      "topic_exists": false,
+      "topic_id": null,
+      "verification_status": "CANDIDATE"
+    },
+    {
+      "law_id": "JUST-docs-administrative-customs-law-readme-md",
+      "title": "中华人民共和国海关法",
+      "category": "administrative",
+      "candidate_path": "docs/administrative/customs-law/README.md",
+      "candidate_source": "just-laws",
+      "topic_exists": false,
+      "topic_id": null,
+      "verification_status": "CANDIDATE"
+    },
+    {
+      "law_id": "JUST-docs-administrative-customs-rank-regulations-readme-md",
+      "title": "中华人民共和国海关关衔条例",
+      "category": "administrative",
+      "candidate_path": "docs/administrative/customs-rank-regulations/README.md",
+      "candidate_source": "just-laws",
+      "topic_exists": false,
+      "topic_id": null,
+      "verification_status": "CANDIDATE"
+    },
+    {
+      "law_id": "JUST-docs-administrative-decision-on-pla-active-duty-enlisted-rank-system-readme-md",
+      "title": "全国人民代表大会常务委员会关于中国人民解放军现役士兵衔级制度的决定",
+      "category": "administrative",
+      "candidate_path": "docs/administrative/decision-on-pla-active-duty-enlisted-rank-system/README.md",
+      "candidate_source": "just-laws",
+      "topic_exists": false,
+      "topic_id": null,
+      "verification_status": "CANDIDATE"
+    },
+    {
+      "law_id": "JUST-docs-administrative-desertification-prevention-and-control-law-readme-md",
+      "title": "中华人民共和国防沙治沙法",
+      "category": "administrative",
+      "candidate_path": "docs/administrative/desertification-prevention-and-control-law/README.md",
+      "candidate_source": "just-laws",
+      "topic_exists": false,
+      "topic_id": null,
+      "verification_status": "CANDIDATE"
+    },
+    {
+      "law_id": "JUST-docs-administrative-diplomatic-personnel-stationed-abroad-law-readme-md",
+      "title": "中华人民共和国驻外外交人员法",
+      "category": "administrative",
+      "candidate_path": "docs/administrative/diplomatic-personnel-stationed-abroad-law/README.md",
+      "candidate_source": "just-laws",
+      "topic_exists": false,
+      "topic_id": null,
+      "verification_status": "CANDIDATE"
+    },
+    {
+      "law_id": "JUST-docs-administrative-drug-administration-law-readme-md",
+      "title": "中华人民共和国药品管理法",
+      "category": "administrative",
+      "candidate_path": "docs/administrative/drug-administration-law/README.md",
+      "candidate_source": "just-laws",
+      "topic_exists": false,
+      "topic_id": null,
+      "verification_status": "CANDIDATE"
+    },
+    {
+      "law_id": "JUST-docs-administrative-earthquake-disaster-prevention-and-mitigation-law-readme-md",
+      "title": "中华人民共和国防震减灾法",
+      "category": "administrative",
+      "candidate_path": "docs/administrative/earthquake-disaster-prevention-and-mitigation-law/README.md",
+      "candidate_source": "just-laws",
+      "topic_exists": false,
+      "topic_id": null,
+      "verification_status": "CANDIDATE"
+    },
+    {
+      "law_id": "JUST-docs-administrative-education-law-readme-md",
+      "title": "中华人民共和国教育法",
+      "category": "administrative",
+      "candidate_path": "docs/administrative/education-law/README.md",
+      "candidate_source": "just-laws",
+      "topic_exists": false,
+      "topic_id": null,
+      "verification_status": "CANDIDATE"
+    },
+    {
+      "law_id": "JUST-docs-administrative-emergency-response-law-readme-md",
+      "title": "中华人民共和国突发事件应对法",
+      "category": "administrative",
+      "candidate_path": "docs/administrative/emergency-response-law/README.md",
+      "candidate_source": "just-laws",
+      "topic_exists": false,
+      "topic_id": null,
+      "verification_status": "CANDIDATE"
+    },
+    {
+      "law_id": "JUST-docs-administrative-environment-protection-readme-md",
+      "title": "中华人民共和国环境保护法",
+      "category": "administrative",
+      "candidate_path": "docs/administrative/environment-protection/README.md",
+      "candidate_source": "just-laws",
+      "topic_exists": true,
+      "topic_id": "environmental-protection-law",
+      "verification_status": "CANDIDATE"
+    },
+    {
+      "law_id": "JUST-docs-administrative-environmental-impact-assessment-law-readme-md",
+      "title": "中华人民共和国环境影响评价法",
+      "category": "administrative",
+      "candidate_path": "docs/administrative/environmental-impact-assessment-law/README.md",
+      "candidate_source": "just-laws",
+      "topic_exists": false,
+      "topic_id": null,
+      "verification_status": "CANDIDATE"
+    },
+    {
+      "law_id": "JUST-docs-administrative-exit-entry-administration-law-readme-md",
+      "title": "中华人民共和国出境入境管理法",
+      "category": "administrative",
+      "candidate_path": "docs/administrative/exit-entry-administration-law/README.md",
+      "candidate_source": "just-laws",
+      "topic_exists": false,
+      "topic_id": null,
+      "verification_status": "CANDIDATE"
+    },
+    {
+      "law_id": "JUST-docs-administrative-fifth-npc-standing-committee-resolution-approving-state-council-interim-provisions-on-retirement-of-veteran-cadres-readme-md",
+      "title": "第五届全国人民代表大会常务委员会关于批准《国务院关于老干部离职休养的暂行规定》的决议",
+      "category": "administrative",
+      "candidate_path": "docs/administrative/fifth-npc-standing-committee-resolution-approving-state-council-interim-provisions-on-retirement-of-veteran-cadres/README.md",
+      "candidate_source": "just-laws",
+      "topic_exists": false,
+      "topic_id": null,
+      "verification_status": "CANDIDATE"
+    },
+    {
+      "law_id": "JUST-docs-administrative-film-industry-promotion-law-readme-md",
+      "title": "中华人民共和国电影产业促进法",
+      "category": "administrative",
+      "candidate_path": "docs/administrative/film-industry-promotion-law/README.md",
+      "candidate_source": "just-laws",
+      "topic_exists": false,
+      "topic_id": null,
+      "verification_status": "CANDIDATE"
+    },
+    {
+      "law_id": "JUST-docs-administrative-fire-rescue-rank-regulations-readme-md",
+      "title": "中华人民共和国消防救援衔条例",
+      "category": "administrative",
+      "candidate_path": "docs/administrative/fire-rescue-rank-regulations/README.md",
+      "candidate_source": "just-laws",
+      "topic_exists": false,
+      "topic_id": null,
+      "verification_status": "CANDIDATE"
+    },
+    {
+      "law_id": "JUST-docs-administrative-fire-services-law-readme-md",
+      "title": "中华人民共和国消防法",
+      "category": "administrative",
+      "candidate_path": "docs/administrative/fire-services-law/README.md",
+      "candidate_source": "just-laws",
+      "topic_exists": false,
+      "topic_id": null,
+      "verification_status": "CANDIDATE"
+    },
+    {
+      "law_id": "JUST-docs-administrative-food-safety-law-readme-md",
+      "title": "中华人民共和国食品安全法",
+      "category": "administrative",
+      "candidate_path": "docs/administrative/food-safety-law/README.md",
+      "candidate_source": "just-laws",
+      "topic_exists": false,
+      "topic_id": null,
+      "verification_status": "CANDIDATE"
+    },
+    {
+      "law_id": "JUST-docs-administrative-frontier-health-and-quarantine-law-readme-md",
+      "title": "中华人民共和国国境卫生检疫法",
+      "category": "administrative",
+      "candidate_path": "docs/administrative/frontier-health-and-quarantine-law/README.md",
+      "candidate_source": "just-laws",
+      "topic_exists": false,
+      "topic_id": null,
+      "verification_status": "CANDIDATE"
+    },
+    {
+      "law_id": "JUST-docs-administrative-gun-control-law-readme-md",
+      "title": "中华人民共和国枪支管理法",
+      "category": "administrative",
+      "candidate_path": "docs/administrative/gun-control-law/README.md",
+      "candidate_source": "just-laws",
+      "topic_exists": false,
+      "topic_id": null,
+      "verification_status": "CANDIDATE"
+    },
+    {
+      "law_id": "JUST-docs-administrative-higher-education-law-readme-md",
+      "title": "中华人民共和国高等教育法",
+      "category": "administrative",
+      "candidate_path": "docs/administrative/higher-education-law/README.md",
+      "candidate_source": "just-laws",
+      "topic_exists": false,
+      "topic_id": null,
+      "verification_status": "CANDIDATE"
+    },
+    {
+      "law_id": "JUST-docs-administrative-household-registration-regulations-readme-md",
+      "title": "中华人民共和国户口登记条例",
+      "category": "administrative",
+      "candidate_path": "docs/administrative/household-registration-regulations/README.md",
+      "candidate_source": "just-laws",
+      "topic_exists": false,
+      "topic_id": null,
+      "verification_status": "CANDIDATE"
+    },
+    {
+      "law_id": "JUST-docs-administrative-intangible-cultural-heritage-law-readme-md",
+      "title": "中华人民共和国非物质文化遗产法",
+      "category": "administrative",
+      "candidate_path": "docs/administrative/intangible-cultural-heritage-law/README.md",
+      "candidate_source": "just-laws",
+      "topic_exists": false,
+      "topic_id": null,
+      "verification_status": "CANDIDATE"
+    },
+    {
+      "law_id": "JUST-docs-administrative-island-protection-law-readme-md",
+      "title": "中华人民共和国海岛保护法",
+      "category": "administrative",
+      "candidate_path": "docs/administrative/island-protection-law/README.md",
+      "candidate_source": "just-laws",
+      "topic_exists": false,
+      "topic_id": null,
+      "verification_status": "CANDIDATE"
+    },
+    {
+      "law_id": "JUST-docs-administrative-land-administration-law-readme-md",
+      "title": "中华人民共和国土地管理法",
+      "category": "administrative",
+      "candidate_path": "docs/administrative/land-administration-law/README.md",
+      "candidate_source": "just-laws",
+      "topic_exists": true,
+      "topic_id": "land-administration-law",
+      "verification_status": "CANDIDATE"
+    },
+    {
+      "law_id": "JUST-docs-administrative-lawyers-law-readme-md",
+      "title": "中华人民共和国律师法",
+      "category": "administrative",
+      "candidate_path": "docs/administrative/lawyers-law/README.md",
+      "candidate_source": "just-laws",
+      "topic_exists": false,
+      "topic_id": null,
+      "verification_status": "CANDIDATE"
+    },
+    {
+      "law_id": "JUST-docs-administrative-marine-environment-protection-law-readme-md",
+      "title": "中华人民共和国海洋环境保护法",
+      "category": "administrative",
+      "candidate_path": "docs/administrative/marine-environment-protection-law/README.md",
+      "candidate_source": "just-laws",
+      "topic_exists": false,
+      "topic_id": null,
+      "verification_status": "CANDIDATE"
+    },
+    {
+      "law_id": "JUST-docs-administrative-maritime-traffic-safety-law-readme-md",
+      "title": "中华人民共和国海上交通安全法",
+      "category": "administrative",
+      "candidate_path": "docs/administrative/maritime-traffic-safety-law/README.md",
+      "candidate_source": "just-laws",
+      "topic_exists": false,
+      "topic_id": null,
+      "verification_status": "CANDIDATE"
+    },
+    {
+      "law_id": "JUST-docs-administrative-mental-health-law-readme-md",
+      "title": "中华人民共和国精神卫生法",
+      "category": "administrative",
+      "candidate_path": "docs/administrative/mental-health-law/README.md",
+      "candidate_source": "just-laws",
+      "topic_exists": false,
+      "topic_id": null,
+      "verification_status": "CANDIDATE"
+    },
+    {
+      "law_id": "JUST-docs-administrative-meteorology-law-readme-md",
+      "title": "中华人民共和国气象法",
+      "category": "administrative",
+      "candidate_path": "docs/administrative/meteorology-law/README.md",
+      "candidate_source": "just-laws",
+      "topic_exists": false,
+      "topic_id": null,
+      "verification_status": "CANDIDATE"
+    },
+    {
+      "law_id": "JUST-docs-administrative-military-facilities-protection-law-readme-md",
+      "title": "中华人民共和国军事设施保护法",
+      "category": "administrative",
+      "candidate_path": "docs/administrative/military-facilities-protection-law/README.md",
+      "candidate_source": "just-laws",
+      "topic_exists": false,
+      "topic_id": null,
+      "verification_status": "CANDIDATE"
+    },
+    {
+      "law_id": "JUST-docs-administrative-military-service-law-readme-md",
+      "title": "中华人民共和国兵役法",
+      "category": "administrative",
+      "candidate_path": "docs/administrative/military-service-law/README.md",
+      "candidate_source": "just-laws",
+      "topic_exists": false,
+      "topic_id": null,
+      "verification_status": "CANDIDATE"
+    },
+    {
+      "law_id": "JUST-docs-administrative-national-defense-education-law-readme-md",
+      "title": "中华人民共和国国防教育法",
+      "category": "administrative",
+      "candidate_path": "docs/administrative/national-defense-education-law/README.md",
+      "candidate_source": "just-laws",
+      "topic_exists": false,
+      "topic_id": null,
+      "verification_status": "CANDIDATE"
+    },
+    {
+      "law_id": "JUST-docs-administrative-national-defense-mobilization-law-readme-md",
+      "title": "中华人民共和国国防动员法",
+      "category": "administrative",
+      "candidate_path": "docs/administrative/national-defense-mobilization-law/README.md",
+      "candidate_source": "just-laws",
+      "topic_exists": false,
+      "topic_id": null,
+      "verification_status": "CANDIDATE"
+    },
+    {
+      "law_id": "JUST-docs-administrative-national-defense-transportation-law-readme-md",
+      "title": "中华人民共和国国防交通法",
+      "category": "administrative",
+      "candidate_path": "docs/administrative/national-defense-transportation-law/README.md",
+      "candidate_source": "just-laws",
+      "topic_exists": false,
+      "topic_id": null,
+      "verification_status": "CANDIDATE"
+    },
+    {
+      "law_id": "JUST-docs-administrative-national-intelligence-law-readme-md",
+      "title": "中华人民共和国国家情报法",
+      "category": "administrative",
+      "candidate_path": "docs/administrative/national-intelligence-law/README.md",
+      "candidate_source": "just-laws",
+      "topic_exists": false,
+      "topic_id": null,
+      "verification_status": "CANDIDATE"
+    },
+    {
+      "law_id": "JUST-docs-administrative-noise-pollution-prevention-and-control-law-readme-md",
+      "title": "中华人民共和国噪声污染防治法",
+      "category": "administrative",
+      "candidate_path": "docs/administrative/noise-pollution-prevention-and-control-law/README.md",
+      "candidate_source": "just-laws",
+      "topic_exists": false,
+      "topic_id": null,
+      "verification_status": "CANDIDATE"
+    },
+    {
+      "law_id": "JUST-docs-administrative-notarization-law-readme-md",
+      "title": "中华人民共和国公证法",
+      "category": "administrative",
+      "candidate_path": "docs/administrative/notarization-law/README.md",
+      "candidate_source": "just-laws",
+      "topic_exists": false,
+      "topic_id": null,
+      "verification_status": "CANDIDATE"
+    },
+    {
+      "law_id": "JUST-docs-administrative-nuclear-safety-law-readme-md",
+      "title": "中华人民共和国核安全法",
+      "category": "administrative",
+      "candidate_path": "docs/administrative/nuclear-safety-law/README.md",
+      "candidate_source": "just-laws",
+      "topic_exists": false,
+      "topic_id": null,
+      "verification_status": "CANDIDATE"
+    },
+    {
+      "law_id": "JUST-docs-administrative-officer-ranks-regulations-readme-md",
+      "title": "中国人民解放军军官军衔条例",
+      "category": "administrative",
+      "candidate_path": "docs/administrative/officer-ranks-regulations/README.md",
+      "candidate_source": "just-laws",
+      "topic_exists": false,
+      "topic_id": null,
+      "verification_status": "CANDIDATE"
+    },
+    {
+      "law_id": "JUST-docs-administrative-passport-law-readme-md",
+      "title": "中华人民共和国护照法",
+      "category": "administrative",
+      "candidate_path": "docs/administrative/passport-law/README.md",
+      "candidate_source": "just-laws",
+      "topic_exists": false,
+      "topic_id": null,
+      "verification_status": "CANDIDATE"
+    },
+    {
+      "law_id": "JUST-docs-administrative-penalties-for-administration-of-public-security-readme-md",
+      "title": "中华人民共和国治安管理处罚法",
+      "category": "administrative",
+      "candidate_path": "docs/administrative/penalties-for-administration-of-public-security/README.md",
+      "candidate_source": "just-laws",
+      "topic_exists": false,
+      "topic_id": null,
+      "verification_status": "CANDIDATE"
+    },
+    {
+      "law_id": "JUST-docs-administrative-people-s-armed-police-law-readme-md",
+      "title": "中华人民共和国人民武装警察法",
+      "category": "administrative",
+      "candidate_path": "docs/administrative/people-s-armed-police-law/README.md",
+      "candidate_source": "just-laws",
+      "topic_exists": false,
+      "topic_id": null,
+      "verification_status": "CANDIDATE"
+    },
+    {
+      "law_id": "JUST-docs-administrative-people-s-police-law-readme-md",
+      "title": "中华人民共和国人民警察法",
+      "category": "administrative",
+      "candidate_path": "docs/administrative/people-s-police-law/README.md",
+      "candidate_source": "just-laws",
+      "topic_exists": false,
+      "topic_id": null,
+      "verification_status": "CANDIDATE"
+    },
+    {
+      "law_id": "JUST-docs-administrative-people-s-police-rank-regulations-readme-md",
+      "title": "中华人民共和国人民警察警衔条例",
+      "category": "administrative",
+      "candidate_path": "docs/administrative/people-s-police-rank-regulations/README.md",
+      "candidate_source": "just-laws",
+      "topic_exists": false,
+      "topic_id": null,
+      "verification_status": "CANDIDATE"
+    },
+    {
+      "law_id": "JUST-docs-administrative-physicians-law-readme-md",
+      "title": "中华人民共和国医师法",
+      "category": "administrative",
+      "candidate_path": "docs/administrative/physicians-law/README.md",
+      "candidate_source": "just-laws",
+      "topic_exists": false,
+      "topic_id": null,
+      "verification_status": "CANDIDATE"
+    },
+    {
+      "law_id": "JUST-docs-administrative-population-and-family-planning-law-readme-md",
+      "title": "中华人民共和国人口与计划生育法",
+      "category": "administrative",
+      "candidate_path": "docs/administrative/population-and-family-planning-law/README.md",
+      "candidate_source": "just-laws",
+      "topic_exists": false,
+      "topic_id": null,
+      "verification_status": "CANDIDATE"
+    },
+    {
+      "law_id": "JUST-docs-administrative-preschool-education-law-readme-md",
+      "title": "中华人民共和国学前教育法",
+      "category": "administrative",
+      "candidate_path": "docs/administrative/preschool-education-law/README.md",
+      "candidate_source": "just-laws",
+      "topic_exists": false,
+      "topic_id": null,
+      "verification_status": "CANDIDATE"
+    },
+    {
+      "law_id": "JUST-docs-administrative-prevention-and-treatment-of-infections-diseases-readme-md",
+      "title": "中华人民共和国传染病防治法",
+      "category": "administrative",
+      "candidate_path": "docs/administrative/prevention-and-treatment-of-infections-diseases/README.md",
+      "candidate_source": "just-laws",
+      "topic_exists": false,
+      "topic_id": null,
+      "verification_status": "CANDIDATE"
+    },
+    {
+      "law_id": "JUST-docs-administrative-prisons-law-readme-md",
+      "title": "中华人民共和国监狱法",
+      "category": "administrative",
+      "candidate_path": "docs/administrative/prisons-law/README.md",
+      "candidate_source": "just-laws",
+      "topic_exists": false,
+      "topic_id": null,
+      "verification_status": "CANDIDATE"
+    },
+    {
+      "law_id": "JUST-docs-administrative-private-education-promotion-law-readme-md",
+      "title": "中华人民共和国民办教育促进法",
+      "category": "administrative",
+      "candidate_path": "docs/administrative/private-education-promotion-law/README.md",
+      "candidate_source": "just-laws",
+      "topic_exists": false,
+      "topic_id": null,
+      "verification_status": "CANDIDATE"
+    },
+    {
+      "law_id": "JUST-docs-administrative-promotion-of-transformation-of-scientific-and-technological-achievements-law-readme-md",
+      "title": "中华人民共和国促进科技成果转化法",
+      "category": "administrative",
+      "candidate_path": "docs/administrative/promotion-of-transformation-of-scientific-and-technological-achievements-law/README.md",
+      "candidate_source": "just-laws",
+      "topic_exists": false,
+      "topic_id": null,
+      "verification_status": "CANDIDATE"
+    },
+    {
+      "law_id": "JUST-docs-administrative-protection-of-wildlife-readme-md",
+      "title": "中华人民共和国野生动物保护法",
+      "category": "administrative",
+      "candidate_path": "docs/administrative/protection-of-wildlife/README.md",
+      "candidate_source": "just-laws",
+      "topic_exists": false,
+      "topic_id": null,
+      "verification_status": "CANDIDATE"
+    },
+    {
+      "law_id": "JUST-docs-administrative-public-cultural-services-guarantee-law-readme-md",
+      "title": "中华人民共和国公共文化服务保障法",
+      "category": "administrative",
+      "candidate_path": "docs/administrative/public-cultural-services-guarantee-law/README.md",
+      "candidate_source": "just-laws",
+      "topic_exists": false,
+      "topic_id": null,
+      "verification_status": "CANDIDATE"
+    },
+    {
+      "law_id": "JUST-docs-administrative-public-health-emergency-response-law-readme-md",
+      "title": "中华人民共和国突发公共卫生事件应对法",
+      "category": "administrative",
+      "candidate_path": "docs/administrative/public-health-emergency-response-law/README.md",
+      "candidate_source": "just-laws",
+      "topic_exists": false,
+      "topic_id": null,
+      "verification_status": "CANDIDATE"
+    },
+    {
+      "law_id": "JUST-docs-administrative-public-library-law-readme-md",
+      "title": "中华人民共和国公共图书馆法",
+      "category": "administrative",
+      "candidate_path": "docs/administrative/public-library-law/README.md",
+      "candidate_source": "just-laws",
+      "topic_exists": false,
+      "topic_id": null,
+      "verification_status": "CANDIDATE"
+    },
+    {
+      "law_id": "JUST-docs-administrative-qinghai-tibet-plateau-ecological-protection-law-readme-md",
+      "title": "中华人民共和国青藏高原生态保护法",
+      "category": "administrative",
+      "candidate_path": "docs/administrative/qinghai-tibet-plateau-ecological-protection-law/README.md",
+      "candidate_source": "just-laws",
+      "topic_exists": false,
+      "topic_id": null,
+      "verification_status": "CANDIDATE"
+    },
+    {
+      "law_id": "JUST-docs-administrative-radioactive-pollution-prevention-and-control-law-readme-md",
+      "title": "中华人民共和国放射性污染防治法",
+      "category": "administrative",
+      "candidate_path": "docs/administrative/radioactive-pollution-prevention-and-control-law/README.md",
+      "candidate_source": "just-laws",
+      "topic_exists": false,
+      "topic_id": null,
+      "verification_status": "CANDIDATE"
+    },
+    {
+      "law_id": "JUST-docs-administrative-reservists-law-readme-md",
+      "title": "中华人民共和国预备役人员法",
+      "category": "administrative",
+      "candidate_path": "docs/administrative/reservists-law/README.md",
+      "candidate_source": "just-laws",
+      "topic_exists": false,
+      "topic_id": null,
+      "verification_status": "CANDIDATE"
+    },
+    {
+      "law_id": "JUST-docs-administrative-resident-identity-card-law-readme-md",
+      "title": "中华人民共和国居民身份证法",
+      "category": "administrative",
+      "candidate_path": "docs/administrative/resident-identity-card-law/README.md",
+      "candidate_source": "just-laws",
+      "topic_exists": false,
+      "topic_id": null,
+      "verification_status": "CANDIDATE"
+    },
+    {
+      "law_id": "JUST-docs-administrative-resolution-approving-state-council-interim-measures-on-placement-of-old-weak-sick-and-disabled-cadres-readme-md",
+      "title": "全国人民代表大会常务委员会关于批准《国务院关于安置老弱病残干部的暂行办法》的决议",
+      "category": "administrative",
+      "candidate_path": "docs/administrative/resolution-approving-state-council-interim-measures-on-placement-of-old-weak-sick-and-disabled-cadres/README.md",
+      "candidate_source": "just-laws",
+      "topic_exists": false,
+      "topic_id": null,
+      "verification_status": "CANDIDATE"
+    },
+    {
+      "law_id": "JUST-docs-administrative-road-traffic-safety-law-readme-md",
+      "title": "中华人民共和国道路交通安全法",
+      "category": "administrative",
+      "candidate_path": "docs/administrative/road-traffic-safety-law/README.md",
+      "candidate_source": "just-laws",
+      "topic_exists": false,
+      "topic_id": null,
+      "verification_status": "CANDIDATE"
+    },
+    {
+      "law_id": "JUST-docs-administrative-science-and-technology-progress-law-readme-md",
+      "title": "中华人民共和国科学技术进步法",
+      "category": "administrative",
+      "candidate_path": "docs/administrative/science-and-technology-progress-law/README.md",
+      "candidate_source": "just-laws",
+      "topic_exists": false,
+      "topic_id": null,
+      "verification_status": "CANDIDATE"
+    },
+    {
+      "law_id": "JUST-docs-administrative-soil-pollution-prevention-and-control-law-readme-md",
+      "title": "中华人民共和国土壤污染防治法",
+      "category": "administrative",
+      "candidate_path": "docs/administrative/soil-pollution-prevention-and-control-law/README.md",
+      "candidate_source": "just-laws",
+      "topic_exists": false,
+      "topic_id": null,
+      "verification_status": "CANDIDATE"
+    },
+    {
+      "law_id": "JUST-docs-administrative-solid-waste-pollution-prevention-and-control-law-readme-md",
+      "title": "中华人民共和国固体废物污染环境防治法",
+      "category": "administrative",
+      "candidate_path": "docs/administrative/solid-waste-pollution-prevention-and-control-law/README.md",
+      "candidate_source": "just-laws",
+      "topic_exists": false,
+      "topic_id": null,
+      "verification_status": "CANDIDATE"
+    },
+    {
+      "law_id": "JUST-docs-administrative-sports-law-readme-md",
+      "title": "中华人民共和国体育法",
+      "category": "administrative",
+      "candidate_path": "docs/administrative/sports-law/README.md",
+      "candidate_source": "just-laws",
+      "topic_exists": false,
+      "topic_id": null,
+      "verification_status": "CANDIDATE"
+    },
+    {
+      "law_id": "JUST-docs-administrative-state-secrets-law-readme-md",
+      "title": "中华人民共和国保守国家秘密法",
+      "category": "administrative",
+      "candidate_path": "docs/administrative/state-secrets-law/README.md",
+      "candidate_source": "just-laws",
+      "topic_exists": false,
+      "topic_id": null,
+      "verification_status": "CANDIDATE"
+    },
+    {
+      "law_id": "JUST-docs-administrative-status-and-rights-protection-of-military-personnel-law-readme-md",
+      "title": "中华人民共和国军人地位和权益保障法",
+      "category": "administrative",
+      "candidate_path": "docs/administrative/status-and-rights-protection-of-military-personnel-law/README.md",
+      "candidate_source": "just-laws",
+      "topic_exists": false,
+      "topic_id": null,
+      "verification_status": "CANDIDATE"
+    },
+    {
+      "law_id": "JUST-docs-administrative-surveying-and-mapping-law-readme-md",
+      "title": "中华人民共和国测绘法",
+      "category": "administrative",
+      "candidate_path": "docs/administrative/surveying-and-mapping-law/README.md",
+      "candidate_source": "just-laws",
+      "topic_exists": false,
+      "topic_id": null,
+      "verification_status": "CANDIDATE"
+    },
+    {
+      "law_id": "JUST-docs-administrative-teachers-law-readme-md",
+      "title": "中华人民共和国教师法",
+      "category": "administrative",
+      "candidate_path": "docs/administrative/teachers-law/README.md",
+      "candidate_source": "just-laws",
+      "topic_exists": false,
+      "topic_id": null,
+      "verification_status": "CANDIDATE"
+    },
+    {
+      "law_id": "JUST-docs-administrative-traditional-chinese-medicine-law-readme-md",
+      "title": "中华人民共和国中医药法",
+      "category": "administrative",
+      "candidate_path": "docs/administrative/traditional-chinese-medicine-law/README.md",
+      "candidate_source": "just-laws",
+      "topic_exists": false,
+      "topic_id": null,
+      "verification_status": "CANDIDATE"
+    },
+    {
+      "law_id": "JUST-docs-administrative-urban-and-rural-planning-law-readme-md",
+      "title": "中华人民共和国城乡规划法",
+      "category": "administrative",
+      "candidate_path": "docs/administrative/urban-and-rural-planning-law/README.md",
+      "candidate_source": "just-laws",
+      "topic_exists": true,
+      "topic_id": "urban-rural-planning-law",
+      "verification_status": "CANDIDATE"
+    },
+    {
+      "law_id": "JUST-docs-administrative-urban-real-estate-administration-law-readme-md",
+      "title": "中华人民共和国城市房地产管理法",
+      "category": "administrative",
+      "candidate_path": "docs/administrative/urban-real-estate-administration-law/README.md",
+      "candidate_source": "just-laws",
+      "topic_exists": false,
+      "topic_id": null,
+      "verification_status": "CANDIDATE"
+    },
+    {
+      "law_id": "JUST-docs-administrative-vaccine-administration-law-readme-md",
+      "title": "中华人民共和国疫苗管理法",
+      "category": "administrative",
+      "candidate_path": "docs/administrative/vaccine-administration-law/README.md",
+      "candidate_source": "just-laws",
+      "topic_exists": false,
+      "topic_id": null,
+      "verification_status": "CANDIDATE"
+    },
+    {
+      "law_id": "JUST-docs-administrative-vocational-education-law-readme-md",
+      "title": "中华人民共和国职业教育法",
+      "category": "administrative",
+      "candidate_path": "docs/administrative/vocational-education-law/README.md",
+      "candidate_source": "just-laws",
+      "topic_exists": false,
+      "topic_id": null,
+      "verification_status": "CANDIDATE"
+    },
+    {
+      "law_id": "JUST-docs-administrative-water-pollution-prevention-and-control-law-readme-md",
+      "title": "中华人民共和国水污染防治法",
+      "category": "administrative",
+      "candidate_path": "docs/administrative/water-pollution-prevention-and-control-law/README.md",
+      "candidate_source": "just-laws",
+      "topic_exists": false,
+      "topic_id": null,
+      "verification_status": "CANDIDATE"
+    },
+    {
+      "law_id": "JUST-docs-civil-and-commercial-auction-law-readme-md",
+      "title": "中华人民共和国拍卖法",
+      "category": "civil-and-commercial",
+      "candidate_path": "docs/civil-and-commercial/auction-law/README.md",
+      "candidate_source": "just-laws",
+      "topic_exists": false,
+      "topic_id": null,
+      "verification_status": "CANDIDATE"
+    },
+    {
+      "law_id": "JUST-docs-civil-and-commercial-bidding-law-readme-md",
+      "title": "中华人民共和国招标投标法",
+      "category": "civil-and-commercial",
+      "candidate_path": "docs/civil-and-commercial/bidding-law/README.md",
+      "candidate_source": "just-laws",
+      "topic_exists": true,
+      "topic_id": "tendering-bidding-law",
+      "verification_status": "CANDIDATE"
+    },
+    {
+      "law_id": "JUST-docs-civil-and-commercial-bill-law-readme-md",
+      "title": "中华人民共和国票据法",
+      "category": "civil-and-commercial",
+      "candidate_path": "docs/civil-and-commercial/bill-law/README.md",
+      "candidate_source": "just-laws",
+      "topic_exists": false,
+      "topic_id": null,
+      "verification_status": "CANDIDATE"
+    },
+    {
+      "law_id": "JUST-docs-civil-and-commercial-civil-code-readme-md",
+      "title": "中华人民共和国民法典",
+      "category": "civil-and-commercial",
+      "candidate_path": "docs/civil-and-commercial/civil-code/README.md",
+      "candidate_source": "just-laws",
+      "topic_exists": true,
+      "topic_id": "civil-code",
+      "verification_status": "OFFICIAL_META"
+    },
+    {
+      "law_id": "JUST-docs-civil-and-commercial-commercial-bank-law-readme-md",
+      "title": "中华人民共和国商业银行法",
+      "category": "civil-and-commercial",
+      "candidate_path": "docs/civil-and-commercial/commercial-bank-law/README.md",
+      "candidate_source": "just-laws",
+      "topic_exists": false,
+      "topic_id": null,
+      "verification_status": "CANDIDATE"
+    },
+    {
+      "law_id": "JUST-docs-civil-and-commercial-company-law-readme-md",
+      "title": "中华人民共和国公司法",
+      "category": "civil-and-commercial",
+      "candidate_path": "docs/civil-and-commercial/company-law/README.md",
+      "candidate_source": "just-laws",
+      "topic_exists": true,
+      "topic_id": "company-law",
+      "verification_status": "OFFICIAL_META"
+    },
+    {
+      "law_id": "JUST-docs-civil-and-commercial-copyright-law-readme-md",
+      "title": "中华人民共和国著作权法",
+      "category": "civil-and-commercial",
+      "candidate_path": "docs/civil-and-commercial/copyright-law/README.md",
+      "candidate_source": "just-laws",
+      "topic_exists": false,
+      "topic_id": null,
+      "verification_status": "CANDIDATE"
+    },
+    {
+      "law_id": "JUST-docs-civil-and-commercial-electronic-signature-law-readme-md",
+      "title": "中华人民共和国电子签名法",
+      "category": "civil-and-commercial",
+      "candidate_path": "docs/civil-and-commercial/electronic-signature-law/README.md",
+      "candidate_source": "just-laws",
+      "topic_exists": false,
+      "topic_id": null,
+      "verification_status": "CANDIDATE"
+    },
+    {
+      "law_id": "JUST-docs-civil-and-commercial-enterprise-bankruptcy-law-readme-md",
+      "title": "中华人民共和国企业破产法",
+      "category": "civil-and-commercial",
+      "candidate_path": "docs/civil-and-commercial/enterprise-bankruptcy-law/README.md",
+      "candidate_source": "just-laws",
+      "topic_exists": false,
+      "topic_id": null,
+      "verification_status": "CANDIDATE"
+    },
+    {
+      "law_id": "JUST-docs-civil-and-commercial-farmer-specialized-cooperatives-law-readme-md",
+      "title": "中华人民共和国农民专业合作社法",
+      "category": "civil-and-commercial",
+      "candidate_path": "docs/civil-and-commercial/farmer-specialized-cooperatives-law/README.md",
+      "candidate_source": "just-laws",
+      "topic_exists": false,
+      "topic_id": null,
+      "verification_status": "CANDIDATE"
+    },
+    {
+      "law_id": "JUST-docs-civil-and-commercial-futures-and-derivatives-law-readme-md",
+      "title": "中华人民共和国期货和衍生品法",
+      "category": "civil-and-commercial",
+      "candidate_path": "docs/civil-and-commercial/futures-and-derivatives-law/README.md",
+      "candidate_source": "just-laws",
+      "topic_exists": false,
+      "topic_id": null,
+      "verification_status": "CANDIDATE"
+    },
+    {
+      "law_id": "JUST-docs-civil-and-commercial-insurance-law-readme-md",
+      "title": "中华人民共和国保险法",
+      "category": "civil-and-commercial",
+      "candidate_path": "docs/civil-and-commercial/insurance-law/README.md",
+      "candidate_source": "just-laws",
+      "topic_exists": false,
+      "topic_id": null,
+      "verification_status": "CANDIDATE"
+    },
+    {
+      "law_id": "JUST-docs-civil-and-commercial-law-application-to-foreign-related-civil-relations-readme-md",
+      "title": "中华人民共和国涉外民事关系法律适用法",
+      "category": "civil-and-commercial",
+      "candidate_path": "docs/civil-and-commercial/law-application-to-foreign-related-civil-relations/README.md",
+      "candidate_source": "just-laws",
+      "topic_exists": false,
+      "topic_id": null,
+      "verification_status": "CANDIDATE"
+    },
+    {
+      "law_id": "JUST-docs-civil-and-commercial-maritime-law-readme-md",
+      "title": "中华人民共和国海商法",
+      "category": "civil-and-commercial",
+      "candidate_path": "docs/civil-and-commercial/maritime-law/README.md",
+      "candidate_source": "just-laws",
+      "topic_exists": false,
+      "topic_id": null,
+      "verification_status": "CANDIDATE"
+    },
+    {
+      "law_id": "JUST-docs-civil-and-commercial-partnership-enterprise-law-readme-md",
+      "title": "中华人民共和国合伙企业法",
+      "category": "civil-and-commercial",
+      "candidate_path": "docs/civil-and-commercial/partnership-enterprise-law/README.md",
+      "candidate_source": "just-laws",
+      "topic_exists": false,
+      "topic_id": null,
+      "verification_status": "CANDIDATE"
+    },
+    {
+      "law_id": "JUST-docs-civil-and-commercial-patent-law-readme-md",
+      "title": "中华人民共和国专利法",
+      "category": "civil-and-commercial",
+      "candidate_path": "docs/civil-and-commercial/patent-law/README.md",
+      "candidate_source": "just-laws",
+      "topic_exists": false,
+      "topic_id": null,
+      "verification_status": "CANDIDATE"
+    },
+    {
+      "law_id": "JUST-docs-civil-and-commercial-protection-of-the-rights-and-interests-of-consumers-readme-md",
+      "title": "中华人民共和国消费者权益保护法",
+      "category": "civil-and-commercial",
+      "candidate_path": "docs/civil-and-commercial/protection-of-the-rights-and-interests-of-consumers/README.md",
+      "candidate_source": "just-laws",
+      "topic_exists": false,
+      "topic_id": null,
+      "verification_status": "CANDIDATE"
+    },
+    {
+      "law_id": "JUST-docs-civil-and-commercial-rural-collective-economic-organizations-law-readme-md",
+      "title": "中华人民共和国农村集体经济组织法",
+      "category": "civil-and-commercial",
+      "candidate_path": "docs/civil-and-commercial/rural-collective-economic-organizations-law/README.md",
+      "candidate_source": "just-laws",
+      "topic_exists": false,
+      "topic_id": null,
+      "verification_status": "CANDIDATE"
+    },
+    {
+      "law_id": "JUST-docs-civil-and-commercial-rural-land-contract-law-readme-md",
+      "title": "中华人民共和国农村土地承包法",
+      "category": "civil-and-commercial",
+      "candidate_path": "docs/civil-and-commercial/rural-land-contract-law/README.md",
+      "candidate_source": "just-laws",
+      "topic_exists": false,
+      "topic_id": null,
+      "verification_status": "CANDIDATE"
+    },
+    {
+      "law_id": "JUST-docs-civil-and-commercial-securities-investment-fund-law-readme-md",
+      "title": "中华人民共和国证券投资基金法",
+      "category": "civil-and-commercial",
+      "candidate_path": "docs/civil-and-commercial/securities-investment-fund-law/README.md",
+      "candidate_source": "just-laws",
+      "topic_exists": false,
+      "topic_id": null,
+      "verification_status": "CANDIDATE"
+    },
+    {
+      "law_id": "JUST-docs-civil-and-commercial-securities-law-readme-md",
+      "title": "中华人民共和国证券法",
+      "category": "civil-and-commercial",
+      "candidate_path": "docs/civil-and-commercial/securities-law/README.md",
+      "candidate_source": "just-laws",
+      "topic_exists": false,
+      "topic_id": null,
+      "verification_status": "CANDIDATE"
+    },
+    {
+      "law_id": "JUST-docs-civil-and-commercial-sole-proprietorship-enterprise-law-readme-md",
+      "title": "中华人民共和国个人独资企业法",
+      "category": "civil-and-commercial",
+      "candidate_path": "docs/civil-and-commercial/sole-proprietorship-enterprise-law/README.md",
+      "candidate_source": "just-laws",
+      "topic_exists": false,
+      "topic_id": null,
+      "verification_status": "CANDIDATE"
+    },
+    {
+      "law_id": "JUST-docs-civil-and-commercial-trademark-law-readme-md",
+      "title": "中华人民共和国商标法",
+      "category": "civil-and-commercial",
+      "candidate_path": "docs/civil-and-commercial/trademark-law/README.md",
+      "candidate_source": "just-laws",
+      "topic_exists": false,
+      "topic_id": null,
+      "verification_status": "CANDIDATE"
+    },
+    {
+      "law_id": "JUST-docs-civil-and-commercial-trust-law-readme-md",
+      "title": "中华人民共和国信托法",
+      "category": "civil-and-commercial",
+      "candidate_path": "docs/civil-and-commercial/trust-law/README.md",
+      "candidate_source": "just-laws",
+      "topic_exists": false,
+      "topic_id": null,
+      "verification_status": "CANDIDATE"
+    },
+    {
+      "law_id": "JUST-docs-constitution-readme-md",
+      "title": "中华人民共和国宪法",
+      "category": "constitution",
+      "candidate_path": "docs/constitution/README.md",
+      "candidate_source": "just-laws",
+      "topic_exists": false,
+      "topic_id": null,
+      "verification_status": "CANDIDATE"
+    },
+    {
+      "law_id": "JUST-docs-constitutional-relevance-anti-foreign-sanctions-law-readme-md",
+      "title": "中华人民共和国反外国制裁法",
+      "category": "constitutional-relevance",
+      "candidate_path": "docs/constitutional-relevance/anti-foreign-sanctions-law/README.md",
+      "candidate_source": "just-laws",
+      "topic_exists": false,
+      "topic_id": null,
+      "verification_status": "CANDIDATE"
+    },
+    {
+      "law_id": "JUST-docs-constitutional-relevance-anti-secession-law-readme-md",
+      "title": "反分裂国家法",
+      "category": "constitutional-relevance",
+      "candidate_path": "docs/constitutional-relevance/anti-secession-law/README.md",
+      "candidate_source": "just-laws",
+      "topic_exists": false,
+      "topic_id": null,
+      "verification_status": "CANDIDATE"
+    },
+    {
+      "law_id": "JUST-docs-constitutional-relevance-assembly-procession-demonstration-law-readme-md",
+      "title": "中华人民共和国集会游行示威法",
+      "category": "constitutional-relevance",
+      "candidate_path": "docs/constitutional-relevance/assembly-procession-demonstration-law/README.md",
+      "candidate_source": "just-laws",
+      "topic_exists": false,
+      "topic_id": null,
+      "verification_status": "CANDIDATE"
+    },
+    {
+      "law_id": "JUST-docs-constitutional-relevance-consular-privileges-and-immunities-regulations-readme-md",
+      "title": "中华人民共和国领事特权与豁免条例",
+      "category": "constitutional-relevance",
+      "candidate_path": "docs/constitutional-relevance/consular-privileges-and-immunities-regulations/README.md",
+      "candidate_source": "just-laws",
+      "topic_exists": false,
+      "topic_id": null,
+      "verification_status": "CANDIDATE"
+    },
+    {
+      "law_id": "JUST-docs-constitutional-relevance-decision-on-establishing-maritime-courts-in-coastal-port-cities-readme-md",
+      "title": "全国人民代表大会常务委员会关于在沿海港口城市设立海事法院的决定",
+      "category": "constitutional-relevance",
+      "candidate_path": "docs/constitutional-relevance/decision-on-establishing-maritime-courts-in-coastal-port-cities/README.md",
+      "candidate_source": "just-laws",
+      "topic_exists": false,
+      "topic_id": null,
+      "verification_status": "CANDIDATE"
+    },
+    {
+      "law_id": "JUST-docs-constitutional-relevance-decision-on-military-honorary-medal-regulations-readme-md",
+      "title": "全国人民代表大会常务委员会关于批准中央军事委员会《关于授予军队离休干部中国人民解放军功勋荣誉章的规定》的决定",
+      "category": "constitutional-relevance",
+      "candidate_path": "docs/constitutional-relevance/decision-on-military-honorary-medal-regulations/README.md",
+      "candidate_source": "just-laws",
+      "topic_exists": false,
+      "topic_id": null,
+      "verification_status": "CANDIDATE"
+    },
+    {
+      "law_id": "JUST-docs-constitutional-relevance-diplomatic-privileges-and-immunities-regulations-readme-md",
+      "title": "中华人民共和国外交特权与豁免条例",
+      "category": "constitutional-relevance",
+      "candidate_path": "docs/constitutional-relevance/diplomatic-privileges-and-immunities-regulations/README.md",
+      "candidate_source": "just-laws",
+      "topic_exists": false,
+      "topic_id": null,
+      "verification_status": "CANDIDATE"
+    },
+    {
+      "law_id": "JUST-docs-constitutional-relevance-electoral-law-of-national-and-local-people-s-congresses-readme-md",
+      "title": "中华人民共和国全国人民代表大会和地方各级人民代表大会选举法",
+      "category": "constitutional-relevance",
+      "candidate_path": "docs/constitutional-relevance/electoral-law-of-national-and-local-people-s-congresses/README.md",
+      "candidate_source": "just-laws",
+      "topic_exists": false,
+      "topic_id": null,
+      "verification_status": "CANDIDATE"
+    },
+    {
+      "law_id": "JUST-docs-constitutional-relevance-ethnic-unity-and-progress-promotion-law-readme-md",
+      "title": "中华人民共和国民族团结进步促进法",
+      "category": "constitutional-relevance",
+      "candidate_path": "docs/constitutional-relevance/ethnic-unity-and-progress-promotion-law/README.md",
+      "candidate_source": "just-laws",
+      "topic_exists": false,
+      "topic_id": null,
+      "verification_status": "CANDIDATE"
+    },
+    {
+      "law_id": "JUST-docs-constitutional-relevance-exclusive-economic-zone-and-continental-shelf-law-readme-md",
+      "title": "中华人民共和国专属经济区和大陆架法",
+      "category": "constitutional-relevance",
+      "candidate_path": "docs/constitutional-relevance/exclusive-economic-zone-and-continental-shelf-law/README.md",
+      "candidate_source": "just-laws",
+      "topic_exists": false,
+      "topic_id": null,
+      "verification_status": "CANDIDATE"
+    },
+    {
+      "law_id": "JUST-docs-constitutional-relevance-foreign-central-bank-property-immunity-law-readme-md",
+      "title": "中华人民共和国外国中央银行财产司法强制措施豁免法",
+      "category": "constitutional-relevance",
+      "candidate_path": "docs/constitutional-relevance/foreign-central-bank-property-immunity-law/README.md",
+      "candidate_source": "just-laws",
+      "topic_exists": false,
+      "topic_id": null,
+      "verification_status": "CANDIDATE"
+    },
+    {
+      "law_id": "JUST-docs-constitutional-relevance-foreign-relations-law-readme-md",
+      "title": "中华人民共和国对外关系法",
+      "category": "constitutional-relevance",
+      "candidate_path": "docs/constitutional-relevance/foreign-relations-law/README.md",
+      "candidate_source": "just-laws",
+      "topic_exists": false,
+      "topic_id": null,
+      "verification_status": "CANDIDATE"
+    },
+    {
+      "law_id": "JUST-docs-constitutional-relevance-foreign-state-immunity-law-readme-md",
+      "title": "中华人民共和国外国国家豁免法",
+      "category": "constitutional-relevance",
+      "candidate_path": "docs/constitutional-relevance/foreign-state-immunity-law/README.md",
+      "candidate_source": "just-laws",
+      "topic_exists": false,
+      "topic_id": null,
+      "verification_status": "CANDIDATE"
+    },
+    {
+      "law_id": "JUST-docs-constitutional-relevance-heroes-and-martyrs-protection-law-readme-md",
+      "title": "中华人民共和国英雄烈士保护法",
+      "category": "constitutional-relevance",
+      "candidate_path": "docs/constitutional-relevance/heroes-and-martyrs-protection-law/README.md",
+      "candidate_source": "just-laws",
+      "topic_exists": false,
+      "topic_id": null,
+      "verification_status": "CANDIDATE"
+    },
+    {
+      "law_id": "JUST-docs-constitutional-relevance-hong-kong-garrison-law-readme-md",
+      "title": "中华人民共和国香港特别行政区驻军法",
+      "category": "constitutional-relevance",
+      "candidate_path": "docs/constitutional-relevance/hong-kong-garrison-law/README.md",
+      "candidate_source": "just-laws",
+      "topic_exists": false,
+      "topic_id": null,
+      "verification_status": "CANDIDATE"
+    },
+    {
+      "law_id": "JUST-docs-constitutional-relevance-hong-kong-national-security-law-readme-md",
+      "title": "中华人民共和国香港特别行政区维护国家安全法",
+      "category": "constitutional-relevance",
+      "candidate_path": "docs/constitutional-relevance/hong-kong-national-security-law/README.md",
+      "candidate_source": "just-laws",
+      "topic_exists": false,
+      "topic_id": null,
+      "verification_status": "CANDIDATE"
+    },
+    {
+      "law_id": "JUST-docs-constitutional-relevance-hong-kong-special-administrative-region-basic-law-readme-md",
+      "title": "中华人民共和国香港特别行政区基本法",
+      "category": "constitutional-relevance",
+      "candidate_path": "docs/constitutional-relevance/hong-kong-special-administrative-region-basic-law/README.md",
+      "candidate_source": "just-laws",
+      "topic_exists": false,
+      "topic_id": null,
+      "verification_status": "CANDIDATE"
+    },
+    {
+      "law_id": "JUST-docs-constitutional-relevance-judges-law-readme-md",
+      "title": "中华人民共和国法官法",
+      "category": "constitutional-relevance",
+      "candidate_path": "docs/constitutional-relevance/judges-law/README.md",
+      "candidate_source": "just-laws",
+      "topic_exists": false,
+      "topic_id": null,
+      "verification_status": "CANDIDATE"
+    },
+    {
+      "law_id": "JUST-docs-constitutional-relevance-land-border-law-readme-md",
+      "title": "中华人民共和国陆地国界法",
+      "category": "constitutional-relevance",
+      "candidate_path": "docs/constitutional-relevance/land-border-law/README.md",
+      "candidate_source": "just-laws",
+      "topic_exists": false,
+      "topic_id": null,
+      "verification_status": "CANDIDATE"
+    },
+    {
+      "law_id": "JUST-docs-constitutional-relevance-law-on-legal-publicity-and-education-readme-md",
+      "title": "中华人民共和国法治宣传教育法",
+      "category": "constitutional-relevance",
+      "candidate_path": "docs/constitutional-relevance/law-on-legal-publicity-and-education/README.md",
+      "candidate_source": "just-laws",
+      "topic_exists": false,
+      "topic_id": null,
+      "verification_status": "CANDIDATE"
+    },
+    {
+      "law_id": "JUST-docs-constitutional-relevance-law-on-regional-national-autonomy-readme-md",
+      "title": "中华人民共和国民族区域自治法",
+      "category": "constitutional-relevance",
+      "candidate_path": "docs/constitutional-relevance/law-on-regional-national-autonomy/README.md",
+      "candidate_source": "just-laws",
+      "topic_exists": false,
+      "topic_id": null,
+      "verification_status": "CANDIDATE"
+    },
+    {
+      "law_id": "JUST-docs-constitutional-relevance-legislation-law-readme-md",
+      "title": "中华人民共和国立法法",
+      "category": "constitutional-relevance",
+      "candidate_path": "docs/constitutional-relevance/legislation-law/README.md",
+      "candidate_source": "just-laws",
+      "topic_exists": false,
+      "topic_id": null,
+      "verification_status": "CANDIDATE"
+    },
+    {
+      "law_id": "JUST-docs-constitutional-relevance-local-people-congress-government-organization-law-readme-md",
+      "title": "中华人民共和国地方各级人民代表大会和地方各级人民政府组织法",
+      "category": "constitutional-relevance",
+      "candidate_path": "docs/constitutional-relevance/local-people-congress-government-organization-law/README.md",
+      "candidate_source": "just-laws",
+      "topic_exists": false,
+      "topic_id": null,
+      "verification_status": "CANDIDATE"
+    },
+    {
+      "law_id": "JUST-docs-constitutional-relevance-macau-garrison-law-readme-md",
+      "title": "中华人民共和国澳门特别行政区驻军法",
+      "category": "constitutional-relevance",
+      "candidate_path": "docs/constitutional-relevance/macau-garrison-law/README.md",
+      "candidate_source": "just-laws",
+      "topic_exists": false,
+      "topic_id": null,
+      "verification_status": "CANDIDATE"
+    },
+    {
+      "law_id": "JUST-docs-constitutional-relevance-macau-special-administrative-region-basic-law-readme-md",
+      "title": "中华人民共和国澳门特别行政区基本法",
+      "category": "constitutional-relevance",
+      "candidate_path": "docs/constitutional-relevance/macau-special-administrative-region-basic-law/README.md",
+      "candidate_source": "just-laws",
+      "topic_exists": false,
+      "topic_id": null,
+      "verification_status": "CANDIDATE"
+    },
+    {
+      "law_id": "JUST-docs-constitutional-relevance-martial-law-readme-md",
+      "title": "中华人民共和国戒严法",
+      "category": "constitutional-relevance",
+      "candidate_path": "docs/constitutional-relevance/martial-law/README.md",
+      "candidate_source": "just-laws",
+      "topic_exists": false,
+      "topic_id": null,
+      "verification_status": "CANDIDATE"
+    },
+    {
+      "law_id": "JUST-docs-constitutional-relevance-national-and-local-people-s-congresses-representative-law-readme-md",
+      "title": "中华人民共和国全国人民代表大会和地方各级人民代表大会代表法",
+      "category": "constitutional-relevance",
+      "candidate_path": "docs/constitutional-relevance/national-and-local-people-s-congresses-representative-law/README.md",
+      "candidate_source": "just-laws",
+      "topic_exists": false,
+      "topic_id": null,
+      "verification_status": "CANDIDATE"
+    },
+    {
+      "law_id": "JUST-docs-constitutional-relevance-national-anthem-law-readme-md",
+      "title": "中华人民共和国国歌法",
+      "category": "constitutional-relevance",
+      "candidate_path": "docs/constitutional-relevance/national-anthem-law/README.md",
+      "candidate_source": "just-laws",
+      "topic_exists": false,
+      "topic_id": null,
+      "verification_status": "CANDIDATE"
+    },
+    {
+      "law_id": "JUST-docs-constitutional-relevance-national-defense-law-readme-md",
+      "title": "中华人民共和国国防法",
+      "category": "constitutional-relevance",
+      "candidate_path": "docs/constitutional-relevance/national-defense-law/README.md",
+      "candidate_source": "just-laws",
+      "topic_exists": false,
+      "topic_id": null,
+      "verification_status": "CANDIDATE"
+    },
+    {
+      "law_id": "JUST-docs-constitutional-relevance-national-emblem-law-readme-md",
+      "title": "中华人民共和国国徽法",
+      "category": "constitutional-relevance",
+      "candidate_path": "docs/constitutional-relevance/national-emblem-law/README.md",
+      "candidate_source": "just-laws",
+      "topic_exists": false,
+      "topic_id": null,
+      "verification_status": "CANDIDATE"
+    },
+    {
+      "law_id": "JUST-docs-constitutional-relevance-national-flag-law-readme-md",
+      "title": "中华人民共和国国旗法",
+      "category": "constitutional-relevance",
+      "candidate_path": "docs/constitutional-relevance/national-flag-law/README.md",
+      "candidate_source": "just-laws",
+      "topic_exists": false,
+      "topic_id": null,
+      "verification_status": "CANDIDATE"
+    },
+    {
+      "law_id": "JUST-docs-constitutional-relevance-national-language-law-readme-md",
+      "title": "中华人民共和国国家通用语言文字法",
+      "category": "constitutional-relevance",
+      "candidate_path": "docs/constitutional-relevance/national-language-law/README.md",
+      "candidate_source": "just-laws",
+      "topic_exists": false,
+      "topic_id": null,
+      "verification_status": "CANDIDATE"
+    },
+    {
+      "law_id": "JUST-docs-constitutional-relevance-national-medal-and-national-honorary-title-law-readme-md",
+      "title": "中华人民共和国国家勋章和国家荣誉称号法",
+      "category": "constitutional-relevance",
+      "candidate_path": "docs/constitutional-relevance/national-medal-and-national-honorary-title-law/README.md",
+      "candidate_source": "just-laws",
+      "topic_exists": false,
+      "topic_id": null,
+      "verification_status": "CANDIDATE"
+    },
+    {
+      "law_id": "JUST-docs-constitutional-relevance-national-people-s-conference-rules-of-procedure-readme-md",
+      "title": "中华人民共和国全国人民代表大会议事规则",
+      "category": "constitutional-relevance",
+      "candidate_path": "docs/constitutional-relevance/national-people-s-conference-rules-of-procedure/README.md",
+      "candidate_source": "just-laws",
+      "topic_exists": false,
+      "topic_id": null,
+      "verification_status": "CANDIDATE"
+    },
+    {
+      "law_id": "JUST-docs-constitutional-relevance-national-security-law-readme-md",
+      "title": "中华人民共和国国家安全法",
+      "category": "constitutional-relevance",
+      "candidate_path": "docs/constitutional-relevance/national-security-law/README.md",
+      "candidate_source": "just-laws",
+      "topic_exists": false,
+      "topic_id": null,
+      "verification_status": "CANDIDATE"
+    },
+    {
+      "law_id": "JUST-docs-constitutional-relevance-nationality-law-readme-md",
+      "title": "中华人民共和国国籍法",
+      "category": "constitutional-relevance",
+      "candidate_path": "docs/constitutional-relevance/nationality-law/README.md",
+      "candidate_source": "just-laws",
+      "topic_exists": false,
+      "topic_id": null,
+      "verification_status": "CANDIDATE"
+    },
+    {
+      "law_id": "JUST-docs-constitutional-relevance-npc-organization-law-readme-md",
+      "title": "中华人民共和国全国人民代表大会组织法",
+      "category": "constitutional-relevance",
+      "candidate_path": "docs/constitutional-relevance/npc-organization-law/README.md",
+      "candidate_source": "just-laws",
+      "topic_exists": false,
+      "topic_id": null,
+      "verification_status": "CANDIDATE"
+    },
+    {
+      "law_id": "JUST-docs-constitutional-relevance-npc-standing-committee-rules-readme-md",
+      "title": "中华人民共和国全国人民代表大会常务委员会议事规则",
+      "category": "constitutional-relevance",
+      "candidate_path": "docs/constitutional-relevance/npc-standing-committee-rules/README.md",
+      "candidate_source": "just-laws",
+      "topic_exists": false,
+      "topic_id": null,
+      "verification_status": "CANDIDATE"
+    },
+    {
+      "law_id": "JUST-docs-constitutional-relevance-npc-standing-committees-supervision-law-readme-md",
+      "title": "中华人民共和国各级人民代表大会常务委员会监督法",
+      "category": "constitutional-relevance",
+      "candidate_path": "docs/constitutional-relevance/npc-standing-committees-supervision-law/README.md",
+      "candidate_source": "just-laws",
+      "topic_exists": false,
+      "topic_id": null,
+      "verification_status": "CANDIDATE"
+    },
+    {
+      "law_id": "JUST-docs-constitutional-relevance-patriotism-education-law-readme-md",
+      "title": "中华人民共和国爱国主义教育法",
+      "category": "constitutional-relevance",
+      "candidate_path": "docs/constitutional-relevance/patriotism-education-law/README.md",
+      "candidate_source": "just-laws",
+      "topic_exists": false,
+      "topic_id": null,
+      "verification_status": "CANDIDATE"
+    },
+    {
+      "law_id": "JUST-docs-constitutional-relevance-people-s-assessors-law-readme-md",
+      "title": "中华人民共和国人民陪审员法",
+      "category": "constitutional-relevance",
+      "candidate_path": "docs/constitutional-relevance/people-s-assessors-law/README.md",
+      "candidate_source": "just-laws",
+      "topic_exists": false,
+      "topic_id": null,
+      "verification_status": "CANDIDATE"
+    },
+    {
+      "law_id": "JUST-docs-constitutional-relevance-people-s-court-organization-law-readme-md",
+      "title": "中华人民共和国人民法院组织法",
+      "category": "constitutional-relevance",
+      "candidate_path": "docs/constitutional-relevance/people-s-court-organization-law/README.md",
+      "candidate_source": "just-laws",
+      "topic_exists": false,
+      "topic_id": null,
+      "verification_status": "CANDIDATE"
+    },
+    {
+      "law_id": "JUST-docs-constitutional-relevance-people-s-procuratorate-organization-law-readme-md",
+      "title": "中华人民共和国人民检察院组织法",
+      "category": "constitutional-relevance",
+      "candidate_path": "docs/constitutional-relevance/people-s-procuratorate-organization-law/README.md",
+      "candidate_source": "just-laws",
+      "topic_exists": false,
+      "topic_id": null,
+      "verification_status": "CANDIDATE"
+    },
+    {
+      "law_id": "JUST-docs-constitutional-relevance-pla-election-measures-readme-md",
+      "title": "中国人民解放军选举全国人民代表大会和县级以上地方各级人民代表大会代表的办法",
+      "category": "constitutional-relevance",
+      "candidate_path": "docs/constitutional-relevance/pla-election-measures/README.md",
+      "candidate_source": "just-laws",
+      "topic_exists": false,
+      "topic_id": null,
+      "verification_status": "CANDIDATE"
+    },
+    {
+      "law_id": "JUST-docs-constitutional-relevance-procurators-law-readme-md",
+      "title": "中华人民共和国检察官法",
+      "category": "constitutional-relevance",
+      "candidate_path": "docs/constitutional-relevance/procurators-law/README.md",
+      "candidate_source": "just-laws",
+      "topic_exists": false,
+      "topic_id": null,
+      "verification_status": "CANDIDATE"
+    },
+    {
+      "law_id": "JUST-docs-constitutional-relevance-provisions-on-direct-election-of-people-s-congress-representatives-below-county-level-readme-md",
+      "title": "全国人民代表大会常务委员会关于县级以下人民代表大会代表直接选举的若干规定",
+      "category": "constitutional-relevance",
+      "candidate_path": "docs/constitutional-relevance/provisions-on-direct-election-of-people-s-congress-representatives-below-county-level/README.md",
+      "candidate_source": "just-laws",
+      "topic_exists": false,
+      "topic_id": null,
+      "verification_status": "CANDIDATE"
+    },
+    {
+      "law_id": "JUST-docs-constitutional-relevance-public-officials-government-sanctions-law-readme-md",
+      "title": "中华人民共和国公职人员政务处分法",
+      "category": "constitutional-relevance",
+      "candidate_path": "docs/constitutional-relevance/public-officials-government-sanctions-law/README.md",
+      "candidate_source": "just-laws",
+      "topic_exists": false,
+      "topic_id": null,
+      "verification_status": "CANDIDATE"
+    },
+    {
+      "law_id": "JUST-docs-constitutional-relevance-state-compensation-law-readme-md",
+      "title": "中华人民共和国国家赔偿法",
+      "category": "constitutional-relevance",
+      "candidate_path": "docs/constitutional-relevance/state-compensation-law/README.md",
+      "candidate_source": "just-laws",
+      "topic_exists": false,
+      "topic_id": null,
+      "verification_status": "CANDIDATE"
+    },
+    {
+      "law_id": "JUST-docs-constitutional-relevance-state-council-organization-law-readme-md",
+      "title": "中华人民共和国国务院组织法",
+      "category": "constitutional-relevance",
+      "candidate_path": "docs/constitutional-relevance/state-council-organization-law/README.md",
+      "candidate_source": "just-laws",
+      "topic_exists": false,
+      "topic_id": null,
+      "verification_status": "CANDIDATE"
+    },
+    {
+      "law_id": "JUST-docs-constitutional-relevance-supervision-law-readme-md",
+      "title": "中华人民共和国监察法",
+      "category": "constitutional-relevance",
+      "candidate_path": "docs/constitutional-relevance/supervision-law/README.md",
+      "candidate_source": "just-laws",
+      "topic_exists": false,
+      "topic_id": null,
+      "verification_status": "CANDIDATE"
+    },
+    {
+      "law_id": "JUST-docs-constitutional-relevance-supervisors-law-readme-md",
+      "title": "中华人民共和国监察官法",
+      "category": "constitutional-relevance",
+      "candidate_path": "docs/constitutional-relevance/supervisors-law/README.md",
+      "candidate_source": "just-laws",
+      "topic_exists": false,
+      "topic_id": null,
+      "verification_status": "CANDIDATE"
+    },
+    {
+      "law_id": "JUST-docs-constitutional-relevance-territorial-sea-and-contiguous-zone-law-readme-md",
+      "title": "中华人民共和国领海及毗连区法",
+      "category": "constitutional-relevance",
+      "candidate_path": "docs/constitutional-relevance/territorial-sea-and-contiguous-zone-law/README.md",
+      "candidate_source": "just-laws",
+      "topic_exists": false,
+      "topic_id": null,
+      "verification_status": "CANDIDATE"
+    },
+    {
+      "law_id": "JUST-docs-constitutional-relevance-treaty-conclusion-procedure-law-readme-md",
+      "title": "中华人民共和国缔结条约程序法",
+      "category": "constitutional-relevance",
+      "candidate_path": "docs/constitutional-relevance/treaty-conclusion-procedure-law/README.md",
+      "candidate_source": "just-laws",
+      "topic_exists": false,
+      "topic_id": null,
+      "verification_status": "CANDIDATE"
+    },
+    {
+      "law_id": "JUST-docs-constitutional-relevance-urban-residents-committee-organization-law-readme-md",
+      "title": "中华人民共和国城市居民委员会组织法",
+      "category": "constitutional-relevance",
+      "candidate_path": "docs/constitutional-relevance/urban-residents-committee-organization-law/README.md",
+      "candidate_source": "just-laws",
+      "topic_exists": false,
+      "topic_id": null,
+      "verification_status": "CANDIDATE"
+    },
+    {
+      "law_id": "JUST-docs-constitutional-relevance-villagers-committee-organization-law-readme-md",
+      "title": "中华人民共和国村民委员会组织法",
+      "category": "constitutional-relevance",
+      "candidate_path": "docs/constitutional-relevance/villagers-committee-organization-law/README.md",
+      "candidate_source": "just-laws",
+      "topic_exists": false,
+      "topic_id": null,
+      "verification_status": "CANDIDATE"
+    },
+    {
+      "law_id": "JUST-docs-criminal-law-anti-espionage-law-readme-md",
+      "title": "中华人民共和国反间谍法",
+      "category": "criminal-law",
+      "candidate_path": "docs/criminal-law/anti-espionage-law/README.md",
+      "candidate_source": "just-laws",
+      "topic_exists": false,
+      "topic_id": null,
+      "verification_status": "CANDIDATE"
+    },
+    {
+      "law_id": "JUST-docs-criminal-law-anti-organized-crime-law-readme-md",
+      "title": "中华人民共和国反有组织犯罪法",
+      "category": "criminal-law",
+      "candidate_path": "docs/criminal-law/anti-organized-crime-law/README.md",
+      "candidate_source": "just-laws",
+      "topic_exists": false,
+      "topic_id": null,
+      "verification_status": "CANDIDATE"
+    },
+    {
+      "law_id": "JUST-docs-criminal-law-combating-telecom-and-online-fraud-readme-md",
+      "title": "中华人民共和国反电信网络诈骗法",
+      "category": "criminal-law",
+      "candidate_path": "docs/criminal-law/combating-telecom-and-online-fraud/README.md",
+      "candidate_source": "just-laws",
+      "topic_exists": false,
+      "topic_id": null,
+      "verification_status": "CANDIDATE"
+    },
+    {
+      "law_id": "JUST-docs-criminal-law-criminal-law-readme-md",
+      "title": "中华人民共和国刑法",
+      "category": "criminal-law",
+      "candidate_path": "docs/criminal-law/criminal-law/README.md",
+      "candidate_source": "just-laws",
+      "topic_exists": false,
+      "topic_id": null,
+      "verification_status": "CANDIDATE"
+    },
+    {
+      "law_id": "JUST-docs-ecological-environment-ecological-environment-code-readme-md",
+      "title": "中华人民共和国生态环境法典",
+      "category": "ecological-environment",
+      "candidate_path": "docs/ecological-environment/ecological-environment-code/README.md",
+      "candidate_source": "just-laws",
+      "topic_exists": false,
+      "topic_id": null,
+      "verification_status": "CANDIDATE"
+    },
+    {
+      "law_id": "JUST-docs-economic-accounting-law-readme-md",
+      "title": "中华人民共和国会计法",
+      "category": "economic",
+      "candidate_path": "docs/economic/accounting-law/README.md",
+      "candidate_source": "just-laws",
+      "topic_exists": false,
+      "topic_id": null,
+      "verification_status": "CANDIDATE"
+    },
+    {
+      "law_id": "JUST-docs-economic-advertising-law-readme-md",
+      "title": "中华人民共和国广告法",
+      "category": "economic",
+      "candidate_path": "docs/economic/advertising-law/README.md",
+      "candidate_source": "just-laws",
+      "topic_exists": false,
+      "topic_id": null,
+      "verification_status": "CANDIDATE"
+    },
+    {
+      "law_id": "JUST-docs-economic-agricultural-mechanization-promotion-law-readme-md",
+      "title": "中华人民共和国农业机械化促进法",
+      "category": "economic",
+      "candidate_path": "docs/economic/agricultural-mechanization-promotion-law/README.md",
+      "candidate_source": "just-laws",
+      "topic_exists": false,
+      "topic_id": null,
+      "verification_status": "CANDIDATE"
+    },
+    {
+      "law_id": "JUST-docs-economic-agricultural-product-quality-and-safety-law-readme-md",
+      "title": "中华人民共和国农产品质量安全法",
+      "category": "economic",
+      "candidate_path": "docs/economic/agricultural-product-quality-and-safety-law/README.md",
+      "candidate_source": "just-laws",
+      "topic_exists": false,
+      "topic_id": null,
+      "verification_status": "CANDIDATE"
+    },
+    {
+      "law_id": "JUST-docs-economic-agricultural-technology-extension-law-readme-md",
+      "title": "中华人民共和国农业技术推广法",
+      "category": "economic",
+      "candidate_path": "docs/economic/agricultural-technology-extension-law/README.md",
+      "candidate_source": "just-laws",
+      "topic_exists": false,
+      "topic_id": null,
+      "verification_status": "CANDIDATE"
+    },
+    {
+      "law_id": "JUST-docs-economic-agriculture-law-readme-md",
+      "title": "中华人民共和国农业法",
+      "category": "economic",
+      "candidate_path": "docs/economic/agriculture-law/README.md",
+      "candidate_source": "just-laws",
+      "topic_exists": false,
+      "topic_id": null,
+      "verification_status": "CANDIDATE"
+    },
+    {
+      "law_id": "JUST-docs-economic-animal-epidemic-prevention-law-readme-md",
+      "title": "中华人民共和国动物防疫法",
+      "category": "economic",
+      "candidate_path": "docs/economic/animal-epidemic-prevention-law/README.md",
+      "candidate_source": "just-laws",
+      "topic_exists": false,
+      "topic_id": null,
+      "verification_status": "CANDIDATE"
+    },
+    {
+      "law_id": "JUST-docs-economic-animal-husbandry-law-readme-md",
+      "title": "中华人民共和国畜牧法",
+      "category": "economic",
+      "candidate_path": "docs/economic/animal-husbandry-law/README.md",
+      "candidate_source": "just-laws",
+      "topic_exists": false,
+      "topic_id": null,
+      "verification_status": "CANDIDATE"
+    },
+    {
+      "law_id": "JUST-docs-economic-anti-money-laundering-law-readme-md",
+      "title": "中华人民共和国反洗钱法",
+      "category": "economic",
+      "candidate_path": "docs/economic/anti-money-laundering-law/README.md",
+      "candidate_source": "just-laws",
+      "topic_exists": false,
+      "topic_id": null,
+      "verification_status": "CANDIDATE"
+    },
+    {
+      "law_id": "JUST-docs-economic-anti-monopoly-law-readme-md",
+      "title": "中华人民共和国反垄断法",
+      "category": "economic",
+      "candidate_path": "docs/economic/anti-monopoly-law/README.md",
+      "candidate_source": "just-laws",
+      "topic_exists": false,
+      "topic_id": null,
+      "verification_status": "CANDIDATE"
+    },
+    {
+      "law_id": "JUST-docs-economic-anti-unfair-competition-law-readme-md",
+      "title": "中华人民共和国反不正当竞争法",
+      "category": "economic",
+      "candidate_path": "docs/economic/anti-unfair-competition-law/README.md",
+      "candidate_source": "just-laws",
+      "topic_exists": false,
+      "topic_id": null,
+      "verification_status": "CANDIDATE"
+    },
+    {
+      "law_id": "JUST-docs-economic-asset-appraisal-law-readme-md",
+      "title": "中华人民共和国资产评估法",
+      "category": "economic",
+      "candidate_path": "docs/economic/asset-appraisal-law/README.md",
+      "candidate_source": "just-laws",
+      "topic_exists": false,
+      "topic_id": null,
+      "verification_status": "CANDIDATE"
+    },
+    {
+      "law_id": "JUST-docs-economic-atomic-energy-law-readme-md",
+      "title": "中华人民共和国原子能法",
+      "category": "economic",
+      "candidate_path": "docs/economic/atomic-energy-law/README.md",
+      "candidate_source": "just-laws",
+      "topic_exists": false,
+      "topic_id": null,
+      "verification_status": "CANDIDATE"
+    },
+    {
+      "law_id": "JUST-docs-economic-audit-law-readme-md",
+      "title": "中华人民共和国审计法",
+      "category": "economic",
+      "candidate_path": "docs/economic/audit-law/README.md",
+      "candidate_source": "just-laws",
+      "topic_exists": false,
+      "topic_id": null,
+      "verification_status": "CANDIDATE"
+    },
+    {
+      "law_id": "JUST-docs-economic-banking-supervision-and-administration-law-readme-md",
+      "title": "中华人民共和国银行业监督管理法",
+      "category": "economic",
+      "candidate_path": "docs/economic/banking-supervision-and-administration-law/README.md",
+      "candidate_source": "just-laws",
+      "topic_exists": false,
+      "topic_id": null,
+      "verification_status": "CANDIDATE"
+    },
+    {
+      "law_id": "JUST-docs-economic-black-soil-protection-law-readme-md",
+      "title": "中华人民共和国黑土地保护法",
+      "category": "economic",
+      "candidate_path": "docs/economic/black-soil-protection-law/README.md",
+      "candidate_source": "just-laws",
+      "topic_exists": false,
+      "topic_id": null,
+      "verification_status": "CANDIDATE"
+    },
+    {
+      "law_id": "JUST-docs-economic-budget-law-readme-md",
+      "title": "中华人民共和国预算法",
+      "category": "economic",
+      "candidate_path": "docs/economic/budget-law/README.md",
+      "candidate_source": "just-laws",
+      "topic_exists": false,
+      "topic_id": null,
+      "verification_status": "CANDIDATE"
+    },
+    {
+      "law_id": "JUST-docs-economic-certified-public-accountants-law-readme-md",
+      "title": "中华人民共和国注册会计师法",
+      "category": "economic",
+      "candidate_path": "docs/economic/certified-public-accountants-law/README.md",
+      "candidate_source": "just-laws",
+      "topic_exists": false,
+      "topic_id": null,
+      "verification_status": "CANDIDATE"
+    },
+    {
+      "law_id": "JUST-docs-economic-circular-economy-promotion-law-readme-md",
+      "title": "中华人民共和国循环经济促进法",
+      "category": "economic",
+      "candidate_path": "docs/economic/circular-economy-promotion-law/README.md",
+      "candidate_source": "just-laws",
+      "topic_exists": false,
+      "topic_id": null,
+      "verification_status": "CANDIDATE"
+    },
+    {
+      "law_id": "JUST-docs-economic-civil-aviation-law-readme-md",
+      "title": "中华人民共和国民用航空法",
+      "category": "economic",
+      "candidate_path": "docs/economic/civil-aviation-law/README.md",
+      "candidate_source": "just-laws",
+      "topic_exists": false,
+      "topic_id": null,
+      "verification_status": "CANDIDATE"
+    },
+    {
+      "law_id": "JUST-docs-economic-cleaner-production-promotion-law-readme-md",
+      "title": "中华人民共和国清洁生产促进法",
+      "category": "economic",
+      "candidate_path": "docs/economic/cleaner-production-promotion-law/README.md",
+      "candidate_source": "just-laws",
+      "topic_exists": false,
+      "topic_id": null,
+      "verification_status": "CANDIDATE"
+    },
+    {
+      "law_id": "JUST-docs-economic-coal-law-readme-md",
+      "title": "中华人民共和国煤炭法",
+      "category": "economic",
+      "candidate_path": "docs/economic/coal-law/README.md",
+      "candidate_source": "just-laws",
+      "topic_exists": false,
+      "topic_id": null,
+      "verification_status": "CANDIDATE"
+    },
+    {
+      "law_id": "JUST-docs-economic-construction-law-readme-md",
+      "title": "中华人民共和国建筑法",
+      "category": "economic",
+      "candidate_path": "docs/economic/construction-law/README.md",
+      "candidate_source": "just-laws",
+      "topic_exists": true,
+      "topic_id": "construction-law",
+      "verification_status": "CANDIDATE"
+    },
+    {
+      "law_id": "JUST-docs-economic-cybersecurity-law-readme-md",
+      "title": "中华人民共和国网络安全法",
+      "category": "economic",
+      "candidate_path": "docs/economic/cybersecurity-law/README.md",
+      "candidate_source": "just-laws",
+      "topic_exists": false,
+      "topic_id": null,
+      "verification_status": "CANDIDATE"
+    },
+    {
+      "law_id": "JUST-docs-economic-data-security-law-readme-md",
+      "title": "中华人民共和国数据安全法",
+      "category": "economic",
+      "candidate_path": "docs/economic/data-security-law/README.md",
+      "candidate_source": "just-laws",
+      "topic_exists": false,
+      "topic_id": null,
+      "verification_status": "CANDIDATE"
+    },
+    {
+      "law_id": "JUST-docs-economic-deed-tax-law-readme-md",
+      "title": "中华人民共和国契税法",
+      "category": "economic",
+      "candidate_path": "docs/economic/deed-tax-law/README.md",
+      "candidate_source": "just-laws",
+      "topic_exists": false,
+      "topic_id": null,
+      "verification_status": "CANDIDATE"
+    },
+    {
+      "law_id": "JUST-docs-economic-deep-seabed-resource-exploration-and-development-law-readme-md",
+      "title": "中华人民共和国深海海底区域资源勘探开发法",
+      "category": "economic",
+      "candidate_path": "docs/economic/deep-seabed-resource-exploration-and-development-law/README.md",
+      "candidate_source": "just-laws",
+      "topic_exists": false,
+      "topic_id": null,
+      "verification_status": "CANDIDATE"
+    },
+    {
+      "law_id": "JUST-docs-economic-e-commerce-law-readme-md",
+      "title": "中华人民共和国电子商务法",
+      "category": "economic",
+      "candidate_path": "docs/economic/e-commerce-law/README.md",
+      "candidate_source": "just-laws",
+      "topic_exists": false,
+      "topic_id": null,
+      "verification_status": "CANDIDATE"
+    },
+    {
+      "law_id": "JUST-docs-economic-electric-power-law-readme-md",
+      "title": "中华人民共和国电力法",
+      "category": "economic",
+      "candidate_path": "docs/economic/electric-power-law/README.md",
+      "candidate_source": "just-laws",
+      "topic_exists": false,
+      "topic_id": null,
+      "verification_status": "CANDIDATE"
+    },
+    {
+      "law_id": "JUST-docs-economic-energy-conservation-law-readme-md",
+      "title": "中华人民共和国节约能源法",
+      "category": "economic",
+      "candidate_path": "docs/economic/energy-conservation-law/README.md",
+      "candidate_source": "just-laws",
+      "topic_exists": false,
+      "topic_id": null,
+      "verification_status": "CANDIDATE"
+    },
+    {
+      "law_id": "JUST-docs-economic-energy-law-readme-md",
+      "title": "中华人民共和国能源法",
+      "category": "economic",
+      "candidate_path": "docs/economic/energy-law/README.md",
+      "candidate_source": "just-laws",
+      "topic_exists": false,
+      "topic_id": null,
+      "verification_status": "CANDIDATE"
+    },
+    {
+      "law_id": "JUST-docs-economic-enterprise-income-tax-law-readme-md",
+      "title": "中华人民共和国企业所得税法",
+      "category": "economic",
+      "candidate_path": "docs/economic/enterprise-income-tax-law/README.md",
+      "candidate_source": "just-laws",
+      "topic_exists": false,
+      "topic_id": null,
+      "verification_status": "CANDIDATE"
+    },
+    {
+      "law_id": "JUST-docs-economic-enterprise-state-owned-assets-law-readme-md",
+      "title": "中华人民共和国企业国有资产法",
+      "category": "economic",
+      "candidate_path": "docs/economic/enterprise-state-owned-assets-law/README.md",
+      "candidate_source": "just-laws",
+      "topic_exists": false,
+      "topic_id": null,
+      "verification_status": "CANDIDATE"
+    },
+    {
+      "law_id": "JUST-docs-economic-entry-and-exit-animal-and-plant-quarantine-law-readme-md",
+      "title": "中华人民共和国进出境动植物检疫法",
+      "category": "economic",
+      "candidate_path": "docs/economic/entry-and-exit-animal-and-plant-quarantine-law/README.md",
+      "candidate_source": "just-laws",
+      "topic_exists": false,
+      "topic_id": null,
+      "verification_status": "CANDIDATE"
+    },
+    {
+      "law_id": "JUST-docs-economic-environmental-protection-tax-law-readme-md",
+      "title": "中华人民共和国环境保护税法",
+      "category": "economic",
+      "candidate_path": "docs/economic/environmental-protection-tax-law/README.md",
+      "candidate_source": "just-laws",
+      "topic_exists": false,
+      "topic_id": null,
+      "verification_status": "CANDIDATE"
+    },
+    {
+      "law_id": "JUST-docs-economic-export-control-law-readme-md",
+      "title": "中华人民共和国出口管制法",
+      "category": "economic",
+      "candidate_path": "docs/economic/export-control-law/README.md",
+      "candidate_source": "just-laws",
+      "topic_exists": false,
+      "topic_id": null,
+      "verification_status": "CANDIDATE"
+    },
+    {
+      "law_id": "JUST-docs-economic-farmland-occupation-tax-law-readme-md",
+      "title": "中华人民共和国耕地占用税法",
+      "category": "economic",
+      "candidate_path": "docs/economic/farmland-occupation-tax-law/README.md",
+      "candidate_source": "just-laws",
+      "topic_exists": false,
+      "topic_id": null,
+      "verification_status": "CANDIDATE"
+    },
+    {
+      "law_id": "JUST-docs-economic-fifth-npc-standing-committee-resolution-approving-guangdong-special-economic-zone-regulations-readme-md",
+      "title": "第五届全国人民代表大会常务委员会关于批准《广东省经济特区条例》的决议",
+      "category": "economic",
+      "candidate_path": "docs/economic/fifth-npc-standing-committee-resolution-approving-guangdong-special-economic-zone-regulations/README.md",
+      "candidate_source": "just-laws",
+      "topic_exists": false,
+      "topic_id": null,
+      "verification_status": "CANDIDATE"
+    },
+    {
+      "law_id": "JUST-docs-economic-fisheries-law-readme-md",
+      "title": "中华人民共和国渔业法",
+      "category": "economic",
+      "candidate_path": "docs/economic/fisheries-law/README.md",
+      "candidate_source": "just-laws",
+      "topic_exists": false,
+      "topic_id": null,
+      "verification_status": "CANDIDATE"
+    },
+    {
+      "law_id": "JUST-docs-economic-flood-control-law-readme-md",
+      "title": "中华人民共和国防洪法",
+      "category": "economic",
+      "candidate_path": "docs/economic/flood-control-law/README.md",
+      "candidate_source": "just-laws",
+      "topic_exists": false,
+      "topic_id": null,
+      "verification_status": "CANDIDATE"
+    },
+    {
+      "law_id": "JUST-docs-economic-food-security-guarantee-law-readme-md",
+      "title": "中华人民共和国粮食安全保障法",
+      "category": "economic",
+      "candidate_path": "docs/economic/food-security-guarantee-law/README.md",
+      "candidate_source": "just-laws",
+      "topic_exists": false,
+      "topic_id": null,
+      "verification_status": "CANDIDATE"
+    },
+    {
+      "law_id": "JUST-docs-economic-foreign-investment-law-readme-md",
+      "title": "中华人民共和国外商投资法",
+      "category": "economic",
+      "candidate_path": "docs/economic/foreign-investment-law/README.md",
+      "candidate_source": "just-laws",
+      "topic_exists": false,
+      "topic_id": null,
+      "verification_status": "CANDIDATE"
+    },
+    {
+      "law_id": "JUST-docs-economic-foreign-trade-law-readme-md",
+      "title": "中华人民共和国对外贸易法",
+      "category": "economic",
+      "candidate_path": "docs/economic/foreign-trade-law/README.md",
+      "candidate_source": "just-laws",
+      "topic_exists": false,
+      "topic_id": null,
+      "verification_status": "CANDIDATE"
+    },
+    {
+      "law_id": "JUST-docs-economic-forest-law-readme-md",
+      "title": "中华人民共和国森林法",
+      "category": "economic",
+      "candidate_path": "docs/economic/forest-law/README.md",
+      "candidate_source": "just-laws",
+      "topic_exists": false,
+      "topic_id": null,
+      "verification_status": "CANDIDATE"
+    },
+    {
+      "law_id": "JUST-docs-economic-government-procurement-law-readme-md",
+      "title": "中华人民共和国政府采购法",
+      "category": "economic",
+      "candidate_path": "docs/economic/government-procurement-law/README.md",
+      "candidate_source": "just-laws",
+      "topic_exists": true,
+      "topic_id": "government-procurement-law",
+      "verification_status": "CANDIDATE"
+    },
+    {
+      "law_id": "JUST-docs-economic-grassland-law-readme-md",
+      "title": "中华人民共和国草原法",
+      "category": "economic",
+      "candidate_path": "docs/economic/grassland-law/README.md",
+      "candidate_source": "just-laws",
+      "topic_exists": false,
+      "topic_id": null,
+      "verification_status": "CANDIDATE"
+    },
+    {
+      "law_id": "JUST-docs-economic-hainan-free-trade-port-law-readme-md",
+      "title": "中华人民共和国海南自由贸易港法",
+      "category": "economic",
+      "candidate_path": "docs/economic/hainan-free-trade-port-law/README.md",
+      "candidate_source": "just-laws",
+      "topic_exists": false,
+      "topic_id": null,
+      "verification_status": "CANDIDATE"
+    },
+    {
+      "law_id": "JUST-docs-economic-highways-law-readme-md",
+      "title": "中华人民共和国公路法",
+      "category": "economic",
+      "candidate_path": "docs/economic/highways-law/README.md",
+      "candidate_source": "just-laws",
+      "topic_exists": false,
+      "topic_id": null,
+      "verification_status": "CANDIDATE"
+    },
+    {
+      "law_id": "JUST-docs-economic-import-and-export-commodity-inspection-law-readme-md",
+      "title": "中华人民共和国进出口商品检验法",
+      "category": "economic",
+      "candidate_path": "docs/economic/import-and-export-commodity-inspection-law/README.md",
+      "candidate_source": "just-laws",
+      "topic_exists": false,
+      "topic_id": null,
+      "verification_status": "CANDIDATE"
+    },
+    {
+      "law_id": "JUST-docs-economic-individual-income-tax-law-readme-md",
+      "title": "中华人民共和国个人所得税法",
+      "category": "economic",
+      "candidate_path": "docs/economic/individual-income-tax-law/README.md",
+      "candidate_source": "just-laws",
+      "topic_exists": false,
+      "topic_id": null,
+      "verification_status": "CANDIDATE"
+    },
+    {
+      "law_id": "JUST-docs-economic-metrology-law-readme-md",
+      "title": "中华人民共和国计量法",
+      "category": "economic",
+      "candidate_path": "docs/economic/metrology-law/README.md",
+      "candidate_source": "just-laws",
+      "topic_exists": false,
+      "topic_id": null,
+      "verification_status": "CANDIDATE"
+    },
+    {
+      "law_id": "JUST-docs-economic-mineral-resources-law-readme-md",
+      "title": "中华人民共和国矿产资源法",
+      "category": "economic",
+      "candidate_path": "docs/economic/mineral-resources-law/README.md",
+      "candidate_source": "just-laws",
+      "topic_exists": false,
+      "topic_id": null,
+      "verification_status": "CANDIDATE"
+    },
+    {
+      "law_id": "JUST-docs-economic-national-development-planning-law-readme-md",
+      "title": "中华人民共和国国家发展规划法",
+      "category": "economic",
+      "candidate_path": "docs/economic/national-development-planning-law/README.md",
+      "candidate_source": "just-laws",
+      "topic_exists": false,
+      "topic_id": null,
+      "verification_status": "CANDIDATE"
+    },
+    {
+      "law_id": "JUST-docs-economic-national-parks-law-readme-md",
+      "title": "中华人民共和国国家公园法",
+      "category": "economic",
+      "candidate_path": "docs/economic/national-parks-law/README.md",
+      "candidate_source": "just-laws",
+      "topic_exists": false,
+      "topic_id": null,
+      "verification_status": "CANDIDATE"
+    },
+    {
+      "law_id": "JUST-docs-economic-oil-and-gas-pipeline-protection-law-readme-md",
+      "title": "中华人民共和国石油天然气管道保护法",
+      "category": "economic",
+      "candidate_path": "docs/economic/oil-and-gas-pipeline-protection-law/README.md",
+      "candidate_source": "just-laws",
+      "topic_exists": false,
+      "topic_id": null,
+      "verification_status": "CANDIDATE"
+    },
+    {
+      "law_id": "JUST-docs-economic-peoples-bank-of-china-law-readme-md",
+      "title": "中华人民共和国中国人民银行法",
+      "category": "economic",
+      "candidate_path": "docs/economic/peoples-bank-of-china-law/README.md",
+      "candidate_source": "just-laws",
+      "topic_exists": false,
+      "topic_id": null,
+      "verification_status": "CANDIDATE"
+    },
+    {
+      "law_id": "JUST-docs-economic-personal-information-protection-law-readme-md",
+      "title": "中华人民共和国个人信息保护法",
+      "category": "economic",
+      "candidate_path": "docs/economic/personal-information-protection-law/README.md",
+      "candidate_source": "just-laws",
+      "topic_exists": false,
+      "topic_id": null,
+      "verification_status": "CANDIDATE"
+    },
+    {
+      "law_id": "JUST-docs-economic-ports-law-readme-md",
+      "title": "中华人民共和国港口法",
+      "category": "economic",
+      "candidate_path": "docs/economic/ports-law/README.md",
+      "candidate_source": "just-laws",
+      "topic_exists": false,
+      "topic_id": null,
+      "verification_status": "CANDIDATE"
+    },
+    {
+      "law_id": "JUST-docs-economic-postal-law-readme-md",
+      "title": "中华人民共和国邮政法",
+      "category": "economic",
+      "candidate_path": "docs/economic/postal-law/README.md",
+      "candidate_source": "just-laws",
+      "topic_exists": false,
+      "topic_id": null,
+      "verification_status": "CANDIDATE"
+    },
+    {
+      "law_id": "JUST-docs-economic-price-law-readme-md",
+      "title": "中华人民共和国价格法",
+      "category": "economic",
+      "candidate_path": "docs/economic/price-law/README.md",
+      "candidate_source": "just-laws",
+      "topic_exists": false,
+      "topic_id": null,
+      "verification_status": "CANDIDATE"
+    },
+    {
+      "law_id": "JUST-docs-economic-private-economy-promotion-law-readme-md",
+      "title": "中华人民共和国民营经济促进法",
+      "category": "economic",
+      "candidate_path": "docs/economic/private-economy-promotion-law/README.md",
+      "candidate_source": "just-laws",
+      "topic_exists": false,
+      "topic_id": null,
+      "verification_status": "CANDIDATE"
+    },
+    {
+      "law_id": "JUST-docs-economic-product-quality-law-readme-md",
+      "title": "中华人民共和国产品质量法",
+      "category": "economic",
+      "candidate_path": "docs/economic/product-quality-law/README.md",
+      "candidate_source": "just-laws",
+      "topic_exists": false,
+      "topic_id": null,
+      "verification_status": "CANDIDATE"
+    },
+    {
+      "law_id": "JUST-docs-economic-railways-law-readme-md",
+      "title": "中华人民共和国铁路法",
+      "category": "economic",
+      "candidate_path": "docs/economic/railways-law/README.md",
+      "candidate_source": "just-laws",
+      "topic_exists": false,
+      "topic_id": null,
+      "verification_status": "CANDIDATE"
+    },
+    {
+      "law_id": "JUST-docs-economic-renewable-energy-law-readme-md",
+      "title": "中华人民共和国可再生能源法",
+      "category": "economic",
+      "candidate_path": "docs/economic/renewable-energy-law/README.md",
+      "candidate_source": "just-laws",
+      "topic_exists": false,
+      "topic_id": null,
+      "verification_status": "CANDIDATE"
+    },
+    {
+      "law_id": "JUST-docs-economic-resource-tax-law-readme-md",
+      "title": "中华人民共和国资源税法",
+      "category": "economic",
+      "candidate_path": "docs/economic/resource-tax-law/README.md",
+      "candidate_source": "just-laws",
+      "topic_exists": false,
+      "topic_id": null,
+      "verification_status": "CANDIDATE"
+    },
+    {
+      "law_id": "JUST-docs-economic-rural-vitalization-promotion-law-readme-md",
+      "title": "中华人民共和国乡村振兴促进法",
+      "category": "economic",
+      "candidate_path": "docs/economic/rural-vitalization-promotion-law/README.md",
+      "candidate_source": "just-laws",
+      "topic_exists": false,
+      "topic_id": null,
+      "verification_status": "CANDIDATE"
+    },
+    {
+      "law_id": "JUST-docs-economic-sea-area-use-administration-law-readme-md",
+      "title": "中华人民共和国海域使用管理法",
+      "category": "economic",
+      "candidate_path": "docs/economic/sea-area-use-administration-law/README.md",
+      "candidate_source": "just-laws",
+      "topic_exists": false,
+      "topic_id": null,
+      "verification_status": "CANDIDATE"
+    },
+    {
+      "law_id": "JUST-docs-economic-seed-law-readme-md",
+      "title": "中华人民共和国种子法",
+      "category": "economic",
+      "candidate_path": "docs/economic/seed-law/README.md",
+      "candidate_source": "just-laws",
+      "topic_exists": false,
+      "topic_id": null,
+      "verification_status": "CANDIDATE"
+    },
+    {
+      "law_id": "JUST-docs-economic-small-and-medium-sized-enterprises-promotion-law-readme-md",
+      "title": "中华人民共和国中小企业促进法",
+      "category": "economic",
+      "candidate_path": "docs/economic/small-and-medium-sized-enterprises-promotion-law/README.md",
+      "candidate_source": "just-laws",
+      "topic_exists": false,
+      "topic_id": null,
+      "verification_status": "CANDIDATE"
+    },
+    {
+      "law_id": "JUST-docs-economic-stamp-tax-law-readme-md",
+      "title": "中华人民共和国印花税法",
+      "category": "economic",
+      "candidate_path": "docs/economic/stamp-tax-law/README.md",
+      "candidate_source": "just-laws",
+      "topic_exists": false,
+      "topic_id": null,
+      "verification_status": "CANDIDATE"
+    },
+    {
+      "law_id": "JUST-docs-economic-standardization-law-readme-md",
+      "title": "中华人民共和国标准化法",
+      "category": "economic",
+      "candidate_path": "docs/economic/standardization-law/README.md",
+      "candidate_source": "just-laws",
+      "topic_exists": false,
+      "topic_id": null,
+      "verification_status": "CANDIDATE"
+    },
+    {
+      "law_id": "JUST-docs-economic-statistics-law-readme-md",
+      "title": "中华人民共和国统计法",
+      "category": "economic",
+      "candidate_path": "docs/economic/statistics-law/README.md",
+      "candidate_source": "just-laws",
+      "topic_exists": false,
+      "topic_id": null,
+      "verification_status": "CANDIDATE"
+    },
+    {
+      "law_id": "JUST-docs-economic-taiwan-compatriots-investment-protection-law-readme-md",
+      "title": "中华人民共和国台湾同胞投资保护法",
+      "category": "economic",
+      "candidate_path": "docs/economic/taiwan-compatriots-investment-protection-law/README.md",
+      "candidate_source": "just-laws",
+      "topic_exists": false,
+      "topic_id": null,
+      "verification_status": "CANDIDATE"
+    },
+    {
+      "law_id": "JUST-docs-economic-tariff-law-readme-md",
+      "title": "中华人民共和国关税法",
+      "category": "economic",
+      "candidate_path": "docs/economic/tariff-law/README.md",
+      "candidate_source": "just-laws",
+      "topic_exists": false,
+      "topic_id": null,
+      "verification_status": "CANDIDATE"
+    },
+    {
+      "law_id": "JUST-docs-economic-tax-collection-administration-law-readme-md",
+      "title": "中华人民共和国税收征收管理法",
+      "category": "economic",
+      "candidate_path": "docs/economic/tax-collection-administration-law/README.md",
+      "candidate_source": "just-laws",
+      "topic_exists": false,
+      "topic_id": null,
+      "verification_status": "CANDIDATE"
+    },
+    {
+      "law_id": "JUST-docs-economic-tobacco-leaf-tax-law-readme-md",
+      "title": "中华人民共和国烟叶税法",
+      "category": "economic",
+      "candidate_path": "docs/economic/tobacco-leaf-tax-law/README.md",
+      "candidate_source": "just-laws",
+      "topic_exists": false,
+      "topic_id": null,
+      "verification_status": "CANDIDATE"
+    },
+    {
+      "law_id": "JUST-docs-economic-tobacco-monopoly-law-readme-md",
+      "title": "中华人民共和国烟草专卖法",
+      "category": "economic",
+      "candidate_path": "docs/economic/tobacco-monopoly-law/README.md",
+      "candidate_source": "just-laws",
+      "topic_exists": false,
+      "topic_id": null,
+      "verification_status": "CANDIDATE"
+    },
+    {
+      "law_id": "JUST-docs-economic-tourism-law-readme-md",
+      "title": "中华人民共和国旅游法",
+      "category": "economic",
+      "candidate_path": "docs/economic/tourism-law/README.md",
+      "candidate_source": "just-laws",
+      "topic_exists": false,
+      "topic_id": null,
+      "verification_status": "CANDIDATE"
+    },
+    {
+      "law_id": "JUST-docs-economic-urban-maintenance-and-construction-tax-law-readme-md",
+      "title": "中华人民共和国城市维护建设税法",
+      "category": "economic",
+      "candidate_path": "docs/economic/urban-maintenance-and-construction-tax-law/README.md",
+      "candidate_source": "just-laws",
+      "topic_exists": false,
+      "topic_id": null,
+      "verification_status": "CANDIDATE"
+    },
+    {
+      "law_id": "JUST-docs-economic-value-added-tax-law-readme-md",
+      "title": "中华人民共和国增值税法",
+      "category": "economic",
+      "candidate_path": "docs/economic/value-added-tax-law/README.md",
+      "candidate_source": "just-laws",
+      "topic_exists": false,
+      "topic_id": null,
+      "verification_status": "CANDIDATE"
+    },
+    {
+      "law_id": "JUST-docs-economic-vehicle-and-vessel-tax-law-readme-md",
+      "title": "中华人民共和国车船税法",
+      "category": "economic",
+      "candidate_path": "docs/economic/vehicle-and-vessel-tax-law/README.md",
+      "candidate_source": "just-laws",
+      "topic_exists": false,
+      "topic_id": null,
+      "verification_status": "CANDIDATE"
+    },
+    {
+      "law_id": "JUST-docs-economic-vehicle-purchase-tax-law-readme-md",
+      "title": "中华人民共和国车辆购置税法",
+      "category": "economic",
+      "candidate_path": "docs/economic/vehicle-purchase-tax-law/README.md",
+      "candidate_source": "just-laws",
+      "topic_exists": false,
+      "topic_id": null,
+      "verification_status": "CANDIDATE"
+    },
+    {
+      "law_id": "JUST-docs-economic-vessel-tonnage-tax-law-readme-md",
+      "title": "中华人民共和国船舶吨税法",
+      "category": "economic",
+      "candidate_path": "docs/economic/vessel-tonnage-tax-law/README.md",
+      "candidate_source": "just-laws",
+      "topic_exists": false,
+      "topic_id": null,
+      "verification_status": "CANDIDATE"
+    },
+    {
+      "law_id": "JUST-docs-economic-water-and-soil-conservation-law-readme-md",
+      "title": "中华人民共和国水土保持法",
+      "category": "economic",
+      "candidate_path": "docs/economic/water-and-soil-conservation-law/README.md",
+      "candidate_source": "just-laws",
+      "topic_exists": false,
+      "topic_id": null,
+      "verification_status": "CANDIDATE"
+    },
+    {
+      "law_id": "JUST-docs-economic-water-law-readme-md",
+      "title": "中华人民共和国水法",
+      "category": "economic",
+      "candidate_path": "docs/economic/water-law/README.md",
+      "candidate_source": "just-laws",
+      "topic_exists": false,
+      "topic_id": null,
+      "verification_status": "CANDIDATE"
+    },
+    {
+      "law_id": "JUST-docs-economic-waterways-law-readme-md",
+      "title": "中华人民共和国航道法",
+      "category": "economic",
+      "candidate_path": "docs/economic/waterways-law/README.md",
+      "candidate_source": "just-laws",
+      "topic_exists": false,
+      "topic_id": null,
+      "verification_status": "CANDIDATE"
+    },
+    {
+      "law_id": "JUST-docs-economic-wetland-protection-law-readme-md",
+      "title": "中华人民共和国湿地保护法",
+      "category": "economic",
+      "candidate_path": "docs/economic/wetland-protection-law/README.md",
+      "candidate_source": "just-laws",
+      "topic_exists": false,
+      "topic_id": null,
+      "verification_status": "CANDIDATE"
+    },
+    {
+      "law_id": "JUST-docs-economic-yangtze-river-protection-law-readme-md",
+      "title": "中华人民共和国长江保护法",
+      "category": "economic",
+      "candidate_path": "docs/economic/yangtze-river-protection-law/README.md",
+      "candidate_source": "just-laws",
+      "topic_exists": false,
+      "topic_id": null,
+      "verification_status": "CANDIDATE"
+    },
+    {
+      "law_id": "JUST-docs-economic-yellow-river-protection-law-readme-md",
+      "title": "中华人民共和国黄河保护法",
+      "category": "economic",
+      "candidate_path": "docs/economic/yellow-river-protection-law/README.md",
+      "candidate_source": "just-laws",
+      "topic_exists": false,
+      "topic_id": null,
+      "verification_status": "CANDIDATE"
+    },
+    {
+      "law_id": "JUST-docs-procedural-administrative-procedure-readme-md",
+      "title": "中华人民共和国行政诉讼法",
+      "category": "procedural",
+      "candidate_path": "docs/procedural/administrative-procedure/README.md",
+      "candidate_source": "just-laws",
+      "topic_exists": false,
+      "topic_id": null,
+      "verification_status": "CANDIDATE"
+    },
+    {
+      "law_id": "JUST-docs-procedural-arbitration-law-readme-md",
+      "title": "中华人民共和国仲裁法",
+      "category": "procedural",
+      "candidate_path": "docs/procedural/arbitration-law/README.md",
+      "candidate_source": "just-laws",
+      "topic_exists": false,
+      "topic_id": null,
+      "verification_status": "CANDIDATE"
+    },
+    {
+      "law_id": "JUST-docs-procedural-civil-procedure-readme-md",
+      "title": "中华人民共和国民事诉讼法",
+      "category": "procedural",
+      "candidate_path": "docs/procedural/civil-procedure/README.md",
+      "candidate_source": "just-laws",
+      "topic_exists": true,
+      "topic_id": "civil-procedure-law",
+      "verification_status": "CANDIDATE"
+    },
+    {
+      "law_id": "JUST-docs-procedural-criminal-procedure-readme-md",
+      "title": "中华人民共和国刑事诉讼法",
+      "category": "procedural",
+      "candidate_path": "docs/procedural/criminal-procedure/README.md",
+      "candidate_source": "just-laws",
+      "topic_exists": false,
+      "topic_id": null,
+      "verification_status": "CANDIDATE"
+    },
+    {
+      "law_id": "JUST-docs-procedural-extradition-law-readme-md",
+      "title": "中华人民共和国引渡法",
+      "category": "procedural",
+      "candidate_path": "docs/procedural/extradition-law/README.md",
+      "candidate_source": "just-laws",
+      "topic_exists": false,
+      "topic_id": null,
+      "verification_status": "CANDIDATE"
+    },
+    {
+      "law_id": "JUST-docs-procedural-international-criminal-judicial-assistance-law-readme-md",
+      "title": "中华人民共和国国际刑事司法协助法",
+      "category": "procedural",
+      "candidate_path": "docs/procedural/international-criminal-judicial-assistance-law/README.md",
+      "candidate_source": "just-laws",
+      "topic_exists": false,
+      "topic_id": null,
+      "verification_status": "CANDIDATE"
+    },
+    {
+      "law_id": "JUST-docs-procedural-labor-dispute-mediation-and-arbitration-law-readme-md",
+      "title": "中华人民共和国劳动争议调解仲裁法",
+      "category": "procedural",
+      "candidate_path": "docs/procedural/labor-dispute-mediation-and-arbitration-law/README.md",
+      "candidate_source": "just-laws",
+      "topic_exists": false,
+      "topic_id": null,
+      "verification_status": "CANDIDATE"
+    },
+    {
+      "law_id": "JUST-docs-procedural-maritime-procedure-law-readme-md",
+      "title": "中华人民共和国海事诉讼特别程序法",
+      "category": "procedural",
+      "candidate_path": "docs/procedural/maritime-procedure-law/README.md",
+      "candidate_source": "just-laws",
+      "topic_exists": false,
+      "topic_id": null,
+      "verification_status": "CANDIDATE"
+    },
+    {
+      "law_id": "JUST-docs-procedural-people-s-mediation-law-readme-md",
+      "title": "中华人民共和国人民调解法",
+      "category": "procedural",
+      "candidate_path": "docs/procedural/people-s-mediation-law/README.md",
+      "candidate_source": "just-laws",
+      "topic_exists": false,
+      "topic_id": null,
+      "verification_status": "CANDIDATE"
+    },
+    {
+      "law_id": "JUST-docs-procedural-rural-land-contract-dispute-mediation-and-arbitration-law-readme-md",
+      "title": "中华人民共和国农村土地承包经营纠纷调解仲裁法",
+      "category": "procedural",
+      "candidate_path": "docs/procedural/rural-land-contract-dispute-mediation-and-arbitration-law/README.md",
+      "candidate_source": "just-laws",
+      "topic_exists": false,
+      "topic_id": null,
+      "verification_status": "CANDIDATE"
+    },
+    {
+      "law_id": "JUST-docs-social-anti-domestic-violence-law-readme-md",
+      "title": "中华人民共和国反家庭暴力法",
+      "category": "social",
+      "candidate_path": "docs/social/anti-domestic-violence-law/README.md",
+      "candidate_source": "just-laws",
+      "topic_exists": false,
+      "topic_id": null,
+      "verification_status": "CANDIDATE"
+    },
+    {
+      "law_id": "JUST-docs-social-barrier-free-environment-construction-law-readme-md",
+      "title": "中华人民共和国无障碍环境建设法",
+      "category": "social",
+      "candidate_path": "docs/social/barrier-free-environment-construction-law/README.md",
+      "candidate_source": "just-laws",
+      "topic_exists": false,
+      "topic_id": null,
+      "verification_status": "CANDIDATE"
+    },
+    {
+      "law_id": "JUST-docs-social-charity-law-readme-md",
+      "title": "中华人民共和国慈善法",
+      "category": "social",
+      "candidate_path": "docs/social/charity-law/README.md",
+      "candidate_source": "just-laws",
+      "topic_exists": false,
+      "topic_id": null,
+      "verification_status": "CANDIDATE"
+    },
+    {
+      "law_id": "JUST-docs-social-elderly-rights-and-interests-protection-law-readme-md",
+      "title": "中华人民共和国老年人权益保障法",
+      "category": "social",
+      "candidate_path": "docs/social/elderly-rights-and-interests-protection-law/README.md",
+      "candidate_source": "just-laws",
+      "topic_exists": false,
+      "topic_id": null,
+      "verification_status": "CANDIDATE"
+    },
+    {
+      "law_id": "JUST-docs-social-employment-promotion-law-readme-md",
+      "title": "中华人民共和国就业促进法",
+      "category": "social",
+      "candidate_path": "docs/social/employment-promotion-law/README.md",
+      "candidate_source": "just-laws",
+      "topic_exists": false,
+      "topic_id": null,
+      "verification_status": "CANDIDATE"
+    },
+    {
+      "law_id": "JUST-docs-social-family-education-promotion-law-readme-md",
+      "title": "中华人民共和国家庭教育促进法",
+      "category": "social",
+      "candidate_path": "docs/social/family-education-promotion-law/README.md",
+      "candidate_source": "just-laws",
+      "topic_exists": false,
+      "topic_id": null,
+      "verification_status": "CANDIDATE"
+    },
+    {
+      "law_id": "JUST-docs-social-fifth-npc-standing-committee-resolution-approving-state-council-provisions-on-employees-home-leave-benefits-readme-md",
+      "title": "第五届全国人民代表大会常务委员会关于批准《国务院关于职工探亲待遇的规定》的决议",
+      "category": "social",
+      "candidate_path": "docs/social/fifth-npc-standing-committee-resolution-approving-state-council-provisions-on-employees-home-leave-benefits/README.md",
+      "candidate_source": "just-laws",
+      "topic_exists": false,
+      "topic_id": null,
+      "verification_status": "CANDIDATE"
+    },
+    {
+      "law_id": "JUST-docs-social-hazardous-chemicals-safety-law-readme-md",
+      "title": "中华人民共和国危险化学品安全法",
+      "category": "social",
+      "candidate_path": "docs/social/hazardous-chemicals-safety-law/README.md",
+      "candidate_source": "just-laws",
+      "topic_exists": false,
+      "topic_id": null,
+      "verification_status": "CANDIDATE"
+    },
+    {
+      "law_id": "JUST-docs-social-labor-contracts-law-readme-md",
+      "title": "中华人民共和国劳动合同法",
+      "category": "social",
+      "candidate_path": "docs/social/labor-contracts-law/README.md",
+      "candidate_source": "just-laws",
+      "topic_exists": true,
+      "topic_id": "labor-contract-law",
+      "verification_status": "OFFICIAL_META"
+    },
+    {
+      "law_id": "JUST-docs-social-labor-law-readme-md",
+      "title": "中华人民共和国劳动法",
+      "category": "social",
+      "candidate_path": "docs/social/labor-law/README.md",
+      "candidate_source": "just-laws",
+      "topic_exists": false,
+      "topic_id": null,
+      "verification_status": "CANDIDATE"
+    },
+    {
+      "law_id": "JUST-docs-social-legal-aid-law-readme-md",
+      "title": "中华人民共和国法律援助法",
+      "category": "social",
+      "candidate_path": "docs/social/legal-aid-law/README.md",
+      "candidate_source": "just-laws",
+      "topic_exists": false,
+      "topic_id": null,
+      "verification_status": "CANDIDATE"
+    },
+    {
+      "law_id": "JUST-docs-social-maternal-and-infant-health-care-law-readme-md",
+      "title": "中华人民共和国母婴保健法",
+      "category": "social",
+      "candidate_path": "docs/social/maternal-and-infant-health-care-law/README.md",
+      "candidate_source": "just-laws",
+      "topic_exists": false,
+      "topic_id": null,
+      "verification_status": "CANDIDATE"
+    },
+    {
+      "law_id": "JUST-docs-social-military-personnel-insurance-law-readme-md",
+      "title": "中华人民共和国军人保险法",
+      "category": "social",
+      "candidate_path": "docs/social/military-personnel-insurance-law/README.md",
+      "candidate_source": "just-laws",
+      "topic_exists": false,
+      "topic_id": null,
+      "verification_status": "CANDIDATE"
+    },
+    {
+      "law_id": "JUST-docs-social-mine-safety-law-readme-md",
+      "title": "中华人民共和国矿山安全法",
+      "category": "social",
+      "candidate_path": "docs/social/mine-safety-law/README.md",
+      "candidate_source": "just-laws",
+      "topic_exists": false,
+      "topic_id": null,
+      "verification_status": "CANDIDATE"
+    },
+    {
+      "law_id": "JUST-docs-social-occupational-disease-prevention-and-control-law-readme-md",
+      "title": "中华人民共和国职业病防治法",
+      "category": "social",
+      "candidate_path": "docs/social/occupational-disease-prevention-and-control-law/README.md",
+      "candidate_source": "just-laws",
+      "topic_exists": false,
+      "topic_id": null,
+      "verification_status": "CANDIDATE"
+    },
+    {
+      "law_id": "JUST-docs-social-overseas-non-governmental-organizations-domestic-activities-administration-law-readme-md",
+      "title": "中华人民共和国境外非政府组织境内活动管理法",
+      "category": "social",
+      "candidate_path": "docs/social/overseas-non-governmental-organizations-domestic-activities-administration-law/README.md",
+      "candidate_source": "just-laws",
+      "topic_exists": false,
+      "topic_id": null,
+      "verification_status": "CANDIDATE"
+    },
+    {
+      "law_id": "JUST-docs-social-prevention-of-juvenile-delinquency-readme-md",
+      "title": "中华人民共和国预防未成年人犯罪法",
+      "category": "social",
+      "candidate_path": "docs/social/prevention-of-juvenile-delinquency/README.md",
+      "candidate_source": "just-laws",
+      "topic_exists": false,
+      "topic_id": null,
+      "verification_status": "CANDIDATE"
+    },
+    {
+      "law_id": "JUST-docs-social-protection-of-disabled-persons-law-readme-md",
+      "title": "中华人民共和国残疾人保障法",
+      "category": "social",
+      "candidate_path": "docs/social/protection-of-disabled-persons-law/README.md",
+      "candidate_source": "just-laws",
+      "topic_exists": false,
+      "topic_id": null,
+      "verification_status": "CANDIDATE"
+    },
+    {
+      "law_id": "JUST-docs-social-protection-of-minors-readme-md",
+      "title": "中华人民共和国未成年人保护法",
+      "category": "social",
+      "candidate_path": "docs/social/protection-of-minors/README.md",
+      "candidate_source": "just-laws",
+      "topic_exists": false,
+      "topic_id": null,
+      "verification_status": "CANDIDATE"
+    },
+    {
+      "law_id": "JUST-docs-social-public-welfare-donations-law-readme-md",
+      "title": "中华人民共和国公益事业捐赠法",
+      "category": "social",
+      "candidate_path": "docs/social/public-welfare-donations-law/README.md",
+      "candidate_source": "just-laws",
+      "topic_exists": false,
+      "topic_id": null,
+      "verification_status": "CANDIDATE"
+    },
+    {
+      "law_id": "JUST-docs-social-red-cross-society-law-readme-md",
+      "title": "中华人民共和国红十字会法",
+      "category": "social",
+      "candidate_path": "docs/social/red-cross-society-law/README.md",
+      "candidate_source": "just-laws",
+      "topic_exists": false,
+      "topic_id": null,
+      "verification_status": "CANDIDATE"
+    },
+    {
+      "law_id": "JUST-docs-social-resolution-approving-state-council-interim-measures-on-workers-retirement-and-resignation-readme-md",
+      "title": "全国人民代表大会常务委员会关于批准《国务院关于工人退休、退职的暂行办法》的决议",
+      "category": "social",
+      "candidate_path": "docs/social/resolution-approving-state-council-interim-measures-on-workers-retirement-and-resignation/README.md",
+      "candidate_source": "just-laws",
+      "topic_exists": false,
+      "topic_id": null,
+      "verification_status": "CANDIDATE"
+    },
+    {
+      "law_id": "JUST-docs-social-returned-overseas-chinese-and-relatives-rights-protection-law-readme-md",
+      "title": "中华人民共和国归侨侨眷权益保护法",
+      "category": "social",
+      "candidate_path": "docs/social/returned-overseas-chinese-and-relatives-rights-protection-law/README.md",
+      "candidate_source": "just-laws",
+      "topic_exists": false,
+      "topic_id": null,
+      "verification_status": "CANDIDATE"
+    },
+    {
+      "law_id": "JUST-docs-social-science-and-technology-popularization-law-readme-md",
+      "title": "中华人民共和国科学技术普及法",
+      "category": "social",
+      "candidate_path": "docs/social/science-and-technology-popularization-law/README.md",
+      "candidate_source": "just-laws",
+      "topic_exists": false,
+      "topic_id": null,
+      "verification_status": "CANDIDATE"
+    },
+    {
+      "law_id": "JUST-docs-social-social-assistance-law-readme-md",
+      "title": "中华人民共和国社会救助法",
+      "category": "social",
+      "candidate_path": "docs/social/social-assistance-law/README.md",
+      "candidate_source": "just-laws",
+      "topic_exists": false,
+      "topic_id": null,
+      "verification_status": "CANDIDATE"
+    },
+    {
+      "law_id": "JUST-docs-social-social-insurance-law-readme-md",
+      "title": "中华人民共和国社会保险法",
+      "category": "social",
+      "candidate_path": "docs/social/social-insurance-law/README.md",
+      "candidate_source": "just-laws",
+      "topic_exists": false,
+      "topic_id": null,
+      "verification_status": "CANDIDATE"
+    },
+    {
+      "law_id": "JUST-docs-social-special-equipment-safety-law-readme-md",
+      "title": "中华人民共和国特种设备安全法",
+      "category": "social",
+      "candidate_path": "docs/social/special-equipment-safety-law/README.md",
+      "candidate_source": "just-laws",
+      "topic_exists": false,
+      "topic_id": null,
+      "verification_status": "CANDIDATE"
+    },
+    {
+      "law_id": "JUST-docs-social-trade-unions-law-readme-md",
+      "title": "中华人民共和国工会法",
+      "category": "social",
+      "candidate_path": "docs/social/trade-unions-law/README.md",
+      "candidate_source": "just-laws",
+      "topic_exists": false,
+      "topic_id": null,
+      "verification_status": "CANDIDATE"
+    },
+    {
+      "law_id": "JUST-docs-social-veterans-protection-law-readme-md",
+      "title": "中华人民共和国退役军人保障法",
+      "category": "social",
+      "candidate_path": "docs/social/veterans-protection-law/README.md",
+      "candidate_source": "just-laws",
+      "topic_exists": false,
+      "topic_id": null,
+      "verification_status": "CANDIDATE"
+    },
+    {
+      "law_id": "JUST-docs-social-womens-rights-and-interests-protection-law-readme-md",
+      "title": "中华人民共和国妇女权益保障法",
+      "category": "social",
+      "candidate_path": "docs/social/womens-rights-and-interests-protection-law/README.md",
+      "candidate_source": "just-laws",
+      "topic_exists": false,
+      "topic_id": null,
+      "verification_status": "CANDIDATE"
+    },
+    {
+      "law_id": "JUST-docs-social-work-safety-law-readme-md",
+      "title": "中华人民共和国安全生产法",
+      "category": "social",
+      "candidate_path": "docs/social/work-safety-law/README.md",
+      "candidate_source": "just-laws",
+      "topic_exists": true,
+      "topic_id": "work-safety-law",
+      "verification_status": "CANDIDATE"
+    }
+  ]
+}

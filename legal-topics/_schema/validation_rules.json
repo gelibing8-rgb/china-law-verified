@@ -1,0 +1,10 @@
+{
+  "schema_version": "V4",
+  "verification_status": ["VERIFIED", "OFFICIAL_META", "CANDIDATE", "UNVERIFIED"],
+  "legal_status": ["effective", "repealed", "replaced", "historical", "draft", "pending_verification", "not_applicable"],
+  "reference_status": ["active", "no_longer_reference", "historical", "pending_verification"],
+  "relation_strength": ["core", "direct", "related", "pending_relation"],
+  "case_authority": ["guiding_case", "people_court_database_case", "gazette_case", "typical_case"],
+  "default_relation_strength": ["core", "direct"],
+  "default_case_order": ["guiding_case", "people_court_database_case", "gazette_case", "typical_case", "pending_verification"]
+}

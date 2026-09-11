@@ -1,0 +1,145 @@
+{
+  "topic": {
+    "id": "labor-contract-law",
+    "title": "中华人民共和国劳动合同法专题",
+    "primary_law": "中华人民共和国劳动合同法",
+    "primary_document_id": "OFFICIAL-labor_contract_law",
+    "schema_version": "V4",
+    "topic_status": "generated_local_candidate",
+    "generated_at": "2026-09-11T07:52:43Z",
+    "data_sources": [
+      "just-laws: local read-only clone",
+      "lawtext-laws: local read-only clone",
+      "china-data-laws: local read-only clone"
+    ]
+  },
+  "documents": [
+    {
+      "document_id": "OFFICIAL-labor_contract_law",
+      "title": "中华人民共和国劳动合同法",
+      "document_type": "法律",
+      "issuing_authority": "全国人民代表大会常务委员会",
+      "promulgation_date": "2012-12-28",
+      "effective_date": "2013-07-01",
+      "legal_status": "effective",
+      "relation_strength": "core",
+      "verification_status": "OFFICIAL_META",
+      "local_path": "laws/labor_contract_law.md",
+      "official_url": "https://flk.npc.gov.cn/detail.html?bbbs=2c909fdd678bf17901678bf74d7106b3",
+      "candidate_sources": [
+        {
+          "source": "just-laws",
+          "local_root": "/Users/glb/workspace/legal-sources/just-laws",
+          "relative_path": "docs/social/labor-contracts-law/README.md",
+          "source_commit": "56770b043bf19686fec43403bd24e8e290275794",
+          "verification_status": "CANDIDATE",
+          "match_method": "title_exact"
+        },
+        {
+          "source": "lawtext-laws",
+          "local_root": "/Users/glb/workspace/legal-sources/laws",
+          "relative_path": "content/法律/2c909fdd678bf17901678bf74d7106b3.md",
+          "source_commit": "aefdfca37fb06e90a29af6311a1ed9804c9670bd",
+          "verification_status": "CANDIDATE",
+          "match_method": "title_exact"
+        },
+        {
+          "source": "china-data-laws",
+          "local_root": "/Users/glb/workspace/legal-sources/china-data-laws",
+          "relative_path": "社会法/劳动合同法(2012-12-28).md",
+          "source_commit": "1ca7a3518d115c8dd3b752849ebdfa09878fa1b0",
+          "verification_status": "CANDIDATE",
+          "match_method": "title_exact"
+        }
+      ],
+      "notes": "本仓库现有官方元数据层；正文是否逐字核验由源文件 frontmatter 决定。"
+    },
+    {
+      "document_id": "LOCAL-C8CE22DC6103",
+      "title": "中华人民共和国劳动合同法实施条例",
+      "document_type": "行政法规",
+      "document_number": null,
+      "issuing_authority": null,
+      "promulgation_date": null,
+      "effective_date": null,
+      "legal_status": "pending_verification",
+      "relation_strength": "direct",
+      "verification_status": "CANDIDATE",
+      "source_url": null,
+      "candidate_sources": [
+        {
+          "source": "china-data-laws",
+          "local_root": "/Users/glb/workspace/legal-sources/china-data-laws",
+          "relative_path": "行政法规/劳动合同法实施条例(2008-09-18).md",
+          "source_commit": "1ca7a3518d115c8dd3b752849ebdfa09878fa1b0",
+          "verification_status": "CANDIDATE",
+          "match_method": "title_contains_primary_law"
+        }
+      ],
+      "notes": "由本地候选库标题/元数据明确关联；未复制正文，未提升为 VERIFIED。"
+    },
+    {
+      "document_id": "LOCAL-6A68657FDE1D",
+      "title": "中华人民共和国劳动合同法实施条例",
+      "document_type": "行政法规",
+      "document_number": null,
+      "issuing_authority": "国务院",
+      "promulgation_date": "2008-09-18",
+      "effective_date": null,
+      "legal_status": "effective",
+      "relation_strength": "direct",
+      "verification_status": "CANDIDATE",
+      "source_url": null,
+      "candidate_sources": [
+        {
+          "source": "lawtext-laws",
+          "local_root": "/Users/glb/workspace/legal-sources/laws",
+          "relative_path": "content/行政法规/ff8080816f3cbb3c016f40927caf049c.md",
+          "source_commit": "aefdfca37fb06e90a29af6311a1ed9804c9670bd",
+          "verification_status": "CANDIDATE",
+          "match_method": "title_contains_primary_law"
+        }
+      ],
+      "notes": "由本地候选库标题/元数据明确关联；未复制正文，未提升为 VERIFIED。"
+    }
+  ],
+  "documents_related": [],
+  "case_collections": [],
+  "cases": [],
+  "cases_related": [],
+  "statistics": {
+    "documents_total": 3,
+    "documents_by_type": {
+      "法律": 1,
+      "行政法规": 2
+    },
+    "documents_by_verification_status": {
+      "OFFICIAL_META": 1,
+      "CANDIDATE": 2
+    },
+    "documents_by_legal_status": {
+      "effective": 2,
+      "pending_verification": 1
+    },
+    "documents_by_relation_strength": {
+      "core": 1,
+      "direct": 2
+    },
+    "cases_total": 0
+  },
+  "verification": {
+    "generated_by": "scripts/build_topic.py",
+    "no_government_network": true
+  },
+  "known_gaps": [
+    "案例层未自动归类；需后续提供唯一可靠案例身份与本地材料。"
+  ],
+  "update_state": {
+    "generated_at": "2026-09-11T07:52:43Z",
+    "candidate_commits": {
+      "just-laws": "56770b043bf19686fec43403bd24e8e290275794",
+      "lawtext-laws": "aefdfca37fb06e90a29af6311a1ed9804c9670bd",
+      "china-data-laws": "1ca7a3518d115c8dd3b752849ebdfa09878fa1b0"
+    }
+  }
+}

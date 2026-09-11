@@ -1,0 +1,152 @@
+{
+  "topic": {
+    "id": "tendering-bidding-law",
+    "title": "中华人民共和国招标投标法专题",
+    "primary_law": "中华人民共和国招标投标法",
+    "primary_document_id": "LOCAL-EC1C7DD7B9DB",
+    "schema_version": "V4",
+    "topic_status": "generated_local_candidate",
+    "generated_at": "2026-09-11T07:52:44Z",
+    "data_sources": [
+      "just-laws: local read-only clone",
+      "lawtext-laws: local read-only clone",
+      "china-data-laws: local read-only clone"
+    ]
+  },
+  "documents": [
+    {
+      "document_id": "LOCAL-EC1C7DD7B9DB",
+      "title": "中华人民共和国招标投标法",
+      "document_type": "法律",
+      "document_number": null,
+      "issuing_authority": null,
+      "promulgation_date": null,
+      "effective_date": null,
+      "legal_status": "pending_verification",
+      "relation_strength": "core",
+      "verification_status": "CANDIDATE",
+      "source_url": null,
+      "candidate_sources": [
+        {
+          "source": "just-laws",
+          "local_root": "/Users/glb/workspace/legal-sources/just-laws",
+          "relative_path": "docs/civil-and-commercial/bidding-law/README.md",
+          "source_commit": "56770b043bf19686fec43403bd24e8e290275794",
+          "verification_status": "CANDIDATE",
+          "match_method": "title_exact"
+        }
+      ],
+      "notes": "由本地候选库标题/元数据明确关联；未复制正文，未提升为 VERIFIED。"
+    },
+    {
+      "document_id": "LOCAL-C758562AC5BE",
+      "title": "河南省实施《中华人民共和国招标投标法》办法",
+      "document_type": "法律",
+      "document_number": null,
+      "issuing_authority": null,
+      "promulgation_date": null,
+      "effective_date": null,
+      "legal_status": "pending_verification",
+      "relation_strength": "direct",
+      "verification_status": "CANDIDATE",
+      "source_url": null,
+      "candidate_sources": [
+        {
+          "source": "china-data-laws",
+          "local_root": "/Users/glb/workspace/legal-sources/china-data-laws",
+          "relative_path": "地方性法规/河南/河南省实施《招标投标法》办法(2002-11-30).md",
+          "source_commit": "1ca7a3518d115c8dd3b752849ebdfa09878fa1b0",
+          "verification_status": "CANDIDATE",
+          "match_method": "title_contains_primary_law"
+        }
+      ],
+      "notes": "由本地候选库标题/元数据明确关联；未复制正文，未提升为 VERIFIED。"
+    },
+    {
+      "document_id": "LOCAL-914001C8323F",
+      "title": "中华人民共和国招标投标法实施条例",
+      "document_type": "行政法规",
+      "document_number": null,
+      "issuing_authority": null,
+      "promulgation_date": null,
+      "effective_date": null,
+      "legal_status": "pending_verification",
+      "relation_strength": "direct",
+      "verification_status": "CANDIDATE",
+      "source_url": null,
+      "candidate_sources": [
+        {
+          "source": "china-data-laws",
+          "local_root": "/Users/glb/workspace/legal-sources/china-data-laws",
+          "relative_path": "行政法规/招标投标法实施条例(2019-03-02).md",
+          "source_commit": "1ca7a3518d115c8dd3b752849ebdfa09878fa1b0",
+          "verification_status": "CANDIDATE",
+          "match_method": "title_contains_primary_law"
+        }
+      ],
+      "notes": "由本地候选库标题/元数据明确关联；未复制正文，未提升为 VERIFIED。"
+    },
+    {
+      "document_id": "LOCAL-93D1B6F510A3",
+      "title": "中华人民共和国招标投标法实施条例",
+      "document_type": "行政法规",
+      "document_number": null,
+      "issuing_authority": "国务院",
+      "promulgation_date": "2019-03-02",
+      "effective_date": null,
+      "legal_status": "effective",
+      "relation_strength": "direct",
+      "verification_status": "CANDIDATE",
+      "source_url": null,
+      "candidate_sources": [
+        {
+          "source": "lawtext-laws",
+          "local_root": "/Users/glb/workspace/legal-sources/laws",
+          "relative_path": "content/行政法规/ff8080816f3cbb3c016f410aac441307.md",
+          "source_commit": "aefdfca37fb06e90a29af6311a1ed9804c9670bd",
+          "verification_status": "CANDIDATE",
+          "match_method": "title_contains_primary_law"
+        }
+      ],
+      "notes": "由本地候选库标题/元数据明确关联；未复制正文，未提升为 VERIFIED。"
+    }
+  ],
+  "documents_related": [],
+  "case_collections": [],
+  "cases": [],
+  "cases_related": [],
+  "statistics": {
+    "documents_total": 4,
+    "documents_by_type": {
+      "法律": 2,
+      "行政法规": 2
+    },
+    "documents_by_verification_status": {
+      "CANDIDATE": 4
+    },
+    "documents_by_legal_status": {
+      "pending_verification": 3,
+      "effective": 1
+    },
+    "documents_by_relation_strength": {
+      "core": 1,
+      "direct": 3
+    },
+    "cases_total": 0
+  },
+  "verification": {
+    "generated_by": "scripts/build_topic.py",
+    "no_government_network": true
+  },
+  "known_gaps": [
+    "案例层未自动归类；需后续提供唯一可靠案例身份与本地材料。"
+  ],
+  "update_state": {
+    "generated_at": "2026-09-11T07:52:44Z",
+    "candidate_commits": {
+      "just-laws": "56770b043bf19686fec43403bd24e8e290275794",
+      "lawtext-laws": "aefdfca37fb06e90a29af6311a1ed9804c9670bd",
+      "china-data-laws": "1ca7a3518d115c8dd3b752849ebdfa09878fa1b0"
+    }
+  }
+}
