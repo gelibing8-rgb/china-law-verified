@@ -149,6 +149,17 @@ add("AR-CAPITAL-2024",
     bbbs="ff808181907350630190dd6d975c6c01",
     source_url="https://flk.npc.gov.cn/detail.html?bbbs=ff808181907350630190dd6d975c6c01",
     local_path=None,
+    candidate_sources=[
+        {
+            "source": "lawtext-laws",
+            "local_root": "~/workspace/legal-sources/laws",
+            "relative_path": "content/行政法规/ff808181907350630190dd6d975c6c01.md",
+            "source_commit": "aefdfca37fb06e90a29af6311a1ed9804c9670bd",
+            "source_license_status": "unclear",
+            "verification_status": "CANDIDATE",
+            "match_method": "bbbs_exact_match",
+        }
+    ],
     notes="2023 修订公司法同步配套；just-laws 无副本；正文未逐字核验。"
 )
 add("AR-MARKET-ENTITY-2022",
@@ -167,6 +178,17 @@ add("AR-MARKET-ENTITY-2022",
     bbbs="ff8081817b63b679017b7b2085953607",
     source_url="https://flk.npc.gov.cn/detail.html?bbbs=ff8081817b63b679017b7b2085953607",
     local_path=None,
+    candidate_sources=[
+        {
+            "source": "lawtext-laws",
+            "local_root": "~/workspace/legal-sources/laws",
+            "relative_path": "content/行政法规/ff8081817b63b679017b7b2085953607.md",
+            "source_commit": "aefdfca37fb06e90a29af6311a1ed9804c9670bd",
+            "source_license_status": "unclear",
+            "verification_status": "CANDIDATE",
+            "match_method": "bbbs_exact_match",
+        }
+    ],
     notes="公司登记 / 备案的直接依据；just-laws 无副本。"
 )
 add("AR-NAME-2020",
@@ -184,7 +206,18 @@ add("AR-NAME-2020",
     effective_date="2021-03-01",
     bbbs="ff808081777d0c94017784da4aa50a73",
     source_url="https://flk.npc.gov.cn/detail.html?bbbs=ff808081777d0c94017784da4aa50a73",
-    local_path=None
+    local_path=None,
+    candidate_sources=[
+        {
+            "source": "lawtext-laws",
+            "local_root": "~/workspace/legal-sources/laws",
+            "relative_path": "content/行政法规/ff808081777d0c94017784da4aa50a73.md",
+            "source_commit": "aefdfca37fb06e90a29af6311a1ed9804c9670bd",
+            "source_license_status": "unclear",
+            "verification_status": "CANDIDATE",
+            "match_method": "bbbs_exact_match",
+        }
+    ],
 )
 
 # 4) 司法解释（现行）
@@ -206,6 +239,17 @@ add("JI-1-2014",
     source_url="https://flk.npc.gov.cn/detail.html?bbbs=ff8081818a1cb709018acf819b8f452f",
     document_number="法释〔2014〕2号",
     local_path=None,
+    candidate_sources=[
+        {
+            "source": "lawtext-laws",
+            "local_root": "~/workspace/legal-sources/laws",
+            "relative_path": "content/司法解释/ff8081818a1cb709018acf819b8f452f.md",
+            "source_commit": "aefdfca37fb06e90a29af6311a1ed9804c9670bd",
+            "source_license_status": "unclear",
+            "verification_status": "CANDIDATE",
+            "match_method": "bbbs_exact_match",
+        }
+    ],
     notes="2014 修正版（最新）；与 2023 公司法无冲突的内容继续适用；条文援引旧法序号应改写为新法序号。"
 )
 add("JI-2-2020",
@@ -225,6 +269,17 @@ add("JI-2-2020",
     source_url="https://flk.npc.gov.cn/detail.html?bbbs=ff808181799df6140179ac069a281a27",
     document_number="法释〔2020〕18号",
     local_path=None,
+    candidate_sources=[
+        {
+            "source": "lawtext-laws",
+            "local_root": "~/workspace/legal-sources/laws",
+            "relative_path": "content/司法解释/ff808181799df6140179ac069a281a27.md",
+            "source_commit": "aefdfca37fb06e90a29af6311a1ed9804c9670bd",
+            "source_license_status": "unclear",
+            "verification_status": "CANDIDATE",
+            "match_method": "bbbs_exact_match",
+        }
+    ],
     notes="2020 修正版；公司解散与清算纠纷。"
 )
 add("JI-3-2020",
@@ -244,6 +299,17 @@ add("JI-3-2020",
     source_url="https://flk.npc.gov.cn/detail.html?bbbs=ff808181799def980179ac07a9ca117c",
     document_number="法释〔2020〕18号",
     local_path=None,
+    candidate_sources=[
+        {
+            "source": "lawtext-laws",
+            "local_root": "~/workspace/legal-sources/laws",
+            "relative_path": "content/司法解释/ff808181799def980179ac07a9ca117c.md",
+            "source_commit": "aefdfca37fb06e90a29af6311a1ed9804c9670bd",
+            "source_license_status": "unclear",
+            "verification_status": "CANDIDATE",
+            "match_method": "bbbs_exact_match",
+        }
+    ],
     notes="2020 修正版；公司设立、股东出资、股权确认等纠纷。第十三条第三款被 2023 公司法第九十九条吸收。"
 )
 add("JI-4-2020",
@@ -263,6 +329,17 @@ add("JI-4-2020",
     source_url="https://flk.npc.gov.cn/detail.html?bbbs=ff808181799df4000179ac08cb701145",
     document_number="法释〔2020〕18号",
     local_path=None,
+    candidate_sources=[
+        {
+            "source": "lawtext-laws",
+            "local_root": "~/workspace/legal-sources/laws",
+            "relative_path": "content/司法解释/ff808181799df4000179ac08cb701145.md",
+            "source_commit": "aefdfca37fb06e90a29af6311a1ed9804c9670bd",
+            "source_license_status": "unclear",
+            "verification_status": "CANDIDATE",
+            "match_method": "bbbs_exact_match",
+        }
+    ],
     notes="2020 修正版；公司决议效力、股东知情权、利润分配权、股东代位诉讼。"
 )
 add("JI-5-2020",
@@ -282,6 +359,17 @@ add("JI-5-2020",
     source_url="https://flk.npc.gov.cn/detail.html?bbbs=ff808181799df4000179ac1ef1b1115c",
     document_number="法释〔2020〕18号",
     local_path=None,
+    candidate_sources=[
+        {
+            "source": "lawtext-laws",
+            "local_root": "~/workspace/legal-sources/laws",
+            "relative_path": "content/司法解释/ff808181799df4000179ac1ef1b1115c.md",
+            "source_commit": "aefdfca37fb06e90a29af6311a1ed9804c9670bd",
+            "source_license_status": "unclear",
+            "verification_status": "CANDIDATE",
+            "match_method": "bbbs_exact_match",
+        }
+    ],
     notes="2020 修正版；关联交易、董事职务解除、利润分配履行。"
 )
 add("JI-TIME-2024",
@@ -301,6 +389,17 @@ add("JI-TIME-2024",
     source_url="https://flk.npc.gov.cn/detail.html?bbbs=ff8081819150444501916e8c37764524",
     document_number="法释〔2024〕7号",
     local_path=None,
+    candidate_sources=[
+        {
+            "source": "lawtext-laws",
+            "local_root": "~/workspace/legal-sources/laws",
+            "relative_path": "content/司法解释/ff8081819150444501916e8c37764524.md",
+            "source_commit": "aefdfca37fb06e90a29af6311a1ed9804c9670bd",
+            "source_license_status": "unclear",
+            "verification_status": "CANDIDATE",
+            "match_method": "bbbs_exact_match",
+        }
+    ],
     notes="2024 年发布；解决新旧公司法衔接适用问题。第四条关于第八十八条第一款溯及适用的规定，已被 法释〔2024〕15号批复实质否定。"
 )
 add("JI-88-FB-2024",
@@ -320,6 +419,17 @@ add("JI-88-FB-2024",
     source_url="https://flk.npc.gov.cn/detail.html?bbbs=ff808181927f1276019448a29dca7d34",
     document_number="法释〔2024〕15号",
     local_path=None,
+    candidate_sources=[
+        {
+            "source": "lawtext-laws",
+            "local_root": "~/workspace/legal-sources/laws",
+            "relative_path": "content/司法解释/ff808181927f1276019448a29dca7d34.md",
+            "source_commit": "aefdfca37fb06e90a29af6311a1ed9804c9670bd",
+            "source_license_status": "unclear",
+            "verification_status": "CANDIDATE",
+            "match_method": "bbbs_exact_match",
+        }
+    ],
     notes="2024-12-24 最高法审委会第 1939 次会议通过；针对 2024 备案审查中公民、组织对 JI-TIME-2024 第四条溯及适用的审查建议；明确第八十八条第一款仅适用于 2024-07-01 之后发生的股权转让。"
 )
 

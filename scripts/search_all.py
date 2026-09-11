@@ -51,6 +51,8 @@ WORKSPACE = ROOT.parent
 LAWS_DIR = ROOT / "laws"
 INDEX_FILE = ROOT / "metadata" / "index.jsonl"
 CANDIDATE_ROOT = WORKSPACE / "legal-sources" / "just-laws"
+# V3.2：第二候选源 lawtext/laws（仅本地只读；不复制到本仓）
+LAWTEXT_ROOT = WORKSPACE / "legal-sources" / "laws"
 
 LAYER_VERIFIED = "VERIFIED"
 LAYER_OFFICIAL_META = "OFFICIAL_META"
@@ -197,14 +199,15 @@ def fmt_law_hit(rel_path: str, lineno: int, snippet: str, idx: dict, layer: str)
     ]
 
 
-def fmt_candidate_hit(rel_path: str, lineno: int, snippet: str, _idx=None) -> list[str]:
-    full = CANDIDATE_ROOT / rel_path
+def fmt_candidate_hit(rel_path: str, lineno: int, snippet: str, _idx=None, *, root: Path = CANDIDATE_ROOT, source_name: str = "just-laws") -> list[str]:
+    full = root / rel_path
     title = title_from_md(full)
     cat = category_of(full)
     ctx = snippet.strip()[:200]
     return [
         f"  标题: {title}",
         f"  层: CANDIDATE",
+        f"  candidate_source: {source_name}",
         f"  类别: {cat}",
         f"  路径: {rel_path}:{lineno}",
         f"  原文: {ctx}",
@@ -212,8 +215,11 @@ def fmt_candidate_hit(rel_path: str, lineno: int, snippet: str, _idx=None) -> li
 
 
 def print_section(backend: str, dt: float, hits: list[tuple[str, int, str]],
-                  root: Path, fmt_hit, idx) -> int:
-    """返回本节命中行数. fmt_hit 决定 VERIFIED/OFFICIAL_META/CANDIDATE 渲染."""
+                  root: Path, fmt_hit, idx, *, source_name: str = "just-laws") -> int:
+    """返回本节命中行数. fmt_hit 决定 VERIFIED/OFFICIAL_META/CANDIDATE 渲染.
+
+    V3.2：source_name 仅对 CANDIDATE 命中生效；用于输出 candidate_source 标签。
+    """
     if not hits:
         print(f"  └─ (无命中)  backend: {backend}  耗时 {dt*1000:.1f} ms")
         return 0
@@ -230,14 +236,14 @@ def print_section(backend: str, dt: float, hits: list[tuple[str, int, str]],
             layer_label = layer_for_law(rel)
         # 仅取标题行（fmt_law_hit 需要 layer 参数，title 情况下也补上）
         if fmt_hit is fmt_candidate_hit:
-            title_line = fmt_hit(rel, 0, "", idx)[0]
+            title_line = fmt_hit(rel, 0, "", idx, root=root, source_name=source_name)[0]
         else:
             title_line = fmt_hit(rel, 0, "", idx, layer_label)[0]
         print(f"  · {title_line}  ({rel})  [{layer_label}]")
         for ln, snippet in hs[:20]:
             total += 1
             if fmt_hit is fmt_candidate_hit:
-                lines = fmt_hit(rel, ln, snippet, idx)
+                lines = fmt_hit(rel, ln, snippet, idx, root=root, source_name=source_name)
             else:
                 lines = fmt_hit(rel, ln, snippet, idx, layer_label)
             for line in lines:
@@ -379,7 +385,11 @@ def load_topic_manifest(topic_id: str, include_related: bool = False):
         docs = docs + list(manifest.get("documents_related", []) or [])
 
     laws_paths: set[str] = set()
-    candidate_paths: set[str] = set()
+    # V3.2：按 source 分隔的候选路径集
+    candidate_sources_paths: dict[str, set[str]] = {
+        "just-laws": set(),
+        "lawtext-laws": set(),
+    }
     unresolved: list[tuple[str, str]] = []
 
     for doc in docs:
@@ -393,14 +403,27 @@ def load_topic_manifest(topic_id: str, include_related: bool = False):
         if strength not in allowed_strength:
             continue
 
-        # V3.1.1：candidate_path 优先于 title 匹配
+        # V3.2：candidate_sources[] 优先于其他路径字段
+        css = doc.get("candidate_sources")
+        if css:
+            for cs in css:
+                src_name = cs.get("source", "?")
+                rel = cs.get("relative_path", "")
+                if not rel:
+                    continue
+                if src_name in candidate_sources_paths:
+                    candidate_sources_paths[src_name].add(rel)
+                else:
+                    unresolved.append((doc_id, title))
+            continue
+
+        # 向后兼容 V3.1.1 的 candidate_path 单字段
         cp = doc.get("candidate_path")
         if cp:
-            # 必须是相对 CANDIDATE_ROOT 的路径
             if cp.startswith("docs/") or cp.startswith("constitution/") or "/" in cp:
-                candidate_paths.add(cp)
+                candidate_sources_paths["just-laws"].add(cp)
                 continue
-            unresolved.append((doc_id, title, f"candidate_path 不在 CANDIDATE_ROOT 之下: {cp}"))
+            unresolved.append((doc_id, title))
             continue
 
         lp = doc.get("local_path")
@@ -408,23 +431,32 @@ def load_topic_manifest(topic_id: str, include_related: bool = False):
             if lp.startswith("laws/"):
                 laws_paths.add(lp[len("laws/"):])
             elif lp.startswith("docs/") or lp.startswith("constitution/"):
-                candidate_paths.add(lp)
+                candidate_sources_paths["just-laws"].add(lp)
             else:
-                unresolved.append((doc_id, title, "local_path 不在已知层（laws/ 或 CANDIDATE/）"))
+                unresolved.append((doc_id, title))
             continue
 
-        # 既无 candidate_path 也无 local_path → title 唯一匹配
+        # 既无 candidate_sources 也无 candidate_path / local_path → title 唯一匹配
         cand_index = _build_candidate_title_index()
         norm = _normalize_title(title)
         matches = cand_index.get(norm, set())
         if len(matches) == 1:
-            candidate_paths.update(matches)
+            candidate_sources_paths["just-laws"].update(matches)
         elif len(matches) > 1:
             unresolved.append((doc_id, title))
         else:
             unresolved.append((doc_id, title))
 
-    scope = {"laws_paths": laws_paths, "candidate_paths": candidate_paths}
+    # V3.2：构造多源 scope
+    candidate_sources = []
+    for name in ["just-laws", "lawtext-laws"]:
+        root_map = {"just-laws": CANDIDATE_ROOT, "lawtext-laws": LAWTEXT_ROOT}
+        candidate_sources.append({
+            "name": name,
+            "root": root_map[name],
+            "paths": candidate_sources_paths[name],
+        })
+    scope = {"laws_paths": laws_paths, "candidate_sources": candidate_sources}
     return topic_meta, scope, unresolved
 
 
@@ -481,25 +513,42 @@ def main() -> int:
         print(f"Topic: {args.topic}")
         print(f"Topic title: {topic_meta.get('title', '')}")
         if topic_scope:
+            cs_summary = ", ".join(
+                f"{cs['name']}={len(cs['paths'])} files"
+                for cs in topic_scope["candidate_sources"]
+            )
             print(f"Topic scope: laws_paths={len(topic_scope['laws_paths'])} files, "
-                  f"candidate_paths={len(topic_scope['candidate_paths'])} files")
+                  f"candidate_sources=[{cs_summary}]")
         if args.include_related:
             print("# (--include-related 已启用)")
     print(f"# query={query!r}")
     print(f"# keywords={keywords!r}\n")
 
-    # 局部 search 包装：启用专题时按层过滤 hits
-    def _s(root: Path, pattern: str):
+    # 局部 search 包装：启用专题时按层过滤 hits（V3.2：支持多候选源）
+    def _s(root: Path, source_name: str | None, pattern: str):
         backend, hits, dt = search_one(root, pattern)
         if topic_scope is not None:
             if root == LAWS_DIR:
                 hits = filter_hits_by_scope(hits, topic_scope["laws_paths"])
-            elif root == CANDIDATE_ROOT:
-                hits = filter_hits_by_scope(hits, topic_scope["candidate_paths"])
             else:
-                # sub-path search（如 LAWS_DIR/xxx.md）不过滤：路径已由调用点限定
-                pass
+                # 按 source_name 查找对应的 paths 集
+                for cs in topic_scope.get("candidate_sources", []):
+                    if cs["root"] == root:
+                        hits = filter_hits_by_scope(hits, cs["paths"])
+                        break
         return backend, hits, dt
+
+    # 获得本次运行时需要遍历的候选源列表
+    # - 专题模式下：只遍历 scope.candidate_sources（包括 paths 为空的源，输出”已启用但未映射”）
+    # - 非专题模式下：遍历全部
+    candidate_iter: list[tuple[str, Path]] = []
+    if topic_scope is not None:
+        for cs in topic_scope["candidate_sources"]:
+            candidate_iter.append((cs["name"], cs["root"]))
+    else:
+        candidate_iter.append(("just-laws", CANDIDATE_ROOT))
+        if LAWTEXT_ROOT.exists():
+            candidate_iter.append(("lawtext-laws", LAWTEXT_ROOT))
 
     grand_total = 0
     t_total = time.perf_counter()
@@ -512,7 +561,7 @@ def main() -> int:
         total1 = 0
         if query:
             print(f"\n[阶段 1] 原句精确: {query!r}")
-            backend, hits, dt = _s(LAWS_DIR, re.escape(query))
+            backend, hits, dt = _s(LAWS_DIR, None, re.escape(query))
             total1 = print_section(backend, dt, hits, LAWS_DIR, fmt_hit, idx)
             grand_total += total1
         # 阶段 2/3：只要提供 keywords 就要跑（阶段 1 为 0 或未运行都跑）
@@ -520,7 +569,7 @@ def main() -> int:
             print(f"\n[阶段 2] 关键词单独检索（阶段 1 未命中后）")
             for kw in keywords:
                 print(f"\n  keyword: {kw!r}")
-                backend, hits, dt = _s(LAWS_DIR, re.escape(kw))
+                backend, hits, dt = _s(LAWS_DIR, None, re.escape(kw))
                 grand_total += print_section(backend, dt, hits, LAWS_DIR, fmt_hit, idx)
             print(f"\n[阶段 3] 关键词 AND 交集")
             inter = and_intersect(LAWS_DIR, keywords)
@@ -536,45 +585,65 @@ def main() -> int:
                     title = rec.get("title", Path(rel).stem)
                     print(f"  · {title}  ({rel})  [{layer}]")
                     for kw in keywords:
-                        backend, hits, dt = _s(LAWS_DIR / Path(rel).name, re.escape(kw))
+                        backend, hits, dt = _s(LAWS_DIR / Path(rel).name, None, re.escape(kw))
                         for ln, snippet in hits[:args.limit]:
                             for line in fmt_hit(rel, ln, snippet, idx, layer):
                                 print("    [kw=" + kw + "] " + line)
                         grand_total += len(hits)
 
-    # CANDIDATE 层
-    if not args.laws_only and CANDIDATE_ROOT.exists():
-        print(f"\n## CANDIDATE  (ImCa0/just-laws, MIT — 仅供定位，不可作最终法律依据)")
-        fmt_hit = fmt_candidate_hit
-        total1 = 0
-        if query:
-            print(f"\n[阶段 1] 原句精确: {query!r}")
-            backend, hits, dt = _s(CANDIDATE_ROOT, re.escape(query))
-            total1 = print_section(backend, dt, hits, CANDIDATE_ROOT, fmt_hit, {})
-            grand_total += total1
-        if keywords and total1 == 0:
-            print(f"\n[阶段 2] 关键词单独检索（阶段 1 未命中后）")
-            for kw in keywords:
-                print(f"\n  keyword: {kw!r}")
-                backend, hits, dt = _s(CANDIDATE_ROOT, re.escape(kw))
-                grand_total += print_section(backend, dt, hits, CANDIDATE_ROOT, fmt_hit, {})
-            print(f"\n[阶段 3] 关键词 AND 交集")
-            inter = and_intersect(CANDIDATE_ROOT, keywords)
+    # CANDIDATE 层（V3.2：多候选源迭代）
+    if not args.laws_only:
+        for source_name, source_root in candidate_iter:
+            if not source_root.exists():
+                continue
+            license_note = {
+                "just-laws": "ImCa0/just-laws, MIT",
+                "lawtext-laws": "lawtext/laws (LICENSE unclear — 本地只读候选，不可复制)",
+            }.get(source_name, "?")
+            print(f"\n## CANDIDATE / {source_name}  ({source_root})  [{license_note}]")
+            fmt_hit = fmt_candidate_hit
+            # 本源在专题下的路径集合（topic 启用时）
+            source_paths: set[str] = set()
             if topic_scope is not None:
-                inter = {p: v for p, v in inter.items() if p in topic_scope["candidate_paths"]}
-            if not inter:
-                print(f"  └─ (无文件同时包含全部 {len(keywords)} 个关键词)")
-            else:
-                print(f"  └─ {len(inter)} 个文件同时包含全部 {len(keywords)} 个关键词")
-                for rel in sorted(inter):
-                    full = CANDIDATE_ROOT / rel
-                    print(f"  · {title_from_md(full)}  ({rel})  [CANDIDATE]")
-                    for kw in keywords:
-                        backend, hits, dt = _s(CANDIDATE_ROOT / rel, re.escape(kw))
-                        for ln, snippet in hits[:args.limit]:
-                            for line in fmt_candidate_hit(rel, ln, snippet):
-                                print("    [kw=" + kw + "] " + line)
-                        grand_total += len(hits)
+                for cs in topic_scope["candidate_sources"]:
+                    if cs["root"] == source_root:
+                        source_paths = cs["paths"]
+                        break
+                # 专题启用但本源无任何映射路径：报错并跳过
+                if not source_paths and source_name in (
+                    c["name"] for c in topic_scope["candidate_sources"]
+                ):
+                    print(f"  本源在专题中未映射任何文件（请检查 manifest.candidate_sources）")
+                    continue
+            total1 = 0
+            if query:
+                print(f"\n[阶段 1] 原句精确: {query!r}")
+                backend, hits, dt = _s(source_root, source_name, re.escape(query))
+                total1 = print_section(backend, dt, hits, source_root, fmt_hit, {}, source_name=source_name)
+                grand_total += total1
+            if keywords and total1 == 0:
+                print(f"\n[阶段 2] 关键词单独检索（阶段 1 未命中后）")
+                for kw in keywords:
+                    print(f"\n  keyword: {kw!r}")
+                    backend, hits, dt = _s(source_root, source_name, re.escape(kw))
+                    grand_total += print_section(backend, dt, hits, source_root, fmt_hit, {}, source_name=source_name)
+                print(f"\n[阶段 3] 关键词 AND 交集")
+                inter = and_intersect(source_root, keywords)
+                if topic_scope is not None:
+                    inter = {p: v for p, v in inter.items() if p in source_paths}
+                if not inter:
+                    print(f"  └─ (无文件同时包含全部 {len(keywords)} 个关键词)")
+                else:
+                    print(f"  └─ {len(inter)} 个文件同时包含全部 {len(keywords)} 个关键词")
+                    for rel in sorted(inter):
+                        full = source_root / rel
+                        print(f"  · {title_from_md(full)}  ({rel})  [CANDIDATE / {source_name}]")
+                        for kw in keywords:
+                            backend, hits, dt = _s(source_root / rel, source_name, re.escape(kw))
+                            for ln, snippet in hits[:args.limit]:
+                                for line in fmt_candidate_hit(rel, ln, snippet, root=source_root, source_name=source_name):
+                                    print("    [kw=" + kw + "] " + line)
+                            grand_total += len(hits)
 
     dt_total = time.perf_counter() - t_total
     print(f"\n# 合计命中行数: {grand_total}  总耗时: {dt_total*1000:.1f} ms")
