@@ -1,22 +1,24 @@
 #!/usr/bin/env python3
-"""china-law-verified V2.1 统一检索：精确 → AND 拆解.
+"""china-law-verified V2.2 三层语义检索.
 
-输入：
-    --query     用户原始自然语言问题（用于精确整句检索）
-    --keywords  2~4 个候选检索词（由调用方拆词；本脚本不做 LLM 拆词）
-    --candidate-only / --verified-only   只搜某一层
+层级定义（V2.2）：
+  VERIFIED       = laws/*.md 中 verification_status=verified_official 的文件
+                   元数据 + 全文均已与官方原文逐字核验
+  OFFICIAL_META  = laws/*.md 中 verification_status=needs_recheck 的文件
+                   元数据 + 结构树已通过官方 API 核验；正文未经官方原文逐字核验，
+                   不可作为最终法律依据引用
+  CANDIDATE      = ~/workspace/legal-sources/just-laws (ImCa0/just-laws, MIT)
+                   开源候选，仅供"定位相关条文"，**不能**作为最终法律依据
 
-执行顺序（每次查询都在 VERIFIED 与 CANDIDATE 两层各跑一遍）：
+执行顺序：
   阶段 1：--query 整句精确检索
-  阶段 2（仅在阶段 1 完全 0 命中时）：每个 --keyword 单独检索
-  阶段 3（仅在阶段 1 完全 0 命中时）：--keywords 的 AND 交集
-          （同一文件必须出现全部关键词，列出每条命中行）
+  阶段 2（仅阶段 1 完全 0 命中时）：每个 --keyword 单独检索
+  阶段 3（仅阶段 1 完全 0 命中时）：--keywords 的 AND 交集
 
-输出始终区分：
-  VERIFIED   = china-law-verified/laws/  (已官方核验)
-  CANDIDATE  = just-laws ImCa0/just-laws (MIT，开源候选，仅供定位)
-
-不调用 LLM；正文查找只用 rg / Python re。
+LLM / Agent 职责分工（V2.2）：
+  - Agent / LLM 可以将自然语言问题转换为 2~4 个检索关键词
+  - 法律正文检索**必须**由本脚本使用 rg / Python re 完成
+  - LLM **禁止**生成、补写、修改或冒充法律原文；命中行的"原文"必须是源文件原样
 """
 from __future__ import annotations
 
@@ -33,22 +35,23 @@ from typing import Iterator
 ROOT = Path(__file__).resolve().parent.parent
 WORKSPACE = ROOT.parent
 
-VERIFIED_DIR = ROOT / "laws"
-VERIFIED_INDEX = ROOT / "metadata" / "index.jsonl"
-
+LAWS_DIR = ROOT / "laws"
+INDEX_FILE = ROOT / "metadata" / "index.jsonl"
 CANDIDATE_ROOT = WORKSPACE / "legal-sources" / "just-laws"
 
 LAYER_VERIFIED = "VERIFIED"
+LAYER_OFFICIAL_META = "OFFICIAL_META"
 LAYER_CANDIDATE = "CANDIDATE"
 
 
-# ------------------------- I/O 辅助 -------------------------
+# ------------------------- 元数据 -------------------------
 
-def load_verified_index() -> dict[str, dict]:
-    if not VERIFIED_INDEX.exists():
+def load_index() -> dict[str, dict]:
+    """key = laws/xxx.md 相对路径"""
+    if not INDEX_FILE.exists():
         return {}
     out: dict[str, dict] = {}
-    with VERIFIED_INDEX.open("r", encoding="utf-8") as fh:
+    with INDEX_FILE.open("r", encoding="utf-8") as fh:
         for line in fh:
             line = line.strip()
             if not line:
@@ -60,6 +63,34 @@ def load_verified_index() -> dict[str, dict]:
             if rec.get("path"):
                 out[rec["path"]] = rec
     return out
+
+
+def law_verification_status(md_path: Path) -> str:
+    """读 laws/<file>.md frontmatter 的 verification_status.
+    缺省视为 needs_recheck（保守）。
+    """
+    try:
+        text = md_path.read_text(encoding="utf-8")
+    except OSError:
+        return "needs_recheck"
+    m = re.match(r"^---\s*\n(.*?)\n---\s*\n", text, re.DOTALL)
+    if not m:
+        return "needs_recheck"
+    for line in m.group(1).splitlines():
+        k, sep, v = line.partition(":")
+        if k.strip() == "verification_status":
+            val = v.split("#", 1)[0].strip()
+            return val or "needs_recheck"
+    return "needs_recheck"
+
+
+def layer_for_law(rel_path: str) -> str:
+    """V2.2: 按每个 law 文件自己的 verification_status 决定层标签."""
+    md = LAWS_DIR / Path(rel_path).name
+    status = law_verification_status(md)
+    if status == "verified_official":
+        return LAYER_VERIFIED
+    return LAYER_OFFICIAL_META
 
 
 def title_from_md(path: Path) -> str:
@@ -123,8 +154,8 @@ def iter_python(root: Path, pattern: str, suffix: str = ".md") -> Iterator[tuple
             continue
 
 
-def search_one(layer_name: str, root: Path, pattern: str) -> tuple[str, list[tuple[str, int, str]], float]:
-    """返回 (backend, hits, dt)。"""
+def search_one(root: Path, pattern: str) -> tuple[str, list[tuple[str, int, str]], float]:
+    """返回 (backend, hits, dt)."""
     t0 = time.perf_counter()
     backend = "rg" if shutil.which("rg") else "python"
     it = iter_rg(root, pattern) or iter_python(root, pattern)
@@ -135,7 +166,8 @@ def search_one(layer_name: str, root: Path, pattern: str) -> tuple[str, list[tup
 
 # ------------------------- 渲染 -------------------------
 
-def fmt_verified_hit(rel_path: str, lineno: int, snippet: str, idx: dict) -> list[str]:
+def fmt_law_hit(rel_path: str, lineno: int, snippet: str, idx: dict, layer: str) -> list[str]:
+    """VERIFIED / OFFICIAL_META 共用渲染：来自 laws/*.md."""
     rec = idx.get(rel_path, {})
     title = rec.get("title", Path(rel_path).stem)
     url = rec.get("official_url", "(无)")
@@ -144,10 +176,11 @@ def fmt_verified_hit(rel_path: str, lineno: int, snippet: str, idx: dict) -> lis
     ctx = snippet.strip()[:200]
     return [
         f"  标题: {title}",
-        f"  版本日期: {vdate}  verification: {status}",
+        f"  层: {layer}  verification: {status}",
+        f"  版本日期: {vdate}",
         f"  路径: {rel_path}:{lineno}",
         f"  官方来源: {url}",
-        f"  上下文: {ctx}",
+        f"  原文: {ctx}",
     ]
 
 
@@ -158,15 +191,16 @@ def fmt_candidate_hit(rel_path: str, lineno: int, snippet: str, _idx=None) -> li
     ctx = snippet.strip()[:200]
     return [
         f"  标题: {title}",
+        f"  层: CANDIDATE",
         f"  类别: {cat}",
         f"  路径: {rel_path}:{lineno}",
         f"  原文: {ctx}",
     ]
 
 
-def print_layer_section(layer_name: str, backend: str, dt: float,
-                        hits: list[tuple[str, int, str]], root: Path,
-                        fmt_hit, idx) -> int:
+def print_section(backend: str, dt: float, hits: list[tuple[str, int, str]],
+                  root: Path, fmt_hit, idx) -> int:
+    """返回本节命中行数. fmt_hit 决定 VERIFIED/OFFICIAL_META/CANDIDATE 渲染."""
     if not hits:
         print(f"  └─ (无命中)  backend: {backend}  耗时 {dt*1000:.1f} ms")
         return 0
@@ -176,11 +210,24 @@ def print_layer_section(layer_name: str, backend: str, dt: float,
         grouped.setdefault(rel, []).append((ln, content))
     total = 0
     for rel, hs in sorted(grouped.items()):
-        title_path = fmt_hit(rel, 0, "", idx)[0]
-        print(f"  · {title_path}  ({rel})")
+        # 计算每条命中所在文件的层标签
+        if fmt_hit is fmt_candidate_hit:
+            layer_label = LAYER_CANDIDATE
+        else:
+            layer_label = layer_for_law(rel)
+        # 仅取标题行（fmt_law_hit 需要 layer 参数，title 情况下也补上）
+        if fmt_hit is fmt_candidate_hit:
+            title_line = fmt_hit(rel, 0, "", idx)[0]
+        else:
+            title_line = fmt_hit(rel, 0, "", idx, layer_label)[0]
+        print(f"  · {title_line}  ({rel})  [{layer_label}]")
         for ln, snippet in hs[:20]:
             total += 1
-            for line in fmt_hit(rel, ln, snippet, idx):
+            if fmt_hit is fmt_candidate_hit:
+                lines = fmt_hit(rel, ln, snippet, idx)
+            else:
+                lines = fmt_hit(rel, ln, snippet, idx, layer_label)
+            for line in lines:
                 print("    " + line)
         if len(hs) > 20:
             print(f"    ... 省略 {len(hs) - 20} 行")
@@ -190,10 +237,10 @@ def print_layer_section(layer_name: str, backend: str, dt: float,
 # ------------------------- AND 交集 -------------------------
 
 def and_intersect(layer_root: Path, keywords: list[str]) -> dict[str, set[int]]:
-    """返回 {rel_path: {行号, ...}}，文件必须包含所有关键词；行号是任何关键词出现的行集合。"""
+    """返回 {rel_path: {行号, ...}}，文件必须包含所有关键词."""
     per_kw: list[dict[str, set[int]]] = []
     for kw in keywords:
-        _, hits, _ = search_one("", layer_root, re.escape(kw))
+        _, hits, _ = search_one(layer_root, re.escape(kw))
         d: dict[str, set[int]] = {}
         for rel, ln, _ in hits:
             d.setdefault(rel, set()).add(ln)
@@ -210,13 +257,14 @@ def and_intersect(layer_root: Path, keywords: list[str]) -> dict[str, set[int]]:
 
 def main() -> int:
     p = argparse.ArgumentParser(
-        description="china-law-verified V2.1 统一检索：原句精确 → AND 拆解"
+        description="china-law-verified V2.2 三层语义检索：VERIFIED + OFFICIAL_META + CANDIDATE"
     )
     p.add_argument("--query", help="用户原始自然语言问题（用于整句精确检索）")
     p.add_argument("--keywords", nargs="+", help="2~4 个候选检索词（调用方已拆好）")
     p.add_argument("--limit", type=int, default=20, help="每个文件最多返回命中行数")
-    p.add_argument("--verified-only", action="store_true")
-    p.add_argument("--candidate-only", action="store_true")
+    p.add_argument("--candidate-only", action="store_true", help="只搜 CANDIDATE")
+    p.add_argument("--laws-only", action="store_true",
+                   help="只搜 VERIFIED + OFFICIAL_META（即 laws/）")
     args = p.parse_args()
 
     if not args.query and not args.keywords:
@@ -228,52 +276,80 @@ def main() -> int:
     query = (args.query or "").strip()
     keywords = [k.strip() for k in (args.keywords or []) if k.strip()]
 
-    print(f"# 检索: query={query!r}  keywords={keywords!r}\n")
+    print("# china-law-verified V2.2 检索")
+    print(f"# query={query!r}")
+    print(f"# keywords={keywords!r}\n")
 
     grand_total = 0
     t_total = time.perf_counter()
+    idx = load_index()
 
-    layers = []
-    if not args.candidate_only:
-        layers.append((LAYER_VERIFIED, VERIFIED_DIR))
-    if not args.verified_only:
-        layers.append((LAYER_CANDIDATE, CANDIDATE_ROOT))
-
-    for layer_name, root in layers:
-        print(f"## {layer_name}  ({root})")
-        idx = load_verified_index() if layer_name == LAYER_VERIFIED else {}
-        fmt_hit = fmt_verified_hit if layer_name == LAYER_VERIFIED else fmt_candidate_hit
-
-        # 阶段 1：原句精确
+    # laws/ 这一组（VERIFIED + OFFICIAL_META，按文件 frontmatter 区分）
+    if not args.candidate_only and LAWS_DIR.exists():
+        print(f"## laws/  (VERIFIED / OFFICIAL_META — 由每个文件 frontmatter 决定)")
+        fmt_hit = fmt_law_hit
+        total1 = 0
         if query:
             print(f"\n[阶段 1] 原句精确: {query!r}")
-            backend, hits, dt = search_one(layer_name, root, re.escape(query))
-            total = print_layer_section(layer_name, backend, dt, hits, root, fmt_hit, idx)
-            grand_total += total
-            if total == 0 and keywords:
-                # 阶段 2：每个关键词单独
-                print(f"\n[阶段 2] 关键词单独检索（0 命中后）")
-                for kw in keywords:
-                    print(f"\n  keyword: {kw!r}")
-                    backend, hits, dt = search_one(layer_name, root, re.escape(kw))
-                    grand_total += print_layer_section(layer_name, backend, dt, hits, root, fmt_hit, idx)
-                # 阶段 3：AND 交集
-                print(f"\n[阶段 3] 关键词 AND 交集")
-                inter = and_intersect(root, keywords)
-                if not inter:
-                    print(f"  └─ (无文件同时包含全部 {len(keywords)} 个关键词)")
-                else:
-                    print(f"  └─ {len(inter)} 个文件同时包含全部 {len(keywords)} 个关键词")
-                    for rel in sorted(inter):
-                        title_path = fmt_hit(rel, 0, "", idx)[0]
-                        print(f"  · {title_path}  ({rel})")
-                        # 显示每个关键词在该文件的命中行
-                        for kw in keywords:
-                            backend, hits, dt = search_one(layer_name, root / rel, re.escape(kw))
-                            for ln, snippet in hits[:args.limit]:
-                                for line in fmt_hit(rel, ln, snippet, idx):
-                                    print("    [kw=" + kw + "] " + line)
-                            grand_total += len(hits)
+            backend, hits, dt = search_one(LAWS_DIR, re.escape(query))
+            total1 = print_section(backend, dt, hits, LAWS_DIR, fmt_hit, idx)
+            grand_total += total1
+        # 阶段 2/3：只要提供 keywords 就要跑（阶段 1 为 0 或未运行都跑）
+        if keywords and total1 == 0:
+            print(f"\n[阶段 2] 关键词单独检索（阶段 1 未命中后）")
+            for kw in keywords:
+                print(f"\n  keyword: {kw!r}")
+                backend, hits, dt = search_one(LAWS_DIR, re.escape(kw))
+                grand_total += print_section(backend, dt, hits, LAWS_DIR, fmt_hit, idx)
+            print(f"\n[阶段 3] 关键词 AND 交集")
+            inter = and_intersect(LAWS_DIR, keywords)
+            if not inter:
+                print(f"  └─ (无文件同时包含全部 {len(keywords)} 个关键词)")
+            else:
+                print(f"  └─ {len(inter)} 个文件同时包含全部 {len(keywords)} 个关键词")
+                for rel in sorted(inter):
+                    layer = layer_for_law(rel)
+                    rec = idx.get(rel, {})
+                    title = rec.get("title", Path(rel).stem)
+                    print(f"  · {title}  ({rel})  [{layer}]")
+                    for kw in keywords:
+                        backend, hits, dt = search_one(LAWS_DIR / Path(rel).name, re.escape(kw))
+                        for ln, snippet in hits[:args.limit]:
+                            for line in fmt_hit(rel, ln, snippet, idx, layer):
+                                print("    [kw=" + kw + "] " + line)
+                        grand_total += len(hits)
+
+    # CANDIDATE 层
+    if not args.laws_only and CANDIDATE_ROOT.exists():
+        print(f"\n## CANDIDATE  (ImCa0/just-laws, MIT — 仅供定位，不可作最终法律依据)")
+        fmt_hit = fmt_candidate_hit
+        total1 = 0
+        if query:
+            print(f"\n[阶段 1] 原句精确: {query!r}")
+            backend, hits, dt = search_one(CANDIDATE_ROOT, re.escape(query))
+            total1 = print_section(backend, dt, hits, CANDIDATE_ROOT, fmt_hit, {})
+            grand_total += total1
+        if keywords and total1 == 0:
+            print(f"\n[阶段 2] 关键词单独检索（阶段 1 未命中后）")
+            for kw in keywords:
+                print(f"\n  keyword: {kw!r}")
+                backend, hits, dt = search_one(CANDIDATE_ROOT, re.escape(kw))
+                grand_total += print_section(backend, dt, hits, CANDIDATE_ROOT, fmt_hit, {})
+            print(f"\n[阶段 3] 关键词 AND 交集")
+            inter = and_intersect(CANDIDATE_ROOT, keywords)
+            if not inter:
+                print(f"  └─ (无文件同时包含全部 {len(keywords)} 个关键词)")
+            else:
+                print(f"  └─ {len(inter)} 个文件同时包含全部 {len(keywords)} 个关键词")
+                for rel in sorted(inter):
+                    full = CANDIDATE_ROOT / rel
+                    print(f"  · {title_from_md(full)}  ({rel})  [CANDIDATE]")
+                    for kw in keywords:
+                        backend, hits, dt = search_one(CANDIDATE_ROOT / rel, re.escape(kw))
+                        for ln, snippet in hits[:args.limit]:
+                            for line in fmt_candidate_hit(rel, ln, snippet):
+                                print("    [kw=" + kw + "] " + line)
+                        grand_total += len(hits)
 
     dt_total = time.perf_counter() - t_total
     print(f"\n# 合计命中行数: {grand_total}  总耗时: {dt_total*1000:.1f} ms")
