@@ -2,7 +2,64 @@
 
 Verified Chinese laws from official government sources, structured for human and AI-agent retrieval.
 
-## 项目规模（V5.0.0）
+## 项目规模（V5.0.1）
+
+`legal-universe.json` 按 bbbs / 文号 / 标题+机关+日期 去重后（12 类严格区分）：
+
+- **宪法**：13
+- **法律**：849
+- **法律解释**：27
+- **行政法规**：1433
+- **监察法规**：3
+- **部门规章**：29
+- **中央规范性文件**：283
+- **司法解释**：1235
+- **地方性法规**：1670
+- **地方政府规章**：0（本地候选源该独立路径未提供）
+- **地方规范性文件**：0（本地候选源该独立路径未提供）
+- **其他**：95
+- **去重后法律规范总数**：5637
+- **current_version_selected**：5362
+- **current_effective_confirmed**：1533（仅同时满足 legal_status=effective, version_status=current, freshness_status=FRESH）
+- **current_effective_unconfirmed**：3829
+
+P0 重点（19 业务领域 × 真正核心规范，metadata/p0-core-documents.json）：
+
+- **P0 核心规范总数**：20
+- **P0 本地正文可用**：20（覆盖率 100%）
+- **P0 FRESH**：4
+- **P0 STALE**：0
+- **P0 UNKNOWN**：16
+- **P0 CONFLICT**：0
+- **P0 current_effective_confirmed_rate**：20%
+
+案例（公司法专题）：
+
+- 指导性案例：3
+- 人民法院案例库案例：1
+- 其他权威案例：7
+- 合计：11
+
+完整 Topic：12 ｜ 轻量 Topic：0 ｜ 业务一级领域：51（P0=19 / P1=32 / P2=0）
+
+10 题验收（ROUTING + COVERAGE 拆开）：
+
+- **ROUTING 测试通过率**：10 / 10 = 100%
+- **COVERAGE 测试通过率**：7 / 10 = 70%
+- **COVERAGE_PARTIAL**：Q3 工业用地违约 / Q4 政府平台公司合作 / Q10 招商奖励合规
+
+可信等级分布：
+
+- **VERIFIED**：0
+- **OFFICIAL_META**：4（3 个 laws/ 主法律 + 1 个独立元数据）
+- **CANDIDATE**：5633
+- **UNVERIFIED**：0
+
+## 正式用途说明
+
+正式合同 / 法律意见 / 诉讼 / 仲裁 / 重大投资 / 重大交易等场景仍以官方现行有效性核验结果为最终依据；本仓库 `CANDIDATE` 不得直接作为最终法律依据。P0 主法律凡 freshness_status ≠ FRESH 的，仍需人工在 flk.npc.gov.cn / court.gov.cn 完成官方核验。
+
+## 项目说明
 
 `legal-universe.json` 按 bbbs / 文号 / 标题+机关+日期 去重后：
 

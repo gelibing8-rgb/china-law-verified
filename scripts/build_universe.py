@@ -144,34 +144,127 @@ def first_heading(text: str) -> str | None:
     return None
 
 
-def infer_document_type_from_path(path: Path) -> str | None:
-    """仅按路径补推 document_type，不作为法律效力判定。"""
-    p = str(path)
+# V5.0.1 严格 12 类 document_type 枚举
+DOCUMENT_TYPES = [
+    "constitution",
+    "law",
+    "legislative_interpretation",
+    "administrative_regulation",
+    "supervision_regulation",
+    "department_rule",
+    "normative_document",
+    "judicial_interpretation",
+    "local_regulation",
+    "local_government_rule",
+    "local_normative_document",
+    "other",
+]
+
+# lawtext-laws frontmatter group → 12 类严格映射
+LAWTEXT_GROUP_TO_TYPE = {
+    "司法解释": "judicial_interpretation",
+    "行政法规": "administrative_regulation",
+    "法律": "law",
+    "法律解释": "legislative_interpretation",
+    "宪法": "constitution",
+    "监察法规": "supervision_regulation",
+    "修正案": "normative_document",
+    "修改、废止的决定": "normative_document",
+    "有关法律问题和重大问题的决定（部分）": "normative_document",
+    "资料": "other",
+}
+
+# china-data-laws 路径分类 → 12 类（注意：经济法/行政法/社会法/刑法/民法商法/诉讼与非诉讼程序法是主法律的子分类）
+CHINA_DATA_DIR_TO_TYPE = {
+    "地方性法规": "local_regulation",
+    "地方政府规章": "local_government_rule",
+    "地方规章": "local_government_rule",
+    "地方规范性文件": "local_normative_document",
+    "行政法规": "administrative_regulation",
+    "部门规章": "department_rule",
+    "司法解释": "judicial_interpretation",
+    "宪法": "constitution",
+    "宪法相关法": "law",
+    "法律": "law",
+    "经济法": "law",
+    "行政法": "law",
+    "社会法": "law",
+    "刑法": "law",
+    "民法商法": "law",
+    "诉讼与非诉讼程序法": "law",
+    "案例": "other",
+    "资料": "other",
+}
+
+# 中国省份列表（用于 china-data-laws 地方规范的 province 字段）
+CHINA_PROVINCES = [
+    "北京", "天津", "上海", "重庆", "河北", "山西", "辽宁", "吉林", "黑龙江",
+    "江苏", "浙江", "安徽", "福建", "江西", "山东", "河南", "湖北", "湖南",
+    "广东", "海南", "四川", "贵州", "云南", "陕西", "甘肃", "青海",
+    "内蒙古", "广西", "西藏", "宁夏", "新疆", "台湾",
+    "香港特别行政区", "澳门特别行政区",
+]
+
+
+def classify_doc_type(group: str | None, path: Path) -> str:
+    """V5.0.1 严格 12 类分类。优先级：lawtext group > china-data 路径 > just-laws 路径。"""
+    rel = str(path)
     parts = set(path.parts)
-    if "司法解释" in parts:
-        return "司法解释"
-    if "部门规章" in parts:
-        return "部门规章"
-    if "行政法规" in parts:
-        return "行政法规"
-    if "规范性文件" in parts:
-        return "规范性文件"
-    if "地方性法规" in parts or "地方性法規" in parts:
-        return "地方性法规"
-    if "地方规章" in parts or "地方政府规章" in parts:
-        return "地方政府规章"
-    if "地方规范性文件" in parts:
-        return "地方规范性文件"
-    # just-laws: docs/<category>/<law>/README.md -> 主法律（按路径分布）
-    if "/docs/" in p and "just-laws" in p:
-        return "主法律"
-    # lawtext-laws: content/法律/<file>.md -> 主法律
-    if "/content/法律/" in p or "/content/法律/" in p:
-        return "主法律"
-    # china-data-laws: 法律/<file>.md -> 主法律
-    if "/laws/法律/" in p or "/china-data-laws/法律/" in p:
-        return "主法律"
+    # 1. lawtext-laws frontmatter group
+    if group and group in LAWTEXT_GROUP_TO_TYPE:
+        return LAWTEXT_GROUP_TO_TYPE[group]
+    # 2. china-data-laws 路径分类（顶级目录）
+    for part in parts:
+        for p in [part]:
+            # 路径组件顶层即 china-data 分类
+            if rel.endswith("china-data-laws.md") or "china-data-laws" in rel:
+                pass
+    # 检测 china-data-laws 路径
+    if "china-data-laws" in rel:
+        # 取相对 china-data-laws 后的第一层目录
+        try:
+            rel_to_root = Path(rel).relative_to(Path(rel).parts[0]) if False else None
+        except Exception:
+            rel_to_root = None
+        # 直接枚举 parts
+        rel_parts = list(Path(rel).parts)
+        for i, part in enumerate(rel_parts):
+            if part == part and part in CHINA_DATA_DIR_TO_TYPE:
+                return CHINA_DATA_DIR_TO_TYPE[part]
+        # 省级地方性法规
+        for part in rel_parts:
+            if part in CHINA_PROVINCES:
+                return "local_regulation"
+    # 3. just-laws 路径：docs/<category>/<law>/README.md → law
+    if "/docs/" in rel and "/just-laws" in rel:
+        # 若路径包含 constitution 子目录，归 constitution；否则归 law
+        if "/constitution/" in rel or "/constitutional-relevance/" in rel:
+            return "law"  # constitutional-relevance 是相关法，仍归 law
+        return "law"
+    # 4. lawtext-laws content/法律/<file>.md → law
+    if "/content/法律/" in rel:
+        return "law"
+    # 5. lawtext-laws content/<其他> → 走 CHINA_DATA_DIR_TO_TYPE 同款
+    if "/laws/" in rel and "/legal-sources/laws/" in rel:
+        # 取 content/ 后第一层
+        for part in parts:
+            if part in CHINA_DATA_DIR_TO_TYPE:
+                return CHINA_DATA_DIR_TO_TYPE[part]
+    return "other"
+
+
+def province_from_path(path: Path) -> str | None:
+    """从 china-data-laws 路径提取省份。"""
+    parts = list(path.parts)
+    for part in parts:
+        if part in CHINA_PROVINCES:
+            return part
     return None
+
+
+def infer_document_type_from_path(path: Path) -> str | None:
+    """V5.0.1 deprecated：保留旧接口，内部转调 classify_doc_type。"""
+    return classify_doc_type(None, path)
 
 
 def parse_md(path: Path) -> dict:
@@ -183,7 +276,8 @@ def parse_md(path: Path) -> dict:
     title = fm.get("title") or first_heading(text)
     if not title:
         return {}
-    doc_type = fm.get("document_type") or fm.get("group") or infer_document_type_from_path(path)
+    group = fm.get("group") or fm.get("document_type")
+    doc_type = classify_doc_type(group, path)
     return {
         "title": title.strip(),
         "document_type": doc_type,
@@ -195,6 +289,7 @@ def parse_md(path: Path) -> dict:
         "urls": fm.get("urls"),
         "groups": fm.get("group"),
         "categories": fm.get("categories"),
+        "province": province_from_path(path),
     }
 
 
@@ -338,14 +433,8 @@ def build_universe() -> dict:
         c["related_topics"] = sorted({t for t in c["related_topics"] if t} | {
             t for t in TOPIC_KEYWORDS if any(k in (r["title"] or "") for k in TOPIC_KEYWORDS[t])
         })
-        # 合并 document_type：法律 / 主法律 合并为 主法律
-        if r.get("document_type") == "法律":
-            c["document_type"] = "主法律"
-        # 合并 document_type：未分类但文件路径实际是主法律，补推
-        if c["document_type"] in (None, "未分类") and any(
-            r.get("document_type") in ("主法律", "法律") for r in c["_records"]
-        ):
-            c["document_type"] = "主法律"
+        # V5.0.1：document_type 不再合并主法律／法律；严格保留 12 类
+        c["province"] = r.get("province") or c.get("province")
 
     # 计算 legal_status / version_status / current_version_date
     for c in canonicals.values():
