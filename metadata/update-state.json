@@ -1,6 +1,6 @@
 {
-  "updated_at": "2026-09-11T07:48:58Z",
-  "dry_run": true,
+  "updated_at": "2026-09-13T23:30:00Z",
+  "dry_run": false,
   "sources": [
     {
       "source": "just-laws",
@@ -8,16 +8,22 @@
       "old_commit": "56770b043bf19686fec43403bd24e8e290275794",
       "new_commit": "56770b043bf19686fec43403bd24e8e290275794",
       "changed_files": [],
-      "status": "dry_run",
+      "status": "unchanged",
       "affected_topics": []
     },
     {
       "source": "lawtext-laws",
       "path": "/Users/glb/workspace/legal-sources/laws",
       "old_commit": "aefdfca37fb06e90a29af6311a1ed9804c9670bd",
-      "new_commit": "aefdfca37fb06e90a29af6311a1ed9804c9670bd",
-      "changed_files": [],
-      "status": "dry_run",
+      "new_commit": "8ae72a51090e8216d44f0a563990794896fa30f8",
+      "changed_files": [
+        "\"content/\\346\\263\\225\\345\\276\\213/7d951fed0e964a509d223ebd47af0f5a.md\"",
+        "\"content/\\346\\263\\225\\345\\276\\213/_index.md\"",
+        "\"content/\\350\\241\\214\\346\\224\\277\\346\\263\\225\\350\\247\\204/_index.md\"",
+        "\"content/\\350\\241\\214\\346\\224\\277\\346\\263\\225\\350\\247\\204/ff8080816f3e98bd016f41d843660104.md\"",
+        "\"content/\\350\\241\\214\\346\\224\\277\\346\\263\\225\\350\\247\\204/ff8081819ff541ea01a07eb41e2709fb.md\""
+      ],
+      "status": "updated",
       "affected_topics": []
     },
     {
@@ -26,7 +32,7 @@
       "old_commit": "1ca7a3518d115c8dd3b752849ebdfa09878fa1b0",
       "new_commit": "1ca7a3518d115c8dd3b752849ebdfa09878fa1b0",
       "changed_files": [],
-      "status": "dry_run",
+      "status": "unchanged",
       "affected_topics": []
     }
   ],

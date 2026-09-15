@@ -1,0 +1,30 @@
+{
+  "generated_at": "2026-09-15T00:16:29Z",
+  "candidate_sources": {
+    "just-laws": {
+      "local_root": "/Users/glb/workspace/legal-sources/just-laws",
+      "git_commit": "56770b043bf19686fec43403bd24e8e290275794",
+      "file_count": 377,
+      "disk_bytes": 9460939,
+      "human_size": "9.0 MB"
+    },
+    "lawtext-laws": {
+      "local_root": "/Users/glb/workspace/legal-sources/laws",
+      "git_commit": "8ae72a51090e8216d44f0a563990794896fa30f8",
+      "file_count": 2501,
+      "disk_bytes": 40412112,
+      "human_size": "38.5 MB"
+    },
+    "china-data-laws": {
+      "local_root": "/Users/glb/workspace/legal-sources/china-data-laws",
+      "git_commit": "1ca7a3518d115c8dd3b752849ebdfa09878fa1b0",
+      "file_count": 3112,
+      "disk_bytes": 50110084,
+      "human_size": "47.8 MB"
+    }
+  },
+  "candidate_total_files": 5990,
+  "candidate_total_human": "95.4 MB",
+  "repo_laws_files": 4,
+  "repo_laws_total_bytes": 286914
+}

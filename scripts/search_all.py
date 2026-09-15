@@ -608,6 +608,7 @@ def main() -> int:
                    help="展示专题案例元数据；--topic 模式默认开启")
     p.add_argument("--auto-topic", action="store_true",
                    help="按 topics.json 中主法律全称做高置信度唯一专题路由；无法唯一匹配则全库检索")
+    p.add_argument("--topics", help="V5 多专题聚合：逗号分隔 topic id 列表，合并 laws_paths 与 candidate_sources 后检索。")
     args = p.parse_args()
 
     if not args.query and not args.keywords:
@@ -625,10 +626,37 @@ def main() -> int:
         if selected:
             args.topic = selected
 
+    # V5 多专题聚合：合并多个 --topic 的 laws_paths 与 candidate_sources
+    multi_topic_ids: list[str] = []
+    if args.topics:
+        multi_topic_ids = [t.strip() for t in args.topics.split(",") if t.strip()]
+        merged_laws: set[str] = set()
+        merged_cands: dict[str, dict] = {}
+        merged_unresolved: list[tuple[str, str]] = []
+        for tid in multi_topic_ids:
+            meta, scope, unresolved = load_topic_manifest(tid, include_related=args.include_related)
+            if scope is None:
+                continue
+            merged_laws |= scope.get("laws_paths", set())
+            for cs in scope.get("candidate_sources", []):
+                name = cs["name"]
+                if name not in merged_cands:
+                    merged_cands[name] = {"name": name, "root": cs["root"], "paths": set()}
+                merged_cands[name]["paths"] |= set(cs["paths"])
+            merged_unresolved.extend(unresolved)
+        topic_meta = {"id": "multi:" + "+".join(multi_topic_ids), "title": "多专题聚合：" + " / ".join(multi_topic_ids), "schema_version": "V5"}
+        topic_scope = {
+            "laws_paths": merged_laws,
+            "candidate_sources": list(merged_cands.values()),
+        }
+        topic_unresolved = merged_unresolved
+        args.topic = "__multi__"
+
     # V3.1 专题加载（--topic）
-    topic_meta, topic_scope, topic_unresolved = (None, None, [])
+    if not args.topics:
+        topic_meta, topic_scope, topic_unresolved = (None, None, [])
     topic_cases: list[dict] = []
-    if args.topic:
+    if args.topic and args.topic != "__multi__":
         topic_meta, topic_scope, topic_unresolved = load_topic_manifest(
             args.topic, include_related=args.include_related
         )

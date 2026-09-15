@@ -1,0 +1,895 @@
+{
+  "generated_at": "2026-09-15T00:16:29Z",
+  "domain_count": 51,
+  "domains": [
+    {
+      "domain_code": "01",
+      "domain_name": "民商事基础",
+      "related_topics": [
+        "civil-code"
+      ],
+      "linked_canonical_count": 1254,
+      "linked_canonicals_sample": [
+        "CD-0036547A1AB7",
+        "CD-00380A8DC1E9",
+        "CD-006101BC3022",
+        "CD-00646851E91C",
+        "CD-00ED03AC374C"
+      ],
+      "priority": "P0",
+      "local_text_count": 1269
+    },
+    {
+      "domain_code": "02",
+      "domain_name": "公司治理",
+      "related_topics": [
+        "company-law"
+      ],
+      "linked_canonical_count": 25,
+      "linked_canonicals_sample": [
+        "CD-07F495AC00D7",
+        "CD-13C2A5A3B4DB",
+        "CD-213045032562",
+        "CD-2B66330DC07A",
+        "CD-30FD7F793995"
+      ],
+      "priority": "P0",
+      "local_text_count": 26
+    },
+    {
+      "domain_code": "03",
+      "domain_name": "合同与担保",
+      "related_topics": [
+        "civil-code",
+        "company-law"
+      ],
+      "linked_canonical_count": 1260,
+      "linked_canonicals_sample": [
+        "CD-0036547A1AB7",
+        "CD-00380A8DC1E9",
+        "CD-006101BC3022",
+        "CD-00646851E91C",
+        "CD-00ED03AC374C"
+      ],
+      "priority": "P0",
+      "local_text_count": 1276
+    },
+    {
+      "domain_code": "04",
+      "domain_name": "劳动人事",
+      "related_topics": [
+        "labor-contract-law"
+      ],
+      "linked_canonical_count": 16,
+      "linked_canonicals_sample": [
+        "CD-1997B400AF46",
+        "CD-309AB828FCD2",
+        "CD-51F8488BF12C",
+        "CD-63D89F81DD94",
+        "CD-70ACB3EA8032"
+      ],
+      "priority": "P0",
+      "local_text_count": 17
+    },
+    {
+      "domain_code": "05",
+      "domain_name": "招标投标",
+      "related_topics": [
+        "tendering-bidding-law"
+      ],
+      "linked_canonical_count": 7,
+      "linked_canonicals_sample": [
+        "CD-04062224BD6E",
+        "CD-4C1964CDBFFA",
+        "CD-6F0A382FBF1C",
+        "CD-71570E9DA264",
+        "CD-76D3B9FE6DBE"
+      ],
+      "priority": "P0",
+      "local_text_count": 8
+    },
+    {
+      "domain_code": "06",
+      "domain_name": "政府采购",
+      "related_topics": [
+        "government-procurement-law"
+      ],
+      "linked_canonical_count": 4,
+      "linked_canonicals_sample": [
+        "CD-8F7F0B7150BB",
+        "CD-B63651D144FF",
+        "CD-D4D3A10B6AE7",
+        "CD-F32B51A7E36B"
+      ],
+      "priority": "P0",
+      "local_text_count": 5
+    },
+    {
+      "domain_code": "07",
+      "domain_name": "工程建设",
+      "related_topics": [
+        "construction-law"
+      ],
+      "linked_canonical_count": 146,
+      "linked_canonicals_sample": [
+        "CD-006C08F36F9E",
+        "CD-009C63EA509A",
+        "CD-01A9B2265768",
+        "CD-033C13FC2E42",
+        "CD-04B85548F530"
+      ],
+      "priority": "P0",
+      "local_text_count": 148
+    },
+    {
+      "domain_code": "08",
+      "domain_name": "EPC / EPCO / 工程总承包",
+      "related_topics": [
+        "tendering-bidding-law",
+        "construction-law",
+        "civil-code"
+      ],
+      "linked_canonical_count": 1391,
+      "linked_canonicals_sample": [
+        "CD-0036547A1AB7",
+        "CD-00380A8DC1E9",
+        "CD-006101BC3022",
+        "CD-00646851E91C",
+        "CD-006C08F36F9E"
+      ],
+      "priority": "P0",
+      "local_text_count": 1409
+    },
+    {
+      "domain_code": "09",
+      "domain_name": "房地产与工业地产",
+      "related_topics": [
+        "civil-code",
+        "land-administration-law",
+        "urban-rural-planning-law"
+      ],
+      "linked_canonical_count": 1320,
+      "linked_canonicals_sample": [
+        "CD-0036547A1AB7",
+        "CD-00380A8DC1E9",
+        "CD-006101BC3022",
+        "CD-00646851E91C",
+        "CD-00ED03AC374C"
+      ],
+      "priority": "P0",
+      "local_text_count": 1340
+    },
+    {
+      "domain_code": "10",
+      "domain_name": "土地管理",
+      "related_topics": [
+        "land-administration-law"
+      ],
+      "linked_canonical_count": 67,
+      "linked_canonicals_sample": [
+        "CD-00ED03AC374C",
+        "CD-0265866EE2C4",
+        "CD-034BDDAB9FAA",
+        "CD-04D5C9102736",
+        "CD-08185DCF5F8D"
+      ],
+      "priority": "P0",
+      "local_text_count": 71
+    },
+    {
+      "domain_code": "11",
+      "domain_name": "城乡规划",
+      "related_topics": [
+        "urban-rural-planning-law"
+      ],
+      "linked_canonical_count": 22,
+      "linked_canonicals_sample": [
+        "CD-0D2B53542492",
+        "CD-0F0785688338",
+        "CD-21F1066DC23E",
+        "CD-261572C6F6DD",
+        "CD-28F9B60654AC"
+      ],
+      "priority": "P0",
+      "local_text_count": 23
+    },
+    {
+      "domain_code": "12",
+      "domain_name": "产业园区开发运营",
+      "related_topics": [
+        "land-administration-law",
+        "urban-rural-planning-law",
+        "company-law"
+      ],
+      "linked_canonical_count": 114,
+      "linked_canonicals_sample": [
+        "CD-00ED03AC374C",
+        "CD-0265866EE2C4",
+        "CD-034BDDAB9FAA",
+        "CD-04D5C9102736",
+        "CD-07F495AC00D7"
+      ],
+      "priority": "P1",
+      "local_text_count": 120
+    },
+    {
+      "domain_code": "13",
+      "domain_name": "招商引资",
+      "related_topics": [
+        "company-law",
+        "civil-code",
+        "land-administration-law"
+      ],
+      "linked_canonical_count": 1304,
+      "linked_canonicals_sample": [
+        "CD-0036547A1AB7",
+        "CD-00380A8DC1E9",
+        "CD-006101BC3022",
+        "CD-00646851E91C",
+        "CD-00ED03AC374C"
+      ],
+      "priority": "P1",
+      "local_text_count": 1324
+    },
+    {
+      "domain_code": "14",
+      "domain_name": "国有资产与国有企业",
+      "related_topics": [
+        "company-law",
+        "civil-code"
+      ],
+      "linked_canonical_count": 1260,
+      "linked_canonicals_sample": [
+        "CD-0036547A1AB7",
+        "CD-00380A8DC1E9",
+        "CD-006101BC3022",
+        "CD-00646851E91C",
+        "CD-00ED03AC374C"
+      ],
+      "priority": "P0",
+      "local_text_count": 1276
+    },
+    {
+      "domain_code": "15",
+      "domain_name": "政府平台公司",
+      "related_topics": [
+        "company-law"
+      ],
+      "linked_canonical_count": 25,
+      "linked_canonicals_sample": [
+        "CD-07F495AC00D7",
+        "CD-13C2A5A3B4DB",
+        "CD-213045032562",
+        "CD-2B66330DC07A",
+        "CD-30FD7F793995"
+      ],
+      "priority": "P0",
+      "local_text_count": 26
+    },
+    {
+      "domain_code": "16",
+      "domain_name": "投资并购",
+      "related_topics": [
+        "company-law",
+        "civil-code"
+      ],
+      "linked_canonical_count": 1260,
+      "linked_canonicals_sample": [
+        "CD-0036547A1AB7",
+        "CD-00380A8DC1E9",
+        "CD-006101BC3022",
+        "CD-00646851E91C",
+        "CD-00ED03AC374C"
+      ],
+      "priority": "P0",
+      "local_text_count": 1276
+    },
+    {
+      "domain_code": "17",
+      "domain_name": "私募基金",
+      "related_topics": [
+        "company-law",
+        "civil-code"
+      ],
+      "linked_canonical_count": 1260,
+      "linked_canonicals_sample": [
+        "CD-0036547A1AB7",
+        "CD-00380A8DC1E9",
+        "CD-006101BC3022",
+        "CD-00646851E91C",
+        "CD-00ED03AC374C"
+      ],
+      "priority": "P1",
+      "local_text_count": 1276
+    },
+    {
+      "domain_code": "18",
+      "domain_name": "政府投资基金 / 引导基金",
+      "related_topics": [
+        "company-law"
+      ],
+      "linked_canonical_count": 25,
+      "linked_canonicals_sample": [
+        "CD-07F495AC00D7",
+        "CD-13C2A5A3B4DB",
+        "CD-213045032562",
+        "CD-2B66330DC07A",
+        "CD-30FD7F793995"
+      ],
+      "priority": "P1",
+      "local_text_count": 26
+    },
+    {
+      "domain_code": "19",
+      "domain_name": "企业融资与金融",
+      "related_topics": [
+        "company-law",
+        "civil-code"
+      ],
+      "linked_canonical_count": 1260,
+      "linked_canonicals_sample": [
+        "CD-0036547A1AB7",
+        "CD-00380A8DC1E9",
+        "CD-006101BC3022",
+        "CD-00646851E91C",
+        "CD-00ED03AC374C"
+      ],
+      "priority": "P1",
+      "local_text_count": 1276
+    },
+    {
+      "domain_code": "20",
+      "domain_name": "税务财政",
+      "related_topics": [
+        "civil-code"
+      ],
+      "linked_canonical_count": 1254,
+      "linked_canonicals_sample": [
+        "CD-0036547A1AB7",
+        "CD-00380A8DC1E9",
+        "CD-006101BC3022",
+        "CD-00646851E91C",
+        "CD-00ED03AC374C"
+      ],
+      "priority": "P1",
+      "local_text_count": 1269
+    },
+    {
+      "domain_code": "21",
+      "domain_name": "企业登记与市场监管",
+      "related_topics": [
+        "company-law"
+      ],
+      "linked_canonical_count": 25,
+      "linked_canonicals_sample": [
+        "CD-07F495AC00D7",
+        "CD-13C2A5A3B4DB",
+        "CD-213045032562",
+        "CD-2B66330DC07A",
+        "CD-30FD7F793995"
+      ],
+      "priority": "P1",
+      "local_text_count": 26
+    },
+    {
+      "domain_code": "22",
+      "domain_name": "安全生产",
+      "related_topics": [
+        "work-safety-law"
+      ],
+      "linked_canonical_count": 258,
+      "linked_canonicals_sample": [
+        "CD-007927AC6FA7",
+        "CD-01BD6F2DA81F",
+        "CD-02FE33C3E31B",
+        "CD-03ED8A7C4207",
+        "CD-03FAC15A1ECD"
+      ],
+      "priority": "P0",
+      "local_text_count": 273
+    },
+    {
+      "domain_code": "23",
+      "domain_name": "消防",
+      "related_topics": [
+        "work-safety-law"
+      ],
+      "linked_canonical_count": 258,
+      "linked_canonicals_sample": [
+        "CD-007927AC6FA7",
+        "CD-01BD6F2DA81F",
+        "CD-02FE33C3E31B",
+        "CD-03ED8A7C4207",
+        "CD-03FAC15A1ECD"
+      ],
+      "priority": "P1",
+      "local_text_count": 273
+    },
+    {
+      "domain_code": "24",
+      "domain_name": "环境保护",
+      "related_topics": [
+        "environmental-protection-law"
+      ],
+      "linked_canonical_count": 49,
+      "linked_canonicals_sample": [
+        "CD-040834FA6B7B",
+        "CD-04AEB7EC2CC0",
+        "CD-0A623D4C5373",
+        "CD-1158C8B70FF6",
+        "CD-1597ECE98C57"
+      ],
+      "priority": "P0",
+      "local_text_count": 53
+    },
+    {
+      "domain_code": "25",
+      "domain_name": "节能与双碳",
+      "related_topics": [
+        "environmental-protection-law"
+      ],
+      "linked_canonical_count": 49,
+      "linked_canonicals_sample": [
+        "CD-040834FA6B7B",
+        "CD-04AEB7EC2CC0",
+        "CD-0A623D4C5373",
+        "CD-1158C8B70FF6",
+        "CD-1597ECE98C57"
+      ],
+      "priority": "P1",
+      "local_text_count": 53
+    },
+    {
+      "domain_code": "26",
+      "domain_name": "分布式光伏",
+      "related_topics": [
+        "environmental-protection-law"
+      ],
+      "linked_canonical_count": 49,
+      "linked_canonicals_sample": [
+        "CD-040834FA6B7B",
+        "CD-04AEB7EC2CC0",
+        "CD-0A623D4C5373",
+        "CD-1158C8B70FF6",
+        "CD-1597ECE98C57"
+      ],
+      "priority": "P1",
+      "local_text_count": 53
+    },
+    {
+      "domain_code": "27",
+      "domain_name": "储能",
+      "related_topics": [
+        "environmental-protection-law"
+      ],
+      "linked_canonical_count": 49,
+      "linked_canonicals_sample": [
+        "CD-040834FA6B7B",
+        "CD-04AEB7EC2CC0",
+        "CD-0A623D4C5373",
+        "CD-1158C8B70FF6",
+        "CD-1597ECE98C57"
+      ],
+      "priority": "P1",
+      "local_text_count": 53
+    },
+    {
+      "domain_code": "28",
+      "domain_name": "电力与综合能源",
+      "related_topics": [
+        "environmental-protection-law"
+      ],
+      "linked_canonical_count": 49,
+      "linked_canonicals_sample": [
+        "CD-040834FA6B7B",
+        "CD-04AEB7EC2CC0",
+        "CD-0A623D4C5373",
+        "CD-1158C8B70FF6",
+        "CD-1597ECE98C57"
+      ],
+      "priority": "P1",
+      "local_text_count": 53
+    },
+    {
+      "domain_code": "29",
+      "domain_name": "行政许可",
+      "related_topics": [
+        "administrative-penalty-law",
+        "civil-procedure-law"
+      ],
+      "linked_canonical_count": 183,
+      "linked_canonicals_sample": [
+        "CD-0330B254F0EC",
+        "CD-082A506DB5C8",
+        "CD-087052DE7281",
+        "CD-08A92FBB92BC",
+        "CD-0987D180B9BA"
+      ],
+      "priority": "P0",
+      "local_text_count": 186
+    },
+    {
+      "domain_code": "30",
+      "domain_name": "行政处罚",
+      "related_topics": [
+        "administrative-penalty-law"
+      ],
+      "linked_canonical_count": 19,
+      "linked_canonicals_sample": [
+        "CD-0D4CCE7ED358",
+        "CD-0DE8FBDE718C",
+        "CD-12C1C9269DEB",
+        "CD-12C7950B3A93",
+        "CD-1EEE037AA0B4"
+      ],
+      "priority": "P1",
+      "local_text_count": 20
+    },
+    {
+      "domain_code": "31",
+      "domain_name": "行政复议",
+      "related_topics": [
+        "administrative-penalty-law",
+        "civil-procedure-law"
+      ],
+      "linked_canonical_count": 183,
+      "linked_canonicals_sample": [
+        "CD-0330B254F0EC",
+        "CD-082A506DB5C8",
+        "CD-087052DE7281",
+        "CD-08A92FBB92BC",
+        "CD-0987D180B9BA"
+      ],
+      "priority": "P1",
+      "local_text_count": 186
+    },
+    {
+      "domain_code": "32",
+      "domain_name": "行政诉讼",
+      "related_topics": [
+        "administrative-penalty-law",
+        "civil-procedure-law"
+      ],
+      "linked_canonical_count": 183,
+      "linked_canonicals_sample": [
+        "CD-0330B254F0EC",
+        "CD-082A506DB5C8",
+        "CD-087052DE7281",
+        "CD-08A92FBB92BC",
+        "CD-0987D180B9BA"
+      ],
+      "priority": "P1",
+      "local_text_count": 186
+    },
+    {
+      "domain_code": "33",
+      "domain_name": "民事诉讼",
+      "related_topics": [
+        "civil-procedure-law"
+      ],
+      "linked_canonical_count": 167,
+      "linked_canonicals_sample": [
+        "CD-0330B254F0EC",
+        "CD-082A506DB5C8",
+        "CD-087052DE7281",
+        "CD-08A92FBB92BC",
+        "CD-0987D180B9BA"
+      ],
+      "priority": "P0",
+      "local_text_count": 169
+    },
+    {
+      "domain_code": "34",
+      "domain_name": "仲裁",
+      "related_topics": [
+        "civil-procedure-law"
+      ],
+      "linked_canonical_count": 167,
+      "linked_canonicals_sample": [
+        "CD-0330B254F0EC",
+        "CD-082A506DB5C8",
+        "CD-087052DE7281",
+        "CD-08A92FBB92BC",
+        "CD-0987D180B9BA"
+      ],
+      "priority": "P1",
+      "local_text_count": 169
+    },
+    {
+      "domain_code": "35",
+      "domain_name": "强制执行",
+      "related_topics": [
+        "civil-procedure-law"
+      ],
+      "linked_canonical_count": 167,
+      "linked_canonicals_sample": [
+        "CD-0330B254F0EC",
+        "CD-082A506DB5C8",
+        "CD-087052DE7281",
+        "CD-08A92FBB92BC",
+        "CD-0987D180B9BA"
+      ],
+      "priority": "P1",
+      "local_text_count": 169
+    },
+    {
+      "domain_code": "36",
+      "domain_name": "企业破产",
+      "related_topics": [
+        "company-law",
+        "civil-procedure-law"
+      ],
+      "linked_canonical_count": 192,
+      "linked_canonicals_sample": [
+        "CD-0330B254F0EC",
+        "CD-07F495AC00D7",
+        "CD-082A506DB5C8",
+        "CD-087052DE7281",
+        "CD-08A92FBB92BC"
+      ],
+      "priority": "P0",
+      "local_text_count": 195
+    },
+    {
+      "domain_code": "37",
+      "domain_name": "知识产权",
+      "related_topics": [
+        "civil-code"
+      ],
+      "linked_canonical_count": 1254,
+      "linked_canonicals_sample": [
+        "CD-0036547A1AB7",
+        "CD-00380A8DC1E9",
+        "CD-006101BC3022",
+        "CD-00646851E91C",
+        "CD-00ED03AC374C"
+      ],
+      "priority": "P1",
+      "local_text_count": 1269
+    },
+    {
+      "domain_code": "38",
+      "domain_name": "数据安全",
+      "related_topics": [
+        "civil-code"
+      ],
+      "linked_canonical_count": 1254,
+      "linked_canonicals_sample": [
+        "CD-0036547A1AB7",
+        "CD-00380A8DC1E9",
+        "CD-006101BC3022",
+        "CD-00646851E91C",
+        "CD-00ED03AC374C"
+      ],
+      "priority": "P1",
+      "local_text_count": 1269
+    },
+    {
+      "domain_code": "39",
+      "domain_name": "网络安全",
+      "related_topics": [
+        "civil-code"
+      ],
+      "linked_canonical_count": 1254,
+      "linked_canonicals_sample": [
+        "CD-0036547A1AB7",
+        "CD-00380A8DC1E9",
+        "CD-006101BC3022",
+        "CD-00646851E91C",
+        "CD-00ED03AC374C"
+      ],
+      "priority": "P1",
+      "local_text_count": 1269
+    },
+    {
+      "domain_code": "40",
+      "domain_name": "个人信息保护",
+      "related_topics": [
+        "civil-code"
+      ],
+      "linked_canonical_count": 1254,
+      "linked_canonicals_sample": [
+        "CD-0036547A1AB7",
+        "CD-00380A8DC1E9",
+        "CD-006101BC3022",
+        "CD-00646851E91C",
+        "CD-00ED03AC374C"
+      ],
+      "priority": "P1",
+      "local_text_count": 1269
+    },
+    {
+      "domain_code": "41",
+      "domain_name": "人工智能相关合规",
+      "related_topics": [
+        "civil-code"
+      ],
+      "linked_canonical_count": 1254,
+      "linked_canonicals_sample": [
+        "CD-0036547A1AB7",
+        "CD-00380A8DC1E9",
+        "CD-006101BC3022",
+        "CD-00646851E91C",
+        "CD-00ED03AC374C"
+      ],
+      "priority": "P1",
+      "local_text_count": 1269
+    },
+    {
+      "domain_code": "42",
+      "domain_name": "反不正当竞争",
+      "related_topics": [
+        "civil-code"
+      ],
+      "linked_canonical_count": 1254,
+      "linked_canonicals_sample": [
+        "CD-0036547A1AB7",
+        "CD-00380A8DC1E9",
+        "CD-006101BC3022",
+        "CD-00646851E91C",
+        "CD-00ED03AC374C"
+      ],
+      "priority": "P1",
+      "local_text_count": 1269
+    },
+    {
+      "domain_code": "43",
+      "domain_name": "反垄断",
+      "related_topics": [
+        "civil-code"
+      ],
+      "linked_canonical_count": 1254,
+      "linked_canonicals_sample": [
+        "CD-0036547A1AB7",
+        "CD-00380A8DC1E9",
+        "CD-006101BC3022",
+        "CD-00646851E91C",
+        "CD-00ED03AC374C"
+      ],
+      "priority": "P1",
+      "local_text_count": 1269
+    },
+    {
+      "domain_code": "44",
+      "domain_name": "广告与宣传",
+      "related_topics": [
+        "civil-code",
+        "administrative-penalty-law"
+      ],
+      "linked_canonical_count": 1270,
+      "linked_canonicals_sample": [
+        "CD-0036547A1AB7",
+        "CD-00380A8DC1E9",
+        "CD-006101BC3022",
+        "CD-00646851E91C",
+        "CD-00ED03AC374C"
+      ],
+      "priority": "P1",
+      "local_text_count": 1286
+    },
+    {
+      "domain_code": "45",
+      "domain_name": "企业信用",
+      "related_topics": [
+        "administrative-penalty-law"
+      ],
+      "linked_canonical_count": 19,
+      "linked_canonicals_sample": [
+        "CD-0D4CCE7ED358",
+        "CD-0DE8FBDE718C",
+        "CD-12C1C9269DEB",
+        "CD-12C7950B3A93",
+        "CD-1EEE037AA0B4"
+      ],
+      "priority": "P1",
+      "local_text_count": 20
+    },
+    {
+      "domain_code": "46",
+      "domain_name": "产业扶持资金",
+      "related_topics": [
+        "civil-code",
+        "company-law"
+      ],
+      "linked_canonical_count": 1260,
+      "linked_canonicals_sample": [
+        "CD-0036547A1AB7",
+        "CD-00380A8DC1E9",
+        "CD-006101BC3022",
+        "CD-00646851E91C",
+        "CD-00ED03AC374C"
+      ],
+      "priority": "P1",
+      "local_text_count": 1276
+    },
+    {
+      "domain_code": "47",
+      "domain_name": "政府补贴与专项资金",
+      "related_topics": [
+        "civil-code",
+        "company-law"
+      ],
+      "linked_canonical_count": 1260,
+      "linked_canonicals_sample": [
+        "CD-0036547A1AB7",
+        "CD-00380A8DC1E9",
+        "CD-006101BC3022",
+        "CD-00646851E91C",
+        "CD-00ED03AC374C"
+      ],
+      "priority": "P1",
+      "local_text_count": 1276
+    },
+    {
+      "domain_code": "48",
+      "domain_name": "商协会 / 社会组织",
+      "related_topics": [
+        "civil-code"
+      ],
+      "linked_canonical_count": 1254,
+      "linked_canonicals_sample": [
+        "CD-0036547A1AB7",
+        "CD-00380A8DC1E9",
+        "CD-006101BC3022",
+        "CD-00646851E91C",
+        "CD-00ED03AC374C"
+      ],
+      "priority": "P1",
+      "local_text_count": 1269
+    },
+    {
+      "domain_code": "49",
+      "domain_name": "拍卖业务",
+      "related_topics": [
+        "civil-code",
+        "administrative-penalty-law"
+      ],
+      "linked_canonical_count": 1270,
+      "linked_canonicals_sample": [
+        "CD-0036547A1AB7",
+        "CD-00380A8DC1E9",
+        "CD-006101BC3022",
+        "CD-00646851E91C",
+        "CD-00ED03AC374C"
+      ],
+      "priority": "P1",
+      "local_text_count": 1286
+    },
+    {
+      "domain_code": "50",
+      "domain_name": "律师业务相关程序规范",
+      "related_topics": [
+        "civil-procedure-law",
+        "administrative-penalty-law"
+      ],
+      "linked_canonical_count": 183,
+      "linked_canonicals_sample": [
+        "CD-0330B254F0EC",
+        "CD-082A506DB5C8",
+        "CD-087052DE7281",
+        "CD-08A92FBB92BC",
+        "CD-0987D180B9BA"
+      ],
+      "priority": "P1",
+      "local_text_count": 186
+    },
+    {
+      "domain_code": "51",
+      "domain_name": "与产业园区经营直接相关的其他必要专题",
+      "related_topics": [
+        "land-administration-law",
+        "company-law"
+      ],
+      "linked_canonical_count": 92,
+      "linked_canonicals_sample": [
+        "CD-00ED03AC374C",
+        "CD-0265866EE2C4",
+        "CD-034BDDAB9FAA",
+        "CD-04D5C9102736",
+        "CD-07F495AC00D7"
+      ],
+      "priority": "P1",
+      "local_text_count": 97
+    }
+  ]
+}

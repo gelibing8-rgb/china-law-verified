@@ -39,7 +39,7 @@
           "source": "lawtext-laws",
           "local_root": "/Users/glb/workspace/legal-sources/laws",
           "relative_path": "content/法律/2c909fdd678bf17901678bf74d7106b3.md",
-          "source_commit": "aefdfca37fb06e90a29af6311a1ed9804c9670bd",
+          "source_commit": "8ae72a51090e8216d44f0a563990794896fa30f8",
           "verification_status": "CANDIDATE",
           "match_method": "title_exact"
         },
@@ -95,7 +95,7 @@
           "source": "lawtext-laws",
           "local_root": "/Users/glb/workspace/legal-sources/laws",
           "relative_path": "content/行政法规/ff8080816f3cbb3c016f40927caf049c.md",
-          "source_commit": "aefdfca37fb06e90a29af6311a1ed9804c9670bd",
+          "source_commit": "8ae72a51090e8216d44f0a563990794896fa30f8",
           "verification_status": "CANDIDATE",
           "match_method": "title_contains_primary_law"
         }

@@ -6,7 +6,7 @@
     "primary_document_id": "LOCAL-EC1C7DD7B9DB",
     "schema_version": "V4",
     "topic_status": "generated_local_candidate",
-    "generated_at": "2026-09-11T08:29:49Z",
+    "generated_at": "2026-09-15T00:22:27Z",
     "data_sources": [
       "just-laws: local read-only clone",
       "lawtext-laws: local read-only clone",
@@ -103,7 +103,7 @@
           "source": "lawtext-laws",
           "local_root": "/Users/glb/workspace/legal-sources/laws",
           "relative_path": "content/行政法规/ff8080816f3cbb3c016f410aac441307.md",
-          "source_commit": "aefdfca37fb06e90a29af6311a1ed9804c9670bd",
+          "source_commit": "8ae72a51090e8216d44f0a563990794896fa30f8",
           "verification_status": "CANDIDATE",
           "match_method": "title_contains_primary_law"
         }
@@ -142,10 +142,10 @@
     "案例层未自动归类；需后续提供唯一可靠案例身份与本地材料。"
   ],
   "update_state": {
-    "generated_at": "2026-09-11T08:29:49Z",
+    "generated_at": "2026-09-15T00:22:27Z",
     "candidate_commits": {
       "just-laws": "56770b043bf19686fec43403bd24e8e290275794",
-      "lawtext-laws": "aefdfca37fb06e90a29af6311a1ed9804c9670bd",
+      "lawtext-laws": "8ae72a51090e8216d44f0a563990794896fa30f8",
       "china-data-laws": "1ca7a3518d115c8dd3b752849ebdfa09878fa1b0"
     }
   }

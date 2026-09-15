@@ -39,7 +39,7 @@
           "source": "lawtext-laws",
           "local_root": "/Users/glb/workspace/legal-sources/laws",
           "relative_path": "content/法律/ff808081729d1efe01729d50b5c500bf.md",
-          "source_commit": "aefdfca37fb06e90a29af6311a1ed9804c9670bd",
+          "source_commit": "8ae72a51090e8216d44f0a563990794896fa30f8",
           "verification_status": "CANDIDATE",
           "match_method": "title_exact"
         },
@@ -239,7 +239,7 @@
           "source": "lawtext-laws",
           "local_root": "/Users/glb/workspace/legal-sources/laws",
           "relative_path": "content/司法解释/ff80808177e757ac017800561d541abb.md",
-          "source_commit": "aefdfca37fb06e90a29af6311a1ed9804c9670bd",
+          "source_commit": "8ae72a51090e8216d44f0a563990794896fa30f8",
           "verification_status": "CANDIDATE",
           "match_method": "title_contains_primary_law"
         }
@@ -263,7 +263,7 @@
           "source": "lawtext-laws",
           "local_root": "/Users/glb/workspace/legal-sources/laws",
           "relative_path": "content/司法解释/ff80808177e757ac01780077d2291b77.md",
-          "source_commit": "aefdfca37fb06e90a29af6311a1ed9804c9670bd",
+          "source_commit": "8ae72a51090e8216d44f0a563990794896fa30f8",
           "verification_status": "CANDIDATE",
           "match_method": "title_contains_primary_law"
         }
@@ -287,7 +287,7 @@
           "source": "lawtext-laws",
           "local_root": "/Users/glb/workspace/legal-sources/laws",
           "relative_path": "content/司法解释/ff80808177e75f880178006736f21aaf.md",
-          "source_commit": "aefdfca37fb06e90a29af6311a1ed9804c9670bd",
+          "source_commit": "8ae72a51090e8216d44f0a563990794896fa30f8",
           "verification_status": "CANDIDATE",
           "match_method": "title_contains_primary_law"
         }
@@ -311,7 +311,7 @@
           "source": "lawtext-laws",
           "local_root": "/Users/glb/workspace/legal-sources/laws",
           "relative_path": "content/司法解释/ff80808177e75f880178006a30861ac3.md",
-          "source_commit": "aefdfca37fb06e90a29af6311a1ed9804c9670bd",
+          "source_commit": "8ae72a51090e8216d44f0a563990794896fa30f8",
           "verification_status": "CANDIDATE",
           "match_method": "title_contains_primary_law"
         }
@@ -335,7 +335,7 @@
           "source": "lawtext-laws",
           "local_root": "/Users/glb/workspace/legal-sources/laws",
           "relative_path": "content/司法解释/ff80808177e75f880178006e5ae91ae3.md",
-          "source_commit": "aefdfca37fb06e90a29af6311a1ed9804c9670bd",
+          "source_commit": "8ae72a51090e8216d44f0a563990794896fa30f8",
           "verification_status": "CANDIDATE",
           "match_method": "title_contains_primary_law"
         }
@@ -359,7 +359,7 @@
           "source": "lawtext-laws",
           "local_root": "/Users/glb/workspace/legal-sources/laws",
           "relative_path": "content/司法解释/ff80818181cdceb30181d2c0af9e2339.md",
-          "source_commit": "aefdfca37fb06e90a29af6311a1ed9804c9670bd",
+          "source_commit": "8ae72a51090e8216d44f0a563990794896fa30f8",
           "verification_status": "CANDIDATE",
           "match_method": "title_contains_primary_law"
         }
@@ -383,7 +383,7 @@
           "source": "lawtext-laws",
           "local_root": "/Users/glb/workspace/legal-sources/laws",
           "relative_path": "content/司法解释/ff8081818c24e05b018c814e6de45ab5.md",
-          "source_commit": "aefdfca37fb06e90a29af6311a1ed9804c9670bd",
+          "source_commit": "8ae72a51090e8216d44f0a563990794896fa30f8",
           "verification_status": "CANDIDATE",
           "match_method": "title_contains_primary_law"
         }
@@ -407,7 +407,7 @@
           "source": "lawtext-laws",
           "local_root": "/Users/glb/workspace/legal-sources/laws",
           "relative_path": "content/司法解释/ff808181923a4d0c019240cdec8b09f8.md",
-          "source_commit": "aefdfca37fb06e90a29af6311a1ed9804c9670bd",
+          "source_commit": "8ae72a51090e8216d44f0a563990794896fa30f8",
           "verification_status": "CANDIDATE",
           "match_method": "title_contains_primary_law"
         }
@@ -431,7 +431,7 @@
           "source": "lawtext-laws",
           "local_root": "/Users/glb/workspace/legal-sources/laws",
           "relative_path": "content/司法解释/ff808181981cf0ec019831790a392ff0.md",
-          "source_commit": "aefdfca37fb06e90a29af6311a1ed9804c9670bd",
+          "source_commit": "8ae72a51090e8216d44f0a563990794896fa30f8",
           "verification_status": "CANDIDATE",
           "match_method": "title_contains_primary_law"
         }
