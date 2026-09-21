@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-15T00:54:06Z",
+  "generated_at": "2026-09-21T08:12:19Z",
   "schema_version": "V5.0.1",
   "p0_domain_count": 19,
   "p0_core_total": 20,
@@ -10,8 +10,19 @@
       "canonical_document_id": "CD-44662A8FD703",
       "title": "中华人民共和国民法典",
       "document_type": "law",
+      "domain_codes": [
+        "01",
+        "03",
+        "08",
+        "09",
+        "16"
+      ],
       "business_domains": [
-        "01 民商事基础"
+        "民商事基础",
+        "合同与担保",
+        "EPC / EPCO / 工程总承包",
+        "房地产与工业地产",
+        "投资并购"
       ],
       "priority": "P0",
       "local_text_available": true,
@@ -31,7 +42,7 @@
       "version_status": "current",
       "freshness_status": "UNKNOWN",
       "verification_status": "CANDIDATE",
-      "last_status_checked_at": "2026-09-15T00:54:06Z",
+      "last_status_checked_at": "2026-09-21T08:12:19Z",
       "official_source_url": null,
       "official_last_verified_at": null,
       "source_commits": {
@@ -43,8 +54,17 @@
       "canonical_document_id": "CD-64659AA1FFF6",
       "title": "中华人民共和国公司法",
       "document_type": "law",
+      "domain_codes": [
+        "02",
+        "14",
+        "15",
+        "16"
+      ],
       "business_domains": [
-        "02 公司治理"
+        "公司治理",
+        "国有资产与国有企业",
+        "政府平台公司",
+        "投资并购"
       ],
       "priority": "P0",
       "local_text_available": true,
@@ -57,7 +77,7 @@
       "version_status": "current",
       "freshness_status": "UNKNOWN",
       "verification_status": "CANDIDATE",
-      "last_status_checked_at": "2026-09-15T00:54:06Z",
+      "last_status_checked_at": "2026-09-21T08:12:19Z",
       "official_source_url": null,
       "official_last_verified_at": null,
       "source_commits": {
@@ -69,8 +89,11 @@
       "canonical_document_id": "CD-513B0A8512FD",
       "title": "中华人民共和国劳动法",
       "document_type": "law",
+      "domain_codes": [
+        "04"
+      ],
       "business_domains": [
-        "04 劳动人事"
+        "劳动人事"
       ],
       "priority": "P0",
       "local_text_available": true,
@@ -83,7 +106,7 @@
       "version_status": "current",
       "freshness_status": "UNKNOWN",
       "verification_status": "CANDIDATE",
-      "last_status_checked_at": "2026-09-15T00:54:06Z",
+      "last_status_checked_at": "2026-09-21T08:12:19Z",
       "official_source_url": null,
       "official_last_verified_at": null,
       "source_commits": {
@@ -95,8 +118,11 @@
       "canonical_document_id": "CD-74A8D64D50B3",
       "title": "中华人民共和国劳动合同法",
       "document_type": "law",
+      "domain_codes": [
+        "04"
+      ],
       "business_domains": [
-        "04 劳动人事"
+        "劳动人事"
       ],
       "priority": "P0",
       "local_text_available": true,
@@ -109,7 +135,7 @@
       "version_status": "current",
       "freshness_status": "UNKNOWN",
       "verification_status": "CANDIDATE",
-      "last_status_checked_at": "2026-09-15T00:54:06Z",
+      "last_status_checked_at": "2026-09-21T08:12:19Z",
       "official_source_url": null,
       "official_last_verified_at": null,
       "source_commits": {
@@ -121,8 +147,13 @@
       "canonical_document_id": "CD-76D3B9FE6DBE",
       "title": "中华人民共和国招标投标法",
       "document_type": "law",
+      "domain_codes": [
+        "05",
+        "08"
+      ],
       "business_domains": [
-        "05 招标投标"
+        "招标投标",
+        "EPC / EPCO / 工程总承包"
       ],
       "priority": "P0",
       "local_text_available": true,
@@ -135,7 +166,7 @@
       "version_status": "current",
       "freshness_status": "UNKNOWN",
       "verification_status": "CANDIDATE",
-      "last_status_checked_at": "2026-09-15T00:54:06Z",
+      "last_status_checked_at": "2026-09-21T08:12:19Z",
       "official_source_url": null,
       "official_last_verified_at": null,
       "source_commits": {
@@ -147,8 +178,11 @@
       "canonical_document_id": "CD-04062224BD6E",
       "title": "中华人民共和国招标投标法实施条例",
       "document_type": "administrative_regulation",
+      "domain_codes": [
+        "05"
+      ],
       "business_domains": [
-        "05 招标投标"
+        "招标投标"
       ],
       "priority": "P0",
       "local_text_available": true,
@@ -160,7 +194,7 @@
       "version_status": "current",
       "freshness_status": "FRESH",
       "verification_status": "CANDIDATE",
-      "last_status_checked_at": "2026-09-15T00:54:06Z",
+      "last_status_checked_at": "2026-09-21T08:12:19Z",
       "official_source_url": null,
       "official_last_verified_at": null,
       "source_commits": {
@@ -171,8 +205,11 @@
       "canonical_document_id": "CD-D4D3A10B6AE7",
       "title": "中华人民共和国政府采购法",
       "document_type": "law",
+      "domain_codes": [
+        "06"
+      ],
       "business_domains": [
-        "06 政府采购"
+        "政府采购"
       ],
       "priority": "P0",
       "local_text_available": true,
@@ -185,7 +222,7 @@
       "version_status": "current",
       "freshness_status": "UNKNOWN",
       "verification_status": "CANDIDATE",
-      "last_status_checked_at": "2026-09-15T00:54:06Z",
+      "last_status_checked_at": "2026-09-21T08:12:19Z",
       "official_source_url": null,
       "official_last_verified_at": null,
       "source_commits": {
@@ -197,8 +234,11 @@
       "canonical_document_id": "CD-B63651D144FF",
       "title": "中华人民共和国政府采购法实施条例",
       "document_type": "administrative_regulation",
+      "domain_codes": [
+        "06"
+      ],
       "business_domains": [
-        "06 政府采购"
+        "政府采购"
       ],
       "priority": "P0",
       "local_text_available": true,
@@ -210,7 +250,7 @@
       "version_status": "current",
       "freshness_status": "FRESH",
       "verification_status": "CANDIDATE",
-      "last_status_checked_at": "2026-09-15T00:54:06Z",
+      "last_status_checked_at": "2026-09-21T08:12:19Z",
       "official_source_url": null,
       "official_last_verified_at": null,
       "source_commits": {
@@ -221,8 +261,11 @@
       "canonical_document_id": "CD-B844E9460385",
       "title": "中华人民共和国建筑法",
       "document_type": "law",
+      "domain_codes": [
+        "07"
+      ],
       "business_domains": [
-        "07 工程建设"
+        "工程建设"
       ],
       "priority": "P0",
       "local_text_available": true,
@@ -235,7 +278,7 @@
       "version_status": "current",
       "freshness_status": "UNKNOWN",
       "verification_status": "CANDIDATE",
-      "last_status_checked_at": "2026-09-15T00:54:06Z",
+      "last_status_checked_at": "2026-09-21T08:12:19Z",
       "official_source_url": null,
       "official_last_verified_at": null,
       "source_commits": {
@@ -247,8 +290,13 @@
       "canonical_document_id": "CD-1F65C0D9D969",
       "title": "建设工程质量管理条例",
       "document_type": "administrative_regulation",
+      "domain_codes": [
+        "07",
+        "08"
+      ],
       "business_domains": [
-        "07 工程建设"
+        "工程建设",
+        "EPC / EPCO / 工程总承包"
       ],
       "priority": "P0",
       "local_text_available": true,
@@ -260,7 +308,7 @@
       "version_status": "current",
       "freshness_status": "FRESH",
       "verification_status": "CANDIDATE",
-      "last_status_checked_at": "2026-09-15T00:54:06Z",
+      "last_status_checked_at": "2026-09-21T08:12:19Z",
       "official_source_url": null,
       "official_last_verified_at": null,
       "source_commits": {
@@ -271,8 +319,13 @@
       "canonical_document_id": "CD-8A88D78D2810",
       "title": "中华人民共和国土地管理法",
       "document_type": "law",
+      "domain_codes": [
+        "09",
+        "10"
+      ],
       "business_domains": [
-        "09 房地产与工业地产"
+        "房地产与工业地产",
+        "土地管理"
       ],
       "priority": "P0",
       "local_text_available": true,
@@ -285,7 +338,7 @@
       "version_status": "current",
       "freshness_status": "UNKNOWN",
       "verification_status": "CANDIDATE",
-      "last_status_checked_at": "2026-09-15T00:54:06Z",
+      "last_status_checked_at": "2026-09-21T08:12:19Z",
       "official_source_url": null,
       "official_last_verified_at": null,
       "source_commits": {
@@ -297,8 +350,13 @@
       "canonical_document_id": "CD-EF0679C75B75",
       "title": "中华人民共和国城乡规划法",
       "document_type": "law",
+      "domain_codes": [
+        "09",
+        "11"
+      ],
       "business_domains": [
-        "09 房地产与工业地产"
+        "房地产与工业地产",
+        "城乡规划"
       ],
       "priority": "P0",
       "local_text_available": true,
@@ -311,7 +369,7 @@
       "version_status": "current",
       "freshness_status": "UNKNOWN",
       "verification_status": "CANDIDATE",
-      "last_status_checked_at": "2026-09-15T00:54:06Z",
+      "last_status_checked_at": "2026-09-21T08:12:19Z",
       "official_source_url": null,
       "official_last_verified_at": null,
       "source_commits": {
@@ -323,8 +381,11 @@
       "canonical_document_id": "CD-2852B98B3437",
       "title": "中华人民共和国土地管理法实施条例",
       "document_type": "administrative_regulation",
+      "domain_codes": [
+        "10"
+      ],
       "business_domains": [
-        "10 土地管理"
+        "土地管理"
       ],
       "priority": "P0",
       "local_text_available": true,
@@ -336,7 +397,7 @@
       "version_status": "current",
       "freshness_status": "FRESH",
       "verification_status": "CANDIDATE",
-      "last_status_checked_at": "2026-09-15T00:54:06Z",
+      "last_status_checked_at": "2026-09-21T08:12:19Z",
       "official_source_url": null,
       "official_last_verified_at": null,
       "source_commits": {
@@ -347,8 +408,11 @@
       "canonical_document_id": "CD-E8AED912D166",
       "title": "中华人民共和国企业国有资产法",
       "document_type": "law",
+      "domain_codes": [
+        "14"
+      ],
       "business_domains": [
-        "14 国有资产与国有企业"
+        "国有资产与国有企业"
       ],
       "priority": "P0",
       "local_text_available": true,
@@ -361,7 +425,7 @@
       "version_status": "current",
       "freshness_status": "UNKNOWN",
       "verification_status": "CANDIDATE",
-      "last_status_checked_at": "2026-09-15T00:54:06Z",
+      "last_status_checked_at": "2026-09-21T08:12:19Z",
       "official_source_url": null,
       "official_last_verified_at": null,
       "source_commits": {
@@ -373,8 +437,11 @@
       "canonical_document_id": "CD-A20E75D14ECA",
       "title": "中华人民共和国安全生产法",
       "document_type": "law",
+      "domain_codes": [
+        "22"
+      ],
       "business_domains": [
-        "22 安全生产"
+        "安全生产"
       ],
       "priority": "P0",
       "local_text_available": true,
@@ -387,7 +454,7 @@
       "version_status": "current",
       "freshness_status": "UNKNOWN",
       "verification_status": "CANDIDATE",
-      "last_status_checked_at": "2026-09-15T00:54:06Z",
+      "last_status_checked_at": "2026-09-21T08:12:19Z",
       "official_source_url": null,
       "official_last_verified_at": null,
       "source_commits": {
@@ -399,8 +466,11 @@
       "canonical_document_id": "CD-A317A3EF839F",
       "title": "中华人民共和国环境保护法",
       "document_type": "law",
+      "domain_codes": [
+        "24"
+      ],
       "business_domains": [
-        "24 环境保护"
+        "环境保护"
       ],
       "priority": "P0",
       "local_text_available": true,
@@ -413,7 +483,7 @@
       "version_status": "current",
       "freshness_status": "UNKNOWN",
       "verification_status": "CANDIDATE",
-      "last_status_checked_at": "2026-09-15T00:54:06Z",
+      "last_status_checked_at": "2026-09-21T08:12:19Z",
       "official_source_url": null,
       "official_last_verified_at": null,
       "source_commits": {
@@ -425,8 +495,11 @@
       "canonical_document_id": "CD-C3BAE8881763",
       "title": "中华人民共和国环境影响评价法",
       "document_type": "law",
+      "domain_codes": [
+        "24"
+      ],
       "business_domains": [
-        "24 环境保护"
+        "环境保护"
       ],
       "priority": "P0",
       "local_text_available": true,
@@ -439,7 +512,7 @@
       "version_status": "current",
       "freshness_status": "UNKNOWN",
       "verification_status": "CANDIDATE",
-      "last_status_checked_at": "2026-09-15T00:54:06Z",
+      "last_status_checked_at": "2026-09-21T08:12:19Z",
       "official_source_url": null,
       "official_last_verified_at": null,
       "source_commits": {
@@ -451,8 +524,11 @@
       "canonical_document_id": "CD-229FEFDB6C29",
       "title": "中华人民共和国行政许可法",
       "document_type": "law",
+      "domain_codes": [
+        "29"
+      ],
       "business_domains": [
-        "29 行政许可"
+        "行政许可"
       ],
       "priority": "P0",
       "local_text_available": true,
@@ -465,7 +541,7 @@
       "version_status": "current",
       "freshness_status": "UNKNOWN",
       "verification_status": "CANDIDATE",
-      "last_status_checked_at": "2026-09-15T00:54:06Z",
+      "last_status_checked_at": "2026-09-21T08:12:19Z",
       "official_source_url": null,
       "official_last_verified_at": null,
       "source_commits": {
@@ -477,8 +553,11 @@
       "canonical_document_id": "CD-CDF8597DA5D1",
       "title": "中华人民共和国民事诉讼法",
       "document_type": "law",
+      "domain_codes": [
+        "33"
+      ],
       "business_domains": [
-        "33 民事诉讼"
+        "民事诉讼"
       ],
       "priority": "P0",
       "local_text_available": true,
@@ -491,7 +570,7 @@
       "version_status": "current",
       "freshness_status": "UNKNOWN",
       "verification_status": "CANDIDATE",
-      "last_status_checked_at": "2026-09-15T00:54:06Z",
+      "last_status_checked_at": "2026-09-21T08:12:19Z",
       "official_source_url": null,
       "official_last_verified_at": null,
       "source_commits": {
@@ -503,8 +582,11 @@
       "canonical_document_id": "CD-15CF453A11CC",
       "title": "中华人民共和国企业破产法",
       "document_type": "law",
+      "domain_codes": [
+        "36"
+      ],
       "business_domains": [
-        "36 企业破产"
+        "企业破产"
       ],
       "priority": "P0",
       "local_text_available": true,
@@ -517,7 +599,7 @@
       "version_status": "current",
       "freshness_status": "UNKNOWN",
       "verification_status": "CANDIDATE",
-      "last_status_checked_at": "2026-09-15T00:54:06Z",
+      "last_status_checked_at": "2026-09-21T08:12:19Z",
       "official_source_url": null,
       "official_last_verified_at": null,
       "source_commits": {

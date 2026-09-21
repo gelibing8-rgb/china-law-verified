@@ -7,7 +7,7 @@
   3. 正文非空
   4. content_sha256 与正文一致
   5. metadata/index.jsonl 与磁盘文件一致
-  6. 没有重复法律 / 重复 (issuing_authority, title, version_date) 组合
+  6. 没有重复法律 / 重复 (issuing_authority, title, current_version_date) 组合
 """
 from __future__ import annotations
 
@@ -163,7 +163,11 @@ def main() -> int:
                 f"[{rel}] status 取值不在推荐列表: {status!r}, 建议 {ALLOWED_STATUS}"
             )
         # 重复检测
-        key = (meta.get("title", ""), meta.get("issuing_authority", ""), meta.get("version_date", ""))
+        key = (
+            meta.get("title", ""),
+            meta.get("issuing_authority", ""),
+            meta.get("current_version_date", ""),
+        )
         if key != ("", "", "") and key in seen_keys:
             all_errors.append(f"[{rel}] 与已有记录重复: {key}")
         seen_keys.add(key)
