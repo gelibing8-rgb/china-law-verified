@@ -24,25 +24,25 @@ NOW = datetime.now(timezone.utc).replace(microsecond=0).isoformat().replace("+00
 
 # 19 个 P0 领域 → 真正日常专业判断需要的主核心规范（标题严格匹配，按 flk.npc.gov.cn 官方中文全称）
 P0_CORE = [
-    ("01 民商事基础", ["中华人民共和国民法典"]),
-    ("02 公司治理", ["中华人民共和国公司法"]),
-    ("03 合同与担保", ["中华人民共和国民法典"]),  # 合同编、担保制度
-    ("04 劳动人事", ["中华人民共和国劳动法", "中华人民共和国劳动合同法"]),
-    ("05 招标投标", ["中华人民共和国招标投标法", "中华人民共和国招标投标法实施条例"]),
-    ("06 政府采购", ["中华人民共和国政府采购法", "中华人民共和国政府采购法实施条例"]),
-    ("07 工程建设", ["中华人民共和国建筑法", "建设工程质量管理条例"]),
-    ("08 EPC / 工程总承包", ["中华人民共和国招标投标法", "建设工程质量管理条例", "中华人民共和国民法典"]),
-    ("09 房地产与工业地产", ["中华人民共和国民法典", "中华人民共和国土地管理法", "中华人民共和国城乡规划法"]),
-    ("10 土地管理", ["中华人民共和国土地管理法", "中华人民共和国土地管理法实施条例"]),
-    ("11 城乡规划", ["中华人民共和国城乡规划法"]),
-    ("14 国有资产与国有企业", ["中华人民共和国公司法", "中华人民共和国企业国有资产法"]),
-    ("15 政府平台公司", ["中华人民共和国公司法"]),
-    ("16 投资并购", ["中华人民共和国公司法", "中华人民共和国民法典"]),
-    ("22 安全生产", ["中华人民共和国安全生产法"]),
-    ("24 环境保护", ["中华人民共和国环境保护法", "中华人民共和国环境影响评价法"]),
-    ("29 行政许可", ["中华人民共和国行政许可法"]),
-    ("33 民事诉讼", ["中华人民共和国民事诉讼法"]),
-    ("36 企业破产", ["中华人民共和国企业破产法"]),
+    ("01", ["中华人民共和国民法典"]),
+    ("02", ["中华人民共和国公司法"]),
+    ("03", ["中华人民共和国民法典"]),
+    ("04", ["中华人民共和国劳动法", "中华人民共和国劳动合同法"]),
+    ("05", ["中华人民共和国招标投标法", "中华人民共和国招标投标法实施条例"]),
+    ("06", ["中华人民共和国政府采购法", "中华人民共和国政府采购法实施条例"]),
+    ("07", ["中华人民共和国建筑法", "建设工程质量管理条例"]),
+    ("08", ["中华人民共和国招标投标法", "建设工程质量管理条例", "中华人民共和国民法典"]),
+    ("09", ["中华人民共和国民法典", "中华人民共和国土地管理法", "中华人民共和国城乡规划法"]),
+    ("10", ["中华人民共和国土地管理法", "中华人民共和国土地管理法实施条例"]),
+    ("11", ["中华人民共和国城乡规划法"]),
+    ("14", ["中华人民共和国公司法", "中华人民共和国企业国有资产法"]),
+    ("15", ["中华人民共和国公司法"]),
+    ("16", ["中华人民共和国公司法", "中华人民共和国民法典"]),
+    ("22", ["中华人民共和国安全生产法"]),
+    ("24", ["中华人民共和国环境保护法", "中华人民共和国环境影响评价法"]),
+    ("29", ["中华人民共和国行政许可法"]),
+    ("33", ["中华人民共和国民事诉讼法"]),
+    ("36", ["中华人民共和国企业破产法"]),
 ]
 
 
@@ -121,55 +121,62 @@ def build_p0_core_documents(universe: dict, business_map: dict) -> dict:
     domains = business_map["domains"]
     p0_domain_map = {d["domain_code"]: d for d in domains if d["priority"] == "P0"}
 
-    records: list[dict] = []
+    records_by_id: dict[str, dict] = {}
     missing: list[dict] = []
-    seen_ids: set[str] = set()
 
-    for domain_name, titles in P0_CORE:
-        domain_code = next((c for c, d in p0_domain_map.items() if d["domain_name"] == domain_name), None)
+    for domain_code, titles in P0_CORE:
+        d_info = p0_domain_map.get(domain_code, {})
+        domain_name = d_info.get("domain_name", domain_code)
         for title in titles:
             c = find_canonical_by_title(canonicals, title)
             if not c:
                 missing.append({
-                    "domain_code": domain_code or "?",
+                    "domain_code": domain_code,
                     "domain_name": domain_name,
                     "missing_title": title,
                     "reason": "三个本地候选源 + 本仓库 laws/ 全部未唯一找到该主法律",
                     "priority": "P0",
                 })
                 continue
-            if c["canonical_document_id"] in seen_ids:
-                continue
-            seen_ids.add(c["canonical_document_id"])
-            local_text = any(
-                cs.get("local_text_available") for cs in c["candidate_sources"]
-            )
-            records.append({
-                "canonical_document_id": c["canonical_document_id"],
-                "title": c["title"],
-                "document_type": c["document_type"],
-                "business_domains": [domain_name],
-                "priority": "P0",
-                "local_text_available": local_text,
-                "candidate_paths": c["candidate_paths"],
-                "current_version_id": c["canonical_document_id"] if c["version_status"] == "current" else None,
-                "legal_status": c["legal_status"],
-                "version_status": c["version_status"],
-                "freshness_status": c["freshness_status"],
-                "verification_status": c["verification_status"],
-                "last_status_checked_at": NOW,
-                "official_source_url": c["official_source_url"],
-                "official_last_verified_at": c["official_last_verified_at"],
-                "source_commits": c["source_commits"],
-            })
 
+            cid = c["canonical_document_id"]
+            if cid not in records_by_id:
+                local_text = any(cs.get("local_text_available") for cs in c["candidate_sources"])
+                records_by_id[cid] = {
+                    "canonical_document_id": cid,
+                    "title": c["title"],
+                    "document_type": c["document_type"],
+                    "domain_codes": [],
+                    "business_domains": [],
+                    "priority": "P0",
+                    "local_text_available": local_text,
+                    "candidate_paths": c["candidate_paths"],
+                    "current_version_id": cid if c["version_status"] == "current" else None,
+                    "legal_status": c["legal_status"],
+                    "version_status": c["version_status"],
+                    "freshness_status": c["freshness_status"],
+                    "verification_status": c["verification_status"],
+                    "last_status_checked_at": NOW,
+                    "official_source_url": c["official_source_url"],
+                    "official_last_verified_at": c["official_last_verified_at"],
+                    "source_commits": c["source_commits"],
+                }
+
+            rec = records_by_id[cid]
+            if domain_code not in rec["domain_codes"]:
+                rec["domain_codes"].append(domain_code)
+            if domain_name not in rec["business_domains"]:
+                rec["business_domains"].append(domain_name)
+
+    records = list(records_by_id.values())
+    local_count = sum(1 for r in records if r["local_text_available"])
     return {
         "generated_at": NOW,
         "schema_version": "V5.0.1",
         "p0_domain_count": len(P0_CORE),
         "p0_core_total": len(records),
-        "p0_local_text_available_count": sum(1 for r in records if r["local_text_available"]),
-        "p0_local_text_coverage": round(100 * sum(1 for r in records if r["local_text_available"]) / max(len(records), 1), 1),
+        "p0_local_text_available_count": local_count,
+        "p0_local_text_coverage": round(100 * local_count / max(len(records), 1), 1),
         "p0_core_documents": records,
         "missing_from_local_sources": missing,
     }
@@ -177,8 +184,15 @@ def build_p0_core_documents(universe: dict, business_map: dict) -> dict:
 
 def calc_p0_freshness(p0: dict) -> dict:
     cnt = Counter()
+    confirmed = 0
     for r in p0["p0_core_documents"]:
         cnt[r["freshness_status"]] += 1
+        if (
+            r.get("legal_status") == "effective"
+            and r.get("version_status") == "current"
+            and r.get("freshness_status") == "FRESH"
+        ):
+            confirmed += 1
     total = sum(cnt.values())
     return {
         "FRESH": cnt["FRESH"],
@@ -186,19 +200,20 @@ def calc_p0_freshness(p0: dict) -> dict:
         "UNKNOWN": cnt["UNKNOWN"],
         "CONFLICT": cnt["CONFLICT"],
         "total": total,
-        "p0_current_effective_confirmed_rate": round(100 * cnt["FRESH"] / max(total, 1), 1),
+        "current_effective_confirmed": confirmed,
+        "p0_current_effective_confirmed_rate": round(100 * confirmed / max(total, 1), 1),
     }
 
 
 def build_p0_readiness_md(p0: dict, freshness: dict, business_map: dict) -> str:
     domains = business_map["domains"]
-    p0_domain_map = {d["domain_name"]: d for d in domains if d["priority"] == "P0"}
+    p0_domain_map = {d["domain_code"]: d for d in domains if d["priority"] == "P0"}
     lines = [
         "# P0 Readiness (V5.0.1)",
         "",
         f"_生成时间：{NOW}_",
         "",
-        f"## 概览",
+        "## 概览",
         "",
         f"- P0 业务一级领域：**{p0['p0_domain_count']}**",
         f"- P0 核心规范总数（去重后）：**{p0['p0_core_total']}**",
@@ -212,46 +227,51 @@ def build_p0_readiness_md(p0: dict, freshness: dict, business_map: dict) -> str:
         "",
         "## 19 个 P0 领域逐领域状态",
         "",
-        "| domain | domain | 核心主法 | 核心行政法规 | 核心部门规章 | 核心司法解释 | 核心规范性文件 | 核心案例 | local_text | current_version | legal_status | freshness | verification | last_checked | known_gap |",
-        "| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |",
+        "| code | domain | 核心主法 | local_text | current_version | legal_status | freshness | verification | last_checked | known_gap |",
+        "| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |",
     ]
-    for domain_name, titles in P0_CORE:
-        d_info = p0_domain_map.get(domain_name, {})
-        recs = [r for r in p0["p0_core_documents"] if domain_name in r.get("business_domains", [])]
+    missing_codes = {m["domain_code"] for m in p0["missing_from_local_sources"]}
+    for domain_code, titles in P0_CORE:
+        d_info = p0_domain_map.get(domain_code, {})
+        domain_name = d_info.get("domain_name", domain_code)
+        recs = [r for r in p0["p0_core_documents"] if domain_code in r.get("domain_codes", [])]
         title_str = "<br>".join(titles)
         text_count = sum(1 for r in recs if r["local_text_available"])
         cur_ver = sum(1 for r in recs if r["version_status"] == "current")
         lstatus = ",".join(sorted({r["legal_status"] for r in recs})) or "-"
         fresh = ",".join(sorted({r["freshness_status"] for r in recs})) or "-"
         verif = ",".join(sorted({r["verification_status"] for r in recs})) or "-"
-        gap = "本地候选源未唯一找到该主法律" if domain_name in [m["domain_name"] for m in p0["missing_from_local_sources"]] else "-"
+        gap = "本地候选源未唯一找到该主法律" if domain_code in missing_codes else "-"
         lines.append(
-            f"| {d_info.get('domain_code', '?')} | {domain_name} | {title_str} | "
-            f"- | - | - | - | - | {text_count}/{len(recs)} | {cur_ver}/{len(recs)} | "
+            f"| {domain_code} | {domain_name} | {title_str} | "
+            f"{text_count}/{len(recs)} | {cur_ver}/{len(recs)} | "
             f"{lstatus} | {fresh} | {verif} | {NOW[:10]} | {gap} |"
         )
+
     lines += [
         "",
         "## P0 核心规范清单（去重）",
         "",
-        "| canonical_id | title | type | local_text | current_version | freshness | verification |",
-        "| --- | --- | --- | --- | --- | --- | --- |",
+        "| canonical_id | title | domains | type | local_text | current_version | freshness | verification |",
+        "| --- | --- | --- | --- | --- | --- | --- | --- |",
     ]
     for r in p0["p0_core_documents"]:
+        domain_label = ", ".join(
+            f"{c} {n}" for c, n in zip(r.get("domain_codes", []), r.get("business_domains", []))
+        )
         lines.append(
-            f"| `{r['canonical_document_id']}` | {r['title']} | {r['document_type']} | "
+            f"| `{r['canonical_document_id']}` | {r['title']} | {domain_label} | {r['document_type']} | "
             f"{'✅' if r['local_text_available'] else '❌'} | "
             f"{'✅' if r['version_status'] == 'current' else '❌'} | "
             f"{r['freshness_status']} | {r['verification_status']} |"
         )
     if p0["missing_from_local_sources"]:
-        lines += [
-            "",
-            "## 已知 P0 缺失（未在三个本地候选源唯一找到）",
-            "",
-        ]
+        lines += ["", "## 已知 P0 缺失（未在三个本地候选源唯一找到）", ""]
         for m in p0["missing_from_local_sources"]:
-            lines.append(f"- **{m['domain_name']}** ({m['domain_code']}): 缺少 `{m['missing_title']}` — {m['reason']}")
+            lines.append(
+                f"- **{m['domain_name']}** ({m['domain_code']}): "
+                f"缺少 `{m['missing_title']}` — {m['reason']}"
+            )
     return "\n".join(lines) + "\n"
 
 
