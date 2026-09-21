@@ -2,7 +2,7 @@
 name: Maintenance / improvement
 about: Propose a small maintainable improvement
 title: "[maintenance] "
-labels: enhancement
+labels: maintenance
 assignees: ""
 ---
 
