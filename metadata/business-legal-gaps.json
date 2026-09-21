@@ -1,5 +1,39 @@
 {
-  "generated_at": "2026-09-15T00:54:06Z",
-  "gaps": [],
+  "generated_at": "2026-09-21T09:57:44Z",
+  "gaps": [
+    {
+      "gap_id": "coverage:Q3",
+      "scenario_id": "Q3",
+      "business_domain": "工业用地违约",
+      "missing_type": "coverage_partial",
+      "expected_document": "闲置土地处置与项目履约监管专门文件",
+      "reason": "现有覆盖以土地管理法和合同法原则为主，缺实施细则级的闲置土地处置与项目履约监管规范。",
+      "priority": "P0",
+      "recommended_action": "核验 flk.npc.gov.cn / ndrc.gov.cn 等官方来源后补充专题或候选映射",
+      "detected_at": "2026-09-21T09:57:44Z"
+    },
+    {
+      "gap_id": "coverage:Q4",
+      "scenario_id": "Q4",
+      "business_domain": "政府平台公司合作",
+      "missing_type": "coverage_partial",
+      "expected_document": "政府平台公司合规、企业投资合规及产业基金专门规范",
+      "reason": "现有覆盖主要为公司法、民法典和土地管理法原则，缺平台公司投资合规与产业基金等专门规范。",
+      "priority": "P0",
+      "recommended_action": "核验 sasac.gov.cn / ndrc.gov.cn 等官方来源后补充专题或候选映射",
+      "detected_at": "2026-09-21T09:57:44Z"
+    },
+    {
+      "gap_id": "coverage:Q10",
+      "scenario_id": "Q10",
+      "business_domain": "招商奖励合规",
+      "missing_type": "coverage_partial",
+      "expected_document": "招商引资协议监管、财政补贴及产业扶持资金审计专门文件",
+      "reason": "现有覆盖主要为民商事和行政处罚原则，缺招商奖励、财政补贴与产业扶持资金审计等专门规范。",
+      "priority": "P0",
+      "recommended_action": "核验 mof.gov.cn / ndrc.gov.cn 等官方来源后补充专题或候选映射",
+      "detected_at": "2026-09-21T09:57:44Z"
+    }
+  ],
   "schema_version": "V5.0.1"
 }

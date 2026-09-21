@@ -28,6 +28,7 @@ REQUIRED_FILES = [
     META / "business-legal-map.json",
     META / "current-version-registry.json",
     META / "p0-core-documents.json",
+    META / "business-legal-gaps.json",
     REPORTS / "p0-readiness.md",
     REPORTS / "v5.0.1-data-quality.md",
 ]
@@ -54,6 +55,7 @@ def main() -> int:
     business_map = load_json(META / "business-legal-map.json")
     registry = load_json(META / "current-version-registry.json")
     p0 = load_json(META / "p0-core-documents.json")
+    business_gaps = load_json(META / "business-legal-gaps.json")
 
     domains = business_map.get("domains", [])
     p0_domains = [d for d in domains if d.get("priority") == "P0"]
@@ -104,6 +106,28 @@ def main() -> int:
     elif selected != confirmed + unconfirmed:
         errors.append(
             f"selected ({selected}) != confirmed ({confirmed}) + unconfirmed ({unconfirmed})"
+        )
+
+    gap_records = business_gaps.get("gaps", [])
+    if not isinstance(gap_records, list):
+        errors.append("business-legal-gaps gaps must be a list")
+        gap_records = []
+
+    gap_ids = [g.get("gap_id") for g in gap_records if g.get("gap_id")]
+    if len(gap_ids) != len(set(gap_ids)):
+        errors.append("business-legal-gaps contains duplicate gap_id values")
+
+    required_coverage_scenarios = {"Q3", "Q4", "Q10"}
+    coverage_scenarios = {
+        g.get("scenario_id")
+        for g in gap_records
+        if g.get("missing_type") == "coverage_partial"
+    }
+    missing_coverage = sorted(required_coverage_scenarios - coverage_scenarios)
+    if missing_coverage:
+        errors.append(
+            "business-legal-gaps missing COVERAGE_PARTIAL scenarios: "
+            + ", ".join(missing_coverage)
         )
 
     readiness = (REPORTS / "p0-readiness.md").read_text(encoding="utf-8")

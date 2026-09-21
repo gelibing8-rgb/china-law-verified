@@ -46,6 +46,42 @@ P0_CORE = [
 ]
 
 
+# Known business-scenario coverage gaps from the V5.0.1 acceptance suite.
+# These are structured gaps, not verified legal authorities.
+COVERAGE_PARTIAL_GAPS = [
+    {
+        "gap_id": "coverage:Q3",
+        "scenario_id": "Q3",
+        "business_domain": "工业用地违约",
+        "missing_type": "coverage_partial",
+        "expected_document": "闲置土地处置与项目履约监管专门文件",
+        "reason": "现有覆盖以土地管理法和合同法原则为主，缺实施细则级的闲置土地处置与项目履约监管规范。",
+        "priority": "P0",
+        "recommended_action": "核验 flk.npc.gov.cn / ndrc.gov.cn 等官方来源后补充专题或候选映射",
+    },
+    {
+        "gap_id": "coverage:Q4",
+        "scenario_id": "Q4",
+        "business_domain": "政府平台公司合作",
+        "missing_type": "coverage_partial",
+        "expected_document": "政府平台公司合规、企业投资合规及产业基金专门规范",
+        "reason": "现有覆盖主要为公司法、民法典和土地管理法原则，缺平台公司投资合规与产业基金等专门规范。",
+        "priority": "P0",
+        "recommended_action": "核验 sasac.gov.cn / ndrc.gov.cn 等官方来源后补充专题或候选映射",
+    },
+    {
+        "gap_id": "coverage:Q10",
+        "scenario_id": "Q10",
+        "business_domain": "招商奖励合规",
+        "missing_type": "coverage_partial",
+        "expected_document": "招商引资协议监管、财政补贴及产业扶持资金审计专门文件",
+        "reason": "现有覆盖主要为民商事和行政处罚原则，缺招商奖励、财政补贴与产业扶持资金审计等专门规范。",
+        "priority": "P0",
+        "recommended_action": "核验 mof.gov.cn / ndrc.gov.cn 等官方来源后补充专题或候选映射",
+    },
+]
+
+
 def load_universe() -> dict:
     return json.loads((META / "legal-universe.json").read_text(encoding="utf-8"))
 
@@ -437,17 +473,42 @@ def build_data_quality_md(universe: dict, registry: dict, p0: dict, freshness: d
     return "\n".join(lines) + "\n"
 
 
-def update_business_gaps(p0: dict) -> dict:
-    """把 P0 真实缺口追加进 business-legal-gaps.json。"""
-    gaps_path = META / "business-legal-gaps.json"
-    gaps_doc = json.loads(gaps_path.read_text(encoding="utf-8")) if gaps_path.exists() else {"gaps": []}
-    existing_keys = {(g.get("topic_id") or g.get("business_domain"), g.get("expected_document") or g.get("missing_title")) for g in gaps_doc.get("gaps", [])}
+def _gap_identity(gap: dict) -> tuple[str, ...]:
+    """Return a stable identity for new and legacy gap records."""
+    if gap.get("gap_id"):
+        return ("gap_id", str(gap["gap_id"]))
+    return (
+        "legacy",
+        str(gap.get("topic_id") or gap.get("business_domain") or ""),
+        str(gap.get("expected_document") or gap.get("missing_title") or ""),
+    )
+
+
+def build_business_gaps(existing_doc: dict, p0: dict) -> tuple[dict, dict]:
+    """Build the gap registry without file I/O; safe to call repeatedly."""
+    gaps_doc = dict(existing_doc or {})
+    gaps_doc["gaps"] = [dict(g) for g in gaps_doc.get("gaps", [])]
+    existing_keys = {_gap_identity(g) for g in gaps_doc["gaps"]}
     added = 0
-    for m in p0["missing_from_local_sources"]:
-        key = (m.get("domain_code"), m.get("missing_title"))
+
+    def add_gap(record: dict) -> None:
+        nonlocal added
+        key = _gap_identity(record)
         if key in existing_keys:
-            continue
-        gaps_doc.setdefault("gaps", []).append({
+            return
+        rec = dict(record)
+        rec.setdefault("detected_at", NOW)
+        gaps_doc["gaps"].append(rec)
+        existing_keys.add(key)
+        added += 1
+
+    # Acceptance-suite business coverage gaps must be machine-readable too.
+    for gap in COVERAGE_PARTIAL_GAPS:
+        add_gap(gap)
+
+    # P0 core law is missing entirely from local candidate sources.
+    for m in p0["missing_from_local_sources"]:
+        add_gap({
             "business_domain": m.get("domain_name"),
             "topic_id": m.get("domain_code"),
             "missing_type": "p0_primary_law",
@@ -455,16 +516,12 @@ def update_business_gaps(p0: dict) -> dict:
             "reason": m.get("reason"),
             "priority": "P0",
             "recommended_action": "在 flk.npc.gov.cn 浏览器核验后补 laws/ 或 candidate source",
-            "detected_at": NOW,
         })
-        added += 1
-    # 本地无正文的 P0
+
+    # P0 canonical exists but no local text is available.
     for r in p0["p0_core_documents"]:
         if not r["local_text_available"]:
-            key = (r.get("title"), r.get("title"))
-            if key in existing_keys:
-                continue
-            gaps_doc.setdefault("gaps", []).append({
+            add_gap({
                 "business_domain": (r.get("business_domains") or ["?"])[0],
                 "topic_id": r.get("canonical_document_id"),
                 "missing_type": "p0_local_text",
@@ -472,14 +529,27 @@ def update_business_gaps(p0: dict) -> dict:
                 "reason": "三个本地候选源 + 本仓库 laws/ 均未持有该核心规范正文",
                 "priority": "P0",
                 "recommended_action": "在 flk.npc.gov.cn 浏览器核验后写入 laws/ 或本地候选源",
-                "detected_at": NOW,
             })
-            added += 1
+
     gaps_doc["generated_at"] = NOW
     gaps_doc["schema_version"] = "V5.0.1"
-    gaps_path.write_text(json.dumps(gaps_doc, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
-    return {"added": added, "total": len(gaps_doc.get("gaps", []))}
+    return gaps_doc, {"added": added, "total": len(gaps_doc["gaps"])}
 
+
+def update_business_gaps(p0: dict) -> dict:
+    """Synchronize structured business gaps to metadata/business-legal-gaps.json."""
+    gaps_path = META / "business-legal-gaps.json"
+    existing_doc = (
+        json.loads(gaps_path.read_text(encoding="utf-8"))
+        if gaps_path.exists()
+        else {"gaps": []}
+    )
+    gaps_doc, summary = build_business_gaps(existing_doc, p0)
+    gaps_path.write_text(
+        json.dumps(gaps_doc, ensure_ascii=False, indent=2) + "\n",
+        encoding="utf-8",
+    )
+    return summary
 
 def main() -> int:
     p = argparse.ArgumentParser()

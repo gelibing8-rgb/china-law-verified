@@ -2,7 +2,16 @@
 
 All notable project changes are recorded here.
 
-## [5.0.2] - Unreleased
+## [Unreleased]
+
+### Fixed
+- Synchronize known `COVERAGE_PARTIAL` scenarios with the machine-readable business-gap registry.
+- Make business-gap deduplication deterministic and idempotent.
+
+### Added
+- Offline regression tests for shared-law domain aggregation, strict confirmation semantics, and gap-registry consistency.
+
+## [5.0.2] - 2026-09-21
 
 ### Fixed
 - Correct P0 business-domain mapping so domain codes resolve against `business-legal-map.json`.

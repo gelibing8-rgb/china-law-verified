@@ -19,7 +19,10 @@ jobs:
           python-version: "3.12"
 
       - name: Compile Python
-        run: python -m compileall -q scripts
+        run: python -m compileall -q scripts tests
+
+      - name: Run regression tests
+        run: python -m unittest discover -s tests -p 'test_*.py'
 
       - name: Verify repository legal files
         run: python scripts/verify.py
