@@ -4,6 +4,8 @@ All notable project changes are recorded here.
 
 ## [Unreleased]
 
+## [5.0.3] - 2026-09-21
+
 ### Fixed
 - Make `scripts/v501_p0.py --reports-only` leave registry and gap metadata unchanged.
 - Synchronize known `COVERAGE_PARTIAL` scenarios with the machine-readable business-gap registry.
