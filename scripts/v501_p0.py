@@ -584,8 +584,11 @@ def main() -> int:
     print(f"[OK] reports/p0-readiness.md")
     print(f"[OK] reports/v5.0.1-data-quality.md")
 
-    gaps_summary = update_business_gaps(p0)
-    print(f"[OK] business-legal-gaps.json: added={gaps_summary['added']}  total={gaps_summary['total']}")
+    if not args.reports_only:
+        gaps_summary = update_business_gaps(p0)
+        print(f"[OK] business-legal-gaps.json: added={gaps_summary['added']}  total={gaps_summary['total']}")
+    else:
+        print("[INFO] --reports-only: registry and business-legal-gaps metadata unchanged")
 
     print(f"\nP0 FRESH={freshness['FRESH']}  STALE={freshness['STALE']}  UNKNOWN={freshness['UNKNOWN']}  CONFLICT={freshness['CONFLICT']}")
     print(f"P0 current_effective_confirmed_rate = {freshness['p0_current_effective_confirmed_rate']}%")
