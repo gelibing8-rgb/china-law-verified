@@ -4,6 +4,13 @@ All notable project changes are recorded here.
 
 ## [Unreleased]
 
+### Added
+- Track all 16 P0 `UNKNOWN` records in a machine-readable official-version baseline.
+- Add an offline drift guard and regression tests for known stale P0 candidates.
+
+### Changed
+- Upgrade GitHub Actions to `checkout@v7` / `setup-python@v7` and pin CI to Ubuntu 24.04.
+
 ## [5.0.3] - 2026-09-21
 
 ### Fixed
