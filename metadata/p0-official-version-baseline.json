@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0",
   "checked_at": "2026-09-22",
-  "policy": "Track P0 UNKNOWN laws conservatively. Official version metadata does not promote candidate text to VERIFIED or FRESH.",
+  "policy": "Track P0 UNKNOWN laws conservatively. Current candidate presence and official version metadata do not promote candidate text to VERIFIED or FRESH. Older candidate copies may coexist with a current candidate and are reported as mixed-version.",
   "tracked_unknown_count": 16,
   "tracked_unknown": [
     {
@@ -77,7 +77,7 @@
       "official_effective_date": "2024-07-01",
       "official_source_url": "https://www.npc.gov.cn/npc/c2/c30834/202312/t20231229_433967.html",
       "local_candidate_version_hint": "2018-10-26",
-      "expected_local_status": "LOCAL_STALE"
+      "expected_local_status": "MIXED_VERSION_CANDIDATES"
     },
     {
       "canonical_document_id": "CD-CDF8597DA5D1",
@@ -86,7 +86,7 @@
       "official_effective_date": "2024-01-01",
       "official_source_url": "https://www.npc.gov.cn/npc/c2/c30834/202309/t20230901_431419.html",
       "local_candidate_version_hint": "2021-12-24",
-      "expected_local_status": "LOCAL_STALE"
+      "expected_local_status": "MIXED_VERSION_CANDIDATES"
     }
   ]
 }

@@ -192,7 +192,7 @@ The project does not expand source coverage merely to increase record count. New
 
 - Most canonical records are still `CANDIDATE`, not `VERIFIED`.
 - Several P0 laws still have `UNKNOWN` freshness and require official re-check.
-- The official-version drift guard currently confirms that the dated local candidates for Company Law (2018) and Civil Procedure Law (2021) lag their current 2023 NPC versions.
+- The official-version candidate guard records a mixed-version state for Company Law and Civil Procedure Law: current 2023 just-laws candidates coexist with older dated china-data candidate copies. Trust remains `CANDIDATE` and freshness remains `UNKNOWN`.
 - Some scenarios remain `COVERAGE_PARTIAL`, including industrial-land performance, government-platform cooperation, and investment-promotion/subsidy compliance.
 - Candidate repositories and official sites have different licensing, availability, and access constraints.
 - A successful search is not the same as a legally sufficient conclusion.
