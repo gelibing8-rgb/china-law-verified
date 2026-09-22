@@ -4,6 +4,12 @@ All notable project changes are recorded here.
 
 ## [Unreleased]
 
+### Fixed
+- Correct Company Law and Civil Procedure Law from stale-only to mixed-version candidate status after confirming current 2023 just-laws candidates.
+
+### Added
+- Record just-laws source commit and deterministic candidate-tree SHA-256 provenance for the two current P0 candidates.
+
 ### Added
 - Track all 16 P0 `UNKNOWN` records in a machine-readable official-version baseline.
 - Add an offline drift guard and regression tests for known stale P0 candidates.

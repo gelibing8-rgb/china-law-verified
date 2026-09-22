@@ -1,0 +1,34 @@
+{
+  "schema_version": "1.0",
+  "captured_at": "2026-09-22",
+  "source": "ImCa0/just-laws",
+  "source_license": "MIT",
+  "source_commit": "56770b043bf19686fec43403bd24e8e290275794",
+  "policy": "Current local candidates are discovery-layer evidence only. Their presence does not promote CANDIDATE to VERIFIED or UNKNOWN to FRESH.",
+  "records": [
+    {
+      "canonical_document_id": "CD-64659AA1FFF6",
+      "title": "中华人民共和国公司法",
+      "official_current_version_date": "2023-12-29",
+      "candidate_source": "just-laws",
+      "candidate_path": "docs/civil-and-commercial/company-law/README.md",
+      "candidate_tree": "docs/civil-and-commercial/company-law",
+      "candidate_file_count": 1,
+      "candidate_tree_sha256": "e36dcf9d1bd530e4e635e6e1986d5ff27f1172be00ff948abecf869006906111",
+      "version_signature": "2023年12月29日...第二次修订",
+      "status": "CURRENT_CANDIDATE_PRESENT"
+    },
+    {
+      "canonical_document_id": "CD-CDF8597DA5D1",
+      "title": "中华人民共和国民事诉讼法",
+      "official_current_version_date": "2023-09-01",
+      "candidate_source": "just-laws",
+      "candidate_path": "docs/procedural/civil-procedure/README.md",
+      "candidate_tree": "docs/procedural/civil-procedure",
+      "candidate_file_count": 5,
+      "candidate_tree_sha256": "c6670173ddd027924faefd336cb9fb33e745f1d8f1f449314194a2f685e19ae5",
+      "version_signature": "2023年9月1日...第五次修正",
+      "status": "CURRENT_CANDIDATE_PRESENT"
+    }
+  ]
+}

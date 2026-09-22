@@ -7,214 +7,133 @@ from datetime import date
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
-
-DATE_RE = re.compile(
-    r"(?<!\d)(20\d{2})[-_/](\d{2})[-_/](\d{2})(?!\d)"
-)
-
+DATE_RE = re.compile(r"(?<!\d)(20\d{2})[-_/](\d{2})[-_/](\d{2})(?!\d)")
 
 def extract_candidate_dates(paths):
     out = []
-
     for path in paths:
         for y, m, d in DATE_RE.findall(path or ""):
             try:
-                out.append(
-                    date(
-                        int(y),
-                        int(m),
-                        int(d),
-                    )
-                )
+                out.append(date(int(y), int(m), int(d)))
             except ValueError:
                 pass
-
     return sorted(set(out))
 
+def classify_candidate_set(candidate_paths, official_date, current_provenance):
+    official = date.fromisoformat(official_date)
+    dates = extract_candidate_dates(candidate_paths)
+    older = [d for d in dates if d < official]
+    aligned = [d for d in dates if d == official]
+    newer = [d for d in dates if d > official]
 
-def detect_local_status(paths, official_date):
-    dates = extract_candidate_dates(paths)
+    if current_provenance:
+        if older:
+            return "MIXED_VERSION_CANDIDATES", max(older).isoformat()
+        return "CURRENT_CANDIDATE_PRESENT", None
 
-    if not dates:
-        return (
-            "NO_DATED_CANDIDATE",
-            None,
-        )
+    if aligned:
+        return "DATE_ALIGNED", official.isoformat()
 
-    latest = max(dates)
-    official = date.fromisoformat(
-        official_date
-    )
+    if newer:
+        return "BASELINE_BEHIND_LOCAL", max(newer).isoformat()
 
-    if latest < official:
-        return (
-            "LOCAL_STALE",
-            latest.isoformat(),
-        )
+    if older:
+        return "LOCAL_STALE_ONLY", max(older).isoformat()
 
-    if latest == official:
-        return (
-            "DATE_ALIGNED",
-            latest.isoformat(),
-        )
-
-    return (
-        "BASELINE_BEHIND_LOCAL",
-        latest.isoformat(),
-    )
-
+    return "NO_DATED_CANDIDATE", None
 
 def main():
     p0 = json.loads(
-        (
-            ROOT
-            / "metadata"
-            / "p0-core-documents.json"
-        ).read_text(
-            encoding="utf-8"
-        )
+        (ROOT / "metadata" / "p0-core-documents.json").read_text(encoding="utf-8")
     )
-
     baseline = json.loads(
-        (
-            ROOT
-            / "metadata"
-            / "p0-official-version-baseline.json"
-        ).read_text(
-            encoding="utf-8"
-        )
+        (ROOT / "metadata" / "p0-official-version-baseline.json").read_text(encoding="utf-8")
+    )
+    provenance = json.loads(
+        (ROOT / "metadata" / "p0-current-candidate-provenance.json").read_text(encoding="utf-8")
     )
 
     docs = {
         r["canonical_document_id"]: r
-        for r in p0.get(
-            "p0_core_documents",
-            [],
-        )
+        for r in p0.get("p0_core_documents", [])
+    }
+    prov = {
+        r["canonical_document_id"]: r
+        for r in provenance.get("records", [])
     }
 
     errors = []
 
-    tracked = baseline.get(
-        "tracked_unknown",
-        [],
-    )
-
-    if (
-        baseline.get("tracked_unknown_count")
-        != len(tracked)
-    ):
-        errors.append(
-            "tracked_unknown_count mismatch"
-        )
+    tracked = baseline.get("tracked_unknown", [])
+    if baseline.get("tracked_unknown_count") != len(tracked):
+        errors.append("tracked_unknown_count mismatch")
 
     for item in tracked:
-        cid = item[
-            "canonical_document_id"
-        ]
-
+        cid = item["canonical_document_id"]
         rec = docs.get(cid)
-
         if not rec:
+            errors.append("tracked P0 missing: " + cid)
+            continue
+        if rec.get("freshness_status") != "UNKNOWN":
             errors.append(
-                "tracked P0 missing: " + cid
+                f"{cid}: tracked UNKNOWN changed without explicit baseline review "
+                f"(freshness={rec.get('freshness_status')})"
             )
+
+    for item in baseline.get("verified_version_baselines", []):
+        cid = item["canonical_document_id"]
+        rec = docs.get(cid)
+        if not rec:
+            errors.append("verified baseline P0 missing: " + cid)
             continue
 
-        if (
-            rec.get("freshness_status")
-            != "UNKNOWN"
-        ):
-            errors.append(
-                "tracked UNKNOWN changed "
-                "without baseline review: "
-                f"{cid} freshness="
-                f"{rec.get('freshness_status')}"
-            )
+        p = prov.get(cid)
+        if p:
+            if p.get("official_current_version_date") != item.get("official_current_version_date"):
+                errors.append(f"{cid}: provenance/baseline official date mismatch")
+            if not re.fullmatch(r"[0-9a-f]{64}", p.get("candidate_tree_sha256", "")):
+                errors.append(f"{cid}: invalid candidate tree sha256")
+            if not re.fullmatch(r"[0-9a-f]{40}", provenance.get("source_commit", "")):
+                errors.append("invalid just-laws source commit")
 
-    for item in baseline.get(
-        "verified_version_baselines",
-        [],
-    ):
-        cid = item[
-            "canonical_document_id"
-        ]
-
-        rec = docs.get(cid)
-
-        if not rec:
-            errors.append(
-                "verified baseline P0 missing: "
-                + cid
-            )
-            continue
-
-        status, local_date = (
-            detect_local_status(
-                rec.get(
-                    "candidate_paths",
-                    [],
-                ),
-                item[
-                    "official_current_version_date"
-                ],
-            )
+        status, old_date = classify_candidate_set(
+            rec.get("candidate_paths", []),
+            item["official_current_version_date"],
+            p,
         )
 
+        expected = item["expected_local_status"]
         print(
             f"[CHECK] {item['title']}: "
-            f"local={local_date or '-'} "
-            f"official="
-            f"{item['official_current_version_date']} "
-            f"status={status} "
-            f"freshness="
-            f"{rec.get('freshness_status')} "
-            f"trust="
-            f"{rec.get('verification_status')}"
+            f"status={status} old_dated_copy={old_date or '-'} "
+            f"freshness={rec.get('freshness_status')} "
+            f"trust={rec.get('verification_status')}"
         )
 
-        if (
-            status
-            != item["expected_local_status"]
-        ):
+        if status != expected:
             errors.append(
-                f"{item['title']}: "
-                f"detected={status}, "
-                f"expected="
-                f"{item['expected_local_status']}"
+                f"{item['title']}: detected={status}, expected={expected}"
             )
 
         if (
-            status == "LOCAL_STALE"
-            and rec.get("freshness_status")
-            == "FRESH"
+            status in {"MIXED_VERSION_CANDIDATES", "LOCAL_STALE_ONLY"}
+            and rec.get("freshness_status") == "FRESH"
         ):
             errors.append(
-                item["title"]
-                + ": known stale candidate "
-                  "must not be FRESH"
+                f"{item['title']}: mixed/stale candidate set must not be marked FRESH"
             )
 
     if errors:
-        print(
-            "[FAIL] P0 official-version "
-            "drift guard"
-        )
-
+        print("[FAIL] P0 official-version drift guard")
         for error in errors:
             print(" - " + error)
-
         return 1
 
     print(
-        "[OK] tracked_unknown="
-        f"{len(tracked)} "
-        "verified_version_baselines="
-        f"{len(baseline.get('verified_version_baselines', []))}"
+        f"[OK] tracked_unknown={len(tracked)} "
+        f"current_candidate_provenance={len(prov)}"
     )
-
     return 0
-
 
 if __name__ == "__main__":
     raise SystemExit(main())
