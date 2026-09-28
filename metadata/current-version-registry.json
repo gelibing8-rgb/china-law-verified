@@ -124201,7 +124201,7 @@
         "china-law-verified/laws::README.md"
       ],
       "source_commits": {},
-      "verification_status": "OFFICIAL_META",
+      "verification_status": "CANDIDATE",
       "freshness_status": "UNKNOWN",
       "last_checked_at": "2026-09-15T00:54:06Z",
       "check_method": "candidate_metadata_scan"
@@ -124222,7 +124222,7 @@
         "china-law-verified/laws::civil_code.md"
       ],
       "source_commits": {},
-      "verification_status": "OFFICIAL_META",
+      "verification_status": "CANDIDATE",
       "freshness_status": "FRESH",
       "last_checked_at": "2026-09-15T00:54:06Z",
       "check_method": "candidate_metadata_scan"
@@ -124243,7 +124243,7 @@
         "china-law-verified/laws::company_law_2024.md"
       ],
       "source_commits": {},
-      "verification_status": "OFFICIAL_META",
+      "verification_status": "CANDIDATE",
       "freshness_status": "FRESH",
       "last_checked_at": "2026-09-15T00:54:06Z",
       "check_method": "candidate_metadata_scan"
@@ -124264,7 +124264,7 @@
         "china-law-verified/laws::labor_contract_law.md"
       ],
       "source_commits": {},
-      "verification_status": "OFFICIAL_META",
+      "verification_status": "CANDIDATE",
       "freshness_status": "FRESH",
       "last_checked_at": "2026-09-15T00:54:06Z",
       "check_method": "candidate_metadata_scan"
@@ -159501,7 +159501,7 @@
         "china-law-verified/laws::civil_code.md"
       ],
       "source_commits": {},
-      "verification_status": "OFFICIAL_META",
+      "verification_status": "CANDIDATE",
       "freshness_status": "FRESH",
       "last_checked_at": "2026-09-15T00:54:06Z",
       "check_method": "candidate_metadata_scan"
@@ -159522,7 +159522,7 @@
         "china-law-verified/laws::company_law_2024.md"
       ],
       "source_commits": {},
-      "verification_status": "OFFICIAL_META",
+      "verification_status": "CANDIDATE",
       "freshness_status": "FRESH",
       "last_checked_at": "2026-09-15T00:54:06Z",
       "check_method": "candidate_metadata_scan"
@@ -159543,7 +159543,7 @@
         "china-law-verified/laws::labor_contract_law.md"
       ],
       "source_commits": {},
-      "verification_status": "OFFICIAL_META",
+      "verification_status": "CANDIDATE",
       "freshness_status": "FRESH",
       "last_checked_at": "2026-09-15T00:54:06Z",
       "check_method": "candidate_metadata_scan"
@@ -267667,7 +267667,7 @@
         "china-law-verified/laws::README.md"
       ],
       "source_commits": {},
-      "verification_status": "OFFICIAL_META",
+      "verification_status": "CANDIDATE",
       "freshness_status": "UNKNOWN",
       "last_checked_at": "2026-09-15T00:54:06Z",
       "check_method": "candidate_metadata_scan",

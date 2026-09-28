@@ -242870,7 +242870,7 @@
       "document_type": "other",
       "legal_status": "unknown",
       "version_status": "current",
-      "verification_status": "OFFICIAL_META",
+      "verification_status": "CANDIDATE",
       "official_source_url": null,
       "candidate_sources": [
         {
@@ -242878,7 +242878,7 @@
           "relative_path": "README.md",
           "local_root": "/Users/glb/workspace/china-law-verified/laws",
           "source_commit": null,
-          "verification_status": "OFFICIAL_META",
+          "verification_status": "CANDIDATE",
           "match_method": "canonical_key_match",
           "local_text_available": true,
           "local_sha256": "4b3be3ea80fd104ee9f7269a295d3bbfad870e4b5ce6b30d274e1f2137c96390",
@@ -242909,7 +242909,7 @@
       "document_type": "law",
       "legal_status": "effective",
       "version_status": "current",
-      "verification_status": "OFFICIAL_META",
+      "verification_status": "CANDIDATE",
       "official_source_url": null,
       "candidate_sources": [
         {
@@ -242917,7 +242917,7 @@
           "relative_path": "civil_code.md",
           "local_root": "/Users/glb/workspace/china-law-verified/laws",
           "source_commit": null,
-          "verification_status": "OFFICIAL_META",
+          "verification_status": "CANDIDATE",
           "match_method": "canonical_key_match",
           "local_text_available": true,
           "local_sha256": "a068b0a5066f5bfb7483ee55e0496b28917e15dcce89c5efca59098bc3d43b08",
@@ -242952,7 +242952,7 @@
       "document_type": "law",
       "legal_status": "effective",
       "version_status": "current",
-      "verification_status": "OFFICIAL_META",
+      "verification_status": "CANDIDATE",
       "official_source_url": null,
       "candidate_sources": [
         {
@@ -242960,7 +242960,7 @@
           "relative_path": "company_law_2024.md",
           "local_root": "/Users/glb/workspace/china-law-verified/laws",
           "source_commit": null,
-          "verification_status": "OFFICIAL_META",
+          "verification_status": "CANDIDATE",
           "match_method": "canonical_key_match",
           "local_text_available": true,
           "local_sha256": "76bf983ecf62416cc99e2e850d3ff09188bc632ddd22c28fec51ab961f6056ed",
@@ -242995,7 +242995,7 @@
       "document_type": "law",
       "legal_status": "effective",
       "version_status": "current",
-      "verification_status": "OFFICIAL_META",
+      "verification_status": "CANDIDATE",
       "official_source_url": null,
       "candidate_sources": [
         {
@@ -243003,7 +243003,7 @@
           "relative_path": "labor_contract_law.md",
           "local_root": "/Users/glb/workspace/china-law-verified/laws",
           "source_commit": null,
-          "verification_status": "OFFICIAL_META",
+          "verification_status": "CANDIDATE",
           "match_method": "canonical_key_match",
           "local_text_available": true,
           "local_sha256": "cd97f872c8537a766c61ff59eecb6e8e0854e12e7087bf983ed506bac51e845b",
