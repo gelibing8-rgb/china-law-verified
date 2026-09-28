@@ -45,3 +45,10 @@ used_sources:
       zdjgName=全国人民代表大会常务委员会，flxz=法律。
       gbrq=2012-12-28 表示最后一次修正日期；原法律 2007-06-29 通过、2008-01-01 施行。
       这是当前唯一现行版本，V1 收录。
+# 2026-09-28 可达性复测记录（覆盖早期「TLS 被拒」的判断）
+# flk.npc.gov.cn -> HTTP 200（可达）
+# www.gov.cn    -> HTTP 200（可达）
+# www.court.gov.cn -> HTTP 301（可达）
+# www.npc.gov.cn -> HTTP 000（仍不可达）
+# 官方详情页 detail.html 仅 552 字节 SPA 空壳，正文经 WPS/OFD + 内网 OSS 渲染，
+# 公网无直链 —— 这是正文无法逐字核验的根因，与连通性无关。

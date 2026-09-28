@@ -12,13 +12,13 @@ version_date: 2012-12-28  # deprecated: 同 current_version_date
 official_url: https://flk.npc.gov.cn/detail.html?bbbs=2c909fdd678bf17901678bf74d7106b3
 retrieved_at: 2026-09-11T01:30:04Z
 verification_status: needs_recheck
-content_sha256: 664b87074b106513b3848979d255c016ff4c0df530d2cb7c10333347b79dd9b6
+content_sha256: b6697cbbb913f5bb0a49342825596e41136c5638508a340232c3d8da0b5ec247
 ---
 # 中华人民共和国劳动合同法
 
 > **本文件仅完成 V1 元数据与结构核验。**  
 > 标题、制定机关、发布日期、施行日期、当前版本日期均已通过 flk.npc.gov.cn（国家法律法规数据库）公开 API 核验一致。  
-> 各条正文文本尚未补齐，原因：flk.npc.gov.cn 的 SPA 通过内网 WPS/OFD 文档查看器渲染正文，公网无法直接下载对应文件；其他官方站点（npc.gov.cn / gov.cn / moj.gov.cn / court.gov.cn）在本次环境下 TLS 握手被服务端拒绝。  
+> 各条正文文本尚未补齐，原因：flk.npc.gov.cn 的 SPA 通过内网 WPS/OFD 文档查看器渲染正文，公网无法直接下载对应文件；2026-09-28 复测更正：flk.npc.gov.cn 与 gov.cn 现均可达（HTTP 200），npc.gov.cn 仍不可达（连接失败）。**正文缺失的真实原因不是连通性**，而是官方详情页为 552 字节 SPA 空壳（仅 id="app"），正文经 WPS/OFD 查看器从内网 OSS 渲染，公网无直链。此结论取代早期的「TLS 被拒」判断。  
 > verification_status = `needs_recheck`。补齐方法见 `laws/README.md`。
 
 

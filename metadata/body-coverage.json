@@ -1,0 +1,33 @@
+{
+  "generated_by": "scripts/body_coverage_report.py",
+  "law_files": 3,
+  "total_articles": 1624,
+  "with_verified_text": 0,
+  "placeholder_articles": 1624,
+  "coverage_pct": 0.0,
+  "verified_layer_ready": false,
+  "blocker": "官方详情页为 SPA 空壳（detail.html 仅 552 字节），正文经 WPS/OFD + 内网 OSS 渲染，公网无直链；不可通过候选层拷贝补齐（AGENTS.md 禁止）。",
+  "per_file": [
+    {
+      "file": "civil_code.md",
+      "articles": 1260,
+      "with_verified_text": 0,
+      "placeholder": 1260,
+      "coverage_pct": 0.0
+    },
+    {
+      "file": "company_law_2024.md",
+      "articles": 266,
+      "with_verified_text": 0,
+      "placeholder": 266,
+      "coverage_pct": 0.0
+    },
+    {
+      "file": "labor_contract_law.md",
+      "articles": 98,
+      "with_verified_text": 0,
+      "placeholder": 98,
+      "coverage_pct": 0.0
+    }
+  ]
+}

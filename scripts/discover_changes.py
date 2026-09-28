@@ -35,18 +35,33 @@ ROOT = Path(__file__).resolve().parent.parent
 STATE = ROOT / "metadata" / "change-candidates.jsonl"
 SCHEDULE_LOCK = ROOT / "metadata" / "discover-changes-state.json"
 
-OFFICIAL_DOMAINS = [
-    "npc.gov.cn",
-    "gov.cn",
-    "court.gov.cn",
-    "moj.gov.cn",
-    "samr.gov.cn",
-    "ndrc.gov.cn",
-    "mof.gov.cn",
-    "mee.gov.cn",
-    "mem.gov.cn",
-    "mohurd.gov.cn",
-]
+def _load_allowed_domains() -> list[str]:
+    """从 sources.yaml 的 allowed_domains 派生官方域名白名单。
+
+    单一事实来源：sources.yaml 是唯一权威白名单，本脚本不得维护副本。
+    旧实现硬编码了 samr/ndrc/mof/mee/mem/mohurd 六个域名，均不在
+    sources.yaml 白名单内，属越界主动访问，已移除。
+    """
+    src = ROOT / 'sources.yaml'
+    if not src.exists():
+        return []
+    out: list[str] = []
+    in_block = False
+    for raw in src.read_text(encoding='utf-8').splitlines():
+        line = raw.split("#", 1)[0].rstrip()
+        if line.startswith("allowed_domains:"):
+            in_block = True
+            continue
+        if in_block:
+            m = re.match(r"^\s*-\s*(\S+)\s*$", line)
+            if m:
+                out.append(m.group(1))
+            elif line.strip():
+                break
+    return out
+
+
+OFFICIAL_DOMAINS = _load_allowed_domains()
 
 TOPICS = [
     "civil-code",

@@ -114,7 +114,12 @@ def load_index() -> dict[str, dict]:
             except json.JSONDecodeError:
                 continue
             if rec.get("path"):
-                out[rec["path"]] = rec
+                p = rec["path"]
+                out[p] = rec
+                # 索引以仓库根为基准（laws/civil_code.md），
+                # 但检索时 rel_path 以 LAWS_DIR 为基准（civil_code.md）。
+                # 两种键都登记，否则 fmt_law_hit 的元数据查找必然失配。
+                out[Path(p).name] = rec
     return out
 
 
@@ -174,6 +179,7 @@ def iter_rg(root: Path, pattern: str) -> Iterator[tuple[str, int, str]]:
     if shutil.which("rg") is None:
         return None  # type: ignore[return-value]
     cmd = ["rg", "--no-heading", "--line-number", "--color=never",
+           "--glob", "!README.md",
            "--", pattern, str(root)]
     proc = subprocess.run(cmd, capture_output=True, text=True, check=False)
     if proc.returncode not in (0, 1):
@@ -194,6 +200,9 @@ def iter_rg(root: Path, pattern: str) -> Iterator[tuple[str, int, str]]:
 def iter_python(root: Path, pattern: str, suffix: str = ".md") -> Iterator[tuple[str, int, str]]:
     rx = re.compile(pattern)
     for p in sorted(root.rglob(f"*{suffix}")):
+        # README 是说明文档不是法条，命中只会污染结果并被误当原文引用。
+        if p.name == "README.md":
+            continue
         try:
             with p.open("r", encoding="utf-8") as fh:
                 for lineno, line in enumerate(fh, 1):
@@ -219,22 +228,83 @@ def search_one(root: Path, pattern: str) -> tuple[str, list[tuple[str, int, str]
 
 # ------------------------- 渲染 -------------------------
 
+# ---- 正文可引用性判定 ----
+# laws/ 目前只有元数据 + 结构树（条号），正文普遍是「正文待补」占位符。
+# 命中行若不是逐字核验的正文，绝不能以「原文」字段呈现——那会让调用方
+# 把 Markdown 标题当成法条引用，违反 AGENTS.md 的引用完整性规则。
+_FRONT_MATTER_KEYS = {
+    "title", "document_type", "issuing_authority", "promulgation_date",
+    "original_effective_date", "current_version_date",
+    "current_version_effective_date", "effective_date", "status",
+    "version_date", "official_url", "retrieved_at", "verification_status",
+    "content_sha256",
+}
+_ARTICLE_NO_RE = re.compile(r"^第[一二三四五六七八九十百千零〇\d]+条")
+
+_KIND_LABEL = {
+    "text": "法条正文",
+    "heading": "章节标题",
+    "placeholder": "正文待补占位符",
+    "frontmatter": "frontmatter",
+    "empty": "空行",
+}
+
+
+def classify_law_line(snippet: str) -> tuple[str, str]:
+    """判断 laws/ 命中行能否作为法条原文引用。
+
+    返回 (kind, article_no)：
+      text        逐字正文，可引用
+      heading     Markdown 标题 / blockquote 说明，非正文
+      placeholder 「正文待补」占位符
+      frontmatter YAML frontmatter
+      empty       空行
+    """
+    s = snippet.strip()
+    if not s:
+        return "empty", ""
+    if s.startswith("#"):
+        return "heading", ""
+    if s.startswith(">"):
+        return "heading", ""
+    k = s.split(":", 1)[0].strip()
+    if ":" in s and k in _FRONT_MATTER_KEYS:
+        return "frontmatter", ""
+    if "正文待补" in s:
+        return "placeholder", ""
+    m = _ARTICLE_NO_RE.match(s)
+    if m:
+        return "text", m.group(0)
+    return "text", ""
+
+
 def fmt_law_hit(rel_path: str, lineno: int, snippet: str, idx: dict, layer: str) -> list[str]:
     """VERIFIED / OFFICIAL_META 共用渲染：来自 laws/*.md."""
-    rec = idx.get(rel_path, {})
+    rec = idx.get(rel_path) or idx.get(f"laws/{rel_path}") or {}
     title = rec.get("title", Path(rel_path).stem)
     url = rec.get("official_url", "(无)")
     vdate = rec.get("current_version_date") or rec.get("version_date", "(无)")
     status = rec.get("verification_status", "needs_recheck")
     ctx = snippet.strip()[:200]
-    return [
+    kind, art = classify_law_line(snippet)
+    out = [
         f"  标题: {title}",
         f"  层: {layer}  verification: {status}",
         f"  版本日期: {vdate}",
         f"  路径: {rel_path}:{lineno}",
         f"  官方来源: {url}",
-        f"  原文: {ctx}",
     ]
+    if kind == "text":
+        out.append(f"  原文: {ctx}")
+    else:
+        # 非正文命中：显式标注，禁止当作法条引用。
+        label = _KIND_LABEL[kind]
+        out.append(f"  [非正文·{label}] {ctx}".rstrip())
+        out.append("  ⚠ 该 laws/ 文件仅有元数据与结构树，无逐字核验正文；"
+                   "不得作为法条原文引用，正文需到官方来源核对。")
+        if url != "(无)":
+            out.append(f"  官方原文核验入口: {url}")
+    return out
 
 
 def fmt_candidate_hit(rel_path: str, lineno: int, snippet: str, _idx=None, *, root: Path = CANDIDATE_ROOT, source_name: str = "just-laws") -> list[str]:

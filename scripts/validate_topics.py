@@ -28,6 +28,18 @@ def commit(path: Path) -> str | None:
         return None
 
 
+def blob(path: Path, revision: str, relative_path: str) -> str | None:
+    """Return the Git blob id for one candidate file at a pinned/source revision."""
+    try:
+        return subprocess.check_output(
+            ["git", "-C", str(path), "rev-parse", revision + ":" + relative_path],
+            text=True,
+            stderr=subprocess.DEVNULL,
+        ).strip()
+    except (OSError, subprocess.CalledProcessError):
+        return None
+
+
 def fail(errors: list[str], msg: str) -> None:
     errors.append(msg)
 
@@ -103,8 +115,17 @@ def main() -> int:
         d = json.loads(m.read_text(encoding="utf-8"))
         for x in list(d.get("documents", [])) + list(d.get("documents_related", [])):
             for cs in x.get("candidate_sources", []) or []:
-                if cs.get("source_commit") and current.get(cs.get("source")) and cs["source_commit"] != current[cs["source"]]:
-                    fail(errors, f"{m}: candidate commit stale {cs.get('source')}")
+                source = cs.get("source")
+                pinned_commit = cs.get("source_commit")
+                relative_path = cs.get("relative_path", "")
+                if pinned_commit and current.get(source) and pinned_commit != current[source]:
+                    # Repository HEAD may move for unrelated files. Preserve the pin
+                    # when this exact candidate file is unchanged; fail closed when it
+                    # changed or disappeared since the pinned commit.
+                    pinned_blob = blob(SOURCES[source], pinned_commit, relative_path)
+                    current_blob = blob(SOURCES[source], current[source], relative_path)
+                    if not pinned_blob or pinned_blob != current_blob:
+                        fail(errors, f"{m}: candidate source changed since pinned commit {source}:{relative_path}")
     if errors:
         print("[FAIL] QA")
         print("\n".join("- " + e for e in errors))
