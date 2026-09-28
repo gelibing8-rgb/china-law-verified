@@ -1,0 +1,77 @@
+{
+  "generated_at": "2026-09-28T23:50:44Z",
+  "source": "https://flk.npc.gov.cn/law-search/search/flfgDetails",
+  "body_text_note": "正文不可自动获取：官方文档 permission.download=0，对象存储为内网端点。本脚本仅核验元数据。",
+  "items": [
+    {
+      "path": "laws/civil_code.md",
+      "bbbs": "ff808081729d1efe01729d50b5c500bf",
+      "status": "OK",
+      "official": {
+        "title": "中华人民共和国民法典",
+        "gbrq": "2020-05-28",
+        "sxrq": "2021-01-01",
+        "sxx": 3,
+        "sxx_meaning": "现行有效",
+        "version_count": 0,
+        "issuing_authority": "全国人民代表大会"
+      },
+      "snapshot": "metadata/official-snapshots/civil_code.flfgDetails.json",
+      "snapshot_sha256": "26d6d065c59fe1435341738a495a9d2eddabfdda627cd541ed5fb624b611e584",
+      "stored": {
+        "title": "中华人民共和国民法典",
+        "current_version_date": "2020-05-28",
+        "current_version_effective_date": "2021-01-01"
+      },
+      "mismatches": [],
+      "verdict": "CURRENT_MATCH"
+    },
+    {
+      "path": "laws/company_law_2024.md",
+      "bbbs": "ff8081818c9108eb018cb6922f750c07",
+      "status": "OK",
+      "official": {
+        "title": "中华人民共和国公司法",
+        "gbrq": "2023-12-29",
+        "sxrq": "2024-07-01",
+        "sxx": 3,
+        "sxx_meaning": "现行有效",
+        "version_count": 3,
+        "issuing_authority": "全国人民代表大会常务委员会"
+      },
+      "snapshot": "metadata/official-snapshots/company_law_2024.flfgDetails.json",
+      "snapshot_sha256": "aa07360cf298e75ed5fcf1a2ff04ace5efffb69168da9867eaadbcd716cfefd4",
+      "stored": {
+        "title": "中华人民共和国公司法",
+        "current_version_date": "2023-12-29",
+        "current_version_effective_date": "2024-07-01"
+      },
+      "mismatches": [],
+      "verdict": "CURRENT_MATCH"
+    },
+    {
+      "path": "laws/labor_contract_law.md",
+      "bbbs": "2c909fdd678bf17901678bf74d7106b3",
+      "status": "OK",
+      "official": {
+        "title": "中华人民共和国劳动合同法",
+        "gbrq": "2012-12-28",
+        "sxrq": "2013-07-01",
+        "sxx": 3,
+        "sxx_meaning": "现行有效",
+        "version_count": 0,
+        "issuing_authority": "全国人民代表大会常务委员会"
+      },
+      "snapshot": "metadata/official-snapshots/labor_contract_law.flfgDetails.json",
+      "snapshot_sha256": "3951cf494b1815ffa152ab5948962e1ddea93ae5c289de28c2bb2afb01455afe",
+      "stored": {
+        "title": "中华人民共和国劳动合同法",
+        "current_version_date": "2012-12-28",
+        "current_version_effective_date": "2013-07-01"
+      },
+      "mismatches": [],
+      "verdict": "CURRENT_MATCH"
+    }
+  ],
+  "drift": []
+}
