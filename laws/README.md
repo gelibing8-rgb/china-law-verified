@@ -38,29 +38,22 @@ V2.2 起，本目录中的每个 `*.md` 文件依据其 frontmatter 中 `verific
 
 **未核验：每条正文文本。**
 
-正文文本不在 `flk.npc.gov.cn` 的服务端 API 返回中（仅返回结构树）。正文文本在 SPA 中通过嵌入的 WPS / OFD 文档查看器渲染，文档源（OFD / DOCX）存储于内网 OSS（路径形如 `prod/YYYYMMDD/<hash>.ofd`），文件下载接口返回的 preview URL 最终指向 `http://172.16.220.27:38080/...`，从公网无法直接下载。
+正文文本不在 `flk.npc.gov.cn` 的服务端 API 返回中（仅返回结构树）。正文文本在 SPA 中通过嵌入的 WPS / OFD 文档查看器渲染；自动化不得访问内网 OSS 或绕过下载权限。
 
-本任务允许的其他官方源（`npc.gov.cn`、`gov.cn`、`moj.gov.cn`、`court.gov.cn`）在本次执行环境下 TLS 握手被服务端 alert 拒绝，未能拿到正文 HTML。
+此前尝试的其他官方源（`npc.gov.cn`、`gov.cn`、`moj.gov.cn`、`court.gov.cn`）当时未能取得正文 HTML；该连通性结果是时点信息，不代表这些来源当前不可用。
 
-按"中国网站合规铁律"（见根目录 `README.md`），本项目**不**采取任何规避措施（包括伪造 User-Agent、伪造 IP、分布式抓取、登录态劫持等）。正文只能由人工在 flk.npc.gov.cn 浏览器界面复制补齐，才能从 OFFICIAL_META 升级为 VERIFIED。
+按"中国网站合规铁律"（见根目录 `README.md`），本项目**不**采取任何规避措施（包括伪造 User-Agent、伪造 IP、分布式抓取、登录态劫持等）。正文须由人工通过获准的官方页面获取并逐字核对。`scripts/ingest_official_docs.py` 仅辅助解析 DOCX、检查条号结构并替换占位正文；结构匹配不是来源真实性或逐字准确性的证明，脚本不会自动把条目标记为 VERIFIED。
 
 ## 从 OFFICIAL_META 升级为 VERIFIED 的步骤（人工操作）
 
 针对每份 `*.md`：
 
-1. 浏览器访问 `official_url`（或直接在 flk.npc.gov.cn 搜索标题）
-2. 在 WPS / OFD 查看器中逐条复制正文
-3. 在 Markdown 文件中找到对应 `#### 第X条` 后的 `（正文待补：...）` 占位行，替换为正文
-4. 删除 `（正文待补：...）` 中的条目 ID
-5. 重新计算正文 SHA256：
-
-   ```bash
-   python3 -c "import re,hashlib,sys; t=open(sys.argv[1]).read(); m=re.match(r'^---\\s*\\n.*?\\n---\\s*\\n(.*)$', t, re.DOTALL); print(hashlib.sha256(m.group(1).encode('utf-8')).hexdigest())" laws/civil_code.md
-   ```
-
-6. 把 SHA256 写回 frontmatter
-8. 把 `verification_status: needs_recheck` 改为 `verification_status: verified_official`
-9. 重新运行 `python3 scripts/verify.py` 与 `python3 scripts/search_all.py --keywords "关键词" "关键词2" ...` 验收
+1. 浏览器访问 `official_url`（或直接在 flk.npc.gov.cn 搜索标题），核实文档来源和当前版本；确认页面确实允许取得正文。
+2. 逐条对照官方页面可见原文与本地正文，包括条号、标点、附件及遗漏；只有结构匹配或 DOCX 文件名相同不足以证明逐字一致。
+3. 在 `laws/<name>.md` 中补正正文并清除全部 `（正文待补：...）` 占位行；保留来源文件的 SHA256 与人工核验记录。
+4. 运行 `python3 scripts/resync_content_sha.py` 同步 frontmatter 和 `metadata/index.jsonl` 的正文哈希。
+5. 人工核实全部条文后，才将对应 frontmatter 与索引中的 `verification_status` 均改为 `verified_official`，记录 `body_verified_at`。
+6. 运行 `python3 scripts/verify.py` 和检索入口验收；核对 VERIFIED 输出确实对应已逐字核验的正文。
 
 > 说明：人工补齐后的正文不得包含 AI 总结、推断、第三方注释；只允许复制 flk.npc.gov.cn 渲染的官方原文。
 
