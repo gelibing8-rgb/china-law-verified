@@ -13,7 +13,7 @@ official_url: https://flk.npc.gov.cn/detail.html?bbbs=ff808081729d1efe01729d50b5
 retrieved_at: 2026-09-11T01:30:04Z
 verification_status: needs_recheck
 content_sha256: 87f51b4e3d6e44f43ea33bfaed0593c656bf3b96b5d641fead6cf023ff536c79
-official_metadata_verified_at: 2026-09-28T23:50:02Z
+official_metadata_verified_at: 2026-09-29T00:00:05Z
 ---
 # 中华人民共和国民法典
 

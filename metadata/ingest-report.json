@@ -1,0 +1,46 @@
+{
+  "generated_at": "2026-09-29T02:02:29Z",
+  "applied": true,
+  "note": "正文由人工从官方页面取得；本脚本不下载、不绕过 permission.download=0",
+  "results": [
+    {
+      "law_file": "labor_contract_law.md",
+      "docx": "labor_contract_law.docx",
+      "title": "中华人民共和国劳动合同法",
+      "source_sha256": "a3341971f1fb324adb262a9684070069112fc900d2c30b1b131b55fbcd61762a",
+      "source_bytes": 635,
+      "paragraphs": 5,
+      "articles_parsed": 3,
+      "articles_official": 98,
+      "missing_articles": [
+        "第七十一条",
+        "第七十七条",
+        "第七十三条",
+        "第七十九条",
+        "第七十二条",
+        "第七十五条",
+        "第七十八条",
+        "第七十六条",
+        "第七十四条",
+        "第七十条",
+        "第七条",
+        "第三十一条",
+        "第三十七条",
+        "第三十三条",
+        "第三十九条",
+        "第三十二条",
+        "第三十五条",
+        "第三十八条",
+        "第三十六条",
+        "第三十四条"
+      ],
+      "missing_count": 95,
+      "unexpected_articles": [],
+      "empty_articles": [],
+      "structure_available": true,
+      "complete": false,
+      "applied": false,
+      "reason": "正文不完整：缺 95 条、空 0 条、意外 0 条；保持 verification_status=needs_recheck"
+    }
+  ]
+}

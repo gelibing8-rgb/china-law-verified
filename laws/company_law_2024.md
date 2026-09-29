@@ -13,7 +13,7 @@ official_url: https://flk.npc.gov.cn/detail.html?bbbs=ff8081818c9108eb018cb6922f
 retrieved_at: 2026-09-11T01:30:04Z
 verification_status: needs_recheck
 content_sha256: a46c3daca6a7bb00b6ce51c26b8e2beea7839c8be71b0b0366f358db5add1e9f
-official_metadata_verified_at: 2026-09-28T23:50:02Z
+official_metadata_verified_at: 2026-09-29T00:00:05Z
 ---
 # 中华人民共和国公司法
 
