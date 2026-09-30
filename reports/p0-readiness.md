@@ -1,6 +1,6 @@
 # P0 Readiness (V5.0.1)
 
-_生成时间：2026-09-29T09:03:54Z_
+_生成时间：2026-09-30T00:47:01Z_
 
 ## 概览
 
@@ -18,25 +18,25 @@ _生成时间：2026-09-29T09:03:54Z_
 
 | code | domain | 核心主法 | local_text | current_version | legal_status | freshness | verification | last_checked | known_gap |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| 01 | 民商事基础 | 中华人民共和国民法典 | 1/1 | 1/1 | unknown | UNKNOWN | CANDIDATE | 2026-09-29 | - |
-| 02 | 公司治理 | 中华人民共和国公司法 | 1/1 | 1/1 | unknown | UNKNOWN | CANDIDATE | 2026-09-29 | - |
-| 03 | 合同与担保 | 中华人民共和国民法典 | 1/1 | 1/1 | unknown | UNKNOWN | CANDIDATE | 2026-09-29 | - |
-| 04 | 劳动人事 | 中华人民共和国劳动法<br>中华人民共和国劳动合同法 | 2/2 | 2/2 | unknown | UNKNOWN | CANDIDATE | 2026-09-29 | - |
-| 05 | 招标投标 | 中华人民共和国招标投标法<br>中华人民共和国招标投标法实施条例 | 2/2 | 2/2 | effective,unknown | FRESH,UNKNOWN | CANDIDATE | 2026-09-29 | - |
-| 06 | 政府采购 | 中华人民共和国政府采购法<br>中华人民共和国政府采购法实施条例 | 2/2 | 2/2 | effective,unknown | FRESH,UNKNOWN | CANDIDATE | 2026-09-29 | - |
-| 07 | 工程建设 | 中华人民共和国建筑法<br>建设工程质量管理条例 | 2/2 | 2/2 | effective,unknown | FRESH,UNKNOWN | CANDIDATE | 2026-09-29 | - |
-| 08 | EPC / EPCO / 工程总承包 | 中华人民共和国招标投标法<br>建设工程质量管理条例<br>中华人民共和国民法典 | 3/3 | 3/3 | effective,unknown | FRESH,UNKNOWN | CANDIDATE | 2026-09-29 | - |
-| 09 | 房地产与工业地产 | 中华人民共和国民法典<br>中华人民共和国土地管理法<br>中华人民共和国城乡规划法 | 3/3 | 3/3 | unknown | UNKNOWN | CANDIDATE | 2026-09-29 | - |
-| 10 | 土地管理 | 中华人民共和国土地管理法<br>中华人民共和国土地管理法实施条例 | 2/2 | 2/2 | effective,unknown | FRESH,UNKNOWN | CANDIDATE | 2026-09-29 | - |
-| 11 | 城乡规划 | 中华人民共和国城乡规划法 | 1/1 | 1/1 | unknown | UNKNOWN | CANDIDATE | 2026-09-29 | - |
-| 14 | 国有资产与国有企业 | 中华人民共和国公司法<br>中华人民共和国企业国有资产法 | 2/2 | 2/2 | unknown | UNKNOWN | CANDIDATE | 2026-09-29 | - |
-| 15 | 政府平台公司 | 中华人民共和国公司法 | 1/1 | 1/1 | unknown | UNKNOWN | CANDIDATE | 2026-09-29 | - |
-| 16 | 投资并购 | 中华人民共和国公司法<br>中华人民共和国民法典 | 2/2 | 2/2 | unknown | UNKNOWN | CANDIDATE | 2026-09-29 | - |
-| 22 | 安全生产 | 中华人民共和国安全生产法 | 1/1 | 1/1 | unknown | UNKNOWN | CANDIDATE | 2026-09-29 | - |
-| 24 | 环境保护 | 中华人民共和国环境保护法<br>中华人民共和国环境影响评价法 | 2/2 | 2/2 | unknown | UNKNOWN | CANDIDATE | 2026-09-29 | - |
-| 29 | 行政许可 | 中华人民共和国行政许可法 | 1/1 | 1/1 | unknown | UNKNOWN | CANDIDATE | 2026-09-29 | - |
-| 33 | 民事诉讼 | 中华人民共和国民事诉讼法 | 1/1 | 1/1 | unknown | UNKNOWN | CANDIDATE | 2026-09-29 | - |
-| 36 | 企业破产 | 中华人民共和国企业破产法 | 1/1 | 1/1 | unknown | UNKNOWN | CANDIDATE | 2026-09-29 | - |
+| 01 | 民商事基础 | 中华人民共和国民法典 | 1/1 | 1/1 | unknown | UNKNOWN | CANDIDATE | 2026-09-30 | - |
+| 02 | 公司治理 | 中华人民共和国公司法 | 1/1 | 1/1 | unknown | UNKNOWN | CANDIDATE | 2026-09-30 | - |
+| 03 | 合同与担保 | 中华人民共和国民法典 | 1/1 | 1/1 | unknown | UNKNOWN | CANDIDATE | 2026-09-30 | - |
+| 04 | 劳动人事 | 中华人民共和国劳动法<br>中华人民共和国劳动合同法 | 2/2 | 2/2 | unknown | UNKNOWN | CANDIDATE | 2026-09-30 | - |
+| 05 | 招标投标 | 中华人民共和国招标投标法<br>中华人民共和国招标投标法实施条例 | 2/2 | 2/2 | effective,unknown | FRESH,UNKNOWN | CANDIDATE | 2026-09-30 | - |
+| 06 | 政府采购 | 中华人民共和国政府采购法<br>中华人民共和国政府采购法实施条例 | 2/2 | 2/2 | effective,unknown | FRESH,UNKNOWN | CANDIDATE | 2026-09-30 | - |
+| 07 | 工程建设 | 中华人民共和国建筑法<br>建设工程质量管理条例 | 2/2 | 2/2 | effective,unknown | FRESH,UNKNOWN | CANDIDATE | 2026-09-30 | - |
+| 08 | EPC / EPCO / 工程总承包 | 中华人民共和国招标投标法<br>建设工程质量管理条例<br>中华人民共和国民法典 | 3/3 | 3/3 | effective,unknown | FRESH,UNKNOWN | CANDIDATE | 2026-09-30 | - |
+| 09 | 房地产与工业地产 | 中华人民共和国民法典<br>中华人民共和国土地管理法<br>中华人民共和国城乡规划法 | 3/3 | 3/3 | unknown | UNKNOWN | CANDIDATE | 2026-09-30 | - |
+| 10 | 土地管理 | 中华人民共和国土地管理法<br>中华人民共和国土地管理法实施条例 | 2/2 | 2/2 | effective,unknown | FRESH,UNKNOWN | CANDIDATE | 2026-09-30 | - |
+| 11 | 城乡规划 | 中华人民共和国城乡规划法 | 1/1 | 1/1 | unknown | UNKNOWN | CANDIDATE | 2026-09-30 | - |
+| 14 | 国有资产与国有企业 | 中华人民共和国公司法<br>中华人民共和国企业国有资产法 | 2/2 | 2/2 | unknown | UNKNOWN | CANDIDATE | 2026-09-30 | - |
+| 15 | 政府平台公司 | 中华人民共和国公司法 | 1/1 | 1/1 | unknown | UNKNOWN | CANDIDATE | 2026-09-30 | - |
+| 16 | 投资并购 | 中华人民共和国公司法<br>中华人民共和国民法典 | 2/2 | 2/2 | unknown | UNKNOWN | CANDIDATE | 2026-09-30 | - |
+| 22 | 安全生产 | 中华人民共和国安全生产法 | 1/1 | 1/1 | unknown | UNKNOWN | CANDIDATE | 2026-09-30 | - |
+| 24 | 环境保护 | 中华人民共和国环境保护法<br>中华人民共和国环境影响评价法 | 2/2 | 2/2 | unknown | UNKNOWN | CANDIDATE | 2026-09-30 | - |
+| 29 | 行政许可 | 中华人民共和国行政许可法 | 1/1 | 1/1 | unknown | UNKNOWN | CANDIDATE | 2026-09-30 | - |
+| 33 | 民事诉讼 | 中华人民共和国民事诉讼法 | 1/1 | 1/1 | unknown | UNKNOWN | CANDIDATE | 2026-09-30 | - |
+| 36 | 企业破产 | 中华人民共和国企业破产法 | 1/1 | 1/1 | unknown | UNKNOWN | CANDIDATE | 2026-09-30 | - |
 
 ## P0 核心规范清单（去重）
 

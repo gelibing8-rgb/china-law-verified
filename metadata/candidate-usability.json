@@ -1,0 +1,112 @@
+{
+  "generated_at": "2026-09-30T00:47:22Z",
+  "generated_by": "scripts/candidate_usability_audit.py",
+  "trust_ceiling": "CANDIDATE",
+  "disclaimer": "候选层文本不得复制进 laws/，不得标记 verified_official，不得作为法律依据引用；仅用于发现与定位。",
+  "official_body_coverage": "0/1624 官方正文不可公网下载，见 metadata/body-coverage.json",
+  "laws": [
+    {
+      "title": "中华人民共和国民法典",
+      "path": "laws/civil_code.md",
+      "official_current_version_date": "2020-05-28",
+      "official_articles": 1260,
+      "candidate_distinct_articles": 1260,
+      "candidate_files": 8,
+      "candidate_hits": [
+        {
+          "source": "china-data-laws",
+          "relative_path": "民法典/合同编.md",
+          "articles": 526,
+          "version_date_in_name": null
+        },
+        {
+          "source": "china-data-laws",
+          "relative_path": "民法典/物权编.md",
+          "articles": 258,
+          "version_date_in_name": null
+        },
+        {
+          "source": "china-data-laws",
+          "relative_path": "民法典/总则.md",
+          "articles": 204,
+          "version_date_in_name": null
+        },
+        {
+          "source": "china-data-laws",
+          "relative_path": "民法典/侵权责任编.md",
+          "articles": 95,
+          "version_date_in_name": null
+        },
+        {
+          "source": "china-data-laws",
+          "relative_path": "民法典/婚姻家庭编.md",
+          "articles": 79,
+          "version_date_in_name": null
+        },
+        {
+          "source": "china-data-laws",
+          "relative_path": "民法典/人格权编.md",
+          "articles": 51,
+          "version_date_in_name": null
+        },
+        {
+          "source": "china-data-laws",
+          "relative_path": "民法典/继承编.md",
+          "articles": 45,
+          "version_date_in_name": null
+        },
+        {
+          "source": "china-data-laws",
+          "relative_path": "民法典/附则.md",
+          "articles": 2,
+          "version_date_in_name": null
+        }
+      ],
+      "verdict": "ALIGNED_CANDIDATE",
+      "trust_level": "CANDIDATE"
+    },
+    {
+      "title": "中华人民共和国公司法",
+      "path": "laws/company_law_2024.md",
+      "official_current_version_date": "2023-12-29",
+      "official_articles": 266,
+      "candidate_distinct_articles": 218,
+      "candidate_files": 1,
+      "candidate_hits": [
+        {
+          "source": "china-data-laws",
+          "relative_path": "民法商法/公司法(2018-10-26).md",
+          "articles": 218,
+          "version_date_in_name": "2018-10-26"
+        }
+      ],
+      "verdict": "STALE_VERSION",
+      "trust_level": "CANDIDATE"
+    },
+    {
+      "title": "中华人民共和国劳动合同法",
+      "path": "laws/labor_contract_law.md",
+      "official_current_version_date": "2012-12-28",
+      "official_articles": 98,
+      "candidate_distinct_articles": 98,
+      "candidate_files": 1,
+      "candidate_hits": [
+        {
+          "source": "china-data-laws",
+          "relative_path": "社会法/劳动合同法(2012-12-28).md",
+          "articles": 98,
+          "version_date_in_name": "2012-12-28"
+        }
+      ],
+      "verdict": "ALIGNED_CANDIDATE",
+      "trust_level": "CANDIDATE"
+    }
+  ],
+  "summary": {
+    "laws_total": 3,
+    "aligned_candidate": 2,
+    "stale_candidate": 1,
+    "incomplete_candidate": 0,
+    "no_candidate_text": 0
+  }
+}

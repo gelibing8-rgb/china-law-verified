@@ -13,7 +13,7 @@ official_url: https://flk.npc.gov.cn/detail.html?bbbs=2c909fdd678bf17901678bf74d
 retrieved_at: 2026-09-11T01:30:04Z
 verification_status: needs_recheck
 content_sha256: b6697cbbb913f5bb0a49342825596e41136c5638508a340232c3d8da0b5ec247
-official_metadata_verified_at: 2026-09-29T00:00:05Z
+official_metadata_verified_at: 2026-09-30T00:47:13Z
 ---
 # 中华人民共和国劳动合同法
 
